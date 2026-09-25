@@ -1,0 +1,87 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXY2oPPzkxUW1",
+      "hash": "oo4pN2A9kSVDNbYVvRZdWccD26o8BCaDAj7KpZAac7io2NbpC6n",
+      "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+          "fee": "0",
+          "counter": "0",
+          "gas_limit": "0",
+          "storage_limit": "0",
+          "amount": "0",
+          "destination": "KT1Ru5fpQjhQRNDtpS3pj7USvYPTB4cfZoxS",
+          "metadata": {
+            "operation_result": {
+              "status": "failed",
+              "errors": []
+            },
+            "internal_operation_results": [
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 0,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              },
+              {
+                "kind": "transaction",
+                "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+                "nonce": 1,
+                "amount": "0",
+                "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+                "parameters": {
+                  "entrypoint": "increment",
+                  "value": {
+                    "prim": "Unit"
+                  }
+                },
+                "result": {
+                  "status": "failed",
+                  "errors": [
+                    {
+                      "kind": "permanent",
+                      "id": "tezlink_error",
+                      "error_message": "Transfer(OutOfGas(OutOfGas))"
+                    }
+                  ]
+                }
+              },
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 2,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call_end",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+    }
+  ]
+]

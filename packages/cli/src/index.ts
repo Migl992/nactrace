@@ -16,6 +16,7 @@ Options
   -e, --explain-only     print only the one-sentence explanation
       --rpc-only         skip 0xTzKT and rebuild from RPC alone (needs --network)
       --no-enrich        0xTzKT skeleton only, no RPC calls
+      --level <n>        block level of the operation (RPC-only path for an op hash without EVM leg)
       --record <dir>     save every response under <dir> (fixture recording)
       --replay <dir>     answer every request from <dir>, never touch the network
   -v, --verbose          do not trim long error strings
@@ -43,6 +44,7 @@ async function main(): Promise<number> {
         "explain-only": { type: "boolean", short: "e", default: false },
         "rpc-only": { type: "boolean", default: false },
         enrich: { type: "boolean", default: true },
+        level: { type: "string" },
         record: { type: "string" },
         replay: { type: "string" },
         verbose: { type: "boolean", short: "v", default: false },
@@ -79,6 +81,7 @@ async function main(): Promise<number> {
       provider,
       ...(network ? { network: network as NetworkName } : {}),
       useXtzkt: !values["rpc-only"],
+      ...(values["level"] ? { level: Number(values["level"]) } : {}),
       enrich: values["enrich"] !== false,
     });
   } catch (e) {

@@ -19,6 +19,76 @@
     {
       "hash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
       "label": "tz1 -> KT18oDJ %call_evm -> counter.increment() -> Michelson (nested), success"
+    },
+    {
+      "hash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+      "label": "sink.decrementCaught() with counter at 1: low-level call path, crossing applied, success"
+    },
+    {
+      "hash": "0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
+      "label": "sink.decrementCaught() at zero: gateway reverts, caller swallows it, tx succeeds (partially_caught)"
+    },
+    {
+      "hash": "0xbb967b97a2e6bc057348904aea3c64a46a90375c8f604d7b00f689a3b5f6b186",
+      "label": "sink.incrementWithGas(30000): gateway frame starved of gas, atomic revert"
+    },
+    {
+      "hash": "0x979a31b6c5d2ea82676683f85a529663ef5c031342bd8fed1fb21335647e992e",
+      "label": "callMichelson(counter, \"nope\"): entrypoint does not exist, atomic revert"
+    },
+    {
+      "hash": "0xbe4dff3d0e9ef05e763b313940c4b4231b5f95239bf20d313039c8a1f833f5e0",
+      "label": "callMichelson(counter, \"increment\", string instead of unit): ill-typed parameter, atomic revert"
+    },
+    {
+      "hash": "0x5badb9bba526db4a51cc8acbc4e3cef37fea635566c6c95faa393c5220add6bf",
+      "label": "callMichelson to a well-formed but never originated KT1, atomic revert"
+    },
+    {
+      "hash": "0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+      "label": "callMichelson to \"KT1notARealAddress\", atomic revert"
+    },
+    {
+      "hash": "0x6f7f2bd295accb10139bb5bfd669a2bc1217f8d64cf7058e3624394195271b79",
+      "label": "sink.multiCross(): three crossings in one tx (+1 +1 -1), success"
+    },
+    {
+      "hash": "0xbe234e900a1f0ccdc93f02761f14b85051e0c45149ff1c2ba05d68abf45bb6d4",
+      "label": "sink.incrementThenFail(): first crossing applied then second fails, both rolled back"
+    },
+    {
+      "hash": "0x21cd191f45b4af9b0cfd347612464f79ea145a16771097425b96151017fba9a9",
+      "label": "sink.sendTez(tz1) with 0.001 XTZ: value transfer to a Michelson user, success"
+    },
+    {
+      "hash": "0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+      "label": "callMichelsonView(counter, \"nope\"): view does not exist, atomic revert"
+    },
+    {
+      "hash": "ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+      "label": "tz1 -> counter %decrement: plain Michelson op, no crossing"
+    },
+    {
+      "hash": "op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+      "label": "tz1 -> %call_evm -> sink.ping(): success, return value discarded"
+    },
+    {
+      "hash": "opLPk4XK2PjSieAqGRdweeb6GWFvTTNu4vnTbzQNL3fQKnRHvuQ",
+      "label": "tz1 -> %call_evm -> sink.ping() with callback contract: return bytes delivered to receiver"
+    },
+    {
+      "hash": "op7nAGUztKRC4QFtUhyej5CNJqrDLSMQVMwg1x94Q9eRT6qq6gY",
+      "label": "tz1 -> %call_evm with 0.001 XTZ and empty signature to the 0x user: value transfer"
+    },
+    {
+      "hash": "ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+      "label": "tz1 -> counter %decrement at zero: plain Michelson op fails with FAILWITH \"at zero\", no crossing",
+      "level": 1047288
+    },
+    {
+      "hash": "onmRggbbEU7kiQEXVGzCGBPJKEF4cPjDpLWSM31isFXowo3Zoym",
+      "label": "tz1 -> %call_evm -> sink.ping(), raw-injected (fee 0.02 XTZ, gas_limit 120000), success",
+      "level": 1047340
     }
   ],
   "mainnet": [

@@ -1,0 +1,103 @@
+[
+  {
+    "direction": "x_evm",
+    "id": "1152923006234787840",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 1047157,
+    "timestamp": "2026-09-25T14:44:58Z",
+    "hash": "0x5badb9bba526db4a51cc8acbc4e3cef37fea635566c6c95faa393c5220add6bf",
+    "sender": {
+      "id": 268437694,
+      "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268437701,
+      "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "type": "x_evm_contract"
+    },
+    "targetCodeHash": 1694908914,
+    "counter": 11,
+    "gasLimit": 5000000,
+    "gasUsed": 1152065,
+    "status": "failed",
+    "errors": "Cross-runtime call failed with status 400 Bad Request: Contract KT1EnHh4EQRQqcHaxaRD4f7X7XyWjuQ4gnBN does not exist.",
+    "internalOperations": 1,
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amount": "0",
+    "daFee": "1128000000000000",
+    "gasFee": "34659000000000",
+    "gasPrice": "1200000000",
+    "maxFeePerGas": "1200000000",
+    "maxPriorityFeePerGas": "0",
+    "effectiveGasPrice": "1000000000",
+    "input": "0x15a18d78000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000244b5431456e48683445515251716348617861524434663758375879576a755134676e424e00000000000000000000000000000000000000000000000000000000",
+    "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a20436f6e7472616374204b5431456e48683445515251716348617861524434663758375879576a755134676e424e20646f6573206e6f742065786973742e"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152923006235836416",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 1047157,
+    "timestamp": "2026-09-25T14:44:58Z",
+    "hash": "0x5badb9bba526db4a51cc8acbc4e3cef37fea635566c6c95faa393c5220add6bf",
+    "sender": {
+      "id": 268437701,
+      "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "type": "x_evm_contract"
+    },
+    "senderCodeHash": 1694908914,
+    "initiator": {
+      "id": 268437694,
+      "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268437703,
+      "hash": "KT1EnHh4EQRQqcHaxaRD4f7X7XyWjuQ4gnBN",
+      "type": "x_michelson_ghost"
+    },
+    "counter": 11,
+    "gasLimit": 0,
+    "gasUsed": 10594,
+    "status": "failed",
+    "errors": "Cross-runtime call failed with status 400 Bad Request: Contract KT1EnHh4EQRQqcHaxaRD4f7X7XyWjuQ4gnBN does not exist.",
+    "entrypoint": "increment",
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "0",
+    "roundingLoss": "0",
+    "amountReceived": 0,
+    "daFee": "0",
+    "gasFee": "0",
+    "parametersRaw": {
+      "prim": "Unit"
+    },
+    "alias": {
+      "id": 268437702,
+      "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+      "type": "x_michelson_alias"
+    },
+    "gateway": {
+      "id": 268435464,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "increment",
+      "parameters": "0x030b",
+      "destination": "KT1EnHh4EQRQqcHaxaRD4f7X7XyWjuQ4gnBN"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b5431456e48683445515251716348617861524434663758375879576a755134676e424e000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009696e6372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000"
+  }
+]

@@ -23,7 +23,7 @@ import {
 import { explain } from "./explain.js";
 import { syntheticEvmTxHash, syntheticMichelsonOpHash } from "./hashes.js";
 import { parseInput } from "./input.js";
-import { classifyAddress, isGatewayAddress, SYSTEM_ADDRESSES } from "./labels.js";
+import { classifyAddress, isGatewayAddress, SYSTEM_ADDRESSES, type AddressHint } from "./labels.js";
 import { summarizeTezosError } from "./michelson-errors.js";
 import { NETWORKS, type NetworkName } from "./networks.js";
 import type { Provider, ProviderRequest } from "./provider.js";
@@ -31,6 +31,7 @@ import {
   findOperation,
   getBlockOperations,
   getStorage,
+  type MichelineNode,
   type TezosContent,
   type TezosInternalOperation,
   type TezosOperation,
@@ -56,6 +57,8 @@ export interface BuildTraceOptions {
   useXtzkt?: boolean;
   /** false: skeleton only, no RPC enrichment. Default true. */
   enrich?: boolean;
+  /** Block level of the operation, for the RPC-only path when nothing else reveals it. */
+  level?: number;
 }
 
 interface Ctx {
@@ -308,7 +311,7 @@ function evmInternalNode(ctx: Ctx, r: XtzktTransactionRow): TraceNode {
       gas: { used: str(r.gasUsed), unit: "evm_gas" },
       status: rowStatus(ctx, r),
       error: rowError(r),
-      output: decodeViewOutput(str(r.output)),
+      output: r.status === "applied" ? decodeViewOutput(str(r.output)) : undefined,
       raw: { xtzkt: r },
     });
   }
@@ -400,7 +403,14 @@ function skeletonFromRows(ctx: Ctx, rowsIn: XtzktTransactionRow[]): TraceNode {
         (currentEvm ?? root).children.push(evmInternalNode(ctx, r));
         break;
       case "x_michelson":
-        (currentMich ?? root).children.push(michelsonInternalNode(ctx, r));
+        if (isGatewayAddress(r.sender?.hash ?? "")) {
+          // Return value of a %call_evm delivered by TRANSFER_TOKENS from the Michelson gateway.
+          const n = michelsonInternalNode(ctx, r);
+          n.kind = "callback";
+          (currentEvm ?? root).children.push(n);
+        } else {
+          (currentMich ?? root).children.push(michelsonInternalNode(ctx, r));
+        }
         break;
       default:
         ctx.warnings.push(`ignored 0xTzKT row with direction ${String(r.direction)}`);
@@ -513,7 +523,11 @@ function applyCallTrace(ctx: Ctx, root: TraceNode, frame: CallFrame): void {
     frames: { frame: CallFrame; parent?: CallFrame }[],
     what: string,
   ) => {
-    if (nodes.length !== frames.length) {
+    // Extra gateway frames that errored never crossed (rejected by the gateway itself, e.g. a
+    // malformed destination): 0xTzKT rightly has no leg for them, so that is not a mismatch.
+    const rejectedOnly =
+      frames.length > nodes.length && frames.slice(nodes.length).every((h) => h.frame.error);
+    if (nodes.length !== frames.length && !rejectedOnly) {
       ctx.warnings.push(
         `${what}: 0xTzKT shows ${nodes.length} leg(s) but callTracer has ${frames.length} gateway frame(s)`,
       );
@@ -552,28 +566,49 @@ function skeletonFromEvmRpc(
   tx: { from: string; to: string | null; input: string; value: string; gas: string } | null,
   frame: CallFrame | undefined,
 ): TraceNode {
-  const to = tx?.to ?? receipt.to ?? "?";
+  let to = tx?.to ?? receipt.to ?? "?";
+  let input = tx?.input;
+  let value = tx?.value;
+  let fromHint: AddressHint = SYSTEM_ADDRESSES.has(receipt.from) ? {} : { type: "x_evm_user" };
+  if (ctx.origin === "michelson") {
+    // Synthetic tx: from == to == the tz1's alias. The real call is the frame alias -> target,
+    // after the attribution frame 0x7e2058…01 -> alias (docs/FINDINGS.md, EVM RPC).
+    fromHint = { type: "x_evm_alias" };
+    const alias = receipt.from.toLowerCase();
+    const target = frame?.calls?.find(
+      (f) => (f.from ?? "").toLowerCase() === alias && (f.to ?? "").toLowerCase() !== alias,
+    );
+    if (target) {
+      to = target.to ?? to;
+      input = target.input;
+      value = target.value;
+    }
+  }
   const root = newNode(ctx, {
     runtime: "evm",
     kind: "tx",
     hash: ctx.evmHash,
     synthetic: ctx.origin === "michelson",
-    from: classifyAddress(
-      receipt.from,
-      SYSTEM_ADDRESSES.has(receipt.from) ? {} : { type: "x_evm_user" },
-    ),
+    from: classifyAddress(receipt.from, fromHint),
     to: classifyAddress(to, isGatewayAddress(to) ? {} : { type: "x_evm_contract" }),
-    entrypoint: selectorOf(tx?.input),
-    value: wei(hexToDecimal(tx?.value)),
+    entrypoint: selectorOf(input),
+    value: wei(hexToDecimal(value)),
     gas: { used: hexToDecimal(receipt.gasUsed), limit: hexToDecimal(tx?.gas), unit: "evm_gas" },
     status: receipt.status === "0x1" ? "success" : "reverted",
     links: links(ctx, ctx.evmHash, ctx.opHash),
     raw: { receipt },
   });
   if (frame) {
-    for (const { frame: f } of walkFrames(frame)) {
+    const stack: { frame: CallFrame; depth: number }[] = [];
+    for (const { frame: f, depth } of walkFrames(frame)) {
+      while (stack.length && stack[stack.length - 1]!.depth >= depth) stack.pop();
+      const parent = stack[stack.length - 1]?.frame;
+      stack.push({ frame: f, depth });
       if ((f.to ?? "").toLowerCase() !== EVM_GATEWAY_ADDRESS) continue;
-      root.children.push(nodeFromGatewayFrame(ctx, f));
+      const n = nodeFromGatewayFrame(ctx, f);
+      // Gateway frame errored but its caller did not: the revert was caught.
+      if (f.error && parent && !parent.error) n.raw = { ...n.raw, caughtByCaller: true };
+      root.children.push(n);
     }
   } else {
     // No trace (mainnet public node): CrossRuntimeCallSent logs still tell us every outgoing crossing.
@@ -687,10 +722,23 @@ async function applyTezosOperation(
 
   // Internal transactions (excluding calls into the Michelson gateway) line up with the
   // EVM→Michelson crossing nodes in execution order.
+  const isTx = (i: TezosInternalOperation) => i.kind === "transaction";
   const calls = internals.filter(
-    (i): i is TezosInternalOperation =>
-      i.kind === "transaction" && !isGatewayAddress(i.destination ?? ""),
+    (i) => isTx(i) && !isGatewayAddress(i.destination ?? "") && !isGatewayAddress(i.source ?? ""),
   );
+  // Callback deliveries: TRANSFER_TOKENS emitted by the Michelson gateway after a %call_evm.
+  const callbacks = internals.filter((i) => isTx(i) && isGatewayAddress(i.source ?? ""));
+  const callbackNodes = [...walkNodes(root)]
+    .map((x) => x.node)
+    .filter((n) => n.kind === "callback");
+  callbackNodes.forEach((node, i) => {
+    const c = callbacks[i];
+    if (!c) return;
+    if (c.result?.consumed_milligas) {
+      node.michelsonGas = { used: c.result.consumed_milligas, unit: "michelson_milligas" };
+    }
+    node.raw = { ...node.raw, tezosInternalOperation: c };
+  });
   const nodes = crossingsInto(root, "michelson");
   if (calls.length !== nodes.length) {
     ctx.warnings.push(
@@ -757,6 +805,28 @@ async function applyTezosOperation(
       ctx.warnings.push(`storage of ${kt1}: ${(e as Error).message}`);
     }
   }
+}
+
+/** Does the op (top level or internally) call the Michelson gateway? */
+function opCallsGateway(op: TezosOperation): boolean {
+  return op.contents.some(
+    (c) =>
+      isGatewayAddress(c.destination ?? "") ||
+      (c.metadata?.internal_operation_results ?? []).some((i) =>
+        isGatewayAddress(i.destination ?? ""),
+      ),
+  );
+}
+
+/** `%call_evm` parameter: pair string (pair string (pair bytes (option (contract bytes)))). */
+function parseCallEvmParams(value: unknown): { destination?: string; signature?: string } {
+  const v = value as MichelineNode | undefined;
+  const dest = v?.args?.[0]?.string;
+  const sig = v?.args?.[1]?.args?.[0]?.string;
+  const out: { destination?: string; signature?: string } = {};
+  if (dest) out.destination = dest;
+  if (sig) out.signature = sig;
+  return out;
 }
 
 /** RPC-only root for a Michelson-originated op, from the Tezos operation itself. */
@@ -826,21 +896,21 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
   const fromXtzkt = rows.length > 0;
 
   let root: TraceNode | undefined = fromXtzkt ? skeletonFromRows(ctx, rows) : undefined;
-  let level: number | undefined = rows[0]?.level;
+  let level: number | undefined = rows[0]?.level ?? opts.level;
 
   if (enrich || !fromXtzkt) {
     // EVM side
     let receipt: EvmReceipt | null = null;
     let frame: CallFrame | undefined;
-    try {
-      receipt = await getTransactionReceipt(provider, network, evmHash);
-      if (!receipt) {
-        warnings.push(
-          `no EVM receipt for ${evmHash}${origin === "michelson" ? " (derived hash)" : ""}`,
-        );
+    // A Michelson op that 0xTzKT shows without any EVM leg has no synthetic tx to fetch.
+    const needsEvm =
+      !fromXtzkt || origin === "evm" || rows.some((r) => r.direction === "x_michelson_evm");
+    if (needsEvm) {
+      try {
+        receipt = await getTransactionReceipt(provider, network, evmHash);
+      } catch (e) {
+        warnings.push(`eth_getTransactionReceipt: ${(e as Error).message}`);
       }
-    } catch (e) {
-      warnings.push(`eth_getTransactionReceipt: ${(e as Error).message}`);
     }
     if (receipt) {
       const t = await traceTransaction(provider, network, evmHash);
@@ -881,6 +951,12 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
             frame,
           );
           evmLeg.kind = "crossing";
+          // The %call_evm parameters name the target and the signature better than a selector.
+          const params = parseCallEvmParams(op.contents[0]?.parameters?.value);
+          if (params.destination?.startsWith("0x")) {
+            evmLeg.to = classifyAddress(params.destination, { type: "x_evm_contract" });
+          }
+          if (params.signature) evmLeg.entrypoint = params.signature;
           root.children.push(evmLeg);
         }
       }
@@ -897,8 +973,16 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
           : `operation ${opHash} not found in Michelson block ${level ?? "?"}`,
       );
     }
-    if (origin === "michelson" && !receipt && fromXtzkt && crossingsInto(root, "evm").length > 0) {
-      warnings.push(`derived EVM hash ${evmHash} has no receipt; hash recipe may have changed`);
+    const evmLegExpected =
+      origin === "evm" ||
+      crossingsInto(root, "evm").length > 0 ||
+      (op ? opCallsGateway(op) : false);
+    if (needsEvm && !receipt && evmLegExpected) {
+      warnings.push(
+        origin === "michelson"
+          ? `derived EVM hash ${evmHash} has no receipt; hash recipe may have changed`
+          : `no EVM receipt for ${evmHash}`,
+      );
     }
   }
 

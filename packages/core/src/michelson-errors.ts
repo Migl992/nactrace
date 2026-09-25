@@ -22,13 +22,32 @@ export function extractFailWith(text: string | undefined | null): string | undef
   return m ? normalizeValue(m[1]!) : undefined;
 }
 
+/**
+ * Turn the kernel's Rust-debug error wrappers into plain words. Observed on Previewnet:
+ *   Transfer(OutOfGas(OutOfGas))                                                    -> out of gas
+ *   Transfer(MichelsonContractInterpretError("failed typechecking input: …"))      -> failed typechecking input: …
+ *   Transfer(ContractDoesNotExist(Originated(ContractKt1Hash("KT1…"))))            -> contract KT1… does not exist
+ *   Transfer(GatewayError("Cross-runtime call failed with status 400 …"))          -> Cross-runtime call failed …
+ */
+export function humanizeTezosMessage(msg: string): string {
+  let s = msg.trim();
+  const outer = /^(Transfer|Origination|Delegation|Reveal)\((.*)\)$/s.exec(s);
+  if (outer) s = outer[2]!;
+  if (/^OutOfGas\b/.test(s)) return "out of gas";
+  const notFound = /^ContractDoesNotExist\(.*?"([^"]+)"/.exec(s);
+  if (notFound) return `contract ${notFound[1]} does not exist`;
+  const quoted = /^\w+\("(.*)"\)$/s.exec(s);
+  if (quoted) return quoted[1]!.replace(/\\"/g, '"');
+  return s;
+}
+
 /** One-line reason for a Tezos RPC error object. */
 export function summarizeTezosError(err: TezosError | undefined): string | undefined {
   if (!err) return undefined;
   const fromMessage = extractFailWith(err.error_message);
   if (fromMessage) return `FAILWITH ${fromMessage}`;
   if (err.with) return `FAILWITH ${JSON.stringify(err.with)}`;
-  if (err.error_message) return err.error_message;
+  if (err.error_message) return humanizeTezosMessage(err.error_message);
   return err.id;
 }
 

@@ -1,0 +1,4 @@
+# Callback receiver for %call_evm: stores the raw ABI-encoded return bytes the gateway delivers.
+parameter bytes ;
+storage bytes ;
+code { CAR ; NIL operation ; PAIR } ;

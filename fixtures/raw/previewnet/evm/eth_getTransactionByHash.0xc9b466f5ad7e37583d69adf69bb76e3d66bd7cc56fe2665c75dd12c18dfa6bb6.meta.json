@@ -1,0 +1,10 @@
+{
+  "key": "RPC https://evm.previewnet.tezosx.nomadic-labs.com eth_getTransactionByHash [\"0xc9b466f5ad7e37583d69adf69bb76e3d66bd7cc56fe2665c75dd12c18dfa6bb6\"]",
+  "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+  "method": "eth_getTransactionByHash",
+  "params": [
+    "0xc9b466f5ad7e37583d69adf69bb76e3d66bd7cc56fe2665c75dd12c18dfa6bb6"
+  ],
+  "status": 200,
+  "fetchedAt": "2026-09-25T15:12:12.970Z"
+}

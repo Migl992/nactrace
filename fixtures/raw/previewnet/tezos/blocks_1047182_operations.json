@@ -1,0 +1,90 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXY2oPPzkxUW1",
+      "hash": "op7nAGUztKRC4QFtUhyej5CNJqrDLSMQVMwg1x94Q9eRT6qq6gY",
+      "branch": "BMGqpcUaBTY28NzqP2wzaAbDDyu6VPJqqA3y6Cj8N84ZGJRmUXD",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+          "fee": "8000",
+          "counter": "8",
+          "gas_limit": "1175",
+          "storage_limit": "0",
+          "amount": "1000",
+          "destination": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+          "parameters": {
+            "entrypoint": "call_evm",
+            "value": {
+              "prim": "Pair",
+              "args": [
+                {
+                  "string": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3"
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "string": ""
+                    },
+                    {
+                      "prim": "Pair",
+                      "args": [
+                        {
+                          "bytes": ""
+                        },
+                        {
+                          "prim": "None"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "metadata": {
+            "balance_updates": [
+              {
+                "kind": "contract",
+                "contract": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+                "change": "-8000",
+                "origin": "block"
+              },
+              {
+                "kind": "accumulator",
+                "category": "block fees",
+                "change": "8000",
+                "origin": "block"
+              }
+            ],
+            "operation_result": {
+              "status": "applied",
+              "balance_updates": [
+                {
+                  "kind": "contract",
+                  "contract": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+                  "change": "-1000",
+                  "origin": "block"
+                },
+                {
+                  "kind": "contract",
+                  "contract": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+                  "change": "1000",
+                  "origin": "block"
+                }
+              ],
+              "consumed_milligas": "1074811"
+            }
+          }
+        }
+      ],
+      "signature": "sigeayEYat9Qt5rRHiZLpL9dkkcpf39LUbUBxgJt2WYmw3ogDdaEPUq9t2gaZwGaDqo9CDDVa65GCNLpoEzBwfv6dHkvU3zy"
+    }
+  ]
+]

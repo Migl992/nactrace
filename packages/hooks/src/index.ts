@@ -76,6 +76,13 @@ export interface BroadcastTx {
  * Transactions of a Foundry broadcast file (`broadcast/<Script>.s.sol/<chainId>/run-latest.json`),
  * joined with their receipts. `failedOnly` keeps those whose receipt status is not 0x1.
  */
+/** Receipt status as alloy serializes it ("0x1"), plus the shapes older tooling used. */
+function isSuccessStatus(status: unknown): boolean {
+  return (
+    status === "0x1" || status === 1 || status === true || status === "1" || status === "success"
+  );
+}
+
 export function broadcastTransactions(broadcast: unknown, failedOnly = true): BroadcastTx[] {
   const b = (broadcast ?? {}) as {
     transactions?: {
@@ -83,18 +90,20 @@ export function broadcastTransactions(broadcast: unknown, failedOnly = true): Br
       contractName?: string | null;
       function?: string | null;
     }[];
-    receipts?: { transactionHash?: string; status?: string }[];
+    receipts?: { transactionHash?: string; status?: unknown }[];
   };
   const statusByHash = new Map<string, string>();
   for (const r of b.receipts ?? []) {
-    if (r.transactionHash && r.status) statusByHash.set(r.transactionHash.toLowerCase(), r.status);
+    if (r.transactionHash && r.status !== undefined) {
+      statusByHash.set(r.transactionHash.toLowerCase(), String(r.status));
+    }
   }
   const out: BroadcastTx[] = [];
   for (const t of b.transactions ?? []) {
     if (!t.hash) continue;
     const hash = t.hash.toLowerCase();
     const status = statusByHash.get(hash);
-    if (failedOnly && status === "0x1") continue;
+    if (failedOnly && isSuccessStatus(status)) continue;
     const tx: BroadcastTx = { hash };
     if (status) tx.status = status;
     if (t.contractName) tx.contractName = t.contractName;

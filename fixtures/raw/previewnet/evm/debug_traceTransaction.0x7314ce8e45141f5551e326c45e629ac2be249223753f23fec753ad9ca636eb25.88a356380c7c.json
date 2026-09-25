@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "error": {
+    "code": -32603,
+    "message": "Transaction 0x7314ce8e45141f5551e326c45e629ac2be249223753f23fec753ad9ca636eb25 not found"
+  },
+  "id": 1
+}

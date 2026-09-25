@@ -6,7 +6,9 @@
   "author": "mig",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsup src/index.ts --format iife --global-name nactrace --minify --clean",
@@ -14,5 +16,30 @@
   },
   "dependencies": {
     "@nactrace/core": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Migl992/nectrace.git"
+  },
+  "homepage": "https://github.com/Migl992/nectrace#readme",
+  "bugs": {
+    "url": "https://github.com/Migl992/nectrace/issues"
+  },
+  "keywords": [
+    "tezos",
+    "etherlink",
+    "tezos-x",
+    "nac",
+    "cross-runtime",
+    "michelson",
+    "evm",
+    "debugger",
+    "trace"
+  ],
+  "engines": {
+    "node": ">=20.16"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

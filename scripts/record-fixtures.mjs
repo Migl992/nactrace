@@ -56,24 +56,25 @@ for (const net of networks) {
     );
   }
 
-  for (const { hash, label } of hashes[net]) {
+  for (const { hash, label, level: levelHint } of hashes[net]) {
     console.log(`  - ${hash}  (${label})`);
     // Exactly what buildTrace() will do: ask every network, then enrich on the one that answered.
     const found = await detectNetwork(provider, hash);
     if (!found) {
-      console.log("      !! 0xTzKT knows nothing about this hash");
-      continue;
-    }
-    if (found.network !== net)
+      console.log(
+        "      !! 0xTzKT knows nothing about this hash (indexer lag?); recording the RPC-only path",
+      );
+    } else if (found.network !== net) {
       console.log(`      !! detected on ${found.network}, expected ${net}`);
-    const { rows } = found;
+    }
+    const rows = found?.rows ?? [];
     const evmHash = isEvmTxHash(hash) ? hash : syntheticEvmTxHash(hash);
     const opHash = isEvmTxHash(hash) ? syntheticMichelsonOpHash(hash) : hash;
 
     const receipt = await getTransactionReceipt(provider, net, evmHash);
     await getTransaction(provider, net, evmHash);
     const trace = await traceTransaction(provider, net, evmHash);
-    const level = rows[0]?.level ?? hexToNumber(receipt?.blockNumber);
+    const level = rows[0]?.level ?? hexToNumber(receipt?.blockNumber) ?? levelHint;
     let opFound = false;
     let kt1s = [];
     if (level) {

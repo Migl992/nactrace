@@ -8,10 +8,12 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/foundry.ts --format esm --dts --clean && node -e \"require('fs').copyFileSync('src/hardhat.cjs','dist/hardhat.cjs')\"",
+    "build": "tsup src/index.ts src/foundry.ts src/hardhat.ts src/hardhat-action.ts --format esm --dts --clean --external hardhat && node -e \"require('fs').copyFileSync('src/hardhat2.cjs','dist/hardhat2.cjs')\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -26,7 +28,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./hardhat": "./dist/hardhat.cjs"
+    "./hardhat": {
+      "types": "./dist/hardhat.d.ts",
+      "import": "./dist/hardhat.js"
+    },
+    "./hardhat2": "./dist/hardhat2.cjs"
   },
   "peerDependencies": {
     "hardhat": ">=2.0.0"
@@ -35,5 +41,33 @@
     "hardhat": {
       "optional": true
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Migl992/nectrace.git"
+  },
+  "homepage": "https://github.com/Migl992/nectrace#readme",
+  "bugs": {
+    "url": "https://github.com/Migl992/nectrace/issues"
+  },
+  "keywords": [
+    "tezos",
+    "etherlink",
+    "tezos-x",
+    "nac",
+    "cross-runtime",
+    "michelson",
+    "evm",
+    "debugger",
+    "trace"
+  ],
+  "engines": {
+    "node": ">=20.16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "hardhat": "^3.18.0"
   }
 }

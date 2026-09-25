@@ -2,5 +2,5 @@
   "key": "GET https://michelson.etherlink.mainnet.octez.io/chains/main/blocks/51486065/context/contracts/KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ/storage",
   "url": "https://michelson.etherlink.mainnet.octez.io/chains/main/blocks/51486065/context/contracts/KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ/storage",
   "status": 200,
-  "fetchedAt": "2026-09-25T14:14:24.762Z"
+  "fetchedAt": "2026-09-25T15:04:27.875Z"
 }

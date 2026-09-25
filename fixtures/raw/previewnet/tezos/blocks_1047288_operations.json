@@ -1,0 +1,58 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXY2oPPzkxUW1",
+      "hash": "ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+      "branch": "BM6qfHETe6ygscjoNZ4JZE2CvbUwf75d2zu6D9uewbrwnZGTBc4",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+          "fee": "20000",
+          "counter": "14",
+          "gas_limit": "120000",
+          "storage_limit": "1000",
+          "amount": "0",
+          "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+          "parameters": {
+            "entrypoint": "decrement",
+            "value": {
+              "prim": "Unit"
+            }
+          },
+          "metadata": {
+            "balance_updates": [
+              {
+                "kind": "contract",
+                "contract": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+                "change": "-20000",
+                "origin": "block"
+              },
+              {
+                "kind": "accumulator",
+                "category": "block fees",
+                "change": "20000",
+                "origin": "block"
+              }
+            ],
+            "operation_result": {
+              "status": "failed",
+              "errors": [
+                {
+                  "kind": "permanent",
+                  "id": "tezlink_error",
+                  "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"at zero\\\") of type String\"))"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "signature": "sige9iJoJ8wjQ2RRWWoCVTn7q7B6bxTTzsKnuZvKdsvyQWF7ymsAG5xPgNc2kCodU9Jgg7zk2rkDS5D4QRA1wWkBCMjcXTXr"
+    }
+  ]
+]

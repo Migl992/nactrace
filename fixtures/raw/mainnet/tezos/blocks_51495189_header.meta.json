@@ -2,5 +2,5 @@
   "key": "GET https://michelson.etherlink.mainnet.octez.io/chains/main/blocks/51495189/header",
   "url": "https://michelson.etherlink.mainnet.octez.io/chains/main/blocks/51495189/header",
   "status": 200,
-  "fetchedAt": "2026-09-25T14:14:23.935Z"
+  "fetchedAt": "2026-09-25T15:04:26.983Z"
 }

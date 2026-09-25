@@ -17,10 +17,16 @@ importers:
       '@noble/hashes':
         specifier: ^1.8.0
         version: 1.8.0
+      '@taquito/local-forging':
+        specifier: ^25.0.0
+        version: 25.0.0
       '@taquito/signer':
         specifier: ^25.0.0
         version: 25.0.0
       '@taquito/taquito':
+        specifier: ^25.0.0
+        version: 25.0.0
+      '@taquito/utils':
         specifier: ^25.0.0
         version: 25.0.0
       '@types/node':
@@ -71,12 +77,13 @@ importers:
       '@nactrace/core':
         specifier: workspace:*
         version: link:../core
-      hardhat:
-        specifier: '>=2.0.0'
-        version: 3.18.0
       nactrace:
         specifier: workspace:*
         version: link:../cli
+    devDependencies:
+      hardhat:
+        specifier: ^3.18.0
+        version: 3.18.0
 
   packages/widget:
     dependencies:

@@ -1,7 +1,7 @@
 // explain(): the product (CLAUDE.md rule 7). One sentence a developer would agree with, built from
 // the deepest failed node. Everything here is derived from a finished Trace; no network.
 import { shortAddress } from "./labels.js";
-import { extractFailWith, summarizeTezosError } from "./michelson-errors.js";
+import { extractFailWith, parseGatewayFailure, summarizeTezosError } from "./michelson-errors.js";
 import type { TezosError } from "./tezos.js";
 import { walkNodes, type Explanation, type Trace, type TraceNode } from "./types.js";
 
@@ -49,7 +49,10 @@ function reasonOf(n: TraceNode): string | undefined {
   const tezosErr = n.michelsonError as TezosError | undefined;
   const failWith = extractFailWith(tezosErr?.error_message) ?? extractFailWith(n.error);
   if (failWith) return `FAILWITH ${failWith}`;
-  return summarizeTezosError(tezosErr) ?? n.error;
+  const fromTezos = summarizeTezosError(tezosErr);
+  if (fromTezos) return fromTezos;
+  const gw = parseGatewayFailure(n.error);
+  return gw ? `${gw.detail} (gateway status ${gw.status})` : n.error;
 }
 
 /** Deepest reverted node; on ties the last one executed. Root excluded unless nothing else failed. */
@@ -73,8 +76,12 @@ export function explain(trace: Trace): Explanation {
     if (legs.length === 0) return { summary: `${rootDesc} applied without crossing runtimes.` };
     const path = legs.map(describeLeg).join(", then ");
     const n = legs.length;
+    const callbacks = [...walkNodes(root)].map((x) => x.node).filter((n) => n.kind === "callback");
+    const cb = callbacks[0]
+      ? `; return value delivered to ${shortAddress(callbacks[0].to.value)} by callback`
+      : "";
     return {
-      summary: `${rootDesc} crossed into ${path}; all ${n} leg${n > 1 ? "s" : ""} applied.`,
+      summary: `${rootDesc} crossed into ${path}${cb}; all ${n} leg${n > 1 ? "s" : ""} applied.`,
     };
   }
 
@@ -91,14 +98,29 @@ export function explain(trace: Trace): Explanation {
     return out;
   }
 
+  // Legs that had applied before the failing one: they were rolled back too, say so.
+  const earlier = legs.filter((n) => n !== failed && n.status !== "reverted").length;
+  const rolledBack = earlier
+    ? `, including ${earlier} earlier leg${earlier > 1 ? "s" : ""} that had applied`
+    : "";
+
   if (failed === root) {
     out.summary = `${rootDesc} reverted${reason ? `: ${reason}` : ""}; no cross-runtime leg failed.`;
     return out;
   }
-  if (failed.runtime === "michelson") {
-    out.summary = `${rootDesc} reverted: Michelson entrypoint %${ep(failed) ?? "default"} of ${shortAddress(failed.to.value)} failed${withReason}; whole transaction rolled back on both sides.`;
+  if (failed.to.role === "gateway" && failed.kind !== "crossing") {
+    // The gateway refused the call before anything crossed (malformed destination, …).
+    out.summary = `${rootDesc} reverted: the NAC gateway rejected the call${withReason}; nothing crossed.`;
     return out;
   }
-  out.summary = `${rootDesc} failed: EVM call ${ep(failed) ?? "(transfer)"} on ${shortAddress(failed.to.value)} reverted${withReason}; whole operation rolled back on both sides.`;
+  if (failed.kind === "view") {
+    out.summary = `${rootDesc} reverted: Michelson view ${ep(failed) ?? "?"} of ${shortAddress(failed.to.value)} failed${withReason}; whole transaction rolled back${rolledBack}.`;
+    return out;
+  }
+  if (failed.runtime === "michelson") {
+    out.summary = `${rootDesc} reverted: Michelson entrypoint %${ep(failed) ?? "default"} of ${shortAddress(failed.to.value)} failed${withReason}; whole transaction rolled back on both sides${rolledBack}.`;
+    return out;
+  }
+  out.summary = `${rootDesc} failed: EVM call ${ep(failed) ?? "(transfer)"} on ${shortAddress(failed.to.value)} reverted${withReason}; whole operation rolled back on both sides${rolledBack}.`;
   return out;
 }

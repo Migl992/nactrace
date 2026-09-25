@@ -18,7 +18,9 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "sideEffects": false,
   "scripts": {
@@ -28,5 +30,30 @@
   "dependencies": {
     "@noble/hashes": "^1.6.0",
     "viem": "^2.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Migl992/nectrace.git"
+  },
+  "homepage": "https://github.com/Migl992/nectrace#readme",
+  "bugs": {
+    "url": "https://github.com/Migl992/nectrace/issues"
+  },
+  "keywords": [
+    "tezos",
+    "etherlink",
+    "tezos-x",
+    "nac",
+    "cross-runtime",
+    "michelson",
+    "evm",
+    "debugger",
+    "trace"
+  ],
+  "engines": {
+    "node": ">=20.16"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

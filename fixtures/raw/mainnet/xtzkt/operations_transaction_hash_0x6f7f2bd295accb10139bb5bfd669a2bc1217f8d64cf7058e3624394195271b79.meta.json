@@ -1,0 +1,6 @@
+{
+  "key": "GET https://api.xtzkt.io/v1/operations/transaction?hash=0x6f7f2bd295accb10139bb5bfd669a2bc1217f8d64cf7058e3624394195271b79",
+  "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0x6f7f2bd295accb10139bb5bfd669a2bc1217f8d64cf7058e3624394195271b79",
+  "status": 200,
+  "fetchedAt": "2026-09-25T15:12:09.101Z"
+}

@@ -55,7 +55,7 @@ console.log(trace.status, trace.explanation.summary);
 
 ## Test-framework hooks
 
-**Hardhat.** Add `import "@nactrace/hooks/hardhat";` to `hardhat.config.ts`, then after a failed test run on Previewnet:
+**Hardhat 3.** In `hardhat.config.ts`: `import nactrace from "@nactrace/hooks/hardhat";` and add it to `plugins: [nactrace]`. **Hardhat 2:** `import "@nactrace/hooks/hardhat2";`. Then, after a failed run on Previewnet:
 
 ```
 npx hardhat nactrace:last --network previewnet        # last failed tx of the first configured account

@@ -43,7 +43,124 @@
       "opHash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
       "level": 1046583,
       "status": "applied"
+    },
+    "gas_starved_gateway": {
+      "hash": "0xbb967b97a2e6bc057348904aea3c64a46a90375c8f604d7b00f689a3b5f6b186",
+      "status": "reverted",
+      "block": 1047154,
+      "gasUsed": "803884",
+      "functionName": "incrementWithGas"
+    },
+    "missing_entrypoint": {
+      "hash": "0x979a31b6c5d2ea82676683f85a529663ef5c031342bd8fed1fb21335647e992e",
+      "status": "reverted",
+      "block": 1047155,
+      "gasUsed": "675250",
+      "functionName": "callMissingEntrypoint"
+    },
+    "bad_params": {
+      "hash": "0xbe4dff3d0e9ef05e763b313940c4b4231b5f95239bf20d313039c8a1f833f5e0",
+      "status": "reverted",
+      "block": 1047156,
+      "gasUsed": "675549",
+      "functionName": "callBadParams"
+    },
+    "missing_contract_valid_kt1": {
+      "hash": "0x5badb9bba526db4a51cc8acbc4e3cef37fea635566c6c95faa393c5220add6bf",
+      "status": "reverted",
+      "block": 1047157,
+      "gasUsed": "1162659",
+      "functionName": "callMissingContract"
+    },
+    "malformed_destination": {
+      "hash": "0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+      "status": "reverted",
+      "block": 1047158,
+      "gasUsed": "4023702",
+      "functionName": "callMissingContract"
+    },
+    "multi_cross_success": {
+      "hash": "0x6f7f2bd295accb10139bb5bfd669a2bc1217f8d64cf7058e3624394195271b79",
+      "status": "success",
+      "block": 1047159,
+      "gasUsed": "817271",
+      "functionName": "multiCross"
+    },
+    "increment_then_fail": {
+      "hash": "0xbe234e900a1f0ccdc93f02761f14b85051e0c45149ff1c2ba05d68abf45bb6d4",
+      "status": "reverted",
+      "block": 1047160,
+      "gasUsed": "733112",
+      "functionName": "incrementThenFail"
+    },
+    "send_tez_to_tz1": {
+      "hash": "0x21cd191f45b4af9b0cfd347612464f79ea145a16771097425b96151017fba9a9",
+      "status": "success",
+      "block": 1047161,
+      "gasUsed": "1288815",
+      "functionName": "sendTez"
+    },
+    "missing_view": {
+      "hash": "0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+      "status": "reverted",
+      "block": 1047162,
+      "gasUsed": "788759",
+      "functionName": "readMissingView"
+    },
+    "caught_path_decrement_success": {
+      "hash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+      "status": "success",
+      "block": 1047153,
+      "gasUsed": "1123970",
+      "functionName": "decrementCaught"
+    },
+    "plain_michelson_decrement": {
+      "opHash": "ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+      "level": 1047178,
+      "status": "applied"
+    },
+    "m_ping": {
+      "opHash": "op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+      "level": 1047179,
+      "status": "applied"
+    },
+    "m_ping_with_callback": {
+      "opHash": "opLPk4XK2PjSieAqGRdweeb6GWFvTTNu4vnTbzQNL3fQKnRHvuQ",
+      "level": 1047181,
+      "status": "applied"
+    },
+    "m_transfer_to_evm_user": {
+      "opHash": "op7nAGUztKRC4QFtUhyej5CNJqrDLSMQVMwg1x94Q9eRT6qq6gY",
+      "level": 1047182,
+      "status": "applied"
+    },
+    "caught_decrement_at_zero": {
+      "hash": "0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
+      "status": "success",
+      "block": 1047309,
+      "gasUsed": "835079",
+      "functionName": "decrementCaught"
+    },
+    "m_plain_michelson_failure": {
+      "opHash": "ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+      "level": 1047288,
+      "status": "failed"
+    },
+    "m_ping_raw": {
+      "opHash": "onmRggbbEU7kiQEXVGzCGBPJKEF4cPjDpLWSM31isFXowo3Zoym",
+      "level": 1047340,
+      "status": "applied"
     }
   },
-  "recordedAt": "2026-09-25T13:45:39.497Z"
+  "recordedAt": "2026-09-25T13:45:39.497Z",
+  "kitchenSink": {
+    "address": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+    "deployTx": "0x681592c7fd5c0372269bd6e87d9551c6519f21fbc0b4f4861aced67cfe1aaf4f",
+    "block": 1047152
+  },
+  "callbackReceiver": {
+    "address": "KT1QopYiQdyhkjn4mxUvC4u1ci6UzgE7mEDp",
+    "originationOpHash": "ooveRn7s3Rhwjtbn6j4inDmtYZEjitQjcUHCUFPw5KfT2a9soJW",
+    "level": 1047180
+  }
 }

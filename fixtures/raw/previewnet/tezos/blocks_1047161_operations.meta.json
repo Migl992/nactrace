@@ -1,0 +1,6 @@
+{
+  "key": "GET https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047161/operations",
+  "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047161/operations",
+  "status": 200,
+  "fetchedAt": "2026-09-25T15:12:10.758Z"
+}

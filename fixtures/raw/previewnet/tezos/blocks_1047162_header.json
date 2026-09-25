@@ -1,0 +1,24 @@
+{
+  "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+  "chain_id": "NetXY2oPPzkxUW1",
+  "hash": "BL6bvsvYFGdJApSJJv7RDX3n93aXgp6MjoUA7LM8hGNxreiTiTY",
+  "level": 1047162,
+  "proto": 1,
+  "predecessor": "BKwL2tXa7gSs6kC93PjxsrXLf71eDJNuhccciUYAJqcuGdpruhV",
+  "timestamp": "2026-09-25T14:45:08Z",
+  "validation_pass": 4,
+  "operations_hash": "LLoZKi1iMzbeJrfrGWPFYmkLebcsha6vGskQ4rAXt2uMwQtBfRcjL",
+  "fitness": [
+    "02",
+    "000ffa7a",
+    "",
+    "ffffffff",
+    "00000000"
+  ],
+  "context": "CoWb42qqDaU8Gr7ukJ7gjWcPYUgha5FxzH3TjgL45cbZor4MnFaX",
+  "payload_hash": "vh1g87ZG6scSYxKhspAUzprQVuLAyoa5qMBKcUfjgnQGnFb3dJcG",
+  "payload_round": 0,
+  "proof_of_work_nonce": "0000000000000000",
+  "liquidity_baking_toggle_vote": "pass",
+  "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+}
