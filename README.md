@@ -4,14 +4,15 @@ A debugger for cross-interface calls (NAC, Native Atomic Composability) on Ether
 
 Give it a hash from either side of a crossing and it tells you what happened and why it failed: which leg reverted, the decoded `Cross-runtime call failed with status 4xx: …` reason, the Michelson error, storage before/after, and gas per frame in both units.
 
-Status: pre-alpha, under active development. See `docs/SPEC.md` for the full technical spec and `docs/FINDINGS.md` for what the chain actually does.
+Status: pre-alpha (0.1.0 on npm), under active development. See `docs/SPEC.md` for the full technical spec and `docs/FINDINGS.md` for what the chain actually does.
 
 ## Quick start
 
 ```
-pnpm install && pnpm build
-node packages/cli/dist/index.js 0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716
+npx nactrace 0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716
 ```
+
+or `npm i -g nactrace`. Library: `npm i @nactrace/core`. Hooks: `npm i -D @nactrace/hooks`. From a checkout: `pnpm install && pnpm build && node packages/cli/dist/index.js <hash>`.
 
 ```
 nactrace previewnet  REVERTED (atomic, both sides rolled back)
