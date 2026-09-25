@@ -700,7 +700,9 @@ async function applyTezosOperation(
   nodes.forEach((node, i) => {
     const call = calls[i];
     if (!call) return;
-    node.michelsonGas = { used: call.result?.consumed_milligas, unit: "michelson_milligas" };
+    if (call.result?.consumed_milligas) {
+      node.michelsonGas = { used: call.result.consumed_milligas, unit: "michelson_milligas" };
+    }
     const st = internalStatus(call.result?.status);
     if (st !== "success")
       node.status = st === "reverted" ? "reverted" : node.status === "reverted" ? "reverted" : st;

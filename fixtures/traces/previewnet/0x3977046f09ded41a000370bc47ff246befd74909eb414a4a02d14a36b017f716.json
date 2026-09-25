@@ -327,9 +327,6 @@
         },
         "events": [],
         "children": [],
-        "michelsonGas": {
-          "unit": "michelson_milligas"
-        },
         "michelsonError": {
           "kind": "permanent",
           "id": "tezlink_error",
