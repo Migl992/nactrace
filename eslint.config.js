@@ -21,6 +21,7 @@ export default tseslint.config(
         URL: "readonly",
         fetch: "readonly",
         setTimeout: "readonly",
+        structuredClone: "readonly",
       },
     },
   },

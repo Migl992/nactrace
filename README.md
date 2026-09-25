@@ -111,6 +111,12 @@ pnpm fixtures:record   # re-record fixtures from Previewnet and mainnet (see fix
 
 Unit tests never touch the network. Live checks run only in the nightly workflow.
 
+## Continuous integration
+
+- `.github/workflows/ci.yml` runs lint, typecheck, build and the offline tests on every push and pull request.
+- `.github/workflows/nightly.yml` runs `pnpm nightly` every day at 03:17 UTC (and on demand): it rebuilds every pinned hash live through the CLI and compares it with `fixtures/traces`, diffs the 0xTzKT OpenAPI documents and the field set of the recorded rows against the live networks, and logs the node versions. On drift it uploads the report and opens (or comments on) a GitHub issue labelled `nightly`; the issue is closed automatically once a night is green again.
+- `pnpm e2e:live` runs only the trace comparison; `pnpm nightly` runs the whole check and writes `nightly-report.md`.
+
 ## License
 
 MIT

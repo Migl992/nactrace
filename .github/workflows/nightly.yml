@@ -1,0 +1,63 @@
+name: nightly
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # 03:17 UTC, every day
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      # The only place nactrace touches the live networks. Exit 1 means drift or an outage.
+      - id: nightly
+        run: node scripts/nightly.mjs --report nightly-report.md
+        continue-on-error: true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nightly-report
+          path: nightly-report.md
+
+      - name: Open or update the drift issue
+        if: steps.nightly.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh label create nightly --description "opened by the nightly drift check" --color D93F0B --force
+          title="Nightly drift: live networks differ from recorded fixtures"
+          existing=$(gh issue list --label nightly --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file nightly-report.md
+          else
+            gh issue create --title "$title" --label nightly --body-file nightly-report.md
+          fi
+
+      - name: Close the drift issue when everything is green again
+        if: steps.nightly.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          existing=$(gh issue list --label nightly --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh issue close "$existing" --comment "Nightly is green again; closing."
+          fi
+
+      - name: Fail the job on drift
+        if: steps.nightly.outcome == 'failure'
+        run: exit 1

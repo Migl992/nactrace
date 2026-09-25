@@ -14,3 +14,5 @@ export * from "./michelson-errors.js";
 export * from "./input.js";
 export * from "./explain.js";
 export { buildTrace, type BuildTraceOptions } from "./trace.js";
+export { XTZKT_OBSERVED_FIELDS } from "./xtzkt.types.js";
+export type { XtzktAccountRef, XtzktTransactionRowFields } from "./xtzkt.types.js";

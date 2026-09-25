@@ -11,7 +11,8 @@ Recorded ground truth. Unit tests read only from here; nothing in `packages/` to
   - `xtzkt/openapi.json`, `xtzkt/operations_transaction_gateway.hash_…json` — schema and gateway listings for the nightly diff
   - `evm/<method>.<hash>[.<digest>].json` — `eth_getTransactionByHash`, `eth_getTransactionReceipt`, `debug_traceTransaction` (callTracer; the mainnet public node answers with an error object, recorded as-is)
   - `tezos/blocks_<level>_operations.json`, `blocks_<level>_header.json`, `blocks_<level>_context_contracts_<KT1>_storage.json` at `level-1` and `level` (a 404 is recorded too: the contract did not exist yet)
-- `<network>.json` — expected `Trace` snapshots (from Day 3).
+- `traces/<network>/<hash>.json` — expected `Trace` for every pinned hash (minus `meta.fetchedAt`). Written on first run by `packages/core/src/snapshots.test.ts`, refreshed with `UPDATE_TRACES=1 pnpm test`, diffed against the live networks by `pnpm nightly`.
+- `foundry/run-latest.json` — a real `forge script --broadcast` output from Previewnet, used by the hooks tests.
 
 The replay side lives in `packages/core/src/test-utils/replay.ts`; a test that asks for something not recorded fails with `ProviderError: no fixture for …`.
 

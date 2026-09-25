@@ -17,7 +17,9 @@
     "typecheck": "pnpm --filter @nactrace/core build && pnpm -r run typecheck",
     "fixtures:record": "pnpm --filter @nactrace/core build && node scripts/record-fixtures.mjs && node scripts/gen-xtzkt-types.mjs",
     "previewnet:setup": "node --env-file=.env scripts/previewnet/01-originate-counter.mjs && node --env-file=.env scripts/previewnet/02-deploy-and-call-evm.mjs && node --env-file=.env scripts/previewnet/03-call-evm-from-michelson.mjs",
-    "types:xtzkt": "node scripts/gen-xtzkt-types.mjs"
+    "types:xtzkt": "node scripts/gen-xtzkt-types.mjs",
+    "nightly": "node scripts/nightly.mjs --report nightly-report.md",
+    "e2e:live": "node scripts/e2e-live.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
