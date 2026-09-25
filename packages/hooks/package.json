@@ -1,6 +1,6 @@
 {
   "name": "@nactrace/hooks",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Hardhat task nactrace:last and the nactrace-foundry script; thin wrappers around the nactrace CLI",
   "license": "MIT",
   "author": "mig",

@@ -1,6 +1,6 @@
 {
   "name": "nactrace",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "CLI: nactrace <hash> explains a cross-interface call on Etherlink / Tezos X",
   "license": "MIT",
   "author": "mig",
