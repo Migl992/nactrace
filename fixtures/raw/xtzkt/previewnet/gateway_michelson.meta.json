@@ -1,0 +1,5 @@
+{
+  "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?gateway.hash=KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw&sort=id.desc&limit=20",
+  "status": 200,
+  "fetchedAt": "2026-09-25T13:49:32.123Z"
+}

@@ -1,0 +1,84 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXY2oPPzkxUW1",
+      "hash": "oojye4N9yBmfR7gNCWQgodrUtE8eBfPpDUp8WjaopHSVFLp5Kso",
+      "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+          "fee": "0",
+          "counter": "0",
+          "gas_limit": "0",
+          "storage_limit": "0",
+          "amount": "0",
+          "destination": "KT1Ru5fpQjhQRNDtpS3pj7USvYPTB4cfZoxS",
+          "metadata": {
+            "operation_result": {
+              "status": "applied"
+            },
+            "internal_operation_results": [
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 0,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "applied"
+                }
+              },
+              {
+                "kind": "transaction",
+                "source": "KT1TA7PnMEKLeGgTLXZVk1QmeRoUSzUq3XK2",
+                "nonce": 1,
+                "amount": "0",
+                "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+                "parameters": {
+                  "entrypoint": "decrement",
+                  "value": {
+                    "prim": "Unit"
+                  }
+                },
+                "result": {
+                  "status": "applied",
+                  "storage": {
+                    "int": "0"
+                  },
+                  "consumed_milligas": "1022940",
+                  "storage_size": "215"
+                }
+              },
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 2,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call_end",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "applied"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+    }
+  ]
+]

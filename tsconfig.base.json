@@ -14,7 +14,6 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "declaration": true,
-    "composite": true,
     "sourceMap": true
   }
 }

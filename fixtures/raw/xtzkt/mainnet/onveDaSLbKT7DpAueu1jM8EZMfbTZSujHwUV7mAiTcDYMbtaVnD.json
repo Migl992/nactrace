@@ -1,0 +1,120 @@
+[
+  {
+    "direction": "x_michelson",
+    "id": "1154781053956653056",
+    "chain": {
+      "id": 1,
+      "chainId": "0xa729",
+      "layer": "x"
+    },
+    "level": 51496219,
+    "timestamp": "2026-08-21T09:08:04Z",
+    "hash": "onveDaSLbKT7DpAueu1jM8EZMfbTZSujHwUV7mAiTcDYMbtaVnD",
+    "sender": {
+      "id": 269807830,
+      "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 269807829,
+      "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+      "type": "x_michelson_alias"
+    },
+    "counter": 6,
+    "gasLimit": 2352,
+    "gasUsed": 1183,
+    "status": "applied",
+    "internalOperations": 1,
+    "amount": 1000,
+    "storageLimit": 0,
+    "storageUsed": 0,
+    "daFee": 596,
+    "gasFee": 206,
+    "gasFeeRefunded": 0
+  },
+  {
+    "direction": "x_michelson_evm",
+    "id": "1154781053957701632",
+    "chain": {
+      "id": 1,
+      "chainId": "0xa729",
+      "layer": "x"
+    },
+    "level": 51496219,
+    "timestamp": "2026-08-21T09:08:04Z",
+    "hash": "onveDaSLbKT7DpAueu1jM8EZMfbTZSujHwUV7mAiTcDYMbtaVnD",
+    "sender": {
+      "id": 269807829,
+      "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+      "type": "x_michelson_alias"
+    },
+    "initiator": {
+      "id": 269807830,
+      "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268437675,
+      "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+      "type": "x_evm_user"
+    },
+    "counter": 6,
+    "gasUsed": 1070,
+    "status": "applied",
+    "amountSent": 1000,
+    "amountReceived": "1000000000000000",
+    "storageUsed": 0,
+    "nonce": 0,
+    "alias": {
+      "id": 268437675,
+      "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+      "type": "x_evm_user"
+    },
+    "gateway": {
+      "id": 269807828,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract"
+    },
+    "gatewayEntrypoint": "call",
+    "gatewayParameters": {
+      "nat": "1",
+      "list": [],
+      "bytes": "",
+      "string": "http://ethereum/0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+      "contract": null
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "http://ethereum/0x2e2ac8699ad02e710951ea0f56b892ed36916cd5"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            [],
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "int": "1"
+                    },
+                    {
+                      "prim": "None"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

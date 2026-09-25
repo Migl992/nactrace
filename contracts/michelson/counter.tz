@@ -1,0 +1,15 @@
+# Cross-interface counter (docs.etherlink.com/tutorials/nac-counter), hand-written Michelson
+# with an extra on-chain view so callMichelsonView can be exercised.
+parameter (or (or (unit %decrement) (unit %increment)) (unit %reset)) ;
+storage nat ;
+code { UNPAIR ;
+       IF_LEFT
+         { IF_LEFT
+             { DROP ;
+               PUSH nat 0 ; DUP 2 ; COMPARE ; GT ;
+               IF { PUSH nat 1 ; SWAP ; SUB ; ABS }
+                  { PUSH string "at zero" ; FAILWITH } }
+             { DROP ; PUSH nat 1 ; ADD } }
+         { DROP ; DROP ; PUSH nat 0 } ;
+       NIL operation ; PAIR } ;
+view "get_counter" unit nat { CDR } ;

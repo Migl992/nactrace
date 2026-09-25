@@ -1,0 +1,146 @@
+[
+  {
+    "direction": "x_michelson_evm",
+    "id": "1152923005621370880",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 1046583,
+    "timestamp": "2026-09-25T13:47:42Z",
+    "hash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
+    "sender": {
+      "id": 268437695,
+      "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268437697,
+      "hash": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d",
+      "type": "x_evm_contract"
+    },
+    "targetCodeHash": -1308401235,
+    "counter": 3,
+    "gasLimit": 7629,
+    "gasUsed": 5284,
+    "status": "applied",
+    "internalOperations": 1,
+    "logsCount": 1,
+    "amountSent": 0,
+    "amountReceived": "0",
+    "daFee": 952,
+    "gasFee": 5048,
+    "gasRefund": 0,
+    "storageLimit": 0,
+    "storageUsed": 0,
+    "input": "0xd09de08a",
+    "alias": {
+      "id": 268437700,
+      "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
+      "type": "x_evm_alias"
+    },
+    "gateway": {
+      "id": 268435469,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract"
+    },
+    "gatewayEntrypoint": "call_evm",
+    "gatewayParameters": {
+      "bytes": "",
+      "contract": null,
+      "string_0": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d",
+      "string_1": "increment()"
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "increment()"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152923005622419456",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 1046583,
+    "timestamp": "2026-09-25T13:47:42Z",
+    "hash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
+    "sender": {
+      "id": 268437697,
+      "hash": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d",
+      "type": "x_evm_contract"
+    },
+    "senderCodeHash": -1308401235,
+    "initiator": {
+      "id": 268437695,
+      "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268437696,
+      "hash": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+      "type": "x_michelson_contract"
+    },
+    "targetCodeHash": -1217531874,
+    "counter": 3,
+    "gasLimit": 0,
+    "gasUsed": 55626,
+    "status": "applied",
+    "entrypoint": "increment",
+    "parameters": {},
+    "guessed": false,
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "0",
+    "roundingLoss": "0",
+    "amountReceived": 0,
+    "daFee": "0",
+    "gasFee": "0",
+    "parametersRaw": {
+      "prim": "Unit"
+    },
+    "alias": {
+      "id": 268437699,
+      "hash": "KT1TA7PnMEKLeGgTLXZVk1QmeRoUSzUq3XK2",
+      "type": "x_michelson_alias"
+    },
+    "gateway": {
+      "id": 268435464,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "increment",
+      "parameters": "0x030b",
+      "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c73683935546776000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009696e6372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000"
+  }
+]

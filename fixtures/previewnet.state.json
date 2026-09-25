@@ -1,0 +1,49 @@
+{
+  "michelsonCounter": {
+    "address": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+    "originationOpHash": "ooZp91U71BwMi19EUDQPfbnodpNdFXe2GLTQSGZxRC4MPcTvQjj",
+    "level": 1046553
+  },
+  "evmCounter": {
+    "address": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d",
+    "deployTx": "0x7d2f58f393dbf379c07076dd30f1dc5370b4b716f5fbf6482f613903b7a35b91",
+    "block": 1046557
+  },
+  "evmViewReader": {
+    "address": "0x5dae5f5c1f1be3b6b3fe5147ed88af185e872dd7",
+    "deployTx": "0x7f63279572d9f2fe81c9dae22eb6792ba14e55961bc0f27aa53b98cd4e990826",
+    "block": 1046558
+  },
+  "txs": {
+    "increment_success": {
+      "hash": "0x9480b2b38d6b1389cf553603bd81c3796c57e66b669b11f1bb0b00bc5b858bb1",
+      "status": "success",
+      "block": 1046559,
+      "gasUsed": "1496938"
+    },
+    "view_success": {
+      "hash": "0x35ff4be8197f643b5243eecbe00459c18b58558a306a716bbf60b498acba7e50",
+      "status": "success",
+      "block": 1046560,
+      "gasUsed": "674929"
+    },
+    "decrement_success": {
+      "hash": "0x712fb54cb139a16e40885f60fb3c1026a284931af3326837685a625b8ad756ee",
+      "status": "success",
+      "block": 1046561,
+      "gasUsed": "704618"
+    },
+    "decrement_revert": {
+      "hash": "0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716",
+      "status": "reverted",
+      "block": 1046562,
+      "gasUsed": "675409"
+    },
+    "michelson_to_evm_increment": {
+      "opHash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
+      "level": 1046583,
+      "status": "applied"
+    }
+  },
+  "recordedAt": "2026-09-25T13:45:39.497Z"
+}

@@ -1,0 +1,129 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXY2oPPzkxUW1",
+      "hash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
+      "branch": "BMWf32y6GqvA99i7MVtXj5PLY2PNnVbwaAiJdjd7jH1SdeJiTD3",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+          "fee": "6000",
+          "counter": "3",
+          "gas_limit": "7629",
+          "storage_limit": "0",
+          "amount": "0",
+          "destination": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+          "parameters": {
+            "entrypoint": "call_evm",
+            "value": {
+              "prim": "Pair",
+              "args": [
+                {
+                  "string": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d"
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "string": "increment()"
+                    },
+                    {
+                      "prim": "Pair",
+                      "args": [
+                        {
+                          "bytes": ""
+                        },
+                        {
+                          "prim": "None"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "metadata": {
+            "balance_updates": [
+              {
+                "kind": "contract",
+                "contract": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+                "change": "-6000",
+                "origin": "block"
+              },
+              {
+                "kind": "accumulator",
+                "category": "block fees",
+                "change": "6000",
+                "origin": "block"
+              }
+            ],
+            "operation_result": {
+              "status": "applied",
+              "consumed_milligas": "6507655"
+            },
+            "internal_operation_results": [
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 0,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call",
+                "payload": {
+                  "string": "0-0"
+                },
+                "result": {
+                  "status": "applied"
+                }
+              },
+              {
+                "kind": "transaction",
+                "source": "KT1TA7PnMEKLeGgTLXZVk1QmeRoUSzUq3XK2",
+                "nonce": 1,
+                "amount": "0",
+                "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+                "parameters": {
+                  "entrypoint": "increment",
+                  "value": {
+                    "prim": "Unit"
+                  }
+                },
+                "result": {
+                  "status": "applied",
+                  "storage": {
+                    "int": "1"
+                  },
+                  "consumed_milligas": "1020575",
+                  "storage_size": "215"
+                }
+              },
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 2,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call_end",
+                "payload": {
+                  "string": "0-0"
+                },
+                "result": {
+                  "status": "applied"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "signature": "sigY5oVQTqAFUtEPjbwAjTnEFaur8m4L4L4LkoMGQ9SWRA45KCq3arTjoXiQFp1J9y5AjBHqHGrZb6kLxFDYHZFMpExP3SZB"
+    }
+  ]
+]

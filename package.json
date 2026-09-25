@@ -14,18 +14,24 @@
     "test:watch": "vitest",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
-    "typecheck": "tsc -b packages/core packages/cli packages/hooks packages/widget"
+    "typecheck": "pnpm -r --filter './packages/*' run typecheck",
+    "fixtures:record": "pnpm --filter @nactrace/core build && node scripts/record-fixtures.mjs",
+    "previewnet:setup": "node --env-file=.env scripts/previewnet/01-originate-counter.mjs && node --env-file=.env scripts/previewnet/02-deploy-and-call-evm.mjs && node --env-file=.env scripts/previewnet/03-call-evm-from-michelson.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@noble/curves": "^2.4.0",
     "@noble/hashes": "^1.8.0",
+    "@taquito/signer": "^25.0.0",
+    "@taquito/taquito": "^25.0.0",
     "@types/node": "^22.10.0",
     "eslint": "^9.17.0",
     "prettier": "^3.4.0",
+    "solc": "^0.8.37",
     "tsup": "^8.3.0",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.18.0",
+    "viem": "^2.56.9",
     "vitest": "^3.0.0"
   }
 }

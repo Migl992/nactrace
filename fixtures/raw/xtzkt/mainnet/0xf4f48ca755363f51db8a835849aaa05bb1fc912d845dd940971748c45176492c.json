@@ -1,0 +1,56 @@
+[
+  {
+    "direction": "x_evm_michelson",
+    "id": "1154780987551383552",
+    "chain": {
+      "id": 1,
+      "chainId": "0xa729",
+      "layer": "x"
+    },
+    "level": 51486065,
+    "timestamp": "2026-08-21T07:20:48.5Z",
+    "hash": "0xf4f48ca755363f51db8a835849aaa05bb1fc912d845dd940971748c45176492c",
+    "sender": {
+      "id": 268437675,
+      "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 269807830,
+      "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+      "type": "x_michelson_user"
+    },
+    "counter": 14,
+    "gasLimit": 2918944,
+    "gasUsed": 779031,
+    "status": "applied",
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amountSent": "10000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 10000,
+    "daFee": "1768000000000000",
+    "gasFee": "779031000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "alias": {
+      "id": 269807829,
+      "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+      "type": "x_michelson_alias"
+    },
+    "gateway": {
+      "id": 269807824,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "default",
+      "parameters": "0x",
+      "destination": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000024747a31626f714256365868566a584132693579735a346d6567785a78613245456779786700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000764656661756c74000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  }
+]

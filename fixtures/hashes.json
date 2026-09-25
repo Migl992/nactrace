@@ -1,0 +1,46 @@
+{
+  "previewnet": [
+    {
+      "hash": "0x9480b2b38d6b1389cf553603bd81c3796c57e66b669b11f1bb0b00bc5b858bb1",
+      "label": "counter increment, EVM -> Michelson, success"
+    },
+    {
+      "hash": "0x35ff4be8197f643b5243eecbe00459c18b58558a306a716bbf60b498acba7e50",
+      "label": "callMichelsonView get_counter via STATICCALL, success"
+    },
+    {
+      "hash": "0x712fb54cb139a16e40885f60fb3c1026a284931af3326837685a625b8ad756ee",
+      "label": "counter decrement 1 -> 0, EVM -> Michelson, success"
+    },
+    {
+      "hash": "0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716",
+      "label": "counter decrement at zero, Michelson FAILWITH \"at zero\", atomic revert"
+    },
+    {
+      "hash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
+      "label": "tz1 -> KT18oDJ %call_evm -> counter.increment() -> Michelson (nested), success"
+    }
+  ],
+  "mainnet": [
+    {
+      "hash": "0xc5e137c2ba6016f2dc7170edbf1dc03e0e7599174502f09c3e1e1d6715c8a57a",
+      "label": "EVM user -> alias -> generic gateway call(POST http://tezos/tz1…) with value, success"
+    },
+    {
+      "hash": "0xf4f48ca755363f51db8a835849aaa05bb1fc912d845dd940971748c45176492c",
+      "label": "EVM -> Michelson generic gateway call, success"
+    },
+    {
+      "hash": "opZX4Z3TuidPmJDB93WatMNKBfbkDQipUXvFiVeS6LY9JiovffV",
+      "label": "tz1 -> KT18oDJ %call_evm -> withdrawal precompile 0xff…01 withdraw_base58, success"
+    },
+    {
+      "hash": "onveDaSLbKT7DpAueu1jM8EZMfbTZSujHwUV7mAiTcDYMbtaVnD",
+      "label": "KT1 alias -> gateway generic call(http://ethereum/0x…) with value, success"
+    },
+    {
+      "hash": "ooHmHLh2oSJQT8dy2cQ48buPVmjX949nkCfhkLK1GsgZfoct5Ky",
+      "label": "tz1 -> KT18oDJ %call_evm -> EVM user with value (empty signature), success"
+    }
+  ]
+}
