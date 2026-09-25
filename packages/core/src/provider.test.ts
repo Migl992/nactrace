@@ -62,11 +62,11 @@ describe("Provider", () => {
 
   it("does not cache transport failures", async () => {
     let calls = 0;
-    const fetch = vi.fn(async () => {
+    const fetchImpl = vi.fn(async () => {
       if (calls++ === 0) throw new Error("ECONNRESET");
       return new Response("[]", { status: 200 });
     }) as unknown as typeof fetch;
-    const p = new Provider({ fetch });
+    const p = new Provider({ fetch: fetchImpl });
     await expect(p.get("https://api.xtzkt.io/v1/x")).rejects.toBeInstanceOf(ProviderError);
     await expect(p.getJson("https://api.xtzkt.io/v1/x")).resolves.toEqual([]);
   });

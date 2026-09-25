@@ -6,7 +6,9 @@ export interface NetworkConfig {
   evmChainId: number;
   michelsonRpc: string;
   xtzktApi: string;
-  blockscout?: string;
+  blockscout: string;
+  /** TzKT explorer for the Michelson interface (op pages at `${tzkt}/${opHash}`). */
+  tzkt: string;
 }
 
 /** Same on every network (SPEC §2). */
@@ -21,6 +23,7 @@ export const NETWORKS: Record<NetworkName, NetworkConfig> = {
     michelsonRpc: "https://michelson.previewnet.tezosx.nomadic-labs.com",
     xtzktApi: "https://api.previewnet.xtzkt.io",
     blockscout: "https://blockscout.previewnet.tezosx.nomadic-labs.com",
+    tzkt: "https://tzkt.previewnet.tezosx.nomadic-labs.com",
   },
   mainnet: {
     name: "mainnet",
@@ -29,6 +32,7 @@ export const NETWORKS: Record<NetworkName, NetworkConfig> = {
     michelsonRpc: "https://michelson.etherlink.mainnet.octez.io",
     xtzktApi: "https://api.xtzkt.io",
     blockscout: "https://explorer.etherlink.com",
+    tzkt: "https://etherlink.tzkt.io",
   },
   shadownet: {
     name: "shadownet",
@@ -37,5 +41,6 @@ export const NETWORKS: Record<NetworkName, NetworkConfig> = {
     michelsonRpc: "https://michelson.etherlink.shadownet.octez.io",
     xtzktApi: "https://api.shadownet.xtzkt.io",
     blockscout: "https://shadownet.explorer.etherlink.com",
+    tzkt: "https://shadownet.etherlink.tzkt.io",
   },
 };

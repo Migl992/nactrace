@@ -5,7 +5,19 @@
 // so topic0 is the only topic and every field lives in `data`.
 // Kernel version hint: Previewnet v0.10 (2026-08-18). If topic0 stops matching real receipts, the
 // nightly CI must flag it here.
-import { parseAbiItem, toEventSelector } from "viem";
+import { parseAbi, parseAbiItem, toEventSelector } from "viem";
+
+/**
+ * Gateway precompile functions (runtime_gateway.rs `sol!` block). Selectors observed on chain:
+ * callMichelson 0xa1544fc3, callMichelsonView 0x8326329c, call 0xfa591a56.
+ */
+export const gatewayFunctionsAbi = parseAbi([
+  "function callMichelson(string destination, string entrypoint, bytes parameters)",
+  "function callMichelsonView(string destination, string viewName, bytes input) returns (bytes response)",
+  "function call(string url, (string name, string value)[] headers, bytes body, uint8 method) returns (bytes response)",
+  "function resolveAddress(string addr, uint8 sourceRuntime, uint8 targetRuntime) view returns (bool classified, uint8 res, string translated)",
+  "function originOf(string addr, uint8 sourceRuntime) view returns (uint8 kind, uint8 homeRuntime, string nativeAddress)",
+]);
 
 export const EVM_GATEWAY_ADDRESS = "0xff00000000000000000000000000000000000007" as const;
 
