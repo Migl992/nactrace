@@ -13,6 +13,9 @@ function describeRoot(root: TraceNode): string {
   const hash = root.hash ? ` ${shortAddress(root.hash)}` : "";
   const target = shortAddress(root.to.value) + (root.to.role === "gateway" ? " (gateway)" : "");
   if (root.runtime === "evm") {
+    if (root.raw?.["created"]) {
+      return `EVM tx${hash} from ${shortAddress(root.from.value)} deploying ${shortAddress(root.to.value)}`;
+    }
     const fn = ep(root) ? ` calling ${ep(root)}` : "";
     return `EVM tx${hash} from ${shortAddress(root.from.value)} to ${target}${fn}`;
   }
@@ -105,6 +108,12 @@ export function explain(trace: Trace): Explanation {
     : "";
 
   if (failed === root) {
+    const applied = legs.filter((n) => n.status === "backtracked");
+    if (applied.length) {
+      const which = applied.map(describeLeg).join(", then ");
+      out.summary = `${rootDesc} reverted in its own EVM code${reason ? ` (${reason})` : ""} after crossing into ${which}; those legs were rolled back with it.`;
+      return out;
+    }
     out.summary = `${rootDesc} reverted${reason ? `: ${reason}` : ""}; no cross-runtime leg failed.`;
     return out;
   }

@@ -47,7 +47,9 @@ export default async function nactraceLast(
       `nactrace: last ${args.any ? "" : "failed "}tx of ${account}: ${hash} (level ${first.level})`,
     );
   }
-  const { code } = runNactrace([hash, "--network", network, ...(args.json ? ["--json"] : [])]);
+  // An explorer URL names its own network; forcing the Hardhat one would look in the wrong place.
+  const networkArgs = hash.toLowerCase().startsWith("http") ? [] : ["--network", network];
+  const { code } = runNactrace([hash, ...networkArgs, ...(args.json ? ["--json"] : [])]);
   if (code === 2) throw new Error("nactrace could not explain the transaction");
   process.exitCode = code;
 }

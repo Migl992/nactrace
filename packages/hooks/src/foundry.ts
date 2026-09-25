@@ -99,6 +99,17 @@ async function main(): Promise<number> {
     }
   }
 
+  if (!network) {
+    // Hashes came from args/stdin: still borrow the chain id from a broadcast dir if there is one.
+    for (const f of findRunLatest(String(values["broadcast"] ?? "broadcast"))) {
+      try {
+        network = networkForChainId(broadcastChainId(JSON.parse(readFileSync(f, "utf8"))) ?? 0);
+      } catch {
+        /* ignore unreadable files */
+      }
+      if (network) break;
+    }
+  }
   if (hashes.size === 0) {
     process.stderr.write(
       "nactrace-foundry: nothing to explain (no failed broadcast tx, no hashes given)\n",

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+    "synthetic": false,
+    "from": {
+      "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0xa169ce09",
+    "gas": {
+      "used": "637355",
+      "limit": "8000000",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "boom from EVM",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/ooRguxsdWP4zEsmw7nsNYq2TK38yBv59WAoM65CG6eRosNy5snh"
+    },
+    "raw": {
+      "receipt": {
+        "transactionHash": "0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+        "transactionIndex": "0x0",
+        "blockHash": "0x936971a81c359093feb6ffbae9637ca4466ee17ba6fd4157b02c929587153647",
+        "blockNumber": "0xffcbd",
+        "from": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+        "to": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "cumulativeGasUsed": "0x9b9ab",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0x9b9ab",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x0",
+        "contractAddress": null
+      }
+    },
+    "events": [],
+    "children": []
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0xeaca…a42d from 0x2cad…87b3 to 0xb8a4…0908 calling 0xa169ce09 reverted: boom from EVM; no cross-runtime leg failed.",
+    "failedNodeId": "n0",
+    "evmReason": "boom from EVM"
+  },
+  "meta": {
+    "source": "rpc_only",
+    "correlation": "derived_hash",
+    "sources": [
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047741/operations",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionByHash"
+      }
+    ],
+    "warnings": []
+  }
+}

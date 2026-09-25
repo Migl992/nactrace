@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+    "from": {
+      "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0xfccbbc61",
+    "gas": {
+      "used": "788759",
+      "limit": "5000000",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "Cross-runtime call failed with status 404 Not Found: view \"nope\" not found on contract ContractKt1Hash(\"KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv\")",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onkfR6zvRCL9oNBs5TaqdSo2ueMQXW2RMXDdiN8DrJANgJpYdcs"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152923006253662208",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047162,
+        "timestamp": "2026-09-25T14:45:08Z",
+        "hash": "0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+        "sender": {
+          "id": 268437694,
+          "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268437701,
+          "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 1694908914,
+        "counter": 16,
+        "gasLimit": 5000000,
+        "gasUsed": 783518,
+        "status": "failed",
+        "errors": "Cross-runtime call failed with status 404 Not Found: view \"nope\" not found on contract ContractKt1Hash(\"KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv\")",
+        "internalOperations": 1,
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "616000000000000",
+        "gasFee": "172759000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0xfccbbc61",
+        "output": "0x43726f73732d72756e74696d652063616c6c206661696c656420776974682073746174757320343034204e6f7420466f756e643a207669657720226e6f706522206e6f7420666f756e64206f6e20636f6e747261637420436f6e74726163744b74314861736828224b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c736839355467762229"
+      },
+      "receipt": {
+        "transactionHash": "0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+        "transactionIndex": "0x0",
+        "blockHash": "0x4b9c05318978a262ed3f2871a566a07384cff58380c91593d6a4e066a5345981",
+        "blockNumber": "0xffa7a",
+        "from": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+        "to": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "cumulativeGasUsed": "0xc0917",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0xc0917",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x0",
+        "contractAddress": null
+      }
+    },
+    "events": [],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "michelson",
+        "kind": "view",
+        "from": {
+          "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "runtime": "evm",
+          "role": "native",
+          "label": "contract"
+        },
+        "to": {
+          "value": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+          "runtime": "michelson",
+          "role": "unknown"
+        },
+        "entrypoint": "nope",
+        "gas": {
+          "used": "5241",
+          "unit": "evm_gas"
+        },
+        "status": "reverted",
+        "error": "Cross-runtime call failed with status 404 Not Found: view \"nope\" not found on contract ContractKt1Hash(\"KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv\")",
+        "raw": {
+          "xtzkt": {
+            "direction": "x_evm",
+            "id": "1152923006254710784",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 1047162,
+            "timestamp": "2026-09-25T14:45:08Z",
+            "hash": "0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+            "sender": {
+              "id": 268437701,
+              "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": 1694908914,
+            "initiator": {
+              "id": 268437694,
+              "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268435464,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "targetCodeHash": 0,
+            "counter": 16,
+            "gasLimit": 0,
+            "gasUsed": 5241,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 404 Not Found: view \"nope\" not found on contract ContractKt1Hash(\"KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv\")",
+            "entrypoint": "callMichelsonView(string,string,bytes)",
+            "parameters": {
+              "input": "0x030b",
+              "viewName": "nope",
+              "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv"
+            },
+            "guessed": false,
+            "opType": "trace",
+            "opCode": "static_call",
+            "amount": "0",
+            "daFee": "0",
+            "gasFee": "0",
+            "input": "0x8326329c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c736839355467760000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000046e6f7065000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x43726f73732d72756e74696d652063616c6c206661696c656420776974682073746174757320343034204e6f7420466f756e643a207669657720226e6f706522206e6f7420666f756e64206f6e20636f6e747261637420436f6e74726163744b74314861736828224b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c736839355467762229"
+          },
+          "callFrame": {
+            "type": "STATICCALL",
+            "from": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+            "to": "0xff00000000000000000000000000000000000007",
+            "value": "0x00",
+            "gas": "0x416a7d",
+            "gasUsed": "0x1479",
+            "input": "0x8326329c000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c736839355467760000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000046e6f7065000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x43726f73732d72756e74696d652063616c6c206661696c656420776974682073746174757320343034204e6f7420466f756e643a207669657720226e6f706522206e6f7420666f756e64206f6e20636f6e747261637420436f6e74726163744b74314861736828224b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c736839355467762229",
+            "error": "Cross-runtime call failed with status 404 Not Found: view \"nope\" not found on contract ContractKt1Hash(\"KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv\")",
+            "calls": []
+          }
+        },
+        "events": [],
+        "children": [],
+        "links": {}
+      }
+    ]
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0xf510…ebbf from 0x2cad…87b3 to 0xb8a4…0908 calling 0xfccbbc61 reverted: Michelson view nope of KT1LT…5Tgv failed with view \"nope\" not found on contract ContractKt1Hash(\"KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv\") (gateway status 404 Not Found); whole transaction rolled back.",
+    "failedNodeId": "n1",
+    "evmReason": "Cross-runtime call failed with status 404 Not Found: view \"nope\" not found on contract ContractKt1Hash(\"KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv\")"
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0xf510137271323e0f2e9f9665e96da1822872e0a5bc9c6feb7312d3fc8e3febbf",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047162/operations",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

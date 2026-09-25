@@ -136,3 +136,20 @@ contract NacKitchenSink {
         return 1;
     }
 }
+
+/// Calls the sink from one level deeper, so the crossing has an intermediate EVM frame.
+contract Forwarder {
+    NacKitchenSink public sink;
+
+    constructor(address payable _sink) {
+        sink = NacKitchenSink(_sink);
+    }
+
+    function forwardMultiCross() external {
+        sink.multiCross();
+    }
+
+    function forwardMissingEntrypoint() external {
+        sink.callMissingEntrypoint();
+    }
+}

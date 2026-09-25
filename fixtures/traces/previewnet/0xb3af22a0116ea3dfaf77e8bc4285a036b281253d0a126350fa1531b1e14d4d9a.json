@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0xb3af22a0116ea3dfaf77e8bc4285a036b281253d0a126350fa1531b1e14d4d9a",
+    "synthetic": false,
+    "from": {
+      "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0xd770ce4b",
+    "gas": {
+      "used": "701294",
+      "limit": "8000000",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "boom after crossing",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xb3af22a0116ea3dfaf77e8bc4285a036b281253d0a126350fa1531b1e14d4d9a",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onsY3EQAPLAG5YXxgP96g2CcRThPRe8mGp7ZKNakv59EaHLF8Aw"
+    },
+    "raw": {
+      "receipt": {
+        "transactionHash": "0xb3af22a0116ea3dfaf77e8bc4285a036b281253d0a126350fa1531b1e14d4d9a",
+        "transactionIndex": "0x0",
+        "blockHash": "0xf0675d021fff07b7487ef7c9f75b1be59852d80675ff695b62b047f52278d0c5",
+        "blockNumber": "0xffcbf",
+        "from": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+        "to": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "cumulativeGasUsed": "0xab36e",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0xab36e",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x0",
+        "contractAddress": null
+      },
+      "tezosOperation": {
+        "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+        "chain_id": "NetXY2oPPzkxUW1",
+        "hash": "onsY3EQAPLAG5YXxgP96g2CcRThPRe8mGp7ZKNakv59EaHLF8Aw",
+        "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+            "fee": "0",
+            "counter": "0",
+            "gas_limit": "0",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT1Ru5fpQjhQRNDtpS3pj7USvYPTB4cfZoxS",
+            "metadata": {
+              "operation_result": {
+                "status": "backtracked"
+              },
+              "internal_operation_results": [
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 0,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                },
+                {
+                  "kind": "transaction",
+                  "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+                  "nonce": 1,
+                  "amount": "0",
+                  "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+                  "parameters": {
+                    "entrypoint": "increment",
+                    "value": {
+                      "prim": "Unit"
+                    }
+                  },
+                  "result": {
+                    "status": "backtracked",
+                    "storage": {
+                      "int": "1"
+                    },
+                    "consumed_milligas": "1020575",
+                    "storage_size": "215"
+                  }
+                },
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 2,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call_end",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+      }
+    },
+    "events": [
+      {
+        "name": "cross_runtime_call",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      },
+      {
+        "name": "cross_runtime_call_end",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "michelson",
+        "kind": "crossing",
+        "hash": "onsY3EQAPLAG5YXxgP96g2CcRThPRe8mGp7ZKNakv59EaHLF8Aw",
+        "synthetic": true,
+        "from": {
+          "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "runtime": "evm",
+          "role": "native",
+          "label": "contract"
+        },
+        "to": {
+          "value": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+          "runtime": "michelson",
+          "role": "unknown"
+        },
+        "entrypoint": "increment",
+        "gas": {
+          "used": "55626",
+          "unit": "evm_gas"
+        },
+        "status": "backtracked",
+        "links": {
+          "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onsY3EQAPLAG5YXxgP96g2CcRThPRe8mGp7ZKNakv59EaHLF8Aw"
+        },
+        "raw": {
+          "callFrame": {
+            "type": "CALL",
+            "from": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+            "to": "0xff00000000000000000000000000000000000007",
+            "value": "0x00",
+            "gas": "0x2dc6c0",
+            "gasUsed": "0xd94a",
+            "input": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c73683935546776000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009696e6372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x",
+            "logs": [
+              {
+                "address": "0xff00000000000000000000000000000000000007",
+                "topics": ["0x63d7b3745d574412126b88bc586adea349b617cd75e87d47aff3dbc765bd834b"],
+                "data": "0x000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003312d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000"
+              }
+            ],
+            "calls": []
+          },
+          "tezosInternalOperation": {
+            "kind": "transaction",
+            "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+            "nonce": 1,
+            "amount": "0",
+            "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+            "parameters": {
+              "entrypoint": "increment",
+              "value": {
+                "prim": "Unit"
+              }
+            },
+            "result": {
+              "status": "backtracked",
+              "storage": {
+                "int": "1"
+              },
+              "consumed_milligas": "1020575",
+              "storage_size": "215"
+            }
+          }
+        },
+        "events": [],
+        "children": [],
+        "michelsonGas": {
+          "used": "1020575",
+          "unit": "michelson_milligas"
+        },
+        "storageDiff": {
+          "before": {
+            "int": "0"
+          },
+          "after": {
+            "int": "0"
+          }
+        }
+      }
+    ]
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0xb3af…4d9a from 0x2cad…87b3 to 0xb8a4…0908 calling 0xd770ce4b reverted in its own EVM code (boom after crossing) after crossing into Michelson %increment on KT1LT…5Tgv; those legs were rolled back with it.",
+    "failedNodeId": "n0",
+    "evmReason": "boom after crossing"
+  },
+  "meta": {
+    "source": "rpc_only",
+    "correlation": "derived_hash",
+    "sources": [
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047743/operations",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionByHash"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047742/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047743/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

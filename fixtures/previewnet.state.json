@@ -150,6 +150,41 @@
       "opHash": "onmRggbbEU7kiQEXVGzCGBPJKEF4cPjDpLWSM31isFXowo3Zoym",
       "level": 1047340,
       "status": "applied"
+    },
+    "evm_plain_revert": {
+      "hash": "0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+      "status": "reverted",
+      "block": 1047741,
+      "gasUsed": "637355",
+      "functionName": "boom"
+    },
+    "evm_custom_error": {
+      "hash": "0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
+      "status": "reverted",
+      "block": 1047742,
+      "gasUsed": "637368",
+      "functionName": "boomCustom"
+    },
+    "evm_revert_after_crossing": {
+      "hash": "0xb3af22a0116ea3dfaf77e8bc4285a036b281253d0a126350fa1531b1e14d4d9a",
+      "status": "reverted",
+      "block": 1047743,
+      "gasUsed": "701294",
+      "functionName": "incrementThenBoom"
+    },
+    "forwarded_multi_cross": {
+      "hash": "0x956c5aed7667bf43b8c5366cec88f4f5b388f927e37ac447c0ddd3277a039032",
+      "status": "success",
+      "block": 1047744,
+      "gasUsed": "822385",
+      "functionName": "forwardMultiCross"
+    },
+    "forwarded_missing_entrypoint": {
+      "hash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+      "status": "reverted",
+      "block": 1047745,
+      "gasUsed": "680352",
+      "functionName": "forwardMissingEntrypoint"
     }
   },
   "recordedAt": "2026-09-25T13:45:39.497Z",
@@ -162,5 +197,10 @@
     "address": "KT1QopYiQdyhkjn4mxUvC4u1ci6UzgE7mEDp",
     "originationOpHash": "ooveRn7s3Rhwjtbn6j4inDmtYZEjitQjcUHCUFPw5KfT2a9soJW",
     "level": 1047180
+  },
+  "forwarder": {
+    "address": "0xbf8d939ba27c4aa2db1bd00c866d6c63c5a520ab",
+    "deployTx": "0x36da5d5b1105b88edd58b7d72b673e19707ee40e3efb22d2bdca5effbb373468",
+    "block": 1047740
   }
 }

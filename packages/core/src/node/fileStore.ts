@@ -79,7 +79,7 @@ export class FileFixtureStore implements FixtureStore {
     } catch {
       /* no sidecar: assume 200 */
     }
-    let body: unknown = text;
+    let body: unknown = text.endsWith("\n") ? text.slice(0, -1) : text; // set() adds one newline
     try {
       body = JSON.parse(text);
     } catch {

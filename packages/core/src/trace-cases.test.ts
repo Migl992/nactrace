@@ -213,3 +213,66 @@ describe("Michelson-originated edge cases", () => {
     expect(t.explanation.summary).toContain("crossed into EVM ping() on 0xb8a4…0908");
   });
 });
+
+describe("EVM-side reverts and deeper call stacks", () => {
+  const H2 = {
+    plainRevert: "0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+    customError: "0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
+    revertAfterCrossing: "0xb3af22a0116ea3dfaf77e8bc4285a036b281253d0a126350fa1531b1e14d4d9a",
+    forwardedMultiCross: "0x956c5aed7667bf43b8c5366cec88f4f5b388f927e37ac447c0ddd3277a039032",
+    forwardedMissingEntrypoint:
+      "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+    forwarder: "0xbf8d939ba27c4aa2db1bd00c866d6c63c5a520ab",
+  } as const;
+
+  it("plain EVM revert with a reason string, no crossing", async () => {
+    const t = await build(H2.plainRevert);
+    expect(t.status).toBe("reverted");
+    expect(crossings(t)).toHaveLength(0);
+    expect(t.root.error).toBe("boom from EVM");
+    expect(t.explanation.failedNodeId).toBe(t.root.id);
+    expect(t.explanation.summary).toMatch(
+      /reverted: boom from EVM; no cross-runtime leg failed\.$/,
+    );
+  });
+
+  it("custom error without ABI is named by selector and keeps its payload", async () => {
+    const t = await build(H2.customError);
+    expect(t.status).toBe("reverted");
+    expect(t.root.error).toBe(
+      "custom error 0x1167d8fb 000000000000000000000000000000000000000000000000000000000000002a",
+    );
+  });
+
+  it("EVM code reverts after a successful crossing: the leg is backtracked and named", async () => {
+    const t = await build(H2.revertAfterCrossing);
+    expect(t.status).toBe("reverted");
+    expect(t.atomic).toBe(true);
+    const [c] = crossings(t);
+    expect(c?.status).toBe("backtracked");
+    expect(t.explanation.failedNodeId).toBe(t.root.id);
+    expect(t.explanation.summary).toBe(
+      "EVM tx 0xb3af…4d9a from 0x2cad…87b3 to 0xb8a4…0908 calling 0xd770ce4b reverted in its own EVM code (boom after crossing) after crossing into Michelson %increment on KT1LT…5Tgv; those legs were rolled back with it.",
+    );
+  });
+
+  it("crossings started one EVM call deeper still show up, from the intermediate contract", async () => {
+    const t = await build(H2.forwardedMultiCross);
+    expect(t.status).toBe("success");
+    expect(t.root.to.value).toBe(H2.forwarder);
+    const cs = crossings(t);
+    expect(cs).toHaveLength(3);
+    expect(cs.every((c) => c.from.value === H.sink)).toBe(true);
+    expect(t.explanation.summary).toContain("all 3 legs applied");
+  });
+
+  it("nested failure through two EVM contracts", async () => {
+    const t = await build(H2.forwardedMissingEntrypoint);
+    expect(t.status).toBe("reverted");
+    expect(t.root.to.value).toBe(H2.forwarder);
+    expect(crossings(t)[0]?.from.value).toBe(H.sink);
+    expect(t.explanation.summary).toContain(
+      "%nope of KT1LT…5Tgv failed with failed typechecking input: no such entrypoint: nope",
+    );
+  });
+});

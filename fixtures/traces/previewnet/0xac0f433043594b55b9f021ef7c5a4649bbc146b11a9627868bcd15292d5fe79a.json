@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+    "from": {
+      "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0x15a18d78",
+    "gas": {
+      "used": "4023702",
+      "limit": "5000000",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "Cross-runtime call failed with status 400 Bad Request: Invalid Tezos address in URL: KT1notARealAddress: invalid base58",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/opKQBpUM3WtR5MmQUUWVG9CPzeTJSZH44rd2WYnq4Cehoh5QMfG"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152923006237933568",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047158,
+        "timestamp": "2026-09-25T14:45:02Z",
+        "hash": "0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+        "sender": {
+          "id": 268437694,
+          "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268437701,
+          "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 1694908914,
+        "counter": 12,
+        "gasLimit": 5000000,
+        "gasUsed": 1023702,
+        "status": "failed",
+        "errors": "Cross-runtime call failed with status 400 Bad Request: Invalid Tezos address in URL: KT1notARealAddress: invalid base58",
+        "internalOperations": 1,
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "1000000000000000",
+        "gasFee": "3023702000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0x15a18d78000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000124b54316e6f74415265616c416464726573730000000000000000000000000000",
+        "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a20496e76616c69642054657a6f73206164647265737320696e2055524c3a204b54316e6f74415265616c416464726573733a20696e76616c696420626173653538"
+      },
+      "receipt": {
+        "transactionHash": "0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+        "transactionIndex": "0x0",
+        "blockHash": "0x77aa3c2bacab922e12e91a99faf3593c385330f50721b78187f339ef63e25b40",
+        "blockNumber": "0xffa76",
+        "from": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+        "to": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "cumulativeGasUsed": "0x3d6596",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0x3d6596",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x0",
+        "contractAddress": null
+      }
+    },
+    "events": [],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "evm",
+        "kind": "call",
+        "from": {
+          "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "runtime": "evm",
+          "role": "native",
+          "label": "contract"
+        },
+        "to": {
+          "value": "0xff00000000000000000000000000000000000007",
+          "runtime": "evm",
+          "role": "gateway",
+          "label": "NAC gateway (EVM side)"
+        },
+        "entrypoint": "callMichelson(string,string,bytes)",
+        "gas": {
+          "used": "3000000",
+          "unit": "evm_gas"
+        },
+        "status": "reverted",
+        "error": "Cross-runtime call failed with status 400 Bad Request: Invalid Tezos address in URL: KT1notARealAddress: invalid base58",
+        "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a20496e76616c69642054657a6f73206164647265737320696e2055524c3a204b54316e6f74415265616c416464726573733a20696e76616c696420626173653538",
+        "raw": {
+          "xtzkt": {
+            "direction": "x_evm",
+            "id": "1152923006238982144",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 1047158,
+            "timestamp": "2026-09-25T14:45:02Z",
+            "hash": "0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+            "sender": {
+              "id": 268437701,
+              "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": 1694908914,
+            "initiator": {
+              "id": 268437694,
+              "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268435464,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "targetCodeHash": 0,
+            "counter": 12,
+            "gasLimit": 0,
+            "gasUsed": 3000000,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 400 Bad Request: Invalid Tezos address in URL: KT1notARealAddress: invalid base58",
+            "entrypoint": "callMichelson(string,string,bytes)",
+            "parameters": {
+              "entrypoint": "increment",
+              "parameters": "0x030b",
+              "destination": "KT1notARealAddress"
+            },
+            "guessed": false,
+            "opType": "trace",
+            "opCode": "call",
+            "amount": "0",
+            "daFee": "0",
+            "gasFee": "0",
+            "input": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000124b54316e6f74415265616c4164647265737300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009696e6372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a20496e76616c69642054657a6f73206164647265737320696e2055524c3a204b54316e6f74415265616c416464726573733a20696e76616c696420626173653538"
+          }
+        },
+        "events": [],
+        "children": [],
+        "links": {}
+      }
+    ]
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0xac0f…e79a from 0x2cad…87b3 to 0xb8a4…0908 calling 0x15a18d78 reverted: the NAC gateway rejected the call with Invalid Tezos address in URL: KT1notARealAddress: invalid base58 (gateway status 400 Bad Request); nothing crossed.",
+    "failedNodeId": "n1",
+    "evmReason": "Cross-runtime call failed with status 400 Bad Request: Invalid Tezos address in URL: KT1notARealAddress: invalid base58"
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0xac0f433043594b55b9f021ef7c5a4649bbc146b11a9627868bcd15292d5fe79a",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047158/operations",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

@@ -1,0 +1,958 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+    "from": {
+      "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0x6165b870",
+    "gas": {
+      "used": "1123970",
+      "limit": "5000000",
+      "unit": "evm_gas"
+    },
+    "status": "success",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onnbeSG61s1hKcQC7kiJrRRe6b5qgxZwrunR24z7twWiSvyqUas"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152923006222204928",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047153,
+        "timestamp": "2026-09-25T14:44:40Z",
+        "hash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+        "sender": {
+          "id": 268437694,
+          "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268437701,
+          "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 1694908914,
+        "counter": 7,
+        "gasLimit": 5000000,
+        "gasUsed": 672044,
+        "status": "applied",
+        "internalOperations": 1,
+        "logsCount": 1,
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "616000000000000",
+        "gasFee": "507970000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0x6165b870"
+      },
+      "receipt": {
+        "transactionHash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+        "transactionIndex": "0x0",
+        "blockHash": "0xbf51f4068abdc8e3deba766bea3c4840a3f95fd44d309c403db88ced685e0540",
+        "blockNumber": "0xffa71",
+        "from": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+        "to": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "cumulativeGasUsed": "0x112682",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0x112682",
+        "logs": [
+          {
+            "address": "0xff00000000000000000000000000000000000007",
+            "topics": ["0x63d7b3745d574412126b88bc586adea349b617cd75e87d47aff3dbc765bd834b"],
+            "data": "0x000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003312d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000",
+            "blockNumber": "0xffa71",
+            "transactionHash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+            "transactionIndex": "0x0",
+            "blockHash": "0xbf51f4068abdc8e3deba766bea3c4840a3f95fd44d309c403db88ced685e0540",
+            "logIndex": "0x0",
+            "removed": false
+          },
+          {
+            "address": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+            "topics": ["0x89e4c3fbcc98a9d0ace2a01a1600306a834e56529eda1c1f49f778ac047783f3"],
+            "data": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000",
+            "blockNumber": "0xffa71",
+            "transactionHash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+            "transactionIndex": "0x0",
+            "blockHash": "0xbf51f4068abdc8e3deba766bea3c4840a3f95fd44d309c403db88ced685e0540",
+            "logIndex": "0x1",
+            "removed": false
+          }
+        ],
+        "logsBloom": "0x00000000000000000000004000040000000000000002000000000000400000000000000000000000000000000002000000800000000000100000000000000000000000000000000000000000080000000000000200000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x1",
+        "contractAddress": null
+      },
+      "tezosOperation": {
+        "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+        "chain_id": "NetXY2oPPzkxUW1",
+        "hash": "onnbeSG61s1hKcQC7kiJrRRe6b5qgxZwrunR24z7twWiSvyqUas",
+        "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+            "fee": "0",
+            "counter": "0",
+            "gas_limit": "0",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT1Ru5fpQjhQRNDtpS3pj7USvYPTB4cfZoxS",
+            "metadata": {
+              "operation_result": {
+                "status": "applied"
+              },
+              "internal_operation_results": [
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 0,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "applied"
+                  }
+                },
+                {
+                  "kind": "origination",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 1,
+                  "balance": "0",
+                  "script": {
+                    "code": [
+                      {
+                        "prim": "parameter",
+                        "args": [
+                          {
+                            "prim": "unit"
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "storage",
+                        "args": [
+                          {
+                            "prim": "string"
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "code",
+                        "args": [
+                          [
+                            {
+                              "prim": "CDR"
+                            },
+                            {
+                              "prim": "DUP"
+                            },
+                            {
+                              "prim": "PUSH",
+                              "args": [
+                                {
+                                  "prim": "string"
+                                },
+                                {
+                                  "string": "http://ethereum/"
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "CONCAT"
+                            },
+                            {
+                              "prim": "NONE",
+                              "args": [
+                                {
+                                  "prim": "contract",
+                                  "args": [
+                                    {
+                                      "prim": "bytes"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "PUSH",
+                              "args": [
+                                {
+                                  "prim": "nat"
+                                },
+                                {
+                                  "int": "1"
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "PAIR"
+                            },
+                            {
+                              "prim": "PUSH",
+                              "args": [
+                                {
+                                  "prim": "bytes"
+                                },
+                                {
+                                  "bytes": ""
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "PAIR"
+                            },
+                            {
+                              "prim": "NIL",
+                              "args": [
+                                {
+                                  "prim": "pair",
+                                  "args": [
+                                    {
+                                      "prim": "string"
+                                    },
+                                    {
+                                      "prim": "string"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "PAIR"
+                            },
+                            {
+                              "prim": "SWAP"
+                            },
+                            {
+                              "prim": "PAIR"
+                            },
+                            {
+                              "prim": "PUSH",
+                              "args": [
+                                {
+                                  "prim": "address"
+                                },
+                                {
+                                  "string": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw"
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "CONTRACT",
+                              "args": [
+                                {
+                                  "prim": "pair",
+                                  "args": [
+                                    {
+                                      "prim": "string"
+                                    },
+                                    {
+                                      "prim": "pair",
+                                      "args": [
+                                        {
+                                          "prim": "list",
+                                          "args": [
+                                            {
+                                              "prim": "pair",
+                                              "args": [
+                                                {
+                                                  "prim": "string"
+                                                },
+                                                {
+                                                  "prim": "string"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "prim": "pair",
+                                          "args": [
+                                            {
+                                              "prim": "bytes"
+                                            },
+                                            {
+                                              "prim": "pair",
+                                              "args": [
+                                                {
+                                                  "prim": "nat"
+                                                },
+                                                {
+                                                  "prim": "option",
+                                                  "args": [
+                                                    {
+                                                      "prim": "contract",
+                                                      "args": [
+                                                        {
+                                                          "prim": "bytes"
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "annots": ["%call"]
+                            },
+                            {
+                              "prim": "IF_NONE",
+                              "args": [
+                                [
+                                  {
+                                    "prim": "PUSH",
+                                    "args": [
+                                      {
+                                        "prim": "string"
+                                      },
+                                      {
+                                        "string": "gateway"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "prim": "FAILWITH"
+                                  }
+                                ],
+                                []
+                              ]
+                            },
+                            {
+                              "prim": "SWAP"
+                            },
+                            {
+                              "prim": "BALANCE"
+                            },
+                            {
+                              "prim": "SWAP"
+                            },
+                            {
+                              "prim": "TRANSFER_TOKENS"
+                            },
+                            {
+                              "prim": "NIL",
+                              "args": [
+                                {
+                                  "prim": "operation"
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "SWAP"
+                            },
+                            {
+                              "prim": "CONS"
+                            },
+                            {
+                              "prim": "PAIR"
+                            }
+                          ]
+                        ]
+                      }
+                    ],
+                    "storage": {
+                      "string": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908"
+                    }
+                  },
+                  "result": {
+                    "status": "applied",
+                    "originated_contracts": ["KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno"],
+                    "consumed_milligas": "2027661",
+                    "storage_size": "47",
+                    "paid_storage_size_diff": "47"
+                  }
+                },
+                {
+                  "kind": "transaction",
+                  "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+                  "nonce": 2,
+                  "amount": "0",
+                  "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+                  "parameters": {
+                    "entrypoint": "decrement",
+                    "value": {
+                      "prim": "Unit"
+                    }
+                  },
+                  "result": {
+                    "status": "applied",
+                    "storage": {
+                      "int": "0"
+                    },
+                    "consumed_milligas": "1022940",
+                    "storage_size": "215"
+                  }
+                },
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 3,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call_end",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "applied"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+      }
+    },
+    "events": [
+      {
+        "name": "0x89e4c3fbcc98a9d0ace2a01a1600306a834e56529eda1c1f49f778ac047783f3",
+        "address": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "topics": ["0x89e4c3fbcc98a9d0ace2a01a1600306a834e56529eda1c1f49f778ac047783f3"],
+        "data": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "name": "cross_runtime_call",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      },
+      {
+        "name": "cross_runtime_call_end",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "n2",
+        "runtime": "michelson",
+        "kind": "alias_created",
+        "from": {
+          "value": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+          "runtime": "michelson",
+          "role": "system",
+          "label": "kernel attribution address"
+        },
+        "to": {
+          "value": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+          "runtime": "michelson",
+          "role": "alias",
+          "label": "alias"
+        },
+        "michelsonGas": {
+          "used": "2027661",
+          "unit": "michelson_milligas"
+        },
+        "status": "success",
+        "raw": {
+          "tezosInternalOperation": {
+            "kind": "origination",
+            "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+            "nonce": 1,
+            "balance": "0",
+            "script": {
+              "code": [
+                {
+                  "prim": "parameter",
+                  "args": [
+                    {
+                      "prim": "unit"
+                    }
+                  ]
+                },
+                {
+                  "prim": "storage",
+                  "args": [
+                    {
+                      "prim": "string"
+                    }
+                  ]
+                },
+                {
+                  "prim": "code",
+                  "args": [
+                    [
+                      {
+                        "prim": "CDR"
+                      },
+                      {
+                        "prim": "DUP"
+                      },
+                      {
+                        "prim": "PUSH",
+                        "args": [
+                          {
+                            "prim": "string"
+                          },
+                          {
+                            "string": "http://ethereum/"
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "CONCAT"
+                      },
+                      {
+                        "prim": "NONE",
+                        "args": [
+                          {
+                            "prim": "contract",
+                            "args": [
+                              {
+                                "prim": "bytes"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "PUSH",
+                        "args": [
+                          {
+                            "prim": "nat"
+                          },
+                          {
+                            "int": "1"
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "PAIR"
+                      },
+                      {
+                        "prim": "PUSH",
+                        "args": [
+                          {
+                            "prim": "bytes"
+                          },
+                          {
+                            "bytes": ""
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "PAIR"
+                      },
+                      {
+                        "prim": "NIL",
+                        "args": [
+                          {
+                            "prim": "pair",
+                            "args": [
+                              {
+                                "prim": "string"
+                              },
+                              {
+                                "prim": "string"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "PAIR"
+                      },
+                      {
+                        "prim": "SWAP"
+                      },
+                      {
+                        "prim": "PAIR"
+                      },
+                      {
+                        "prim": "PUSH",
+                        "args": [
+                          {
+                            "prim": "address"
+                          },
+                          {
+                            "string": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw"
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "CONTRACT",
+                        "args": [
+                          {
+                            "prim": "pair",
+                            "args": [
+                              {
+                                "prim": "string"
+                              },
+                              {
+                                "prim": "pair",
+                                "args": [
+                                  {
+                                    "prim": "list",
+                                    "args": [
+                                      {
+                                        "prim": "pair",
+                                        "args": [
+                                          {
+                                            "prim": "string"
+                                          },
+                                          {
+                                            "prim": "string"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "prim": "pair",
+                                    "args": [
+                                      {
+                                        "prim": "bytes"
+                                      },
+                                      {
+                                        "prim": "pair",
+                                        "args": [
+                                          {
+                                            "prim": "nat"
+                                          },
+                                          {
+                                            "prim": "option",
+                                            "args": [
+                                              {
+                                                "prim": "contract",
+                                                "args": [
+                                                  {
+                                                    "prim": "bytes"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "annots": ["%call"]
+                      },
+                      {
+                        "prim": "IF_NONE",
+                        "args": [
+                          [
+                            {
+                              "prim": "PUSH",
+                              "args": [
+                                {
+                                  "prim": "string"
+                                },
+                                {
+                                  "string": "gateway"
+                                }
+                              ]
+                            },
+                            {
+                              "prim": "FAILWITH"
+                            }
+                          ],
+                          []
+                        ]
+                      },
+                      {
+                        "prim": "SWAP"
+                      },
+                      {
+                        "prim": "BALANCE"
+                      },
+                      {
+                        "prim": "SWAP"
+                      },
+                      {
+                        "prim": "TRANSFER_TOKENS"
+                      },
+                      {
+                        "prim": "NIL",
+                        "args": [
+                          {
+                            "prim": "operation"
+                          }
+                        ]
+                      },
+                      {
+                        "prim": "SWAP"
+                      },
+                      {
+                        "prim": "CONS"
+                      },
+                      {
+                        "prim": "PAIR"
+                      }
+                    ]
+                  ]
+                }
+              ],
+              "storage": {
+                "string": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908"
+              }
+            },
+            "result": {
+              "status": "applied",
+              "originated_contracts": ["KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno"],
+              "consumed_milligas": "2027661",
+              "storage_size": "47",
+              "paid_storage_size_diff": "47"
+            }
+          }
+        },
+        "events": [],
+        "children": [],
+        "links": {}
+      },
+      {
+        "id": "n1",
+        "runtime": "michelson",
+        "kind": "crossing",
+        "hash": "onnbeSG61s1hKcQC7kiJrRRe6b5qgxZwrunR24z7twWiSvyqUas",
+        "synthetic": true,
+        "from": {
+          "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "runtime": "evm",
+          "role": "native",
+          "counterpart": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+          "label": "contract"
+        },
+        "to": {
+          "value": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+          "runtime": "michelson",
+          "role": "native",
+          "label": "contract"
+        },
+        "entrypoint": "decrement",
+        "gas": {
+          "used": "451926",
+          "unit": "evm_gas"
+        },
+        "status": "success",
+        "links": {
+          "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onnbeSG61s1hKcQC7kiJrRRe6b5qgxZwrunR24z7twWiSvyqUas"
+        },
+        "raw": {
+          "xtzkt": {
+            "direction": "x_evm_michelson",
+            "id": "1152923006223253504",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 1047153,
+            "timestamp": "2026-09-25T14:44:40Z",
+            "hash": "0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+            "sender": {
+              "id": 268437701,
+              "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": 1694908914,
+            "initiator": {
+              "id": 268437694,
+              "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268437696,
+              "hash": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+              "type": "x_michelson_contract"
+            },
+            "targetCodeHash": -1217531874,
+            "counter": 7,
+            "gasLimit": 0,
+            "gasUsed": 451926,
+            "status": "applied",
+            "entrypoint": "decrement",
+            "parameters": {},
+            "guessed": false,
+            "opType": "trace",
+            "opCode": "call",
+            "amountSent": "0",
+            "roundingLoss": "0",
+            "amountReceived": 0,
+            "daFee": "0",
+            "gasFee": "0",
+            "parametersRaw": {
+              "prim": "Unit"
+            },
+            "alias": {
+              "id": 268437702,
+              "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+              "type": "x_michelson_alias"
+            },
+            "gateway": {
+              "id": 268435464,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+            "gatewayParameters": {
+              "entrypoint": "decrement",
+              "parameters": "0x030b",
+              "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv"
+            },
+            "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000964656372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000"
+          },
+          "callFrame": {
+            "type": "CALL",
+            "from": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+            "to": "0xff00000000000000000000000000000000000007",
+            "value": "0x00",
+            "gas": "0x2dc6c0",
+            "gasUsed": "0x06e556",
+            "input": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000964656372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x",
+            "logs": [
+              {
+                "address": "0xff00000000000000000000000000000000000007",
+                "topics": ["0x63d7b3745d574412126b88bc586adea349b617cd75e87d47aff3dbc765bd834b"],
+                "data": "0x000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003312d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000"
+              }
+            ],
+            "calls": []
+          },
+          "tezosInternalOperation": {
+            "kind": "transaction",
+            "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+            "nonce": 2,
+            "amount": "0",
+            "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+            "parameters": {
+              "entrypoint": "decrement",
+              "value": {
+                "prim": "Unit"
+              }
+            },
+            "result": {
+              "status": "applied",
+              "storage": {
+                "int": "0"
+              },
+              "consumed_milligas": "1022940",
+              "storage_size": "215"
+            }
+          }
+        },
+        "events": [
+          {
+            "name": "CrossRuntimeCallSent",
+            "address": "0xff00000000000000000000000000000000000007",
+            "args": {
+              "crossRuntimeCallId": "1-0",
+              "targetRuntime": "tezos",
+              "targetAddress": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+              "amount": "0"
+            },
+            "topics": ["0x63d7b3745d574412126b88bc586adea349b617cd75e87d47aff3dbc765bd834b"],
+            "data": "0x000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003312d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000"
+          }
+        ],
+        "children": [],
+        "michelsonGas": {
+          "used": "1022940",
+          "unit": "michelson_milligas"
+        },
+        "storageDiff": {
+          "before": {
+            "int": "1"
+          },
+          "after": {
+            "int": "0"
+          }
+        }
+      }
+    ]
+  },
+  "status": "success",
+  "atomic": false,
+  "explanation": {
+    "summary": "EVM tx 0x3ad0…bc7b from 0x2cad…87b3 to 0xb8a4…0908 calling 0x6165b870 crossed into Michelson %decrement on KT1LT…5Tgv; all 1 leg applied."
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0x3ad0cb8d4816a3d1754127626d81980fbe4f6ebc25daa04d67a0ebefb468bc7b",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047153/operations",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047152/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047153/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "michelson",
+    "kind": "op",
+    "hash": "op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+    "from": {
+      "value": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+      "runtime": "michelson",
+      "role": "native",
+      "counterpart": "0x926e29d504dc631e4e405925361392dbe7d25909"
+    },
+    "to": {
+      "value": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "runtime": "michelson",
+      "role": "gateway",
+      "label": "NAC gateway (Michelson side)"
+    },
+    "entrypoint": "call_evm",
+    "status": "success",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xfa1fd73e2ded83e356c7b0e9f243408b57988b0d3c4d8c9ad98f0977ae290855",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_michelson_evm",
+        "id": "1152923006274633728",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047179,
+        "timestamp": "2026-09-25T14:46:41Z",
+        "hash": "op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+        "sender": {
+          "id": 268437695,
+          "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+          "type": "x_michelson_user"
+        },
+        "target": {
+          "id": 268437701,
+          "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 1694908914,
+        "counter": 5,
+        "gasLimit": 1068,
+        "gasUsed": 968,
+        "status": "applied",
+        "amountSent": 0,
+        "amountReceived": "0",
+        "daFee": 932,
+        "gasFee": 7068,
+        "gasRefund": 0,
+        "storageLimit": 0,
+        "storageUsed": 0,
+        "input": "0x5c36b186",
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "alias": {
+          "id": 268437700,
+          "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
+          "type": "x_evm_alias"
+        },
+        "gateway": {
+          "id": 268435469,
+          "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+          "type": "x_michelson_contract"
+        },
+        "gatewayEntrypoint": "call_evm",
+        "gatewayParameters": {
+          "bytes": "",
+          "contract": null,
+          "string_0": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "string_1": "ping()"
+        },
+        "gatewayParametersRaw": {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "string": "ping()"
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "bytes": ""
+                    },
+                    {
+                      "prim": "None"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "tezosOperation": {
+        "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+        "chain_id": "NetXY2oPPzkxUW1",
+        "hash": "op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+        "branch": "BM4x4oeoqf3F9YrVnk4QJVCaAcoTWnR3PMiShiD7yBkd7jJXjbW",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+            "fee": "8000",
+            "counter": "5",
+            "gas_limit": "1068",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+            "parameters": {
+              "entrypoint": "call_evm",
+              "value": {
+                "prim": "Pair",
+                "args": [
+                  {
+                    "string": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908"
+                  },
+                  {
+                    "prim": "Pair",
+                    "args": [
+                      {
+                        "string": "ping()"
+                      },
+                      {
+                        "prim": "Pair",
+                        "args": [
+                          {
+                            "bytes": ""
+                          },
+                          {
+                            "prim": "None"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "metadata": {
+              "balance_updates": [
+                {
+                  "kind": "contract",
+                  "contract": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+                  "change": "-8000",
+                  "origin": "block"
+                },
+                {
+                  "kind": "accumulator",
+                  "category": "block fees",
+                  "change": "8000",
+                  "origin": "block"
+                }
+              ],
+              "operation_result": {
+                "status": "applied",
+                "consumed_milligas": "967592"
+              }
+            }
+          }
+        ],
+        "signature": "sigWS8TJCiJarwznMcwcMx47FAbqUA5ydrH9GTSb8gtDwasK6bDvvpry7zJxHp4Z8AeZp3mRPbdhuAQYxN6G6XSRyUxTMchu"
+      }
+    },
+    "events": [],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "evm",
+        "kind": "crossing",
+        "hash": "0xfa1fd73e2ded83e356c7b0e9f243408b57988b0d3c4d8c9ad98f0977ae290855",
+        "synthetic": true,
+        "from": {
+          "value": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+          "runtime": "michelson",
+          "role": "native",
+          "counterpart": "0x926e29d504dc631e4e405925361392dbe7d25909"
+        },
+        "to": {
+          "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "runtime": "evm",
+          "role": "native",
+          "label": "contract"
+        },
+        "entrypoint": "ping()",
+        "status": "success",
+        "links": {
+          "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xfa1fd73e2ded83e356c7b0e9f243408b57988b0d3c4d8c9ad98f0977ae290855"
+        },
+        "raw": {
+          "xtzkt": {
+            "direction": "x_michelson_evm",
+            "id": "1152923006274633728",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 1047179,
+            "timestamp": "2026-09-25T14:46:41Z",
+            "hash": "op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+            "sender": {
+              "id": 268437695,
+              "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+              "type": "x_michelson_user"
+            },
+            "target": {
+              "id": 268437701,
+              "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "type": "x_evm_contract"
+            },
+            "targetCodeHash": 1694908914,
+            "counter": 5,
+            "gasLimit": 1068,
+            "gasUsed": 968,
+            "status": "applied",
+            "amountSent": 0,
+            "amountReceived": "0",
+            "daFee": 932,
+            "gasFee": 7068,
+            "gasRefund": 0,
+            "storageLimit": 0,
+            "storageUsed": 0,
+            "input": "0x5c36b186",
+            "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "alias": {
+              "id": 268437700,
+              "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
+              "type": "x_evm_alias"
+            },
+            "gateway": {
+              "id": 268435469,
+              "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+              "type": "x_michelson_contract"
+            },
+            "gatewayEntrypoint": "call_evm",
+            "gatewayParameters": {
+              "bytes": "",
+              "contract": null,
+              "string_0": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "string_1": "ping()"
+            },
+            "gatewayParametersRaw": {
+              "prim": "Pair",
+              "args": [
+                {
+                  "string": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908"
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "string": "ping()"
+                    },
+                    {
+                      "prim": "Pair",
+                      "args": [
+                        {
+                          "bytes": ""
+                        },
+                        {
+                          "prim": "None"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "receipt": {
+            "transactionHash": "0xfa1fd73e2ded83e356c7b0e9f243408b57988b0d3c4d8c9ad98f0977ae290855",
+            "transactionIndex": "0x0",
+            "blockHash": "0x900f13687d1911330c85c8de3de9798637352dc8efafec2759ba3b8470a1d4bd",
+            "blockNumber": "0xffa8b",
+            "from": "0x926e29d504dc631e4e405925361392dbe7d25909",
+            "to": "0x926e29d504dc631e4e405925361392dbe7d25909",
+            "cumulativeGasUsed": "0xa9fb",
+            "effectiveGasPrice": "0x0",
+            "gasUsed": "0xa9fb",
+            "logs": [
+              {
+                "address": "0xff00000000000000000000000000000000000007",
+                "topics": ["0xfed9a84c1a0b3f03a08e089ccd124decdf96e24756f1963dbcef903c803d5b09"],
+                "data": "0x00000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000001a0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003302d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f73000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30783932366532394435303444433633314534653430353932353336313339324462453764323539303900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30783932366532394435303444433633314534653430353932353336313339324462453764323539303900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30786238413434433245393134384530626331393936623631323266316145633433463739373039303800000000000000000000000000000000000000000000",
+                "blockNumber": "0xffa8b",
+                "transactionHash": "0xfa1fd73e2ded83e356c7b0e9f243408b57988b0d3c4d8c9ad98f0977ae290855",
+                "transactionIndex": "0x0",
+                "blockHash": "0x900f13687d1911330c85c8de3de9798637352dc8efafec2759ba3b8470a1d4bd",
+                "logIndex": "0x0",
+                "removed": false
+              }
+            ],
+            "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000100000000000000800000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200004000000000000000000000000000000000000000000000000000000",
+            "type": "0x0",
+            "status": "0x1",
+            "contractAddress": null
+          }
+        },
+        "events": [
+          {
+            "name": "CrossRuntimeCallReceived",
+            "address": "0xff00000000000000000000000000000000000007",
+            "args": {
+              "crossRuntimeCallId": "0-0",
+              "sourceRuntime": "tezos",
+              "senderAddress": "0x926e29D504DC631E4e405925361392DbE7d25909",
+              "sourceAddress": "0x926e29D504DC631E4e405925361392DbE7d25909",
+              "targetAddress": "0xb8A44C2E9148E0bc1996b6122f1aEc43F7970908",
+              "amount": "0"
+            },
+            "topics": ["0xfed9a84c1a0b3f03a08e089ccd124decdf96e24756f1963dbcef903c803d5b09"],
+            "data": "0x00000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000014000000000000000000000000000000000000000000000000000000000000001a0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003302d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f73000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30783932366532394435303444433633314534653430353932353336313339324462453764323539303900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30783932366532394435303444433633314534653430353932353336313339324462453764323539303900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30786238413434433245393134384530626331393936623631323266316145633433463739373039303800000000000000000000000000000000000000000000"
+          }
+        ],
+        "children": []
+      }
+    ],
+    "gas": {
+      "used": "967592",
+      "limit": "1068",
+      "unit": "michelson_milligas"
+    }
+  },
+  "status": "success",
+  "atomic": false,
+  "explanation": {
+    "summary": "Tezos op op3Gs…Ntai from tz1Tj…A3Mh to KT18o…qsPw (gateway) %call_evm crossed into EVM ping() on 0xb8a4…0908; all 1 leg applied."
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=op3Gs43yVx5eBF288LAH9oMw2mEEdVRKodM7qYdFfpa3hXxNtai",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047179/operations",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

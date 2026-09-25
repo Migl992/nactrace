@@ -1,0 +1,284 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+    "synthetic": false,
+    "from": {
+      "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0xbf8d939ba27c4aa2db1bd00c866d6c63c5a520ab",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0x4065e207",
+    "gas": {
+      "used": "680352",
+      "limit": "8000000",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onmRcijEpBxiZ5m97oqd5L5KsAvLzwJmLdGbVzxFekNrcVkDQxt"
+    },
+    "raw": {
+      "receipt": {
+        "transactionHash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+        "transactionIndex": "0x0",
+        "blockHash": "0x5b82a77ff7dc7d1fec9d8d254a080d93c8fb650401b3e32c5fd453f687edcb86",
+        "blockNumber": "0xffcc1",
+        "from": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+        "to": "0xbf8d939ba27c4aa2db1bd00c866d6c63c5a520ab",
+        "cumulativeGasUsed": "0xa61a0",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0xa61a0",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x0",
+        "contractAddress": null
+      },
+      "tezosOperation": {
+        "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+        "chain_id": "NetXY2oPPzkxUW1",
+        "hash": "onmRcijEpBxiZ5m97oqd5L5KsAvLzwJmLdGbVzxFekNrcVkDQxt",
+        "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+            "fee": "0",
+            "counter": "0",
+            "gas_limit": "0",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT1Ru5fpQjhQRNDtpS3pj7USvYPTB4cfZoxS",
+            "metadata": {
+              "operation_result": {
+                "status": "failed",
+                "errors": []
+              },
+              "internal_operation_results": [
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 0,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                },
+                {
+                  "kind": "transaction",
+                  "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+                  "nonce": 1,
+                  "amount": "0",
+                  "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+                  "parameters": {
+                    "entrypoint": "nope",
+                    "value": {
+                      "prim": "Unit"
+                    }
+                  },
+                  "result": {
+                    "status": "failed",
+                    "errors": [
+                      {
+                        "kind": "permanent",
+                        "id": "tezlink_error",
+                        "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: no such entrypoint: nope\"))"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 2,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call_end",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+      }
+    },
+    "events": [
+      {
+        "name": "cross_runtime_call",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      },
+      {
+        "name": "cross_runtime_call_end",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "michelson",
+        "kind": "crossing",
+        "hash": "onmRcijEpBxiZ5m97oqd5L5KsAvLzwJmLdGbVzxFekNrcVkDQxt",
+        "synthetic": true,
+        "from": {
+          "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "runtime": "evm",
+          "role": "native",
+          "label": "contract"
+        },
+        "to": {
+          "value": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+          "runtime": "michelson",
+          "role": "unknown"
+        },
+        "entrypoint": "nope",
+        "gas": {
+          "used": "29564",
+          "unit": "evm_gas"
+        },
+        "status": "reverted",
+        "error": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+        "links": {
+          "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onmRcijEpBxiZ5m97oqd5L5KsAvLzwJmLdGbVzxFekNrcVkDQxt"
+        },
+        "raw": {
+          "callFrame": {
+            "type": "CALL",
+            "from": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+            "to": "0xff00000000000000000000000000000000000007",
+            "value": "0x00",
+            "gas": "0x2dc6c0",
+            "gasUsed": "0x737c",
+            "input": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c736839355467760000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000046e6f7065000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+            "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
+            "logs": [
+              {
+                "address": "0xff00000000000000000000000000000000000007",
+                "topics": ["0x63d7b3745d574412126b88bc586adea349b617cd75e87d47aff3dbc765bd834b"],
+                "data": "0x000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003312d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000"
+              }
+            ],
+            "calls": []
+          },
+          "tezosInternalOperation": {
+            "kind": "transaction",
+            "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+            "nonce": 1,
+            "amount": "0",
+            "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+            "parameters": {
+              "entrypoint": "nope",
+              "value": {
+                "prim": "Unit"
+              }
+            },
+            "result": {
+              "status": "failed",
+              "errors": [
+                {
+                  "kind": "permanent",
+                  "id": "tezlink_error",
+                  "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: no such entrypoint: nope\"))"
+                }
+              ]
+            }
+          }
+        },
+        "events": [],
+        "children": [],
+        "michelsonError": {
+          "kind": "permanent",
+          "id": "tezlink_error",
+          "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: no such entrypoint: nope\"))"
+        },
+        "storageDiff": {
+          "before": {
+            "int": "1"
+          },
+          "after": {
+            "int": "1"
+          }
+        }
+      }
+    ]
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0xe571…9340 from 0x2cad…87b3 to 0xbf8d…20ab calling 0x4065e207 reverted: Michelson entrypoint %nope of KT1LT…5Tgv failed with failed typechecking input: no such entrypoint: nope; whole transaction rolled back on both sides.",
+    "failedNodeId": "n1",
+    "evmReason": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+    "michelsonError": {
+      "kind": "permanent",
+      "id": "tezlink_error",
+      "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: no such entrypoint: nope\"))"
+    }
+  },
+  "meta": {
+    "source": "rpc_only",
+    "correlation": "derived_hash",
+    "sources": [
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047745/operations",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionByHash"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047744/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047745/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

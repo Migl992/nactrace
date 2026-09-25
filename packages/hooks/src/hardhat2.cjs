@@ -53,7 +53,8 @@ task("nactrace:last", "Explain the last (failed) cross-interface transaction wit
       );
     }
 
-    const { code } = hooks.runNactrace([hash, "--network", network, ...extra]);
+    const networkArgs = hash.toLowerCase().startsWith("http") ? [] : ["--network", network];
+    const { code } = hooks.runNactrace([hash, ...networkArgs, ...extra]);
     if (code === 2) throw new Error("nactrace could not explain the transaction");
     process.exitCode = code;
   });

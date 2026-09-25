@@ -440,6 +440,11 @@ function decodeRevert(output: string | undefined): string | undefined {
     if (d.errorName === "Panic") return `Panic(${String(d.args?.[0])})`;
     return d.errorName;
   } catch {
+    // Custom error: we have no ABI, so name it by selector and keep the payload visible.
+    if (/^0x[0-9a-fA-F]{8}/.test(output)) {
+      const rest = output.length > 10 ? ` ${output.slice(10)}` : "";
+      return `custom error ${output.slice(0, 10)}${rest}`;
+    }
     return undefined;
   }
 }
@@ -566,7 +571,8 @@ function skeletonFromEvmRpc(
   tx: { from: string; to: string | null; input: string; value: string; gas: string } | null,
   frame: CallFrame | undefined,
 ): TraceNode {
-  let to = tx?.to ?? receipt.to ?? "?";
+  const created = !tx?.to && !receipt.to && typeof receipt.contractAddress === "string";
+  let to = tx?.to ?? receipt.to ?? (created ? String(receipt.contractAddress) : "?");
   let input = tx?.input;
   let value = tx?.value;
   let fromHint: AddressHint = SYSTEM_ADDRESSES.has(receipt.from) ? {} : { type: "x_evm_user" };
@@ -591,12 +597,16 @@ function skeletonFromEvmRpc(
     synthetic: ctx.origin === "michelson",
     from: classifyAddress(receipt.from, fromHint),
     to: classifyAddress(to, isGatewayAddress(to) ? {} : { type: "x_evm_contract" }),
-    entrypoint: selectorOf(input),
+    entrypoint: created ? undefined : selectorOf(input),
     value: wei(hexToDecimal(value)),
     gas: { used: hexToDecimal(receipt.gasUsed), limit: hexToDecimal(tx?.gas), unit: "evm_gas" },
     status: receipt.status === "0x1" ? "success" : "reverted",
+    error:
+      receipt.status === "0x1" || !frame?.error
+        ? undefined
+        : (frame.revertReason ?? decodeRevert(frame.output) ?? frame.error),
     links: links(ctx, ctx.evmHash, ctx.opHash),
-    raw: { receipt },
+    raw: created ? { receipt, created: true } : { receipt },
   });
   if (frame) {
     const stack: { frame: CallFrame; depth: number }[] = [];
@@ -986,6 +996,13 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
     }
   }
 
+  // A reverted root rolls back every leg that had applied: mark them backtracked so the tree
+  // and the explanation never show a green leg inside a red transaction.
+  if (root!.status === "reverted") {
+    for (const { node } of walkNodes(root!)) {
+      if (node !== root && node.status === "success") node.status = "backtracked";
+    }
+  }
   const { status, atomic } = overallStatus(root!);
   const trace: Trace = {
     schemaVersion: "1",

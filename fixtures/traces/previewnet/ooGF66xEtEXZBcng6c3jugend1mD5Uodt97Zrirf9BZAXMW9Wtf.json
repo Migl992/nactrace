@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "michelson",
+    "kind": "op",
+    "hash": "ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+    "from": {
+      "value": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+      "runtime": "michelson",
+      "role": "native"
+    },
+    "to": {
+      "value": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+      "runtime": "michelson",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "decrement",
+    "status": "success",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0x7314ce8e45141f5551e326c45e629ac2be249223753f23fec753ad9ca636eb25",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_michelson",
+        "id": "1152923006272536576",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047178,
+        "timestamp": "2026-09-25T14:46:39Z",
+        "hash": "ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+        "sender": {
+          "id": 268437695,
+          "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+          "type": "x_michelson_user"
+        },
+        "target": {
+          "id": 268437696,
+          "hash": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+          "type": "x_michelson_contract"
+        },
+        "targetCodeHash": -1217531874,
+        "counter": 4,
+        "gasLimit": 1272,
+        "gasUsed": 1172,
+        "status": "applied",
+        "entrypoint": "decrement",
+        "parameters": {},
+        "guessed": false,
+        "amount": 0,
+        "storageLimit": 0,
+        "storageUsed": 0,
+        "parametersRaw": {
+          "prim": "Unit"
+        },
+        "daFee": 660,
+        "gasFee": 7340,
+        "gasRefund": 0
+      },
+      "tezosOperation": {
+        "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+        "chain_id": "NetXY2oPPzkxUW1",
+        "hash": "ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+        "branch": "BMbnmh4YDet1G2mJxzeXU7FzFvv8jzUsjNZqsDE1aG2CPLBEm1z",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+            "fee": "8000",
+            "counter": "4",
+            "gas_limit": "1272",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+            "parameters": {
+              "entrypoint": "decrement",
+              "value": {
+                "prim": "Unit"
+              }
+            },
+            "metadata": {
+              "balance_updates": [
+                {
+                  "kind": "contract",
+                  "contract": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+                  "change": "-8000",
+                  "origin": "block"
+                },
+                {
+                  "kind": "accumulator",
+                  "category": "block fees",
+                  "change": "8000",
+                  "origin": "block"
+                }
+              ],
+              "operation_result": {
+                "status": "applied",
+                "storage": {
+                  "int": "0"
+                },
+                "consumed_milligas": "1171446",
+                "storage_size": "215"
+              }
+            }
+          }
+        ],
+        "signature": "sigSwhEE4gJcu7rsuox7AioshD4qogad2ZjLhPUMxi8bGHkZemYzBrqH4Xce6x9qmogiKdVURmvn4NZjGiAjsaBW2BvxmkXz"
+      }
+    },
+    "events": [],
+    "children": [],
+    "gas": {
+      "used": "1171446",
+      "limit": "1272",
+      "unit": "michelson_milligas"
+    }
+  },
+  "status": "success",
+  "atomic": false,
+  "explanation": {
+    "summary": "Tezos op ooGF6…9Wtf from tz1Tj…A3Mh to KT1LT…5Tgv %decrement applied without crossing runtimes."
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=ooGF66xEtEXZBcng6c3jugend1mD5Uodt97Zrirf9BZAXMW9Wtf",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047178/operations",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

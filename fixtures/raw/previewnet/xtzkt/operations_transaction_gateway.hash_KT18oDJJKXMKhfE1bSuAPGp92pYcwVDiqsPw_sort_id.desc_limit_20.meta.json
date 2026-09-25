@@ -2,5 +2,5 @@
   "key": "GET https://api.previewnet.xtzkt.io/v1/operations/transaction?gateway.hash=KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw&sort=id.desc&limit=20",
   "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?gateway.hash=KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw&sort=id.desc&limit=20",
   "status": 200,
-  "fetchedAt": "2026-09-25T15:12:00.543Z"
+  "fetchedAt": "2026-09-25T15:44:42.479Z"
 }
