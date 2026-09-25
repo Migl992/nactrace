@@ -1,0 +1,13 @@
+{
+  "key": "RPC https://evm.previewnet.tezosx.nomadic-labs.com debug_traceTransaction [\"0x9480b2b38d6b1389cf553603bd81c3796c57e66b669b11f1bb0b00bc5b858bb1\",{\"tracer\":\"callTracer\"}]",
+  "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+  "method": "debug_traceTransaction",
+  "params": [
+    "0x9480b2b38d6b1389cf553603bd81c3796c57e66b669b11f1bb0b00bc5b858bb1",
+    {
+      "tracer": "callTracer"
+    }
+  ],
+  "status": 200,
+  "fetchedAt": "2026-09-25T14:14:18.450Z"
+}

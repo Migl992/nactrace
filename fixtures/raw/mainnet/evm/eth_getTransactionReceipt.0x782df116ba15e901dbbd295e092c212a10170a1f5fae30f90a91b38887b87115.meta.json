@@ -1,0 +1,10 @@
+{
+  "key": "RPC https://node.mainnet.etherlink.com eth_getTransactionReceipt [\"0x782df116ba15e901dbbd295e092c212a10170a1f5fae30f90a91b38887b87115\"]",
+  "url": "https://node.mainnet.etherlink.com",
+  "method": "eth_getTransactionReceipt",
+  "params": [
+    "0x782df116ba15e901dbbd295e092c212a10170a1f5fae30f90a91b38887b87115"
+  ],
+  "status": 200,
+  "fetchedAt": "2026-09-25T14:14:26.574Z"
+}

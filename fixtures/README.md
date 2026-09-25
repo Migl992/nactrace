@@ -4,22 +4,21 @@ Recorded ground truth. Unit tests read only from here; nothing in `packages/` to
 
 ## Layout
 
-- `hashes.json` — the pinned hashes per network with a one-line label each. This is the input of the recorder.
+- `hashes.json` — the pinned hashes per network with a one-line label each. Input of the recorder.
 - `previewnet.state.json` — addresses and hashes produced by the Previewnet setup scripts (regenerated after every Previewnet reset).
-- `raw/xtzkt/<network>/` — verbatim 0xTzKT responses:
-  - `<hash>.json` + `<hash>.meta.json` (url, status, `fetchedAt`, `xtzktSchemaObservedAt`, directions, sorted list of every field path seen)
-  - `openapi.json`, `gateway_evm.json`, `gateway_michelson.json` (+ `.meta.json`)
-- `raw/rpc/<network>/<hash>/` — verbatim RPC responses for the same crossing:
-  - `evm.eth_getTransactionByHash.json`, `evm.eth_getTransactionReceipt.json`, `evm.debug_traceTransaction.json` (callTracer; on mainnet the public node refuses it and the error object is what gets saved)
-  - `tezos.block_operations.json`, `tezos.header.json`, `tezos.operation.json` (the mirrored op, if found), `tezos.storage.<KT1>.<level>.json` for every touched KT1 at `level-1` and `level`
-  - `meta.json` — sources, derived counterpart hashes and the cross-checks (receipt found, op found in block, gateway topic0s seen)
-- `<network>.json` — expected `Trace` snapshots (added from Day 2).
+- `raw/<network>/` — verbatim responses, one file per request, written by `FileFixtureStore` (`@nactrace/core/node`) while the real `Provider` runs in record mode. Every file has a `.meta.json` sidecar with the request, HTTP status and `fetchedAt` (which doubles as `xtzktSchemaObservedAt`).
+  - `xtzkt/operations_transaction_hash_<hash>.json` — 0xTzKT rows for a hash (also recorded for the networks that answered `[]`, since network detection asks all of them)
+  - `xtzkt/openapi.json`, `xtzkt/operations_transaction_gateway.hash_…json` — schema and gateway listings for the nightly diff
+  - `evm/<method>.<hash>[.<digest>].json` — `eth_getTransactionByHash`, `eth_getTransactionReceipt`, `debug_traceTransaction` (callTracer; the mainnet public node answers with an error object, recorded as-is)
+  - `tezos/blocks_<level>_operations.json`, `blocks_<level>_header.json`, `blocks_<level>_context_contracts_<KT1>_storage.json` at `level-1` and `level` (a 404 is recorded too: the contract did not exist yet)
+- `<network>.json` — expected `Trace` snapshots (from Day 3).
+
+The replay side lives in `packages/core/src/test-utils/replay.ts`; a test that asks for something not recorded fails with `ProviderError: no fixture for …`.
 
 ## Regenerating
 
 ```
-pnpm fixtures:record                      # all networks in hashes.json
-node scripts/record-fixtures.mjs --network previewnet
+pnpm fixtures:record        # builds core, wipes raw/<network>, re-records, regenerates xtzkt.types.ts
 ```
 
 After a Previewnet reset, first recreate the contracts and transactions (needs a funded `.env`, see `.env.example`):

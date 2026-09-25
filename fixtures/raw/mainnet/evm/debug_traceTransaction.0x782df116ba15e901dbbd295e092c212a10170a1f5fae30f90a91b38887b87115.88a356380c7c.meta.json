@@ -1,0 +1,13 @@
+{
+  "key": "RPC https://node.mainnet.etherlink.com debug_traceTransaction [\"0x782df116ba15e901dbbd295e092c212a10170a1f5fae30f90a91b38887b87115\",{\"tracer\":\"callTracer\"}]",
+  "url": "https://node.mainnet.etherlink.com",
+  "method": "debug_traceTransaction",
+  "params": [
+    "0x782df116ba15e901dbbd295e092c212a10170a1f5fae30f90a91b38887b87115",
+    {
+      "tracer": "callTracer"
+    }
+  ],
+  "status": 200,
+  "fetchedAt": "2026-09-25T14:14:26.697Z"
+}

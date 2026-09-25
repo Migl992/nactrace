@@ -28,7 +28,7 @@
     },
     {
       "hash": "0xf4f48ca755363f51db8a835849aaa05bb1fc912d845dd940971748c45176492c",
-      "label": "EVM -> Michelson generic gateway call, success"
+      "label": "EVM user -> gateway callMichelson(tz1, default) with value, called directly (single row), success"
     },
     {
       "hash": "opZX4Z3TuidPmJDB93WatMNKBfbkDQipUXvFiVeS6LY9JiovffV",
