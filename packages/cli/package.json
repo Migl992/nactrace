@@ -1,0 +1,21 @@
+{
+  "name": "nactrace",
+  "version": "0.0.0",
+  "description": "CLI: nactrace <hash> explains a cross-interface call on Etherlink / Tezos X",
+  "license": "MIT",
+  "author": "mig",
+  "type": "module",
+  "bin": {
+    "nactrace": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nactrace/core": "workspace:*"
+  }
+}

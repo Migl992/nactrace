@@ -1,0 +1,20 @@
+{
+  "name": "@nactrace/hooks",
+  "version": "0.0.0",
+  "description": "Hardhat task nactrace:last and Foundry post-test script; thin wrappers around the nactrace CLI",
+  "license": "MIT",
+  "author": "mig",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nactrace/core": "workspace:*"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@nactrace/widget",
+  "version": "0.0.0",
+  "description": "Embeddable nactrace.js widget (IIFE, no React)",
+  "license": "MIT",
+  "author": "mig",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format iife --global-name nactrace --minify --clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nactrace/core": "workspace:*"
+  }
+}

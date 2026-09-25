@@ -1,0 +1,24 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# deps / build
+node_modules/
+dist/
+*.tsbuildinfo
+.turbo/
+coverage/
+
+# editor / os
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# local claude settings
+.claude/settings.local.json
+
+# scratch
+tmp/
+*.log
