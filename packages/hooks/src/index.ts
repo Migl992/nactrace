@@ -113,6 +113,12 @@ export function broadcastTransactions(broadcast: unknown, failedOnly = true): Br
   return out;
 }
 
+/** `chain` of a Foundry broadcast file (run-latest.json), if present. */
+export function broadcastChainId(broadcast: unknown): number | undefined {
+  const c = (broadcast as { chain?: unknown } | null)?.chain;
+  return typeof c === "number" ? c : typeof c === "string" ? Number(c) : undefined;
+}
+
 /** Absolute path of the nactrace CLI entry, resolved from this package's dependencies. */
 export function resolveCli(): string | undefined {
   try {

@@ -39,6 +39,13 @@ Observed chain behaviour, with the hashes that prove it. When docs and the chain
 - **0xTzKT Previewnet lag**: at 15:09 UTC the indexer's newest row was level 1047225 while the chain head was 1047414 (about 19 minutes); 30 minutes later it was still at 1047225 with the head at 1047515, so this was a stall, not a lag. Three fixtures were recorded through the RPC-only path because of it; `buildTrace` takes a `level` option for op hashes that have no EVM leg to derive it from.
 - **Raw injection on Tezos X**: `injection/operation` accepts a locally forged op (Taquito `LocalForger`, watermark `0x03`); `gas_limit` 120000 and fee 20000 mutez were accepted; `preapply` with a dummy signature is rejected with `Unexpected data (Signature.V3)`.
 
+### Foundry against Previewnet (forge 1.8.3, 2026-09-25)
+
+- `forge script` fails immediately with `failed to get account … Z.Overflow` (-32603): Foundry's fork backend passes the fork block as a **bare block hash** in `eth_getBalance` / `eth_getTransactionCount` / `eth_getCode` (`[addr, "0x0ad0…7b81"]`); the Etherlink node parses that as a block number and overflows. The EIP-1898 object form `{ "blockHash": … }` works. A 20-line rewriting proxy (`scripts/foundry-etherlink-shim.mjs`) makes `forge script` usable.
+- Foundry's own simulation estimates the contract deployment at 878905 gas; the node refuses to send it: "insufficient to cover the transaction cost of 16405958 gas" (the deployment actually used 16972081). Use `--skip-simulation` so Foundry asks the node's `eth_estimateGas`.
+- With node-side estimation, a call that will revert never gets broadcast: `eth_estimateGas` returns `-32005 execution reverted` whose `data` is the ABI-encoded gateway error (visible in the forge output as raw hex). Give the call a fixed gas in the script (`c.decrement{gas: 3_000_000}()`, `isFixedGasLimit: true` in the broadcast file) to land it on chain.
+- When a broadcast transaction reverts, forge prints `Error: Transaction Failure: <hash>` and stops; `run-latest.json` records the failed tx with its `hash` but **no receipt**, and later transactions with `hash: null`. `nactrace-foundry` treats "hash without a successful receipt" as failed, and `--stdin` catches the hash from the forge output as well. Real file kept at `fixtures/foundry/run-latest.json` (hash `0x94e2a1…`, explained end to end).
+
 ## 0xTzKT
 
 - OpenAPI document is at `/v1/openapi.json` (title "0xTzKT API v0.1.0", 65 paths, OpenAPI 3.1.1). `/v1/head` returns 404. Swagger UI paths from classic TzKT do not exist. Saved per network as `fixtures/raw/xtzkt/<network>/openapi.json`.

@@ -11,7 +11,13 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { parseArgs } from "node:util";
-import { broadcastTransactions, extractHashes, runNactrace } from "./index.js";
+import {
+  broadcastChainId,
+  broadcastTransactions,
+  extractHashes,
+  networkForChainId,
+  runNactrace,
+} from "./index.js";
 
 const HELP = `nactrace-foundry [hashes...] [options] [-- nactrace options]
 
@@ -67,6 +73,7 @@ async function main(): Promise<number> {
   }
 
   const hashes = new Set<string>(positionals.flatMap(extractHashes));
+  let network = values["network"] ? String(values["network"]) : undefined;
   if (values["stdin"]) for (const h of extractHashes(await readStdin())) hashes.add(h);
 
   const explicitBroadcast = typeof values["broadcast"] === "string";
@@ -79,7 +86,10 @@ async function main(): Promise<number> {
       return 2;
     }
     for (const f of files) {
-      const txs = broadcastTransactions(JSON.parse(readFileSync(f, "utf8")), !values["all"]);
+      const broadcast = JSON.parse(readFileSync(f, "utf8")) as unknown;
+      // The broadcast file knows its chain id: use it unless --network was given.
+      network ??= networkForChainId(broadcastChainId(broadcast) ?? 0);
+      const txs = broadcastTransactions(broadcast, !values["all"]);
       for (const t of txs) {
         process.stderr.write(
           `nactrace-foundry: ${f}: ${t.contractName ?? "?"}.${t.function ?? "?"} ${t.hash} status=${t.status ?? "?"}\n`,
@@ -96,10 +106,7 @@ async function main(): Promise<number> {
     return 0;
   }
   let worst = 0;
-  const extra = [
-    ...passthrough,
-    ...(values["network"] ? ["--network", String(values["network"])] : []),
-  ];
+  const extra = [...passthrough, ...(network ? ["--network", network] : [])];
   for (const h of hashes) {
     process.stdout.write(`\n=== ${h}\n`);
     const { code } = runNactrace([h, ...extra]);

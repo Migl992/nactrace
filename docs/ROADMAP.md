@@ -6,3 +6,4 @@ Ideas that are useful but outside `SPEC.md §4`. One line each. Nothing here is 
 - **Selector labels for EVM entrypoints.** Root tx lines show `calling 0xd09de08a`; a small 4-byte table (or 0xTzKT's `entrypoint` when it starts populating it for plain EVM rows) would print `increment()`.
 - **Keyed mainnet RPC.** The public mainnet node refuses `debug_traceTransaction`; an `--evm-rpc <url>` override would restore per-frame gas and caught-revert detection on mainnet.
 - **Shadownet fixtures.** No crossing has been recorded there yet; everything is wired, only hashes are missing.
+- **Publish the Foundry shim.** `scripts/foundry-etherlink-shim.mjs` (EIP-1898 rewrite for bare block-hash params) could ship as `npx nactrace-foundry --shim` so Foundry users need no extra file.

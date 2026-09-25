@@ -41,3 +41,26 @@ describe("hooks helpers", () => {
     expect(broadcastTransactions({})).toEqual([]);
   });
 });
+
+describe("real Foundry broadcast (fixtures/foundry/run-latest.json, forge 1.8.3 on Previewnet)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const { fileURLToPath } = await import("node:url");
+  const file = fileURLToPath(new URL("../../../fixtures/foundry/run-latest.json", import.meta.url));
+  const broadcast = JSON.parse(readFileSync(file, "utf8")) as unknown;
+  const { broadcastChainId } = await import("./index.js");
+
+  it("reads the chain id and keeps only the transaction that failed on chain", () => {
+    expect(broadcastChainId(broadcast)).toBe(128064);
+    expect(networkForChainId(broadcastChainId(broadcast)!)).toBe("previewnet");
+    // forge aborts on the first on-chain failure: that tx has a hash but no receipt, the next
+    // one was never sent (hash null), the deployment before it has a 0x1 receipt.
+    expect(broadcastTransactions(broadcast)).toEqual([
+      {
+        hash: "0x94e2a1e48b83168d5c8f316a819dd47b15252250faac05f8f0bed7e1f3d06bab",
+        contractName: "EvmToMichelsonCounter",
+        function: "decrement()",
+      },
+    ]);
+    expect(broadcastTransactions(broadcast, false)).toHaveLength(2);
+  });
+});

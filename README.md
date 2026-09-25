@@ -71,7 +71,7 @@ nactrace-foundry --broadcast broadcast/Deploy.s.sol/128064/run-latest.json --all
 forge test -vvvv 2>&1 | nactrace-foundry --stdin      # any hash printed by a test
 ```
 
-`forge test` against a fork never lands transactions on chain, so there is nothing to explain there; use broadcast runs or print hashes from your tests.
+`forge test` against a fork never lands transactions on chain, so there is nothing to explain there; use broadcast runs or print hashes from your tests. `forge script` against Etherlink needs `scripts/foundry-etherlink-shim.mjs` as RPC, `--skip-simulation`, and a fixed gas on calls expected to revert (see `docs/FINDINGS.md`).
 
 ## Packages
 
