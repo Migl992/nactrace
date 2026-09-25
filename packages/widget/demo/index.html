@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>nactrace widget demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font:
+          15px/1.5 system-ui,
+          sans-serif;
+        max-width: 860px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+      h2 {
+        margin-top: 32px;
+        font-size: 16px;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 0 4px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>nactrace widget</h1>
+    <p>
+      Each block below is one <code>&lt;script&gt;</code> tag. Serve this folder after
+      <code>pnpm build</code>, e.g. <code>npx serve packages/widget</code>.
+    </p>
+
+    <h2>Atomic revert on Previewnet (Michelson FAILWITH "at zero")</h2>
+    <script
+      src="../dist/nactrace.js"
+      data-hash="0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716"
+      data-network="previewnet"
+    ></script>
+
+    <h2>Nested Michelson → EVM → Michelson, dark theme</h2>
+    <script
+      src="../dist/nactrace.js"
+      data-hash="oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W"
+      data-theme="dark"
+    ></script>
+
+    <h2>Caught revert (partially caught)</h2>
+    <script
+      src="../dist/nactrace.js"
+      data-hash="0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f"
+      data-network="previewnet"
+    ></script>
+
+    <h2>Mainnet, network auto-detected, from an explorer URL</h2>
+    <script
+      src="../dist/nactrace.js"
+      data-hash="https://etherlink.tzkt.io/opZX4Z3TuidPmJDB93WatMNKBfbkDQipUXvFiVeS6LY9JiovffV"
+    ></script>
+
+    <h2>Programmatic</h2>
+    <div id="custom"></div>
+    <script>
+      nactrace
+        .mount(document.getElementById("custom"), {
+          hash: "0xbe234e900a1f0ccdc93f02761f14b85051e0c45149ff1c2ba05d68abf45bb6d4",
+          network: "previewnet",
+          theme: "light",
+        })
+        .then((t) => console.log("trace", t && t.status));
+    </script>
+  </body>
+</html>

@@ -54,6 +54,20 @@ console.log(trace.status, trace.explanation.summary);
 
 `@nactrace/core` is browser-safe (fetch only). `@nactrace/core/node` adds the file-backed record/replay store.
 
+## Widget
+
+One script tag, no framework, about 28 kB gzipped:
+
+```html
+<script
+  src="https://cdn.jsdelivr.net/npm/@nactrace/widget@0.1/dist/nactrace.js"
+  data-hash="0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716"
+  data-network="previewnet"
+></script>
+```
+
+It renders status, explanation, legs, errors, storage diff and links right after the tag. Also `nactrace.mount(element, { hash, network, theme })`. Demo page: `packages/widget/demo/index.html` (serve the package folder after `pnpm build`).
+
 ## Test-framework hooks
 
 **Hardhat 3.** In `hardhat.config.ts`: `import nactrace from "@nactrace/hooks/hardhat";` and add it to `plugins: [nactrace]`. **Hardhat 2:** `import "@nactrace/hooks/hardhat2";`. Then, after a failed run on Previewnet:
@@ -81,7 +95,7 @@ forge test -vvvv 2>&1 | nactrace-foundry --stdin      # any hash printed by a te
 | `packages/core`   | `@nactrace/core`: Provider (cache, record/replay), adapters, `buildTrace`, `explain` |
 | `packages/cli`    | `nactrace`: tree output, `--json`, `--explain-only`, exit code 1 on revert           |
 | `packages/hooks`  | `@nactrace/hooks`: Hardhat task `nactrace:last`, `nactrace-foundry` script           |
-| `packages/widget` | Embeddable `nactrace.js` (`data-hash`, `data-network`), not started yet              |
+| `packages/widget` | `@nactrace/widget`: embeddable `nactrace.js` (`data-hash`, `data-network`)           |
 
 ## Data sources
 

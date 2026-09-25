@@ -31,6 +31,7 @@
     "@taquito/utils": "^25.0.0",
     "@types/node": "^22.10.0",
     "eslint": "^9.17.0",
+    "happy-dom": "^20.14.5",
     "prettier": "^3.4.0",
     "solc": "^0.8.37",
     "tsup": "^8.3.0",

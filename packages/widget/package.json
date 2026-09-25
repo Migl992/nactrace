@@ -1,7 +1,7 @@
 {
   "name": "@nactrace/widget",
-  "version": "0.0.0",
-  "description": "Embeddable nactrace.js widget (IIFE, no React)",
+  "version": "0.1.0",
+  "description": "Embeddable nactrace.js: one script tag renders the timeline and explanation of a cross-interface call on Etherlink / Tezos X",
   "license": "MIT",
   "author": "mig",
   "type": "module",
@@ -11,7 +11,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format iife --global-name nactrace --minify --clean",
+    "build": "tsup",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -42,5 +42,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "private": true
+  "main": "./dist/nactrace.js",
+  "unpkg": "./dist/nactrace.js",
+  "jsdelivr": "./dist/nactrace.js",
+  "exports": {
+    ".": "./dist/nactrace.js"
+  }
 }

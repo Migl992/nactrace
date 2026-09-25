@@ -20,6 +20,15 @@ export interface FaultyReplay {
 
 export function faultyReplay(faults: Record<string, Fault>): FaultyReplay {
   const calls: string[] = [];
+  const fetchImpl = makeReplayFetch(faults, calls);
+  return { provider: new Provider({ fetch: fetchImpl }), calls };
+}
+
+/** A fetch() that answers from fixtures/raw (with optional faults); usable as globalThis.fetch. */
+export function makeReplayFetch(
+  faults: Record<string, Fault> = {},
+  calls: string[] = [],
+): typeof fetch {
   const fetchImpl = (async (input: string | URL | Request, init?: RequestInit) => {
     const url = typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
     let req: ProviderRequest;
@@ -72,7 +81,7 @@ export function faultyReplay(faults: Record<string, Fault>): FaultyReplay {
     }
     return new Response(text, { status });
   }) as unknown as typeof fetch;
-  return { provider: new Provider({ fetch: fetchImpl }), calls };
+  return fetchImpl;
 }
 
 export const K = {
