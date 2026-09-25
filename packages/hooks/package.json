@@ -1,7 +1,7 @@
 {
   "name": "@nactrace/hooks",
   "version": "0.0.0",
-  "description": "Hardhat task nactrace:last and Foundry post-test script; thin wrappers around the nactrace CLI",
+  "description": "Hardhat task nactrace:last and the nactrace-foundry script; thin wrappers around the nactrace CLI",
   "license": "MIT",
   "author": "mig",
   "type": "module",
@@ -11,10 +11,29 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --clean",
+    "build": "tsup src/index.ts src/foundry.ts --format esm --dts --clean && node -e \"require('fs').copyFileSync('src/hardhat.cjs','dist/hardhat.cjs')\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@nactrace/core": "workspace:*"
+    "@nactrace/core": "workspace:*",
+    "nactrace": "workspace:*"
+  },
+  "bin": {
+    "nactrace-foundry": "./dist/foundry.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./hardhat": "./dist/hardhat.cjs"
+  },
+  "peerDependencies": {
+    "hardhat": ">=2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "hardhat": {
+      "optional": true
+    }
   }
 }

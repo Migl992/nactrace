@@ -33,7 +33,7 @@ describe("renderTree", () => {
     expect(out).toContain("SUCCESS");
     expect(out).toContain("michelson op oo3MF…E16W tz1Tj…A3Mh → KT18o…qsPw (gateway) %call_evm");
     expect(out).toMatch(/└─ ↘ evm crossing tz1Tj…A3Mh → 0x0e11…4b3d increment\(\)/);
-    expect(out).toMatch(/\n   └─ ↘ michelson crossing 0x0e11…4b3d → KT1LT…5Tgv %increment/);
+    expect(out).toContain("\n   └─ ↘ michelson crossing 0x0e11…4b3d → KT1LT…5Tgv %increment");
     expect(out).toContain("event: CrossRuntimeCallReceived id=0-0");
     expect(out).toContain("event: CrossRuntimeCallSent id=0-0");
     expect(exitCodeFor(t)).toBe(0);

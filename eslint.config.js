@@ -7,9 +7,13 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ["scripts/**/*.mjs"],
+    files: ["scripts/**/*.mjs", "packages/hooks/src/hardhat.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
     languageOptions: {
+      sourceType: "script",
       globals: {
+        require: "readonly",
+        module: "readonly",
         process: "readonly",
         console: "readonly",
         Buffer: "readonly",

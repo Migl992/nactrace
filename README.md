@@ -4,21 +4,88 @@ A debugger for cross-interface calls (NAC, Native Atomic Composability) on Ether
 
 Give it a hash from either side of a crossing and it tells you what happened and why it failed: which leg reverted, the decoded `Cross-runtime call failed with status 4xx: …` reason, the Michelson error, storage before/after, and gas per frame in both units.
 
-Status: pre-alpha, under active development. See `docs/SPEC.md` for the full technical spec.
+Status: pre-alpha, under active development. See `docs/SPEC.md` for the full technical spec and `docs/FINDINGS.md` for what the chain actually does.
+
+## Quick start
+
+```
+pnpm install && pnpm build
+node packages/cli/dist/index.js 0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716
+```
+
+```
+nactrace previewnet  REVERTED (atomic, both sides rolled back)
+
+evm tx 0x3977…f716 0x2cad…87b3 → 0x0e11…4b3d 0x2baeceb7  [675409 gas]  ✗ reverted
+   error: Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract …
+└─ ↘ michelson crossing 0x0e11…4b3d → KT1LT…5Tgv %decrement  [30237 gas] mirrored opEnk…mSry  ✗ reverted
+      michelson: Transfer(MichelsonContractInterpretError("runtime failure while running the script: failed with: String(\"at zero\") of type String"))
+      storage: {"int":"0"} → {"int":"0"}
+
+Why: EVM tx 0x3977…f716 from 0x2cad…87b3 to 0x0e11…4b3d calling 0x2baeceb7 reverted: Michelson entrypoint %decrement of KT1LT…5Tgv failed with FAILWITH "at zero"; whole transaction rolled back on both sides.
+```
+
+The input can be an EVM tx hash, a Tezos operation hash, or a Blockscout / TzKT / 0xTzKT URL. The network is detected through 0xTzKT.
+
+## CLI
+
+```
+nactrace <hash|url> [options]
+  -n, --network <name>   previewnet | mainnet | shadownet (default: auto-detect)
+  -j, --json             full Trace JSON (schema in docs/SPEC.md §6)
+  -e, --explain-only     only the one-sentence explanation
+      --rpc-only         skip 0xTzKT, rebuild from the EVM and Tezos nodes (needs --network)
+      --no-enrich        0xTzKT skeleton only
+      --record <dir>     save every response (fixtures)      --replay <dir>  never touch the network
+  -v, --verbose          full error strings                  --no-color
+```
+
+Exit codes: 0 success, 1 reverted or a caught cross-runtime failure, 2 usage or lookup error.
+
+## Library
+
+```ts
+import { buildTrace, Provider } from "@nactrace/core";
+
+const trace = await buildTrace("0x3977…f716", { provider: new Provider() });
+console.log(trace.status, trace.explanation.summary);
+```
+
+`@nactrace/core` is browser-safe (fetch only). `@nactrace/core/node` adds the file-backed record/replay store.
+
+## Test-framework hooks
+
+**Hardhat.** Add `import "@nactrace/hooks/hardhat";` to `hardhat.config.ts`, then after a failed test run on Previewnet:
+
+```
+npx hardhat nactrace:last --network previewnet        # last failed tx of the first configured account
+npx hardhat nactrace:last --network previewnet --any  # last tx even if it succeeded
+npx hardhat nactrace:last --hash 0x…                  # a specific hash or explorer URL
+```
+
+**Foundry.** After `forge script … --broadcast` on Previewnet, `nactrace-foundry` explains every transaction whose receipt failed (it reads `broadcast/**/run-latest.json`). It also takes hashes as arguments or from stdin:
+
+```
+nactrace-foundry                                      # failed txs of the latest broadcasts
+nactrace-foundry --broadcast broadcast/Deploy.s.sol/128064/run-latest.json --all
+forge test -vvvv 2>&1 | nactrace-foundry --stdin      # any hash printed by a test
+```
+
+`forge test` against a fork never lands transactions on chain, so there is nothing to explain there; use broadcast runs or print hashes from your tests.
 
 ## Packages
 
-| Package           | Purpose                                                                           |
-| ----------------- | --------------------------------------------------------------------------------- |
-| `packages/core`   | `@nactrace/core`: pure TypeScript library, works in Node and the browser          |
-| `packages/cli`    | `nactrace <hash>`: tree output, `--json`, `--explain-only`, exit code 1 on revert |
-| `packages/hooks`  | Hardhat task `nactrace:last` and a Foundry post-test script                       |
-| `packages/widget` | Embeddable `nactrace.js` script (`data-hash`, `data-network`)                     |
+| Package           | Purpose                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------ |
+| `packages/core`   | `@nactrace/core`: Provider (cache, record/replay), adapters, `buildTrace`, `explain` |
+| `packages/cli`    | `nactrace`: tree output, `--json`, `--explain-only`, exit code 1 on revert           |
+| `packages/hooks`  | `@nactrace/hooks`: Hardhat task `nactrace:last`, `nactrace-foundry` script           |
+| `packages/widget` | Embeddable `nactrace.js` (`data-hash`, `data-network`), not started yet              |
 
 ## Data sources
 
 - [0xTzKT](https://api.xtzkt.io/) by Baking Bad, the primary source. It already indexes both legs of every crossing.
-- Etherlink EVM JSON-RPC (`eth_getTransactionReceipt`, `debug_traceTransaction`) and the Michelson RPC, for enrichment and as a fallback when the indexer is down.
+- Etherlink EVM JSON-RPC (`eth_getTransactionReceipt`, `debug_traceTransaction`) and the Michelson RPC, for enrichment and as a fallback when the indexer is down. The public mainnet node refuses `debug_traceTransaction` without an API key; nactrace then works from 0xTzKT rows and receipts and says so in `meta.warnings`.
 
 ## Networks
 
@@ -36,8 +103,10 @@ nactrace is not an explorer. It has no web UI, no database, no indexing and no h
 
 ```
 pnpm install
-pnpm test        # offline, uses recorded fixtures under fixtures/raw/
+pnpm test          # offline, replays fixtures/raw
 pnpm lint
+pnpm typecheck
+pnpm fixtures:record   # re-record fixtures from Previewnet and mainnet (see fixtures/README.md)
 ```
 
 Unit tests never touch the network. Live checks run only in the nightly workflow.
