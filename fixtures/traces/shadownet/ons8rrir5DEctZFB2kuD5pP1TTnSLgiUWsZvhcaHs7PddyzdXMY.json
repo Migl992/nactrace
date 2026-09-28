@@ -283,7 +283,8 @@
           "value": "0x042b24fe81458329ac79d893b2d70fbdad6f2956",
           "runtime": "evm",
           "role": "alias",
-          "label": "alias"
+          "counterpart": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
+          "label": "alias of tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN"
         },
         "entrypoint": "set(uint256)",
         "status": "success",

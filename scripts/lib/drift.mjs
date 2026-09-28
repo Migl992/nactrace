@@ -48,6 +48,11 @@ export function openapiKeys(doc) {
   return [...keys].sort();
 }
 
+/** OpenAPI keys nactrace depends on: the transaction endpoint and every Transaction* schema. */
+export function isRelevantOpenapiKey(key) {
+  return /^path \/v1\/operations\/transaction\b|^schema [A-Za-z]*Transaction[A-Za-z]*\b/.test(key);
+}
+
 export function openapiDiff(before, after) {
   return setDiff(openapiKeys(before), openapiKeys(after));
 }
@@ -80,10 +85,18 @@ export function renderReport({ date, versions, traces, openapi, fields }) {
       lines.push(`- ${net}: unchanged (${d.count} keys)`);
       continue;
     }
-    ok = false;
-    lines.push(`- ${net}: **${d.added.length} added, ${d.removed.length} removed**`);
-    for (const k of d.added) lines.push(`  - + ${k}`);
+    // Only what nactrace reads counts as drift: anything removed, or additions touching the
+    // transaction endpoint / schemas. Other additions (new endpoints, profiles, …) are listed as
+    // information so the recorded document can be refreshed at leisure.
+    const relevantAdded = d.added.filter(isRelevantOpenapiKey);
+    const otherAdded = d.added.filter((k) => !isRelevantOpenapiKey(k));
+    if (d.removed.length || relevantAdded.length) ok = false;
+    lines.push(
+      `- ${net}: ${d.removed.length || relevantAdded.length ? "**" : ""}${relevantAdded.length} relevant added, ${d.removed.length} removed${d.removed.length || relevantAdded.length ? "**" : ""}, ${otherAdded.length} unrelated added`,
+    );
+    for (const k of relevantAdded) lines.push(`  - + ${k}`);
     for (const k of d.removed) lines.push(`  - - ${k}`);
+    for (const k of otherAdded) lines.push(`  - (unrelated) + ${k}`);
   }
   lines.push("");
 

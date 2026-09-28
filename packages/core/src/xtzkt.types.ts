@@ -1,5 +1,5 @@
 // GENERATED FILE — do not edit. Produced by scripts/gen-xtzkt-types.mjs from recorded 0xTzKT
-// responses (142 rows across 83 fixtures, generated 2026-09-28).
+// responses (142 rows across 60 fixtures, generated 2026-09-28).
 // Every field is optional and every object carries an index signature: 0xTzKT is still adding
 // fields (Baking Bad, 2026-09-25) and unknown fields must never break parsing.
 

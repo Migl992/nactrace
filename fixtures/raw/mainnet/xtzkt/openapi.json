@@ -2,7 +2,7 @@
   "openapi": "3.1.1",
   "info": {
     "title": "0xTzKT API",
-    "description": "# Introduction\n\n0xTzKT API provides you with convenient and flexible access to the Tezos L1 and Tezos X (L2) data, processed and indexed by its own indexer. \nYou can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API.\n\n0xTzKT Indexer and API are [open-source](https://github.com/baking-bad/xtzkt), so don't be afraid to depend on the third-party service,\nbecause you can always clone, build and run it yourself to have full control over all the components.\n\nFeel free to contact us if you have any questions or feature requests.\nYour feedback is much appreciated!\n\n- Discord: https://discord.gg/aG8XKuwsQd\n- Telegram: https://t.me/baking_bad_chat\n- X: https://x.com/TezosBakingBad\n- Email: hello@bakingbad.dev\n\nAnd don't forget to star 0xTzKT [on GitHub](https://github.com/baking-bad/xtzkt) if you like it 😊\n\n# Get Started\n\n## Pagination and sorting\n\nEvery endpoint that returns a list is paginated and sorted the same way, with four query parameters:\n`sort`, `cursor`, `offset` and `limit`. There are two ways to walk a list — **cursor** (keyset) and\n**offset** — and the short version is: use `cursor` for anything longer than a few pages.\n\n### Sorting\n\n- `?sort=<field>` sorts ascending, `?sort=<field>.desc` descending. Several fields are allowed:\n  `?sort=balance.desc,id.asc`.\n- Only whitelisted fields can be sorted by, because each of them is backed by an index. The list\n  differs per endpoint and is spelled out under \"Allowed fields\" in the `sort` parameter of each one.\n  Anything else is a `400`, which also names the fields that endpoint does accept.\n- `id` is always appended as the last sort field, unless you sorted by it explicitly. So the order\n  is always strict — items with equal `balance` never shuffle between two identical requests — and\n  a cursor can never skip or duplicate a row.\n- The default is `?sort=id`, ascending. For newest first use `?sort=id.desc`.\n\n### Cursor\n\nA cursor is not an opaque token: it is the **sort field values of the last item from the previous\npage**, comma-separated, one value per `sort` field.\n\n```\nGET /v1/blocks?sort=id.desc&limit=100                    → last item has id 5261000\nGET /v1/blocks?sort=id.desc&limit=100&cursor=5261000     → the next 100 blocks\n```\n\n```\nGET /v1/tokens/balances?sort=balance.desc,id&limit=100   → last item: balance 1000, id 1234\nGET /v1/tokens/balances?sort=balance.desc,id&limit=100&cursor=1000,1234\n```\n\n- Pass a value for **every** field in `sort`. Fewer values are accepted, but then paging happens on\n  that prefix only and the rest of the tie group is skipped — pass them all and this can't happen.\n- Cursor paging stays equally fast at any depth, and it is also more correct than `offset`: when new\n  items arrive between two requests, an offset shifts the whole list and you get duplicates or gaps,\n  while a cursor stays anchored to the item you left off at.\n- To download a whole list, loop until the response is empty:\n  `?sort=id&limit=10000` and then `cursor=<id of the last item>` on every next request.\n\n### Offset and limit\n\n- `?limit=` is between `1` and `10000`, `100` by default. Activity endpoints cap it at\n  `1000`: they merge several tables per request, so their cost grows with the limit faster.\n- `?offset=` is between `0` and `100000`. It is capped on purpose: DB materializes and throws\n  away the skipped rows, so an offset costs time proportional to its value, and past a certain depth\n  a single request would occupy the database for seconds.\n- The cap is roughly 1000 pages of 100 items, which no interactive listing ever reaches. If you do\n  hit it, you're bulk-reading — which is exactly what `cursor` is for, and it's faster anyway.\n- All these caps are configured per instance; the numbers above are this instance's.\n\n## Filtering\n\n### Lists\n\nMost filters take a list: `?level.in=100,200,300` matches any of the values, `?sender.hash.ni=tz1...,tz1...`\nexcludes all of them. This is also how to fetch a batch of items by known keys, `?hash.in=...` or\n`?id.in=1,2,3`, instead of one request per item.\n\n- A list holds at most **50** values. The cap is configured per instance, so treat it as\n  this instance's value rather than the API's.\n- Duplicates count. Dedupe on your side, it's your quota.\n- Only lists of values are capped. Enum lists like `?status.in=applied,failed`, flags like `types` and\n  `roles`, `sort`, `cursor` and `select` are not batches and have no such limit.\n",
+    "description": "# Introduction\n\n0xTzKT API provides you with convenient and flexible access to the Tezos L1 and Tezos X (L2) data, processed and indexed by its own indexer. \nYou can fetch all historical data via REST API, or subscribe for real-time data via WebSocket API.\n\n0xTzKT Indexer and API are [open-source](https://github.com/baking-bad/xtzkt), so don't be afraid to depend on the third-party service,\nbecause you can always clone, build and run it yourself to have full control over all the components.\n\nFeel free to contact us if you have any questions or feature requests.\nYour feedback is much appreciated!\n\n- Discord: https://discord.gg/aG8XKuwsQd\n- Telegram: https://t.me/baking_bad_chat\n- X: https://x.com/TezosBakingBad\n- Email: hello@bakingbad.dev\n\nAnd don't forget to star 0xTzKT [on GitHub](https://github.com/baking-bad/xtzkt) if you like it 😊\n\n# Get Started\n\n## Pagination and sorting\n\nEvery endpoint that returns a list is paginated and sorted the same way, with four query parameters:\n`sort`, `cursor`, `offset` and `limit`. There are two ways to walk a list — **cursor** (keyset) and\n**offset** — and the short version is: use `cursor` for anything longer than a few pages.\n\n### Sorting\n\n- `?sort=<field>` sorts ascending, `?sort=<field>.desc` descending. Several fields are allowed:\n  `?sort=balance.desc,id.asc`.\n- Only whitelisted fields can be sorted by, because each of them is backed by an index. The list\n  differs per endpoint and is spelled out under \"Allowed fields\" in the `sort` parameter of each one.\n  Anything else is a `400`, which also names the fields that endpoint does accept.\n- `id` is always appended as the last sort field, unless you sorted by it explicitly. So the order\n  is always strict — items with equal `balance` never shuffle between two identical requests — and\n  a cursor can never skip or duplicate a row.\n- The default is `?sort=id`, ascending. For newest first use `?sort=id.desc`.\n\n### Cursor\n\nA cursor is not an opaque token: it is the **sort field values of the last item from the previous\npage**, comma-separated, one value per `sort` field.\n\n```\nGET /v1/blocks?sort=id.desc&limit=100                    → last item has id 5261000\nGET /v1/blocks?sort=id.desc&limit=100&cursor=5261000     → the next 100 blocks\n```\n\n```\nGET /v1/tokens/balances?sort=balance.desc,id&limit=100   → last item: balance 1000, id 1234\nGET /v1/tokens/balances?sort=balance.desc,id&limit=100&cursor=1000,1234\n```\n\n- Pass a value for **every** field in `sort`. Fewer values are accepted, but then paging happens on\n  that prefix only and the rest of the tie group is skipped — pass them all and this can't happen.\n- Cursor paging stays equally fast at any depth, and it is also more correct than `offset`: when new\n  items arrive between two requests, an offset shifts the whole list and you get duplicates or gaps,\n  while a cursor stays anchored to the item you left off at.\n- To download a whole list, loop until the response is empty:\n  `?sort=id&limit=10000` and then `cursor=<id of the last item>` on every next request.\n\n### Offset and limit\n\n- `?limit=` is between `1` and `10000`, `100` by default. Activity endpoints cap it at\n  `1000`: they merge several tables per request, so their cost grows with the limit faster.\n- `?offset=` is between `0` and `100000`. It is capped on purpose: DB materializes and throws\n  away the skipped rows, so an offset costs time proportional to its value, and past a certain depth\n  a single request would occupy the database for seconds.\n- The cap is roughly 1000 pages of 100 items, which no interactive listing ever reaches. If you do\n  hit it, you're bulk-reading — which is exactly what `cursor` is for, and it's faster anyway.\n- All these caps are configured per instance; the numbers above are this instance's.\n\n## Selecting fields\n\n`?select=` names the fields to return instead of the default set: `?select=id,hash,balance`. Only the\nselected columns are read and serialized, so responses get noticeably smaller and faster — use it\nwherever a listing feeds a table or a chart rather than a details page.\n\n- Each item is `field`, or `field.path` to reach into a nested object, optionally followed by `as alias`\n  to rename the result: `?select=balance,sender.hash as from`.\n- A single selected field flattens the response into a plain array of values. `?select.values=a,b` does\n  the same for several fields at once, returning an array of arrays instead of objects.\n- An unknown top-level field is a `400` that names it. An unknown path inside a known object is either\n  a `400` too or comes back as `null`, depending on the object, so a typo there may show up as an\n  all-null column.\n\n## Filtering\n\n### Lists\n\nMost filters take a list: `?level.in=100,200,300` matches any of the values, `?sender.hash.ni=tz1...,tz1...`\nexcludes all of them. This is also how to fetch a batch of items by known keys, `?hash.in=...` or\n`?id.in=1,2,3`, instead of one request per item.\n\n- A list holds at most **50** values. The cap is configured per instance, so treat it as\n  this instance's value rather than the API's.\n- Duplicates count. Dedupe on your side, it's your quota.\n- Only lists of values are capped. Enum lists like `?status.in=applied,failed`, flags like `types` and\n  `roles`, `sort`, `cursor` and `select` are not batches and have no such limit.\n",
     "contact": {
       "name": "Baking Bad Team",
       "url": "https://bakingbad.dev",
@@ -8092,6 +8092,141 @@
               "$ref": "#/components/schemas/Address"
             },
             "description": "All the addresses the account owns, owners first, aliases last."
+          },
+          "profile": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Public off-chain profile of the account (the one of its canonical hash), if it has one.",
+                "$ref": "#/components/schemas/AccountProfile"
+              }
+            ]
+          }
+        }
+      },
+      "AccountProfile": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the account."
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Short description of the account."
+          },
+          "logo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Link to the logo."
+          },
+          "logoDark": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Link to the logo for dark themes."
+          },
+          "website": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Link to the website."
+          },
+          "support": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Link to the support."
+          },
+          "email": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Contact email."
+          },
+          "telegram": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Telegram account."
+          },
+          "discord": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Discord server."
+          },
+          "reddit": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Reddit account."
+          },
+          "slack": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Slack workspace."
+          },
+          "github": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "GitHub account."
+          },
+          "gitlab": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "GitLab account."
+          },
+          "mailchain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Mailchain address."
+          },
+          "instagram": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Instagram account."
+          },
+          "facebook": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Facebook account."
+          },
+          "x": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "X (Twitter) account."
           }
         }
       },
@@ -8297,6 +8432,17 @@
               "string"
             ],
             "description": "Name from the address's public off-chain profile, if it has one."
+          },
+          "owner": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Owner of the address, if it's a runtime alias (`x_evm_alias` or `x_michelson_alias`).",
+                "$ref": "#/components/schemas/AddressInfo"
+              }
+            ]
           }
         }
       },
@@ -8360,6 +8506,20 @@
           "runtime": {
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
+          },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
           },
           "firstLevel": {
             "type": "integer",
@@ -8898,6 +9058,20 @@
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
           },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
+          },
           "firstLevel": {
             "type": "integer",
             "description": "Level of the block where the address first appeared.",
@@ -9179,6 +9353,20 @@
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
           },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
+          },
           "firstLevel": {
             "type": "integer",
             "description": "Level of the block where the address first appeared.",
@@ -9430,6 +9618,20 @@
           "runtime": {
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
+          },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
           },
           "firstLevel": {
             "type": "integer",
@@ -9737,6 +9939,20 @@
           "runtime": {
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
+          },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
           },
           "firstLevel": {
             "type": "integer",
@@ -10104,6 +10320,20 @@
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
           },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
+          },
           "firstLevel": {
             "type": "integer",
             "description": "Level of the block where the address first appeared.",
@@ -10276,6 +10506,20 @@
           "runtime": {
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
+          },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
           },
           "firstLevel": {
             "type": "integer",
@@ -10458,6 +10702,20 @@
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
           },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
+          },
           "firstLevel": {
             "type": "integer",
             "description": "Level of the block where the address first appeared.",
@@ -10626,6 +10884,20 @@
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
           },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
+          },
           "firstLevel": {
             "type": "integer",
             "description": "Level of the block where the address first appeared.",
@@ -10771,6 +11043,20 @@
           "runtime": {
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
+          },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
           },
           "firstLevel": {
             "type": "integer",
@@ -10947,6 +11233,20 @@
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
           },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
+          },
           "firstLevel": {
             "type": "integer",
             "description": "Level of the block where the address first appeared.",
@@ -11086,6 +11386,20 @@
           "runtime": {
             "type": "string",
             "description": "Runtime the address belongs to (`michelson` or `evm`)."
+          },
+          "domain": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Primary domain name of the address, if it has one."
+          },
+          "profile": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Name from the address's public off-chain profile, if it has one."
           },
           "firstLevel": {
             "type": "integer",
@@ -12784,6 +13098,17 @@
               "string"
             ],
             "description": "Name from the address's public off-chain profile, if it has one."
+          },
+          "owner": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Owner of the address, if it's a runtime alias (`x_evm_alias` or `x_michelson_alias`).",
+                "$ref": "#/components/schemas/AddressInfo"
+              }
+            ]
           },
           "codeHash": {
             "type": "integer",
@@ -23616,6 +23941,17 @@
               "string"
             ],
             "description": "Name from the address's public off-chain profile, if it has one."
+          },
+          "owner": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Owner of the address, if it's a runtime alias (`x_evm_alias` or `x_michelson_alias`).",
+                "$ref": "#/components/schemas/AddressInfo"
+              }
+            ]
           }
         }
       },

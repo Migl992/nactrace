@@ -43,7 +43,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -131,7 +136,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -219,7 +229,12 @@
     "alias": {
       "id": 269811440,
       "hash": "0x4401753f258fd52e52e297b22101e4c40e41a68b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269811434,
+        "hash": "tz1bBGHxdJ6tVozdP8R921YxxtdAJAmK5zWG",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -307,7 +322,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -395,7 +415,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -483,7 +508,12 @@
     "alias": {
       "id": 269809273,
       "hash": "0x5f175101dde3592715e6352461879326d7df4772",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269809272,
+        "hash": "tz2DLLqqheyeyTrtyYXeW6AnPQyw8SKwyPNr",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -571,7 +601,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -659,7 +694,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -747,7 +787,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -835,7 +880,12 @@
     "alias": {
       "id": 269807937,
       "hash": "0xbabb8aa2056d37bf2289fa46fe29aae2572e5bba",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807936,
+        "hash": "tz1Q2N7Qr47sLhTBWgRPSSTyFa3Qw9DXH785",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -921,7 +971,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -1009,7 +1064,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -1097,7 +1157,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -1185,7 +1250,12 @@
     "alias": {
       "id": 269807923,
       "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807906,
+        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -1241,7 +1311,12 @@
     "sender": {
       "id": 269807829,
       "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
-      "type": "x_michelson_alias"
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268437675,
+        "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+        "type": "x_evm_user"
+      }
     },
     "initiator": {
       "id": 269807830,
@@ -1348,7 +1423,12 @@
     "alias": {
       "id": 269807837,
       "hash": "0xdadccea84650af598f47b4474ddb82999ae168db",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807830,
+        "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,
@@ -1426,7 +1506,12 @@
     "alias": {
       "id": 269807837,
       "hash": "0xdadccea84650af598f47b4474ddb82999ae168db",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269807830,
+        "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 269807828,

@@ -15,7 +15,8 @@
       "value": "0xdadccea84650af598f47b4474ddb82999ae168db",
       "runtime": "evm",
       "role": "alias",
-      "label": "alias"
+      "counterpart": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+      "label": "alias of tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg"
     },
     "value": "10000000000000000 wei",
     "gas": {
@@ -48,7 +49,12 @@
         "target": {
           "id": 269807837,
           "hash": "0xdadccea84650af598f47b4474ddb82999ae168db",
-          "type": "x_evm_alias"
+          "type": "x_evm_alias",
+          "owner": {
+            "id": 269807830,
+            "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+            "type": "x_michelson_user"
+          }
         },
         "targetCodeHash": -1368642541,
         "counter": 16,
@@ -257,7 +263,12 @@
             "sender": {
               "id": 269807837,
               "hash": "0xdadccea84650af598f47b4474ddb82999ae168db",
-              "type": "x_evm_alias"
+              "type": "x_evm_alias",
+              "owner": {
+                "id": 269807830,
+                "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+                "type": "x_michelson_user"
+              }
             },
             "senderCodeHash": -1368642541,
             "initiator": {

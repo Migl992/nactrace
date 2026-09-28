@@ -60,14 +60,37 @@ describe("drift helpers", () => {
     expect(green.markdown).toContain("**No drift.**");
     expect(green.markdown).toContain("(not seen) nonce");
 
+    // Unrelated OpenAPI additions (a profile feature, a new endpoint) are information, not drift.
+    const informational = renderReport({
+      ...base,
+      openapi: {
+        mainnet: {
+          added: ["schema AccountProfile.discord", "path /v1/new"],
+          removed: [],
+          count: 12,
+        },
+      },
+    });
+    expect(informational.ok).toBe(true);
+    expect(informational.markdown).toContain("(unrelated) + schema AccountProfile.discord");
+
     const red = renderReport({
       ...base,
       traces: { pass: 31, fail: 1, output: "DIFF [previewnet] 0xabc summary changed" },
-      openapi: { previewnet: { added: ["path /v1/new"], removed: [], count: 11 } },
+      openapi: {
+        previewnet: {
+          added: ["schema TransactionOperationXEvmTransactionOperation.newField"],
+          removed: ["path /v1/operations/transaction"],
+          count: 11,
+        },
+      },
       fields: { previewnet: { added: ["brandNew"], removed: [], count: 101 } },
     });
     expect(red.ok).toBe(false);
-    expect(red.markdown).toContain("+ path /v1/new");
+    expect(red.markdown).toContain(
+      "+ schema TransactionOperationXEvmTransactionOperation.newField",
+    );
+    expect(red.markdown).toContain("- path /v1/operations/transaction");
     expect(red.markdown).toContain("+ brandNew");
     expect(red.markdown).toContain("summary changed");
     expect(red.markdown).toContain("**Drift detected.**");

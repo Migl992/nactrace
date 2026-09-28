@@ -70,7 +70,12 @@
         "alias": {
           "id": 269807829,
           "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
-          "type": "x_michelson_alias"
+          "type": "x_michelson_alias",
+          "owner": {
+            "id": 268437675,
+            "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+            "type": "x_evm_user"
+          }
         },
         "gateway": {
           "id": 269807824,
@@ -815,7 +820,12 @@
             "alias": {
               "id": 269807829,
               "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
-              "type": "x_michelson_alias"
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268437675,
+                "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+                "type": "x_evm_user"
+              }
             },
             "gateway": {
               "id": 269807824,

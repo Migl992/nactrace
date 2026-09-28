@@ -138,7 +138,9 @@ function addr(
   counterpart?: string,
 ): Address {
   if (!ref?.hash) return { value: "?", runtime: fallbackRuntime, role: "unknown" };
-  return classifyAddress(ref.hash, { type: ref.type, counterpart });
+  // 0xTzKT (mainnet/Shadownet since 2026-09-28) attaches the native `owner` to alias refs.
+  const owner = (ref as { owner?: { hash?: string } }).owner?.hash;
+  return classifyAddress(ref.hash, { type: ref.type, counterpart: counterpart ?? owner });
 }
 
 /** "http://tezos/KT1abc/transfer" -> { destination, entrypoint }; "http://ethereum/0x…" likewise. */
