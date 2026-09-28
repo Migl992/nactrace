@@ -1,0 +1,13 @@
+{
+  "key": "RPC https://node.shadownet.etherlink.com debug_traceTransaction [\"0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516\",{\"tracer\":\"callTracer\"}]",
+  "url": "https://node.shadownet.etherlink.com",
+  "method": "debug_traceTransaction",
+  "params": [
+    "0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+    {
+      "tracer": "callTracer"
+    }
+  ],
+  "status": 200,
+  "fetchedAt": "2026-09-28T08:47:51.620Z"
+}

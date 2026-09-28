@@ -1,0 +1,10 @@
+{
+  "key": "RPC https://node.shadownet.etherlink.com eth_getTransactionReceipt [\"0x24be156d257145caed69ed58a17e055d39e0fb16a3300cf5bb9f230921a75ce4\"]",
+  "url": "https://node.shadownet.etherlink.com",
+  "method": "eth_getTransactionReceipt",
+  "params": [
+    "0x24be156d257145caed69ed58a17e055d39e0fb16a3300cf5bb9f230921a75ce4"
+  ],
+  "status": 200,
+  "fetchedAt": "2026-09-28T08:47:54.922Z"
+}

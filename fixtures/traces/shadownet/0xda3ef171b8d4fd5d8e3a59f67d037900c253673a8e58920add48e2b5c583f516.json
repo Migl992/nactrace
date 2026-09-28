@@ -1,0 +1,381 @@
+{
+  "schemaVersion": "1",
+  "network": "shadownet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+    "from": {
+      "value": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+      "runtime": "evm",
+      "role": "native",
+      "counterpart": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ"
+    },
+    "to": {
+      "value": "0xff00000000000000000000000000000000000007",
+      "runtime": "evm",
+      "role": "gateway",
+      "label": "NAC gateway (EVM side)"
+    },
+    "entrypoint": "callMichelson(string,string,bytes)",
+    "value": "5000000000000000000 wei",
+    "gas": {
+      "used": "2017529",
+      "limit": "12918944",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "Cross-runtime call failed with status 400 Bad Request: Called a non-smart contract with parameter",
+    "links": {
+      "blockscout": "https://shadownet.explorer.etherlink.com/tx/0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+      "tzkt": "https://shadownet.etherlink.tzkt.io/ookQN5MUn4FnB8GP4mcLLEFv4gH5KszXTXufJpXsa6cgbByvF8j"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_evm_michelson",
+        "id": "1152933401613828096",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f34f",
+          "layer": "x"
+        },
+        "level": 6537415,
+        "timestamp": "2026-09-23T14:01:10Z",
+        "hash": "0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+        "sender": {
+          "id": 268437773,
+          "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268443567,
+          "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+          "type": "x_michelson_user"
+        },
+        "counter": 8,
+        "gasLimit": 12918944,
+        "gasUsed": 121529,
+        "status": "failed",
+        "errors": "Cross-runtime call failed with status 400 Bad Request: Called a non-smart contract with parameter",
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amountSent": "5000000000000000000",
+        "roundingLoss": "0",
+        "amountReceived": 5000000,
+        "daFee": "1896000000000000",
+        "gasFee": "121529000000000",
+        "gasPrice": "2000000001",
+        "maxFeePerGas": "2000000001",
+        "maxPriorityFeePerGas": "1",
+        "effectiveGasPrice": "1000000000",
+        "alias": {
+          "id": 268442939,
+          "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+          "type": "x_michelson_alias",
+          "owner": {
+            "id": 268437773,
+            "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+            "type": "x_evm_user"
+          }
+        },
+        "gateway": {
+          "id": 268442897,
+          "hash": "0xff00000000000000000000000000000000000007",
+          "type": "x_evm_contract"
+        },
+        "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+        "gatewayParameters": {
+          "entrypoint": "default",
+          "parameters": "0x0018",
+          "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx"
+        },
+        "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000024747a314b715470455a37596f62375162504534487934576f38664847384c684b785a537800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000764656661756c740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020018000000000000000000000000000000000000000000000000000000000000"
+      },
+      "receipt": {
+        "transactionHash": "0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+        "transactionIndex": "0x0",
+        "blockHash": "0x86cd2a98ca3cc6092a08880eccf2f9f4b41ac96e853a51b717d92201f9af1352",
+        "blockNumber": "0x63c0c7",
+        "from": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+        "to": "0xff00000000000000000000000000000000000007",
+        "cumulativeGasUsed": "0x1ec8f9",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0x1ec8f9",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x0",
+        "contractAddress": null
+      },
+      "tezosOperation": {
+        "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+        "chain_id": "NetXtLrzvQDobza",
+        "hash": "ookQN5MUn4FnB8GP4mcLLEFv4gH5KszXTXufJpXsa6cgbByvF8j",
+        "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+            "fee": "0",
+            "counter": "0",
+            "gas_limit": "0",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+            "metadata": {
+              "operation_result": {
+                "status": "failed",
+                "errors": []
+              },
+              "internal_operation_results": [
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 0,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                },
+                {
+                  "kind": "transaction",
+                  "source": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+                  "nonce": 1,
+                  "amount": "5000000",
+                  "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+                  "parameters": {
+                    "entrypoint": "default",
+                    "value": {
+                      "int": "24"
+                    }
+                  },
+                  "result": {
+                    "status": "failed",
+                    "errors": [
+                      {
+                        "kind": "permanent",
+                        "id": "tezlink_error",
+                        "error_message": "Transfer(NonSmartContractExecutionCall)"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 2,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call_end",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+      }
+    },
+    "events": [
+      {
+        "name": "cross_runtime_call",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      },
+      {
+        "name": "cross_runtime_call_end",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "michelson",
+        "kind": "crossing",
+        "hash": "ookQN5MUn4FnB8GP4mcLLEFv4gH5KszXTXufJpXsa6cgbByvF8j",
+        "synthetic": true,
+        "from": {
+          "value": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+          "runtime": "evm",
+          "role": "native",
+          "counterpart": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ"
+        },
+        "to": {
+          "value": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+          "runtime": "michelson",
+          "role": "native"
+        },
+        "entrypoint": "default",
+        "value": "5000000000000000000 wei",
+        "gas": {
+          "used": "121529",
+          "unit": "evm_gas"
+        },
+        "status": "reverted",
+        "error": "Cross-runtime call failed with status 400 Bad Request: Called a non-smart contract with parameter",
+        "links": {
+          "tzkt": "https://shadownet.etherlink.tzkt.io/ookQN5MUn4FnB8GP4mcLLEFv4gH5KszXTXufJpXsa6cgbByvF8j"
+        },
+        "raw": {
+          "xtzkt": {
+            "direction": "x_evm_michelson",
+            "id": "1152933401613828096",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f34f",
+              "layer": "x"
+            },
+            "level": 6537415,
+            "timestamp": "2026-09-23T14:01:10Z",
+            "hash": "0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+            "sender": {
+              "id": 268437773,
+              "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268443567,
+              "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+              "type": "x_michelson_user"
+            },
+            "counter": 8,
+            "gasLimit": 12918944,
+            "gasUsed": 121529,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 400 Bad Request: Called a non-smart contract with parameter",
+            "opType": "dynamic_fee",
+            "opCode": "call",
+            "amountSent": "5000000000000000000",
+            "roundingLoss": "0",
+            "amountReceived": 5000000,
+            "daFee": "1896000000000000",
+            "gasFee": "121529000000000",
+            "gasPrice": "2000000001",
+            "maxFeePerGas": "2000000001",
+            "maxPriorityFeePerGas": "1",
+            "effectiveGasPrice": "1000000000",
+            "alias": {
+              "id": 268442939,
+              "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268437773,
+                "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+                "type": "x_evm_user"
+              }
+            },
+            "gateway": {
+              "id": 268442897,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+            "gatewayParameters": {
+              "entrypoint": "default",
+              "parameters": "0x0018",
+              "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx"
+            },
+            "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000024747a314b715470455a37596f62375162504534487934576f38664847384c684b785a537800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000764656661756c740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020018000000000000000000000000000000000000000000000000000000000000"
+          },
+          "tezosInternalOperation": {
+            "kind": "transaction",
+            "source": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+            "nonce": 1,
+            "amount": "5000000",
+            "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+            "parameters": {
+              "entrypoint": "default",
+              "value": {
+                "int": "24"
+              }
+            },
+            "result": {
+              "status": "failed",
+              "errors": [
+                {
+                  "kind": "permanent",
+                  "id": "tezlink_error",
+                  "error_message": "Transfer(NonSmartContractExecutionCall)"
+                }
+              ]
+            }
+          }
+        },
+        "events": [],
+        "children": [],
+        "michelsonError": {
+          "kind": "permanent",
+          "id": "tezlink_error",
+          "error_message": "Transfer(NonSmartContractExecutionCall)"
+        }
+      }
+    ]
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0xda3e…f516 from 0x2e2a…6cd5 to 0xff00…0007 (gateway) calling callMichelson(string,string,bytes) reverted: Michelson entrypoint %default of tz1Kq…xZSx failed with a parameter was sent to a user account (tz1), which cannot execute it; whole transaction rolled back on both sides.",
+    "failedNodeId": "n1",
+    "evmReason": "Cross-runtime call failed with status 400 Bad Request: Called a non-smart contract with parameter",
+    "michelsonError": {
+      "kind": "permanent",
+      "id": "tezlink_error",
+      "error_message": "Transfer(NonSmartContractExecutionCall)"
+    }
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+        "method": "GET"
+      },
+      {
+        "url": "https://node.shadownet.etherlink.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://node.shadownet.etherlink.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.etherlink.shadownet.octez.io/chains/main/blocks/6537415/operations",
+        "method": "GET"
+      }
+    ],
+    "warnings": [
+      "debug_traceTransaction unavailable on shadownet: API key is not allowed to access method"
+    ]
+  }
+}

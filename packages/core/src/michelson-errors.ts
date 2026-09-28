@@ -34,6 +34,9 @@ export function humanizeTezosMessage(msg: string): string {
   const outer = /^(Transfer|Origination|Delegation|Reveal)\((.*)\)$/s.exec(s);
   if (outer) s = outer[2]!;
   if (/^OutOfGas\b/.test(s)) return "out of gas";
+  if (/^NonSmartContractExecutionCall\b/.test(s)) {
+    return "a parameter was sent to a user account (tz1), which cannot execute it";
+  }
   const notFound = /^ContractDoesNotExist\(.*?"([^"]+)"/.exec(s);
   if (notFound) return `contract ${notFound[1]} does not exist`;
   const quoted = /^\w+\("(.*)"\)$/s.exec(s);

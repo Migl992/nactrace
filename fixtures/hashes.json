@@ -132,5 +132,31 @@
       "hash": "ooHmHLh2oSJQT8dy2cQ48buPVmjX949nkCfhkLK1GsgZfoct5Ky",
       "label": "tz1 -> KT18oDJ %call_evm -> EVM user with value (empty signature), success"
     }
+  ],
+  "shadownet": [
+    {
+      "hash": "0x4f3814e1b3ebbb4dd5a20326cdde749958a52d9f3c168ff9aeb3ceb11fc3030b",
+      "label": "callMichelson(tz1, \"\" entrypoint, 0x) with value: transfer to a Michelson user, success"
+    },
+    {
+      "hash": "0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+      "label": "callMichelson(tz1, default, 0x0018): bad parameter for a user account, atomic revert"
+    },
+    {
+      "hash": "0x1d586c520103fdc3576de2b8a534d6ddbc9d8ddc3d38161da916138df2ed4f95",
+      "label": "the 0x hash 0xTzKT gives the nested EVM->Michelson leg of op ons8rrir (not the synthetic tx hash): lookup resolves to the whole operation"
+    },
+    {
+      "hash": "ooRAurTS9wmvXLixxpZJp77E1NSAsFeZeEdgAZ1K3WPJkLzFC2F",
+      "label": "tz1 -> %call_evm -> 0x042b… with empty signature (value transfer to a contract), success"
+    },
+    {
+      "hash": "ons8rrir5DEctZFB2kuD5pP1TTnSLgiUWsZvhcaHs7PddyzdXMY",
+      "label": "tz1 -> %call_evm -> 0x042b… with ABI arguments, success"
+    },
+    {
+      "hash": "ooAYMzmpqbUPeUChawecQa5vp1up2pUcqVxHNt8kQBF6yVB7QTZ",
+      "label": "tz1 -> %call_evm -> withdrawal precompile withdraw_base58, success"
+    }
   ]
 }

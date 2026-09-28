@@ -6,6 +6,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 
+- Shadownet: six recorded crossings, snapshots and nightly coverage.
 - `@nactrace/widget`: one-script-tag embeddable timeline and explanation (`data-hash`, `data-network`, `data-theme`, `data-enrich`, `data-target`; `nactrace.mount()`), about 28 kB gzipped.
 - Nightly drift check (`pnpm nightly`, `.github/workflows/nightly.yml`): live traces vs recorded snapshots, 0xTzKT OpenAPI and field-set diffs, node versions; opens a GitHub issue on drift.
 - `scripts/foundry-etherlink-shim.mjs`: JSON-RPC proxy that lets `forge script` talk to Etherlink nodes.

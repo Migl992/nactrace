@@ -1,0 +1,61 @@
+[
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152933401731268608",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6537468,
+    "timestamp": "2026-09-23T14:05:08Z",
+    "hash": "0x4f3814e1b3ebbb4dd5a20326cdde749958a52d9f3c168ff9aeb3ceb11fc3030b",
+    "sender": {
+      "id": 268435497,
+      "hash": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268443567,
+      "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+      "type": "x_michelson_user"
+    },
+    "counter": 1427,
+    "gasLimit": 3000000,
+    "gasUsed": 521804,
+    "status": "applied",
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amountSent": "1000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 1,
+    "daFee": "1640000000000000",
+    "gasFee": "521804000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "alias": {
+      "id": 268443594,
+      "hash": "KT1QoxbwyZubBZbeMFVBTDdLqAhxJqFBd5LF",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268435497,
+        "hash": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+        "type": "x_evm_user"
+      }
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "",
+      "parameters": "0x",
+      "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000024747a314b715470455a37596f62375162504534487934576f38664847384c684b785a53780000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  }
+]

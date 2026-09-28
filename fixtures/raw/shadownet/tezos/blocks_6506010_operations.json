@@ -1,0 +1,76 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXtLrzvQDobza",
+      "hash": "ooRAurTS9wmvXLixxpZJp77E1NSAsFeZeEdgAZ1K3WPJkLzFC2F",
+      "branch": "BMFQLSyxeBWfaYTiyfCd9Wv44eN7Uij4j9MwVWngPyxkqP39pTp",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
+          "fee": "1081",
+          "counter": "3",
+          "gas_limit": "1081",
+          "storage_limit": "0",
+          "amount": "0",
+          "destination": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+          "parameters": {
+            "entrypoint": "call_evm",
+            "value": {
+              "prim": "Pair",
+              "args": [
+                {
+                  "string": "0x042b24fe81458329ac79d893b2d70fbdad6f2956"
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "string": "void()"
+                    },
+                    {
+                      "prim": "Pair",
+                      "args": [
+                        {
+                          "bytes": ""
+                        },
+                        {
+                          "prim": "None"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "metadata": {
+            "balance_updates": [
+              {
+                "kind": "contract",
+                "contract": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
+                "change": "-1081",
+                "origin": "block"
+              },
+              {
+                "kind": "accumulator",
+                "category": "block fees",
+                "change": "1081",
+                "origin": "block"
+              }
+            ],
+            "operation_result": {
+              "status": "applied",
+              "consumed_milligas": "980132"
+            }
+          }
+        }
+      ],
+      "signature": "sigZ3fr9nsGXc8UsXD9QQoZpwaoVUprUf1eroVjWNPqBtz3Fb1nkJoKyzos7uZyhPzxEd3QD5gyENsmPoyqmP94KFSytbpcW"
+    }
+  ]
+]

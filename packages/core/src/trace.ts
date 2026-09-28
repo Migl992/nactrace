@@ -21,7 +21,12 @@ import {
   type EvmReceipt,
 } from "./evm.js";
 import { explain } from "./explain.js";
-import { syntheticEvmTxHash, syntheticMichelsonOpHash } from "./hashes.js";
+import {
+  isEvmTxHash,
+  isMichelsonOpHash,
+  syntheticEvmTxHash,
+  syntheticMichelsonOpHash,
+} from "./hashes.js";
 import { parseInput } from "./input.js";
 import { classifyAddress, isGatewayAddress, SYSTEM_ADDRESSES, type AddressHint } from "./labels.js";
 import { summarizeTezosError } from "./michelson-errors.js";
@@ -261,7 +266,12 @@ function crossingEvmToMichelson(ctx: Ctx, r: XtzktTransactionRow): TraceNode {
     synthetic: ctx.origin === "evm",
     from: addr(r.sender, "evm", r.alias?.hash),
     to,
-    entrypoint: r.entrypoint ?? str(p["entrypoint"]) ?? fromUrl.entrypoint ?? "default",
+    // An empty entrypoint string (seen on Shadownet) means the default entrypoint.
+    entrypoint:
+      nonZero(r.entrypoint ?? "") ||
+      nonZero(str(p["entrypoint"]) ?? "") ||
+      fromUrl.entrypoint ||
+      "default",
     value: wei(r.amountSent),
     gas: { used: str(r.gasUsed), unit: "evm_gas" },
     status: rowStatus(ctx, r),
@@ -899,9 +909,29 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
     );
   }
 
-  const origin: Runtime = parsed.kind;
-  const evmHash = origin === "evm" ? parsed.hash : syntheticEvmTxHash(parsed.hash);
-  const opHash = origin === "evm" ? syntheticMichelsonOpHash(parsed.hash) : parsed.hash;
+  // The rows know better than the hash format which side originated: 0xTzKT may answer an
+  // EVM-looking leg hash with the rows of a Michelson-originated operation (seen on Shadownet).
+  let origin: Runtime = parsed.kind;
+  let realHash = parsed.hash;
+  const firstRow = [...rows].sort((a, b) => (BigInt(a.id ?? 0) < BigInt(b.id ?? 0) ? -1 : 1))[0];
+  if (firstRow?.hash && typeof firstRow.hash === "string") {
+    const rowIsMichelson = String(firstRow.direction).startsWith("x_michelson");
+    if (rowIsMichelson && parsed.kind === "evm" && isMichelsonOpHash(firstRow.hash)) {
+      origin = "michelson";
+      realHash = firstRow.hash;
+      warnings.push(
+        `${parsed.hash} is a leg of Michelson operation ${realHash}; tracing the operation`,
+      );
+    } else if (!rowIsMichelson && parsed.kind === "michelson" && isEvmTxHash(firstRow.hash)) {
+      origin = "evm";
+      realHash = firstRow.hash.toLowerCase();
+      warnings.push(
+        `${parsed.hash} is a leg of EVM transaction ${realHash}; tracing the transaction`,
+      );
+    }
+  }
+  const evmHash = origin === "evm" ? realHash : syntheticEvmTxHash(realHash);
+  const opHash = origin === "evm" ? syntheticMichelsonOpHash(realHash) : realHash;
   const ctx: Ctx = { provider, network, origin, evmHash, opHash, warnings, nextId: 0 };
   const fromXtzkt = rows.length > 0;
 

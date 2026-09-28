@@ -1,6 +1,0 @@
-{
-  "key": "GET https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
-  "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
-  "status": 200,
-  "fetchedAt": "2026-09-25T15:44:55.266Z"
-}

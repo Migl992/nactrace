@@ -1,0 +1,91 @@
+[
+  {
+    "direction": "x_michelson_evm",
+    "id": "1152933337323536384",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6506010,
+    "timestamp": "2026-09-21T22:01:59Z",
+    "hash": "ooRAurTS9wmvXLixxpZJp77E1NSAsFeZeEdgAZ1K3WPJkLzFC2F",
+    "sender": {
+      "id": 268443575,
+      "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268443574,
+      "hash": "0x042b24fe81458329ac79d893b2d70fbdad6f2956",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268443575,
+        "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
+        "type": "x_michelson_user"
+      }
+    },
+    "targetCodeHash": -1368642541,
+    "counter": 3,
+    "gasLimit": 1081,
+    "gasUsed": 981,
+    "status": "applied",
+    "amountSent": 0,
+    "amountReceived": "0",
+    "daFee": 932,
+    "gasFee": 149,
+    "gasFeeRefunded": 0,
+    "storageLimit": 0,
+    "storageUsed": 0,
+    "input": "0xac4c25b2",
+    "alias": {
+      "id": 268443574,
+      "hash": "0x042b24fe81458329ac79d893b2d70fbdad6f2956",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268443575,
+        "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
+        "type": "x_michelson_user"
+      }
+    },
+    "gateway": {
+      "id": 268442901,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract"
+    },
+    "gatewayEntrypoint": "call_evm",
+    "gatewayParameters": {
+      "bytes": "",
+      "contract": null,
+      "string_0": "0x042b24fe81458329ac79d893b2d70fbdad6f2956",
+      "string_1": "void()"
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "0x042b24fe81458329ac79d893b2d70fbdad6f2956"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "void()"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

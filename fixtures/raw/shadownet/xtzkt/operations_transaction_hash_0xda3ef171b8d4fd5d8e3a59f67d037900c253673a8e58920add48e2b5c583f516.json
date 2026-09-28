@@ -1,0 +1,62 @@
+[
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152933401613828096",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6537415,
+    "timestamp": "2026-09-23T14:01:10Z",
+    "hash": "0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516",
+    "sender": {
+      "id": 268437773,
+      "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268443567,
+      "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+      "type": "x_michelson_user"
+    },
+    "counter": 8,
+    "gasLimit": 12918944,
+    "gasUsed": 121529,
+    "status": "failed",
+    "errors": "Cross-runtime call failed with status 400 Bad Request: Called a non-smart contract with parameter",
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amountSent": "5000000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 5000000,
+    "daFee": "1896000000000000",
+    "gasFee": "121529000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "alias": {
+      "id": 268442939,
+      "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268437773,
+        "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+        "type": "x_evm_user"
+      }
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "default",
+      "parameters": "0x0018",
+      "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000024747a314b715470455a37596f62375162504534487934576f38664847384c684b785a537800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000764656661756c740000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020018000000000000000000000000000000000000000000000000000000000000"
+  }
+]
