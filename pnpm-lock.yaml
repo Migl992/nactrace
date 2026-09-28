@@ -63,7 +63,7 @@ importers:
   packages/cli:
     dependencies:
       '@nactrace/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
 
   packages/core:
@@ -78,10 +78,10 @@ importers:
   packages/hooks:
     dependencies:
       '@nactrace/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
       nactrace:
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../cli
     devDependencies:
       hardhat:
@@ -91,7 +91,7 @@ importers:
   packages/widget:
     dependencies:
       '@nactrace/core':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core
 
 packages:

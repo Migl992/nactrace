@@ -17,8 +17,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@nactrace/core": "workspace:*",
-    "nactrace": "workspace:*"
+    "@nactrace/core": "workspace:^",
+    "nactrace": "workspace:^"
   },
   "bin": {
     "nactrace-foundry": "./dist/foundry.js",
