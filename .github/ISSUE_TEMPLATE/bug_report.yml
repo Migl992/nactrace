@@ -1,0 +1,44 @@
+name: Bug report
+description: A wrong explanation, a crash, or a hash nactrace cannot handle
+labels: [bug]
+body:
+  - type: input
+    id: hash
+    attributes:
+      label: Hash or URL
+      description: The EVM tx hash, Tezos op hash or explorer URL you gave nactrace. Public chain data only.
+      placeholder: 0x… / oo… / https://…
+    validations:
+      required: true
+  - type: dropdown
+    id: network
+    attributes:
+      label: Network
+      options: [previewnet, mainnet, shadownet, auto-detected]
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where
+      options: [CLI, "@nactrace/core", Hardhat hook, Foundry script, widget]
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should the explanation have said?
+      description: One sentence a developer would agree with.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Actual output
+      description: Paste `nactrace <hash> --json` (or the CLI tree). It contains only public chain data.
+      render: json
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: nactrace 0.1.0, node 22.x

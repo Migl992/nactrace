@@ -1,0 +1,23 @@
+name: Feature request
+description: Something nactrace should explain or support
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to debug?
+      description: The situation, ideally with a hash on Previewnet or mainnet that shows it.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would nactrace print?
+      description: The sentence or output you would want to see.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This is about explaining cross-interface calls (not an explorer, indexer or wallet feature)
+          required: true

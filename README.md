@@ -1,5 +1,7 @@
 # nactrace
 
+[![npm](https://img.shields.io/npm/v/nactrace?label=nactrace)](https://www.npmjs.com/package/nactrace) [![npm](https://img.shields.io/npm/v/@nactrace/core?label=%40nactrace%2Fcore)](https://www.npmjs.com/package/@nactrace/core) [![npm](https://img.shields.io/npm/v/@nactrace/hooks?label=%40nactrace%2Fhooks)](https://www.npmjs.com/package/@nactrace/hooks) [![ci](https://github.com/Migl992/nectrace/actions/workflows/ci.yml/badge.svg)](https://github.com/Migl992/nectrace/actions/workflows/ci.yml) [![nightly](https://github.com/Migl992/nectrace/actions/workflows/nightly.yml/badge.svg)](https://github.com/Migl992/nectrace/actions/workflows/nightly.yml) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 A debugger for cross-interface calls (NAC, Native Atomic Composability) on Etherlink / Tezos X.
 
 Give it a hash from either side of a crossing and it tells you what happened and why it failed: which leg reverted, the decoded `Cross-runtime call failed with status 4xx: …` reason, the Michelson error, storage before/after, and gas per frame in both units.
@@ -131,6 +133,10 @@ Unit tests never touch the network. Live checks run only in the nightly workflow
 - `.github/workflows/ci.yml` runs lint, typecheck, build and the offline tests on every push and pull request.
 - `.github/workflows/nightly.yml` runs `pnpm nightly` every day at 03:17 UTC (and on demand): it rebuilds every pinned hash live through the CLI and compares it with `fixtures/traces`, diffs the 0xTzKT OpenAPI documents and the field set of the recorded rows against the live networks, and logs the node versions. On drift it uploads the report and opens (or comments on) a GitHub issue labelled `nightly`; the issue is closed automatically once a night is green again.
 - `pnpm e2e:live` runs only the trace comparison; `pnpm nightly` runs the whole check and writes `nightly-report.md`.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the ground rules, how to add a recorded case, and the release process. Chain facts and documentation discrepancies live in [docs/FINDINGS.md](docs/FINDINGS.md); the Trace JSON is documented in [docs/SCHEMA.md](docs/SCHEMA.md); the changelog in [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

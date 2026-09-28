@@ -124,7 +124,7 @@ Save real responses under `fixtures/raw/xtzkt/` on Day 1 and generate the TS typ
 
 ## 4. Product scope
 
-### In scope (v1, grant deliverable, USD 9K)
+### In scope (v1)
 
 - Input: an EVM tx hash, a Tezos op hash, or a Blockscout/TzKT/0xTzKT URL containing one. Network auto-detected across Previewnet / Mainnet / Shadownet via 0xTzKT.
 - Output: normalized `Trace` JSON (§6) and an **explanation**: root cause of failure in one sentence, which leg failed, decoded reasons on both sides, storage before/after for touched Michelson contracts, gas per frame in EVM gas and Michelson milligas.
@@ -309,7 +309,7 @@ Acceptance: every fixture yields a correct `Trace` and a one-sentence explanatio
 2. ~~Where are the events defined?~~ Answered: sources 19d, 19e.
 3. ~~Hash derivation?~~ Answered: §3.1, source 19f. No dedicated RPC.
 4. ~~0xTzKT stable / CORS?~~ Answered: yes, additive changes possible for 1–2 months.
-5. **Open**: is a NAC debugging tool already on Baking Bad's or Nomadic's roadmap? Asked 25 Sep. Answer decides grant submission, not Day 1 work.
+5. **Open**: is a NAC debugging tool already on Baking Bad's or Nomadic's roadmap? Asked 25 Sep 2026.
 6. Minor: full `direction` enum and whether `debug_traceTransaction` is enabled on the public Previewnet/mainnet endpoints (test on Day 1).
 
 ---

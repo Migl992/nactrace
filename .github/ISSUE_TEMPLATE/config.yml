@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Chain behaviour you found (docs vs reality)
+    url: https://github.com/Migl992/nectrace/blob/main/docs/FINDINGS.md
+    about: Check FINDINGS.md first; if it is new, open a bug report with the hash that proves it.
+  - name: Tezos X / Etherlink questions
+    url: https://discord.gg/etherlink
+    about: Questions about the chain itself belong in the Etherlink Discord.
