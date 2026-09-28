@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-09-28
+
+### Fixed
+
+- `@nactrace/core` 1.0.1 / `@nactrace/widget` 1.0.1: in browsers every request failed with "Illegal invocation" because `fetch` was called as a method of the Provider; found on the hosted page, invisible to Node-based tests. Regression test added; `scripts/e2e-browser.mjs` (Playwright) now checks the widget in a real Chromium.
+- RPC-only lookup errors include the collected warnings (the underlying cause).
+
 ### Added
 
 - Hosted page at https://migl992.github.io/nectrace/?hash=… (GitHub Pages, deployed by `.github/workflows/pages.yml`) with the widget demo under `/demo/`.
@@ -38,6 +45,7 @@ First public release (pre-alpha).
 - Fixtures: 27 Previewnet and 5 mainnet crossings recorded verbatim (0xTzKT rows, receipts, traces, Tezos block operations, storage before/after), with expected traces for every one.
 - `docs/FINDINGS.md`: observed chain behaviour and documentation discrepancies, each with the hash that proves it.
 
-[Unreleased]: https://github.com/Migl992/nectrace/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Migl992/nectrace/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/Migl992/nectrace/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/Migl992/nectrace/compare/v0.1.0...v1.0.0
 [0.1.0]: https://github.com/Migl992/nectrace/releases/tag/v0.1.0

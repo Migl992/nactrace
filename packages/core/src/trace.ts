@@ -976,13 +976,15 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
       // RPC-only skeleton (SPEC §5.2)
       if (origin === "evm") {
         if (!receipt)
-          throw new Error(`${evmHash} is unknown to 0xTzKT and to the ${network} EVM node`);
+          throw new Error(
+            `${evmHash} is unknown to 0xTzKT and to the ${network} EVM node${warnings.length ? ` (${warnings.join("; ")})` : ""}`,
+          );
         const tx = await getTransaction(provider, network, evmHash);
         root = skeletonFromEvmRpc(ctx, receipt, tx, frame);
       } else {
         if (!op)
           throw new Error(
-            `operation ${opHash} not found on ${network} (0xTzKT has no rows and no level is known)`,
+            `operation ${opHash} not found on ${network} (0xTzKT has no rows and no level is known${warnings.length ? `; ${warnings.join("; ")}` : ""})`,
           );
         root = opNodeFromTezosOperation(ctx, op);
         if (receipt) {

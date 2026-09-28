@@ -35,7 +35,7 @@ describe.skipIf(!existsSync(BUNDLE))("built bundle in a DOM", () => {
     Object.defineProperty(document, "currentScript", { configurable: true, get: () => null });
 
     const g = globalThis as unknown as { nactrace?: { version: string; mount: unknown } };
-    expect(g.nactrace?.version).toBe("1.0.0");
+    expect(g.nactrace?.version).toBe("1.0.1");
     expect(typeof g.nactrace?.mount).toBe("function");
     const host = script.nextElementSibling as HTMLElement;
     expect(host.className).toBe("nactrace-widget");
