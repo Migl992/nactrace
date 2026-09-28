@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* global document */ // the page.evaluate / waitForFunction callbacks below run inside the browser
 // Real-browser check of the widget (Playwright + Chromium). Loads a page that embeds the widget,
 // waits for every widget to finish, and fails on any failed request, console error or widget
 // error state. Not part of the unit suite (needs a browser download); run with `pnpm e2e:browser`.
