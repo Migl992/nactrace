@@ -1,6 +1,6 @@
 {
   "name": "@nactrace/widget",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Embeddable nactrace.js: one script tag renders the timeline and explanation of a cross-interface call on Etherlink / Tezos X",
   "license": "MIT",
   "author": "mig",

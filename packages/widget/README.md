@@ -4,7 +4,7 @@ One script tag that shows what a cross-interface (NAC) call on Etherlink / Tezos
 
 ```html
 <script
-  src="https://cdn.jsdelivr.net/npm/@nactrace/widget@0.1/dist/nactrace.js"
+  src="https://cdn.jsdelivr.net/npm/@nactrace/widget@1/dist/nactrace.js"
   data-hash="0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716"
   data-network="previewnet"
 ></script>

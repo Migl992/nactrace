@@ -6,7 +6,7 @@ A debugger for cross-interface calls (NAC, Native Atomic Composability) on Ether
 
 Give it a hash from either side of a crossing and it tells you what happened and why it failed: which leg reverted, the decoded `Cross-runtime call failed with status 4xx: …` reason, the Michelson error, storage before/after, and gas per frame in both units.
 
-Status: pre-alpha (0.1.0 on npm), under active development. See `docs/SPEC.md` for the full technical spec and `docs/FINDINGS.md` for what the chain actually does.
+Status: 1.0.0, first stable release. See `docs/SPEC.md` for the full technical spec and `docs/FINDINGS.md` for what the chain actually does.
 
 ## Quick start
 
@@ -62,7 +62,7 @@ One script tag, no framework, about 28 kB gzipped:
 
 ```html
 <script
-  src="https://cdn.jsdelivr.net/npm/@nactrace/widget@0.1/dist/nactrace.js"
+  src="https://cdn.jsdelivr.net/npm/@nactrace/widget@1/dist/nactrace.js"
   data-hash="0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716"
   data-network="previewnet"
 ></script>
@@ -71,6 +71,8 @@ One script tag, no framework, about 28 kB gzipped:
 It renders status, explanation, legs, errors, storage diff and links right after the tag. Also `nactrace.mount(element, { hash, network, theme })`. Demo page: `packages/widget/demo/index.html` (serve the package folder after `pnpm build`).
 
 ## Test-framework hooks
+
+Setup guides: [docs/hooks-hardhat.md](docs/hooks-hardhat.md), [docs/hooks-foundry.md](docs/hooks-foundry.md).
 
 **Hardhat 3.** In `hardhat.config.ts`: `import nactrace from "@nactrace/hooks/hardhat";` and add it to `plugins: [nactrace]`. **Hardhat 2:** `import "@nactrace/hooks/hardhat2";`. Then, after a failed run on Previewnet:
 
@@ -88,7 +90,7 @@ nactrace-foundry --broadcast broadcast/Deploy.s.sol/128064/run-latest.json --all
 forge test -vvvv 2>&1 | nactrace-foundry --stdin      # any hash printed by a test
 ```
 
-`forge test` against a fork never lands transactions on chain, so there is nothing to explain there; use broadcast runs or print hashes from your tests. `forge script` against Etherlink needs `scripts/foundry-etherlink-shim.mjs` as RPC, `--skip-simulation`, and a fixed gas on calls expected to revert (see `docs/FINDINGS.md`).
+`forge test` against a fork never lands transactions on chain, so there is nothing to explain there; use broadcast runs or print hashes from your tests. `forge script` against Etherlink needs `npx nactrace-etherlink-shim` as RPC, `--skip-simulation`, and a fixed gas on calls expected to revert (see `docs/FINDINGS.md`).
 
 ## Packages
 

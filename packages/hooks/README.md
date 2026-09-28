@@ -51,6 +51,6 @@ nactrace-foundry 0x… oo… -- --explain-only             # explicit hashes, op
 
 `forge test` against a fork never lands transactions on chain, so there is no hash to explain there; use broadcast runs or print hashes from your tests.
 
-Running `forge script` against Etherlink today needs three things (details in the repo's `docs/FINDINGS.md`): the RPC shim `scripts/foundry-etherlink-shim.mjs` as `--rpc-url` (Foundry sends bare block hashes the node rejects), `--skip-simulation` (Foundry's own gas estimate is far below what a deployment costs on Etherlink), and a fixed gas on calls you expect to revert (`c.decrement{gas: 3_000_000}()`), otherwise `eth_estimateGas` refuses them before they are sent. When a broadcast call reverts, forge prints `Transaction Failure: <hash>` and stops; `nactrace-foundry` picks that hash up from the broadcast file.
+Running `forge script` against Etherlink today needs three things (details in the repo's `docs/FINDINGS.md`): `npx nactrace-etherlink-shim` as `--rpc-url http://127.0.0.1:8545` (Foundry sends bare block hashes the node rejects), `--skip-simulation` (Foundry's own gas estimate is far below what a deployment costs on Etherlink), and a fixed gas on calls you expect to revert (`c.decrement{gas: 3_000_000}()`), otherwise `eth_estimateGas` refuses them before they are sent. When a broadcast call reverts, forge prints `Transaction Failure: <hash>` and stops; `nactrace-foundry` picks that hash up from the broadcast file.
 
 Pre-alpha. MIT.

@@ -1,6 +1,6 @@
 {
   "name": "@nactrace/hooks",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Hardhat task nactrace:last and the nactrace-foundry script; thin wrappers around the nactrace CLI",
   "license": "MIT",
   "author": "mig",
@@ -13,7 +13,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/foundry.ts src/hardhat.ts src/hardhat-action.ts --format esm --dts --clean --external hardhat && node -e \"require('fs').copyFileSync('src/hardhat2.cjs','dist/hardhat2.cjs')\"",
+    "build": "tsup src/index.ts src/foundry.ts src/hardhat.ts src/hardhat-action.ts src/shim.ts --format esm --dts --clean --external hardhat && node -e \"require('fs').copyFileSync('src/hardhat2.cjs','dist/hardhat2.cjs')\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -21,7 +21,8 @@
     "nactrace": "workspace:*"
   },
   "bin": {
-    "nactrace-foundry": "./dist/foundry.js"
+    "nactrace-foundry": "./dist/foundry.js",
+    "nactrace-etherlink-shim": "./dist/shim.js"
   },
   "exports": {
     ".": {

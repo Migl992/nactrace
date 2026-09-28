@@ -1,6 +1,6 @@
 {
   "name": "nactrace-monorepo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "NAC (cross-interface call) debugger for Etherlink / Tezos X",
   "license": "MIT",

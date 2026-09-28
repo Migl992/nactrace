@@ -18,7 +18,7 @@ export interface MountOptions {
   provider?: Provider;
 }
 
-export const version = "0.1.0";
+export const version = "1.0.0";
 
 function shadowOf(target: HTMLElement): ShadowRoot {
   const root = target.shadowRoot ?? target.attachShadow({ mode: "open" });

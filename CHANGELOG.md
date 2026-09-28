@@ -4,12 +4,23 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-09-28
+
+First stable release: every deliverable of the v1 scope, verified against real crossings on Previewnet, mainnet and Shadownet.
+
 ### Added
 
 - Shadownet: six recorded crossings, snapshots and nightly coverage.
 - `@nactrace/widget`: one-script-tag embeddable timeline and explanation (`data-hash`, `data-network`, `data-theme`, `data-enrich`, `data-target`; `nactrace.mount()`), about 28 kB gzipped.
 - Nightly drift check (`pnpm nightly`, `.github/workflows/nightly.yml`): live traces vs recorded snapshots, 0xTzKT OpenAPI and field-set diffs, node versions; opens a GitHub issue on drift.
-- `scripts/foundry-etherlink-shim.mjs`: JSON-RPC proxy that lets `forge script` talk to Etherlink nodes.
+- `nactrace-etherlink-shim` (in `@nactrace/hooks`) and `scripts/foundry-etherlink-shim.mjs`: JSON-RPC proxy that lets `forge script` talk to Etherlink nodes.
+- `docs/SCHEMA.md`, `docs/hooks-hardhat.md`, `docs/hooks-foundry.md`; contributing, security and conduct files; issue and PR templates; release workflow; Dependabot.
+- More recorded cases: caught revert, gas starvation, missing entrypoint/contract/view, malformed destination, multiple crossings, EVM-side reverts, callbacks, plain Michelson ops, per-leg hashes.
+
+### Changed
+
+- `explain()`: kernel error wrappers unwrapped (out of gas, typechecking, missing contract, user-account parameter), views, gateway rejections, callbacks, backtracked legs and deployments phrased explicitly.
+- Hardhat plugins accept explorer URLs from any network; `nactrace-foundry` takes the network from the broadcast file.
 
 ## [0.1.0] - 2026-09-25
 
@@ -23,5 +34,6 @@ First public release (pre-alpha).
 - Fixtures: 27 Previewnet and 5 mainnet crossings recorded verbatim (0xTzKT rows, receipts, traces, Tezos block operations, storage before/after), with expected traces for every one.
 - `docs/FINDINGS.md`: observed chain behaviour and documentation discrepancies, each with the hash that proves it.
 
-[Unreleased]: https://github.com/Migl992/nectrace/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/Migl992/nectrace/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Migl992/nectrace/compare/v0.1.0...v1.0.0
 [0.1.0]: https://github.com/Migl992/nectrace/releases/tag/v0.1.0

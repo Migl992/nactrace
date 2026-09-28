@@ -1,6 +1,6 @@
 {
   "name": "@nactrace/core",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "NAC (cross-interface call) tracing and explanation for Etherlink / Tezos X",
   "license": "MIT",
   "author": "mig",
