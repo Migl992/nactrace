@@ -10,6 +10,8 @@ One script tag that shows what a cross-interface (NAC) call on Etherlink / Tezos
 ></script>
 ```
 
+Try it without installing anything: https://migl992.github.io/nectrace/?hash=… (the same widget, hash from the URL).
+
 The widget mounts itself right after the tag. Attributes:
 
 | attribute      | values                                         | default                |

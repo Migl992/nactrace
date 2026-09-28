@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+
+- Hosted page at https://migl992.github.io/nectrace/?hash=… (GitHub Pages, deployed by `.github/workflows/pages.yml`) with the widget demo under `/demo/`.
+
 ## [1.0.0] - 2026-09-28
 
 First stable release: every deliverable of the v1 scope, verified against real crossings on Previewnet, mainnet and Shadownet.

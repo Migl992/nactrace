@@ -1,12 +1,16 @@
 # nactrace
 
-[![npm](https://img.shields.io/npm/v/nactrace?label=nactrace)](https://www.npmjs.com/package/nactrace) [![npm](https://img.shields.io/npm/v/@nactrace/core?label=%40nactrace%2Fcore)](https://www.npmjs.com/package/@nactrace/core) [![npm](https://img.shields.io/npm/v/@nactrace/hooks?label=%40nactrace%2Fhooks)](https://www.npmjs.com/package/@nactrace/hooks) [![ci](https://github.com/Migl992/nectrace/actions/workflows/ci.yml/badge.svg)](https://github.com/Migl992/nectrace/actions/workflows/ci.yml) [![nightly](https://github.com/Migl992/nectrace/actions/workflows/nightly.yml/badge.svg)](https://github.com/Migl992/nectrace/actions/workflows/nightly.yml) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/nactrace?label=nactrace)](https://www.npmjs.com/package/nactrace) [![npm](https://img.shields.io/npm/v/@nactrace/core?label=%40nactrace%2Fcore)](https://www.npmjs.com/package/@nactrace/core) [![npm](https://img.shields.io/npm/v/@nactrace/hooks?label=%40nactrace%2Fhooks)](https://www.npmjs.com/package/@nactrace/hooks) [![ci](https://github.com/Migl992/nectrace/actions/workflows/ci.yml/badge.svg)](https://github.com/Migl992/nectrace/actions/workflows/ci.yml) [![nightly](https://github.com/Migl992/nectrace/actions/workflows/nightly.yml/badge.svg)](https://github.com/Migl992/nectrace/actions/workflows/nightly.yml) [![pages](https://github.com/Migl992/nectrace/actions/workflows/pages.yml/badge.svg)](https://migl992.github.io/nectrace/) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 A debugger for cross-interface calls (NAC, Native Atomic Composability) on Etherlink / Tezos X.
 
 Give it a hash from either side of a crossing and it tells you what happened and why it failed: which leg reverted, the decoded `Cross-runtime call failed with status 4xx: …` reason, the Michelson error, storage before/after, and gas per frame in both units.
 
 Status: 1.0.0, first stable release. See `docs/SPEC.md` for the full technical spec and `docs/FINDINGS.md` for what the chain actually does.
+
+## Try it
+
+https://migl992.github.io/nectrace/?hash=0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716&network=previewnet — paste any hash, share the URL.
 
 ## Quick start
 
