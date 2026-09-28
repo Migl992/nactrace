@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>nactrace — explain a cross-interface call</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Paste an Etherlink / Tezos X transaction or operation hash and read what happened and why it failed, on both runtimes."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --fg: #1c1f24;
+        --bg: #fff;
+        --dim: #6b7280;
+        --border: #e2e5ea;
+        --code: #f3f4f6;
+        --accent: #2563eb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --fg: #e5e7eb;
+          --bg: #0f1115;
+          --dim: #9aa3b2;
+          --border: #2a2f3a;
+          --code: #1a1e26;
+          --accent: #60a5fa;
+        }
+      }
+      body {
+        font:
+          15px/1.5 ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        color: var(--fg);
+        background: var(--bg);
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 16px 48px;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 0 0 4px;
+      }
+      h1 small {
+        font-weight: 400;
+        color: var(--dim);
+        font-size: 14px;
+        margin-left: 8px;
+      }
+      p.lead {
+        color: var(--dim);
+        margin: 0 0 16px;
+      }
+      form {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      input[type="text"] {
+        flex: 1 1 420px;
+        font: inherit;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--code);
+        color: var(--fg);
+      }
+      select,
+      button {
+        font: inherit;
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--code);
+        color: var(--fg);
+      }
+      button {
+        background: var(--accent);
+        color: #fff;
+        border-color: transparent;
+        cursor: pointer;
+      }
+      .examples {
+        font-size: 13px;
+        color: var(--dim);
+        margin: 0 0 20px;
+      }
+      .examples a {
+        color: var(--accent);
+      }
+      #out:empty::before {
+        content: "Paste a hash above, or open one of the examples.";
+        color: var(--dim);
+      }
+      footer {
+        margin-top: 32px;
+        font-size: 13px;
+        color: var(--dim);
+      }
+      footer a {
+        color: inherit;
+      }
+      code {
+        background: var(--code);
+        padding: 0 4px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>nactrace <small>explain a cross-interface call on Etherlink / Tezos X</small></h1>
+    <p class="lead">
+      An EVM tx hash, a Tezos operation hash, or an explorer URL. The answer says which leg failed,
+      why, and what was rolled back. Share the page URL: it carries the hash.
+    </p>
+
+    <form id="f">
+      <input
+        id="hash"
+        type="text"
+        placeholder="0x… / oo… / https://explorer.etherlink.com/tx/0x…"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <select id="network">
+        <option value="">auto-detect network</option>
+        <option value="mainnet">mainnet</option>
+        <option value="previewnet">previewnet</option>
+        <option value="shadownet">shadownet</option>
+      </select>
+      <button type="submit">Explain</button>
+    </form>
+
+    <p class="examples">
+      Examples:
+      <a
+        href="?hash=0x3977046f09ded41a000370bc47ff246befd74909eb414a4a02d14a36b017f716&network=previewnet"
+        >atomic revert</a
+      >
+      ·
+      <a
+        href="?hash=0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f&network=previewnet"
+        >caught revert</a
+      >
+      ·
+      <a href="?hash=oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W&network=previewnet"
+        >nested Michelson → EVM → Michelson</a
+      >
+      · <a href="?hash=opZX4Z3TuidPmJDB93WatMNKBfbkDQipUXvFiVeS6LY9JiovffV">mainnet withdrawal</a> ·
+      <a
+        href="?hash=0xda3ef171b8d4fd5d8e3a59f67d037900c253673a8e58920add48e2b5c583f516&network=shadownet"
+        >shadownet revert</a
+      >
+    </p>
+
+    <div id="out"></div>
+
+    <footer>
+      Also a <a href="https://www.npmjs.com/package/nactrace">CLI</a>, a
+      <a href="https://www.npmjs.com/package/@nactrace/core">library</a>, Hardhat and Foundry
+      <a href="https://www.npmjs.com/package/@nactrace/hooks">hooks</a>, and this
+      <a href="https://www.npmjs.com/package/@nactrace/widget">widget</a> for your own pages (<code
+        >&lt;script src=… data-hash=…&gt;</code
+      >, see the <a href="demo/">demo</a>). Source:
+      <a href="https://github.com/Migl992/nectrace">github.com/Migl992/nectrace</a>. Data: 0xTzKT
+      and the public Etherlink nodes, read from your browser.
+    </footer>
+
+    <script src="dist/nactrace.js"></script>
+    <script>
+      (function () {
+        var form = document.getElementById("f");
+        var input = document.getElementById("hash");
+        var select = document.getElementById("network");
+        var out = document.getElementById("out");
+
+        function run(hash, network, push) {
+          hash = (hash || "").trim();
+          if (!hash) return;
+          input.value = hash;
+          select.value = network || "";
+          var q =
+            "?hash=" +
+            encodeURIComponent(hash) +
+            (network ? "&network=" + encodeURIComponent(network) : "");
+          if (push) history.pushState(null, "", q);
+          out.innerHTML = "";
+          var host = document.createElement("div");
+          out.appendChild(host);
+          var opts = { hash: hash, theme: "auto" };
+          if (network) opts.network = network;
+          document.title = "nactrace — " + hash.slice(0, 14) + "…";
+          nactrace.mount(host, opts);
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          run(input.value, select.value, true);
+        });
+
+        function fromUrl() {
+          var p = new URLSearchParams(location.search);
+          run(p.get("hash") || p.get("tx") || p.get("op"), p.get("network"), false);
+        }
+        window.addEventListener("popstate", fromUrl);
+        fromUrl();
+      })();
+    </script>
+  </body>
+</html>
