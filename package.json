@@ -24,7 +24,7 @@
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@noble/curves": "^2.4.0",
-    "@noble/hashes": "^1.8.0",
+    "@noble/hashes": "^2.4.0",
     "@taquito/local-forging": "^25.0.0",
     "@taquito/signer": "^25.0.0",
     "@taquito/taquito": "^25.0.0",
