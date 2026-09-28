@@ -70,7 +70,9 @@ export class Provider {
   constructor(opts: ProviderOptions = {}) {
     this.mode = opts.mode ?? "live";
     this.store = opts.store;
-    this.fetchImpl = opts.fetch ?? globalThis.fetch;
+    // Browsers throw "Illegal invocation" when window.fetch is called with another `this`
+    // (as `this.fetchImpl(...)` would do). Wrap it so the call always goes through globalThis.
+    this.fetchImpl = opts.fetch ?? ((input, init) => globalThis.fetch(input, init));
     this.onRequest = opts.onRequest;
     if (this.mode !== "live" && !this.store) {
       throw new Error(`Provider mode "${this.mode}" needs a FixtureStore`);

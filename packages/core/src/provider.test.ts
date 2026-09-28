@@ -83,3 +83,23 @@ describe("Provider", () => {
     expect(a).not.toBe(b);
   });
 });
+
+describe("Provider in a browser-like environment", () => {
+  it("calls the global fetch with the right `this` (browsers throw Illegal invocation otherwise)", async () => {
+    const original = globalThis.fetch;
+    // Mimic window.fetch: it must be invoked on the global object (or unbound), never on another object.
+    const strictFetch = function (this: unknown, input: string | URL | Request) {
+      if (this !== undefined && this !== globalThis) {
+        throw new TypeError("Failed to execute 'fetch' on 'Window': Illegal invocation");
+      }
+      return Promise.resolve(new Response(JSON.stringify([{ ok: String(input).length > 0 }])));
+    } as unknown as typeof fetch;
+    globalThis.fetch = strictFetch;
+    try {
+      const p = new Provider();
+      await expect(p.getJson("https://api.xtzkt.io/v1/x")).resolves.toEqual([{ ok: true }]);
+    } finally {
+      globalThis.fetch = original;
+    }
+  });
+});
