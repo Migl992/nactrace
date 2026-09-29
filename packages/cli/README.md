@@ -32,4 +32,4 @@ nactrace <hash|url> [options]
 
 Exit codes: 0 success, 1 reverted or a caught cross-runtime failure, 2 usage or lookup error.
 
-Pre-alpha. Built on [@nactrace/core](https://www.npmjs.com/package/@nactrace/core). Source and issues: https://github.com/Migl992/nectrace. MIT.
+Pre-alpha. Built on [@nactrace/core](https://www.npmjs.com/package/@nactrace/core). Source and issues: https://github.com/Migl992/nactrace. MIT.

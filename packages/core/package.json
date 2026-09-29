@@ -33,11 +33,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Migl992/nectrace.git"
+    "url": "git+https://github.com/Migl992/nactrace.git"
   },
-  "homepage": "https://github.com/Migl992/nectrace#readme",
+  "homepage": "https://github.com/Migl992/nactrace#readme",
   "bugs": {
-    "url": "https://github.com/Migl992/nectrace/issues"
+    "url": "https://github.com/Migl992/nactrace/issues"
   },
   "keywords": [
     "tezos",

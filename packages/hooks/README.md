@@ -1,6 +1,6 @@
 # @nactrace/hooks
 
-Test-framework hooks for [nactrace](https://github.com/Migl992/nectrace): when a transaction fails on Etherlink / Tezos X Previewnet, print the explanation without leaving your terminal. Both hooks are thin: they find a hash and run the `nactrace` CLI.
+Test-framework hooks for [nactrace](https://github.com/Migl992/nactrace): when a transaction fails on Etherlink / Tezos X Previewnet, print the explanation without leaving your terminal. Both hooks are thin: they find a hash and run the `nactrace` CLI.
 
 ```
 npm i -D @nactrace/hooks
