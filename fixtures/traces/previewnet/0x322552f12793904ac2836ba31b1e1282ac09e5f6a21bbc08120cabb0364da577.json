@@ -6,7 +6,6 @@
     "runtime": "evm",
     "kind": "tx",
     "hash": "0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
-    "synthetic": false,
     "from": {
       "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
       "runtime": "evm",
@@ -31,6 +30,45 @@
       "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/ooviJEWmbaWJeDm5vpsFqFpxeSXVsud54jydc4UByViKFMqM5Vk"
     },
     "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152923006885953536",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047742,
+        "timestamp": "2026-09-25T15:41:50Z",
+        "hash": "0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
+        "sender": {
+          "id": 268437694,
+          "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268437701,
+          "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 1694908914,
+        "counter": 23,
+        "gasLimit": 8000000,
+        "gasUsed": 637368,
+        "status": "failed",
+        "errors": "1167d8fb000000000000000000000000000000000000000000000000000000000000002a",
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "616000000000000",
+        "gasFee": "21368000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0xc770ba25",
+        "output": "0x1167d8fb000000000000000000000000000000000000000000000000000000000000002a"
+      },
       "receipt": {
         "transactionHash": "0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
         "transactionIndex": "0x0",
@@ -59,9 +97,21 @@
     "evmReason": "custom error 0x1167d8fb 000000000000000000000000000000000000000000000000000000000000002a"
   },
   "meta": {
-    "source": "rpc_only",
-    "correlation": "derived_hash",
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
     "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0x322552f12793904ac2836ba31b1e1282ac09e5f6a21bbc08120cabb0364da577",
+        "method": "GET"
+      },
       {
         "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
         "method": "eth_getTransactionReceipt"
@@ -73,10 +123,6 @@
       {
         "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047742/operations",
         "method": "GET"
-      },
-      {
-        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
-        "method": "eth_getTransactionByHash"
       }
     ],
     "warnings": []

@@ -129,7 +129,13 @@ function rowStatus(ctx: Ctx, r: XtzktTransactionRow): NodeStatus {
 
 function rowError(r: XtzktTransactionRow): string | undefined {
   if (r.errors === undefined || r.errors === null) return undefined;
-  return typeof r.errors === "string" ? r.errors : JSON.stringify(r.errors);
+  const text = typeof r.errors === "string" ? r.errors : JSON.stringify(r.errors);
+  // For EVM-side reverts 0xTzKT puts the raw revert data in `errors` (hex without 0x, seen on
+  // Previewnet for a custom error): decode it the same way as callTracer output.
+  if (/^(0x)?[0-9a-fA-F]{8,}$/.test(text)) {
+    return decodeRevert(text.startsWith("0x") ? text : `0x${text}`) ?? text;
+  }
+  return text;
 }
 
 function addr(

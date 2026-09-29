@@ -61,7 +61,7 @@
         },
         "daFee": 660,
         "gasFee": 7340,
-        "gasRefund": 0
+        "gasFeeRefunded": 0
       },
       "tezosOperation": {
         "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",

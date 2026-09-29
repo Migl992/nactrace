@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "direction": "x_michelson",
+    "id": "1152923006399414272",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 1047288,
+    "timestamp": "2026-09-25T14:56:51.5Z",
+    "hash": "ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+    "sender": {
+      "id": 268437695,
+      "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268437696,
+      "hash": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+      "type": "x_michelson_contract"
+    },
+    "targetCodeHash": -1217531874,
+    "counter": 14,
+    "gasLimit": 120000,
+    "gasUsed": 0,
+    "status": "failed",
+    "errors": "[{\"type\":\"tezlink_error\"}]",
+    "entrypoint": "decrement",
+    "parameters": {},
+    "guessed": false,
+    "amount": 0,
+    "storageLimit": 1000,
+    "storageUsed": 0,
+    "parametersRaw": {
+      "prim": "Unit"
+    },
+    "daFee": 672,
+    "gasFee": 19328,
+    "gasFeeRefunded": 0
+  }
+]

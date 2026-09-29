@@ -31,14 +31,19 @@
     "amountReceived": "0",
     "daFee": 952,
     "gasFee": 5048,
-    "gasRefund": 0,
+    "gasFeeRefunded": 0,
     "storageLimit": 0,
     "storageUsed": 0,
     "input": "0xd09de08a",
     "alias": {
       "id": 268437700,
       "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -90,7 +95,7 @@
     },
     "level": 1046583,
     "timestamp": "2026-09-25T13:47:42Z",
-    "hash": "oo3MFijX6ZMxQpee3vGhYabb9C4Jcxm28MUTQqv2GnLa1NKE16W",
+    "hash": "0x34896e73843c97ab804a9bfa87230eabe5869954daebab535ead62e466c2070c",
     "sender": {
       "id": 268437697,
       "hash": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d",
@@ -109,7 +114,6 @@
     },
     "targetCodeHash": -1217531874,
     "counter": 3,
-    "gasLimit": 0,
     "gasUsed": 55626,
     "status": "applied",
     "entrypoint": "increment",
@@ -120,15 +124,18 @@
     "amountSent": "0",
     "roundingLoss": "0",
     "amountReceived": 0,
-    "daFee": "0",
-    "gasFee": "0",
     "parametersRaw": {
       "prim": "Unit"
     },
     "alias": {
       "id": 268437699,
       "hash": "KT1TA7PnMEKLeGgTLXZVk1QmeRoUSzUq3XK2",
-      "type": "x_michelson_alias"
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268437697,
+        "hash": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d",
+        "type": "x_evm_contract"
+      }
     },
     "gateway": {
       "id": 268435464,

@@ -1,1 +1,87 @@
-[]
+[
+  {
+    "direction": "x_michelson_evm",
+    "id": "1152923006457085952",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 1047340,
+    "timestamp": "2026-09-25T15:02:01Z",
+    "hash": "onmRggbbEU7kiQEXVGzCGBPJKEF4cPjDpLWSM31isFXowo3Zoym",
+    "sender": {
+      "id": 268437695,
+      "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268437701,
+      "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "type": "x_evm_contract"
+    },
+    "targetCodeHash": 1694908914,
+    "counter": 15,
+    "gasLimit": 120000,
+    "gasUsed": 968,
+    "status": "applied",
+    "amountSent": 0,
+    "amountReceived": "0",
+    "daFee": 944,
+    "gasFee": 19056,
+    "gasFeeRefunded": 0,
+    "storageLimit": 1000,
+    "storageUsed": 0,
+    "input": "0x5c36b186",
+    "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "alias": {
+      "id": 268437700,
+      "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
+    },
+    "gateway": {
+      "id": 268435469,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract"
+    },
+    "gatewayEntrypoint": "call_evm",
+    "gatewayParameters": {
+      "bytes": "",
+      "contract": null,
+      "string_0": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "string_1": "ping()"
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "ping()"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

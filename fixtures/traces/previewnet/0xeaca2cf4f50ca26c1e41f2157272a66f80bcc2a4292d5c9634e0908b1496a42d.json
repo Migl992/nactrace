@@ -6,7 +6,6 @@
     "runtime": "evm",
     "kind": "tx",
     "hash": "0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
-    "synthetic": false,
     "from": {
       "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
       "runtime": "evm",
@@ -31,6 +30,45 @@
       "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/ooRguxsdWP4zEsmw7nsNYq2TK38yBv59WAoM65CG6eRosNy5snh"
     },
     "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152923006883856384",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047741,
+        "timestamp": "2026-09-25T15:41:46Z",
+        "hash": "0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+        "sender": {
+          "id": 268437694,
+          "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268437701,
+          "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 1694908914,
+        "counter": 22,
+        "gasLimit": 8000000,
+        "gasUsed": 637355,
+        "status": "failed",
+        "errors": "boom from EVM",
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "616000000000000",
+        "gasFee": "21355000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0xa169ce09",
+        "output": "0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000d626f6f6d2066726f6d2045564d00000000000000000000000000000000000000"
+      },
       "receipt": {
         "transactionHash": "0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
         "transactionIndex": "0x0",
@@ -59,9 +97,21 @@
     "evmReason": "boom from EVM"
   },
   "meta": {
-    "source": "rpc_only",
-    "correlation": "derived_hash",
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
     "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0xeaca2cf4f50ca26c1e41f2157272a66f80bcc2a4292d5c9634e0908b1496a42d",
+        "method": "GET"
+      },
       {
         "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
         "method": "eth_getTransactionReceipt"
@@ -73,10 +123,6 @@
       {
         "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047741/operations",
         "method": "GET"
-      },
-      {
-        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
-        "method": "eth_getTransactionByHash"
       }
     ],
     "warnings": []

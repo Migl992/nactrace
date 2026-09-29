@@ -6,7 +6,6 @@
     "runtime": "evm",
     "kind": "tx",
     "hash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
-    "synthetic": false,
     "from": {
       "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
       "runtime": "evm",
@@ -25,12 +24,52 @@
       "unit": "evm_gas"
     },
     "status": "reverted",
-    "error": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+    "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
     "links": {
       "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
       "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onmRcijEpBxiZ5m97oqd5L5KsAvLzwJmLdGbVzxFekNrcVkDQxt"
     },
     "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152923006897487872",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047745,
+        "timestamp": "2026-09-25T15:42:03Z",
+        "hash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+        "sender": {
+          "id": 268437694,
+          "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268437708,
+          "hash": "0xbf8d939ba27c4aa2db1bd00c866d6c63c5a520ab",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": -30135196,
+        "counter": 26,
+        "gasLimit": 8000000,
+        "gasUsed": 642166,
+        "status": "failed",
+        "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
+        "internalOperations": 2,
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "616000000000000",
+        "gasFee": "64352000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0x4065e207",
+        "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065"
+      },
       "receipt": {
         "transactionHash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
         "transactionIndex": "0x0",
@@ -151,6 +190,74 @@
     "children": [
       {
         "id": "n1",
+        "runtime": "evm",
+        "kind": "call",
+        "from": {
+          "value": "0xbf8d939ba27c4aa2db1bd00c866d6c63c5a520ab",
+          "runtime": "evm",
+          "role": "native",
+          "label": "contract"
+        },
+        "to": {
+          "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "runtime": "evm",
+          "role": "native",
+          "label": "contract"
+        },
+        "entrypoint": "0xf3197b58",
+        "gas": {
+          "used": "8622",
+          "unit": "evm_gas"
+        },
+        "status": "reverted",
+        "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
+        "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+        "raw": {
+          "xtzkt": {
+            "direction": "x_evm",
+            "id": "1152923006898536448",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 1047745,
+            "timestamp": "2026-09-25T15:42:03Z",
+            "hash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+            "sender": {
+              "id": 268437708,
+              "hash": "0xbf8d939ba27c4aa2db1bd00c866d6c63c5a520ab",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": -30135196,
+            "initiator": {
+              "id": 268437694,
+              "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268437701,
+              "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "type": "x_evm_contract"
+            },
+            "targetCodeHash": 1694908914,
+            "counter": 26,
+            "gasUsed": 8622,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
+            "opType": "trace",
+            "opCode": "call",
+            "amount": "0",
+            "input": "0xf3197b58",
+            "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065"
+          }
+        },
+        "events": [],
+        "children": [],
+        "links": {}
+      },
+      {
+        "id": "n2",
         "runtime": "michelson",
         "kind": "crossing",
         "hash": "onmRcijEpBxiZ5m97oqd5L5KsAvLzwJmLdGbVzxFekNrcVkDQxt",
@@ -159,12 +266,14 @@
           "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
           "runtime": "evm",
           "role": "native",
+          "counterpart": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
           "label": "contract"
         },
         "to": {
           "value": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
           "runtime": "michelson",
-          "role": "unknown"
+          "role": "native",
+          "label": "contract"
         },
         "entrypoint": "nope",
         "gas": {
@@ -172,11 +281,76 @@
           "unit": "evm_gas"
         },
         "status": "reverted",
-        "error": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+        "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
         "links": {
           "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/onmRcijEpBxiZ5m97oqd5L5KsAvLzwJmLdGbVzxFekNrcVkDQxt"
         },
         "raw": {
+          "xtzkt": {
+            "direction": "x_evm_michelson",
+            "id": "1152923006899585024",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 1047745,
+            "timestamp": "2026-09-25T15:42:03Z",
+            "hash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+            "sender": {
+              "id": 268437701,
+              "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": 1694908914,
+            "initiator": {
+              "id": 268437694,
+              "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268437696,
+              "hash": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+              "type": "x_michelson_contract"
+            },
+            "targetCodeHash": -1217531874,
+            "counter": 26,
+            "gasUsed": 29564,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
+            "entrypoint": "nope",
+            "guessed": false,
+            "opType": "trace",
+            "opCode": "call",
+            "amountSent": "0",
+            "roundingLoss": "0",
+            "amountReceived": 0,
+            "parametersRaw": {
+              "prim": "Unit"
+            },
+            "alias": {
+              "id": 268437702,
+              "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268437701,
+                "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+                "type": "x_evm_contract"
+              }
+            },
+            "gateway": {
+              "id": 268435464,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+            "gatewayParameters": {
+              "entrypoint": "nope",
+              "parameters": "0x030b",
+              "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv"
+            },
+            "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c736839355467760000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000046e6f7065000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000"
+          },
           "callFrame": {
             "type": "CALL",
             "from": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
@@ -242,8 +416,8 @@
   "atomic": true,
   "explanation": {
     "summary": "EVM tx 0xe571…9340 from 0x2cad…87b3 to 0xbf8d…20ab calling 0x4065e207 reverted: Michelson entrypoint %nope of KT1LT…5Tgv failed with failed typechecking input: no such entrypoint: nope; whole transaction rolled back on both sides.",
-    "failedNodeId": "n1",
-    "evmReason": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e6f207375636820656e747279706f696e743a206e6f7065",
+    "failedNodeId": "n2",
+    "evmReason": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
     "michelsonError": {
       "kind": "permanent",
       "id": "tezlink_error",
@@ -251,9 +425,21 @@
     }
   },
   "meta": {
-    "source": "rpc_only",
-    "correlation": "derived_hash",
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
     "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
+        "method": "GET"
+      },
       {
         "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
         "method": "eth_getTransactionReceipt"
@@ -265,10 +451,6 @@
       {
         "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047745/operations",
         "method": "GET"
-      },
-      {
-        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
-        "method": "eth_getTransactionByHash"
       },
       {
         "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047744/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",

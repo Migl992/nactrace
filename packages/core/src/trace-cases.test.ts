@@ -163,7 +163,13 @@ describe("Michelson-originated edge cases", () => {
   });
 
   it("plain Michelson op that fails (RPC-only, level given): root reverted with FAILWITH", async () => {
-    const t = await build(H.plainMichelsonFailure, 1047288);
+    // Deliberately RPC-only: this path must keep working even now that 0xTzKT knows the op.
+    const t = await buildTrace(H.plainMichelsonFailure, {
+      provider: replayProvider(),
+      network: "previewnet",
+      useXtzkt: false,
+      level: 1047288,
+    });
     expect(t.meta.source).toBe("rpc_only");
     expect(t.status).toBe("reverted");
     expect(t.root.error).toBe('FAILWITH "at zero"');
@@ -204,7 +210,12 @@ describe("Michelson-originated edge cases", () => {
   });
 
   it("RPC-only path names the EVM target and signature from the op parameters", async () => {
-    const t = await build(H.pingRaw, 1047340);
+    const t = await buildTrace(H.pingRaw, {
+      provider: replayProvider(),
+      network: "previewnet",
+      useXtzkt: false,
+      level: 1047340,
+    });
     expect(t.meta.source).toBe("rpc_only");
     const [leg] = crossings(t);
     expect(leg?.entrypoint).toBe("ping()");

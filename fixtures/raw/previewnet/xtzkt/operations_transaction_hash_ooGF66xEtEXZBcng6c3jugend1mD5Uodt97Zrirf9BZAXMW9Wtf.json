@@ -36,6 +36,6 @@
     },
     "daFee": 660,
     "gasFee": 7340,
-    "gasRefund": 0
+    "gasFeeRefunded": 0
   }
 ]
