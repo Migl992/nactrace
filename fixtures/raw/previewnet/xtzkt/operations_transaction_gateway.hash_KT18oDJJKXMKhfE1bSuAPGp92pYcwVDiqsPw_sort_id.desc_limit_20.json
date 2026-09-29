@@ -1,6 +1,91 @@
 [
   {
     "direction": "x_michelson_evm",
+    "id": "1152923006457085952",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 1047340,
+    "timestamp": "2026-09-25T15:02:01Z",
+    "hash": "onmRggbbEU7kiQEXVGzCGBPJKEF4cPjDpLWSM31isFXowo3Zoym",
+    "sender": {
+      "id": 268437695,
+      "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268437701,
+      "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "type": "x_evm_contract"
+    },
+    "targetCodeHash": 1694908914,
+    "counter": 15,
+    "gasLimit": 120000,
+    "gasUsed": 968,
+    "status": "applied",
+    "amountSent": 0,
+    "amountReceived": "0",
+    "daFee": 944,
+    "gasFee": 19056,
+    "gasFeeRefunded": 0,
+    "storageLimit": 1000,
+    "storageUsed": 0,
+    "input": "0x5c36b186",
+    "output": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "alias": {
+      "id": 268437700,
+      "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
+    },
+    "gateway": {
+      "id": 268435469,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract"
+    },
+    "gatewayEntrypoint": "call_evm",
+    "gatewayParameters": {
+      "bytes": "",
+      "contract": null,
+      "string_0": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+      "string_1": "ping()"
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "ping()"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "direction": "x_michelson_evm",
     "id": "1152923006281973760",
     "chain": {
       "id": 1,
@@ -28,14 +113,19 @@
     "amountReceived": "1000000000000000",
     "daFee": 912,
     "gasFee": 7088,
-    "gasRefund": 0,
+    "gasFeeRefunded": 0,
     "storageLimit": 0,
     "storageUsed": 0,
     "input": "0xc5d24601",
     "alias": {
       "id": 268437700,
       "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -108,7 +198,7 @@
     "amountReceived": "0",
     "daFee": 1096,
     "gasFee": 6904,
-    "gasRefund": 0,
+    "gasFeeRefunded": 0,
     "storageLimit": 52,
     "storageUsed": 0,
     "input": "0x5c36b186",
@@ -116,7 +206,12 @@
     "alias": {
       "id": 268437700,
       "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -193,7 +288,7 @@
     "amountReceived": "0",
     "daFee": 932,
     "gasFee": 7068,
-    "gasRefund": 0,
+    "gasFeeRefunded": 0,
     "storageLimit": 0,
     "storageUsed": 0,
     "input": "0x5c36b186",
@@ -201,7 +296,12 @@
     "alias": {
       "id": 268437700,
       "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -275,14 +375,19 @@
     "amountReceived": "0",
     "daFee": 952,
     "gasFee": 5048,
-    "gasRefund": 0,
+    "gasFeeRefunded": 0,
     "storageLimit": 0,
     "storageUsed": 0,
     "input": "0xd09de08a",
     "alias": {
       "id": 268437700,
       "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -353,23 +458,23 @@
     },
     "targetCodeHash": -1816224858,
     "counter": 206,
-    "gasLimit": 0,
     "gasUsed": 1040,
     "status": "applied",
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 0,
     "input": "0x15f41501000000000000000000000000fd1333c26ea2e99e482e82878576e3c819fe957700000000000000000000000000000000000000000000000000000000003d0900000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e",
     "alias": {
       "id": 268436691,
       "hash": "0x6f582e89ea24c17f1f06045ca71618aa80e7386e",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268436689,
+        "hash": "KT1URnWU5rovdPm7Pxh6ko3suaDY2HcLXWaP",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -440,23 +545,23 @@
     },
     "targetCodeHash": -1816224858,
     "counter": 53,
-    "gasLimit": 0,
     "gasUsed": 1146,
     "status": "applied",
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 0,
     "input": "0x15f41501000000000000000000000000fd1333c26ea2e99e482e82878576e3c819fe95770000000000000000000000000000000000000000000000000000000000d59f80000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e",
     "alias": {
       "id": 268436691,
       "hash": "0x6f582e89ea24c17f1f06045ca71618aa80e7386e",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268436689,
+        "hash": "KT1URnWU5rovdPm7Pxh6ko3suaDY2HcLXWaP",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -527,23 +632,23 @@
     },
     "targetCodeHash": -1816224858,
     "counter": 205,
-    "gasLimit": 0,
     "gasUsed": 1146,
     "status": "applied",
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 0,
     "input": "0x15f41501000000000000000000000000fd1333c26ea2e99e482e82878576e3c819fe95770000000000000000000000000000000000000000000000000000000015ef3c00000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e",
     "alias": {
       "id": 268436691,
       "hash": "0x6f582e89ea24c17f1f06045ca71618aa80e7386e",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268436689,
+        "hash": "KT1URnWU5rovdPm7Pxh6ko3suaDY2HcLXWaP",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -614,7 +719,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 204,
-    "gasLimit": 0,
     "gasUsed": 1217,
     "status": "applied",
     "entrypoint": "transfer(address,uint256)",
@@ -627,10 +731,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 0,
     "input": "0xa9059cbb000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000000000000000000000000000000000000000f4240",
@@ -641,7 +741,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -693,7 +798,7 @@
     },
     "level": 1031801,
     "timestamp": "2026-09-24T13:12:12Z",
-    "hash": "0xdf7558a13fc17b8f53e3d8adefa82f00ab8194f53105e91ca8092b6a2d23840f",
+    "hash": "opLdDUrHzwtx4WcSYgSioB6GtKay2oAyptqBTdJLiLG1uzPHu92",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -712,7 +817,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 173,
-    "gasLimit": 0,
     "gasUsed": 1243,
     "status": "applied",
     "entrypoint": "transferFrom(address,address,uint256)",
@@ -726,10 +830,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0x23b872dd000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000002faf080",
@@ -740,7 +840,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -792,7 +897,7 @@
     },
     "level": 1031787,
     "timestamp": "2026-09-24T13:11:22Z",
-    "hash": "0x4295e699c28f946fc8643003612c1ff17ee5e270fa64919457966da64cb22a36",
+    "hash": "oo9Y7LJ8rybxtRN3fFmD3ihfH26etRFsr8zCZATZUYRL786qLab",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -811,7 +916,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 167,
-    "gasLimit": 0,
     "gasUsed": 1243,
     "status": "applied",
     "entrypoint": "transferFrom(address,address,uint256)",
@@ -825,10 +929,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0x23b872dd000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000002faf080",
@@ -839,7 +939,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -891,7 +996,7 @@
     },
     "level": 1031749,
     "timestamp": "2026-09-24T13:07:45Z",
-    "hash": "0xa05935365b7b6d328e8825a9efc13c7d7c92c155d4c9e168c2aa81ab22662db1",
+    "hash": "oorqA7Snpw8pbwqri8uiPdGoSR8oCB8gFyKqGmPHuWsKyH33XHG",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -910,7 +1015,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 162,
-    "gasLimit": 0,
     "gasUsed": 1243,
     "status": "applied",
     "entrypoint": "transferFrom(address,address,uint256)",
@@ -924,10 +1028,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0x23b872dd000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b00000000000000000000000000000000000000000000000000000000006acfc0",
@@ -938,7 +1038,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -990,7 +1095,7 @@
     },
     "level": 1031700,
     "timestamp": "2026-09-24T13:02:59Z",
-    "hash": "0xfb3562f7acf9c724b42c5e92f2102a4de1947b66ca5bd5c856c5b5e0b48a57af",
+    "hash": "opYr4EQihiyjHbGuZsuwAoAMjpAh5UhyfTqSPBWbGu8vtuvj6VY",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -1009,7 +1114,6 @@
     },
     "targetCodeHash": 3982867,
     "counter": 159,
-    "gasLimit": 0,
     "gasUsed": 1215,
     "status": "applied",
     "entrypoint": "transfer(address,uint256)",
@@ -1022,17 +1126,18 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0xa9059cbb000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e0000000000000000000000000000000000000000000000000000000000000fa0",
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1084,7 +1189,7 @@
     },
     "level": 1031699,
     "timestamp": "2026-09-24T13:02:55Z",
-    "hash": "0x9a0e2dc33587a5bfa924b18a07fd9e4eb82532cc186e00d07e2ee9c68858dd8d",
+    "hash": "oop4Qi1qAX9RfxoBxrZjo1v6ysG6fY8ztzaevWf66HKdKnqSVZf",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -1103,7 +1208,6 @@
     },
     "targetCodeHash": 3982867,
     "counter": 158,
-    "gasLimit": 0,
     "gasUsed": 1242,
     "status": "applied",
     "entrypoint": "transferFrom(address,address,uint256)",
@@ -1117,17 +1221,18 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0x23b872dd000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000000002710",
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1179,7 +1284,7 @@
     },
     "level": 1031696,
     "timestamp": "2026-09-24T13:02:44Z",
-    "hash": "0xb055898ae0856733ae59181f1e302080367f693dafde1ecbd813fd68d50419f7",
+    "hash": "ooysVPDe1V5cpYhYCpGEPB126tVrSJTVxuYBW9zUf6E2hhcgr76",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -1198,7 +1303,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 155,
-    "gasLimit": 0,
     "gasUsed": 1218,
     "status": "applied",
     "entrypoint": "transfer(address,uint256)",
@@ -1211,10 +1315,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0xa9059cbb000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e0000000000000000000000000000000000000000000000000000000001c9c380",
@@ -1225,7 +1325,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1296,7 +1401,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 188,
-    "gasLimit": 0,
     "gasUsed": 1217,
     "status": "applied",
     "entrypoint": "transfer(address,uint256)",
@@ -1309,10 +1413,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 0,
     "input": "0xa9059cbb000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e0000000000000000000000000000000000000000000000000000000001312d00",
@@ -1323,7 +1423,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1394,7 +1499,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 187,
-    "gasLimit": 0,
     "gasUsed": 1180,
     "status": "applied",
     "entrypoint": "transferFrom(address,address,uint256)",
@@ -1408,10 +1512,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 0,
     "input": "0x23b872dd0000000000000000000000002c997b746df833ee9d042260f4d2c867ce390fd500000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000002faf080",
@@ -1422,7 +1522,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1501,7 +1606,7 @@
     "amountReceived": "0",
     "daFee": 1264,
     "gasFee": 201,
-    "gasRefund": 0,
+    "gasFeeRefunded": 0,
     "storageLimit": 0,
     "storageUsed": 0,
     "input": "0x095ea7b300000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000002faf080",
@@ -1512,7 +1617,12 @@
     "alias": {
       "id": 268436705,
       "hash": "0x2c997b746df833ee9d042260f4d2c867ce390fd5",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268436651,
+        "hash": "tz1NFowpkMHNiFPBsoc9SVAJTR7aAVrEXSVk",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1564,7 +1674,7 @@
     },
     "level": 1031691,
     "timestamp": "2026-09-24T13:02:28Z",
-    "hash": "0xaf988972a4c59b33247ead070b05817fd91f66f09fbe63506274f727a46c7ac2",
+    "hash": "ooyYdbRayKJcMnauFBZkBQmKBLw3tXdvpJJNSr6LqyxjdxQjkiZ",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -1583,7 +1693,6 @@
     },
     "targetCodeHash": 1948148987,
     "counter": 153,
-    "gasLimit": 0,
     "gasUsed": 1349,
     "status": "applied",
     "entrypoint": "transferFrom(address,address,uint256)",
@@ -1597,10 +1706,6 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0x23b872dd000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000005f5e100",
@@ -1611,7 +1716,12 @@
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1663,7 +1773,7 @@
     },
     "level": 1031685,
     "timestamp": "2026-09-24T13:02:00Z",
-    "hash": "0x3de10f319777283954a6971adb447aaf23d0239b89d6b8b22919fd065660720b",
+    "hash": "oo7TtdfgUqCSWvRSdVu4PPFLatx3wAc89HvjTmDcJHQ5wa2GAcw",
     "sender": {
       "id": 268437684,
       "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
@@ -1682,7 +1792,6 @@
     },
     "targetCodeHash": 3982867,
     "counter": 150,
-    "gasLimit": 0,
     "gasUsed": 1215,
     "status": "applied",
     "entrypoint": "transfer(address,uint256)",
@@ -1695,17 +1804,18 @@
     "logsCount": 1,
     "amountSent": 0,
     "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
     "storageUsed": 0,
     "nonce": 2,
     "input": "0xa9059cbb000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e0000000000000000000000000000000000000000000000000000000000000fa0",
     "alias": {
       "id": 268437685,
       "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437684,
+        "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
+        "type": "x_michelson_contract"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -1736,101 +1846,6 @@
               "args": [
                 {
                   "bytes": "000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e0000000000000000000000000000000000000000000000000000000000000fa0"
-                },
-                {
-                  "prim": "None"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "direction": "x_michelson_evm",
-    "id": "1152922989846593536",
-    "chain": {
-      "id": 1,
-      "chainId": "0x1f440",
-      "layer": "x"
-    },
-    "level": 1031684,
-    "timestamp": "2026-09-24T13:01:55Z",
-    "hash": "0x4b06f0cecd4d4817645ac7a675afbd419819144f287f6979ae1160e1607ebd06",
-    "sender": {
-      "id": 268437684,
-      "hash": "KT1Bp2xRms8FbmD3z72D5D1JdYEaCcSxvJ2X",
-      "type": "x_michelson_contract"
-    },
-    "senderCodeHash": 68402387,
-    "initiator": {
-      "id": 268436656,
-      "hash": "0xd920516f16903681c5db89596a877fa218fbb90e",
-      "type": "x_evm_user"
-    },
-    "target": {
-      "id": 268437680,
-      "hash": "0x3a01c3f3bfa6c0541a69a4f8b2a66fd3ad4fae37",
-      "type": "x_evm_contract"
-    },
-    "targetCodeHash": 3982867,
-    "counter": 149,
-    "gasLimit": 0,
-    "gasUsed": 1242,
-    "status": "applied",
-    "entrypoint": "transferFrom(address,address,uint256)",
-    "parameters": {
-      "to": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "from": "0xd920516f16903681c5db89596a877fa218fbb90e",
-      "value": "10000"
-    },
-    "guessed": true,
-    "tokenTransfers": 1,
-    "logsCount": 1,
-    "amountSent": 0,
-    "amountReceived": "0",
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0,
-    "storageLimit": 0,
-    "storageUsed": 0,
-    "nonce": 2,
-    "input": "0x23b872dd000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000000002710",
-    "alias": {
-      "id": 268437685,
-      "hash": "0x46999a683acf2f580b5129f1f2436f811783202b",
-      "type": "x_evm_alias"
-    },
-    "gateway": {
-      "id": 268435469,
-      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
-      "type": "x_michelson_contract"
-    },
-    "gatewayEntrypoint": "call_evm",
-    "gatewayParameters": {
-      "bytes": "000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000000002710",
-      "contract": null,
-      "string_0": "0x3a01c3f3bfa6c0541a69a4f8b2a66fd3ad4fae37",
-      "string_1": "transferFrom(address,address,uint256)"
-    },
-    "gatewayParametersRaw": {
-      "prim": "Pair",
-      "args": [
-        {
-          "string": "0x3a01c3f3bfa6c0541a69a4f8b2a66fd3ad4fae37"
-        },
-        {
-          "prim": "Pair",
-          "args": [
-            {
-              "string": "transferFrom(address,address,uint256)"
-            },
-            {
-              "prim": "Pair",
-              "args": [
-                {
-                  "bytes": "000000000000000000000000d920516f16903681c5db89596a877fa218fbb90e00000000000000000000000046999a683acf2f580b5129f1f2436f811783202b0000000000000000000000000000000000000000000000000000000000002710"
                 },
                 {
                   "prim": "None"

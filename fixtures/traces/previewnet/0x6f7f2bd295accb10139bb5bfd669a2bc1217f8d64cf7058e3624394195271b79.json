@@ -412,7 +412,6 @@
             },
             "targetCodeHash": -1217531874,
             "counter": 13,
-            "gasLimit": 0,
             "gasUsed": 55626,
             "status": "applied",
             "entrypoint": "increment",
@@ -423,15 +422,18 @@
             "amountSent": "0",
             "roundingLoss": "0",
             "amountReceived": 0,
-            "daFee": "0",
-            "gasFee": "0",
             "parametersRaw": {
               "prim": "Unit"
             },
             "alias": {
               "id": 268437702,
               "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
-              "type": "x_michelson_alias"
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268437701,
+                "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+                "type": "x_evm_contract"
+              }
             },
             "gateway": {
               "id": 268435464,
@@ -572,7 +574,6 @@
             },
             "targetCodeHash": -1217531874,
             "counter": 13,
-            "gasLimit": 0,
             "gasUsed": 55626,
             "status": "applied",
             "entrypoint": "increment",
@@ -583,15 +584,18 @@
             "amountSent": "0",
             "roundingLoss": "0",
             "amountReceived": 0,
-            "daFee": "0",
-            "gasFee": "0",
             "parametersRaw": {
               "prim": "Unit"
             },
             "alias": {
               "id": 268437702,
               "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
-              "type": "x_michelson_alias"
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268437701,
+                "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+                "type": "x_evm_contract"
+              }
             },
             "gateway": {
               "id": 268435464,
@@ -732,7 +736,6 @@
             },
             "targetCodeHash": -1217531874,
             "counter": 13,
-            "gasLimit": 0,
             "gasUsed": 55736,
             "status": "applied",
             "entrypoint": "decrement",
@@ -743,15 +746,18 @@
             "amountSent": "0",
             "roundingLoss": "0",
             "amountReceived": 0,
-            "daFee": "0",
-            "gasFee": "0",
             "parametersRaw": {
               "prim": "Unit"
             },
             "alias": {
               "id": 268437702,
               "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
-              "type": "x_michelson_alias"
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268437701,
+                "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+                "type": "x_evm_contract"
+              }
             },
             "gateway": {
               "id": 268435464,

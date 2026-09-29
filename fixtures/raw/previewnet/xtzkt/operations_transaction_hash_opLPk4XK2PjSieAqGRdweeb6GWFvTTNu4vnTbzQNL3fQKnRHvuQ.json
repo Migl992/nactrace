@@ -30,7 +30,7 @@
     "amountReceived": "0",
     "daFee": 1096,
     "gasFee": 6904,
-    "gasRefund": 0,
+    "gasFeeRefunded": 0,
     "storageLimit": 52,
     "storageUsed": 0,
     "input": "0x5c36b186",
@@ -38,7 +38,12 @@
     "alias": {
       "id": 268437700,
       "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-      "type": "x_evm_alias"
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268437695,
+        "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+        "type": "x_michelson_user"
+      }
     },
     "gateway": {
       "id": 268435469,
@@ -114,7 +119,6 @@
     },
     "targetCodeHash": -1040015789,
     "counter": 7,
-    "gasLimit": 0,
     "gasUsed": 1106,
     "status": "applied",
     "entrypoint": "default",
@@ -122,14 +126,10 @@
     "guessed": false,
     "amount": 0,
     "storageFee": 32,
-    "storageLimit": 0,
     "storageUsed": 32,
     "nonce": 0,
     "parametersRaw": {
       "bytes": "0000000000000000000000000000000000000000000000000000000000000001"
-    },
-    "daFee": 0,
-    "gasFee": 0,
-    "gasRefund": 0
+    }
   }
 ]

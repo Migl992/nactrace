@@ -68,7 +68,6 @@
     },
     "targetCodeHash": -1217531874,
     "counter": 5,
-    "gasLimit": 0,
     "gasUsed": 30237,
     "status": "failed",
     "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"at zero\") of type String",
@@ -80,15 +79,18 @@
     "amountSent": "0",
     "roundingLoss": "0",
     "amountReceived": 0,
-    "daFee": "0",
-    "gasFee": "0",
     "parametersRaw": {
       "prim": "Unit"
     },
     "alias": {
       "id": 268437699,
       "hash": "KT1TA7PnMEKLeGgTLXZVk1QmeRoUSzUq3XK2",
-      "type": "x_michelson_alias"
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268437697,
+        "hash": "0x0e11ecfd2aca4b8290ea5db996f46dd238374b3d",
+        "type": "x_evm_contract"
+      }
     },
     "gateway": {
       "id": 268435464,

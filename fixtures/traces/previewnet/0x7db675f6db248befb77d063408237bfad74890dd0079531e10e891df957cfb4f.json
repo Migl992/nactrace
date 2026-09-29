@@ -6,7 +6,6 @@
     "runtime": "evm",
     "kind": "tx",
     "hash": "0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
-    "synthetic": false,
     "from": {
       "value": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
       "runtime": "evm",
@@ -30,6 +29,45 @@
       "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/opL7oUJNQ942VD3gkR262cwgF4kZWUuZAeNCCAvTiD1yNJxZT9U"
     },
     "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152923006422482944",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047309,
+        "timestamp": "2026-09-25T14:58:57Z",
+        "hash": "0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
+        "sender": {
+          "id": 268437694,
+          "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268437701,
+          "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 1694908914,
+        "counter": 17,
+        "gasLimit": 5000000,
+        "gasUsed": 804842,
+        "status": "applied",
+        "internalOperations": 1,
+        "logsCount": 1,
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "616000000000000",
+        "gasFee": "219079000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0x6165b870"
+      },
       "receipt": {
         "transactionHash": "0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
         "transactionIndex": "0x0",
@@ -141,6 +179,12 @@
     },
     "events": [
       {
+        "name": "0x89e4c3fbcc98a9d0ace2a01a1600306a834e56529eda1c1f49f778ac047783f3",
+        "address": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "topics": ["0x89e4c3fbcc98a9d0ace2a01a1600306a834e56529eda1c1f49f778ac047783f3"],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000be43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e747261637420776974682072756e74696d65206661696c757265207768696c652072756e6e696e6720746865207363726970743a206661696c656420776974683a20537472696e6728226174207a65726f2229206f66207479706520537472696e670000"
+      },
+      {
         "name": "cross_runtime_call",
         "args": {
           "payload": {
@@ -170,12 +214,14 @@
           "value": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
           "runtime": "evm",
           "role": "native",
+          "counterpart": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
           "label": "contract"
         },
         "to": {
           "value": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
           "runtime": "michelson",
-          "role": "unknown"
+          "role": "native",
+          "label": "contract"
         },
         "entrypoint": "decrement",
         "gas": {
@@ -183,11 +229,78 @@
           "unit": "evm_gas"
         },
         "status": "reverted",
-        "error": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e747261637420776974682072756e74696d65206661696c757265207768696c652072756e6e696e6720746865207363726970743a206661696c656420776974683a20537472696e6728226174207a65726f2229206f66207479706520537472696e67",
+        "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"at zero\") of type String",
         "links": {
           "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/opL7oUJNQ942VD3gkR262cwgF4kZWUuZAeNCCAvTiD1yNJxZT9U"
         },
         "raw": {
+          "xtzkt": {
+            "direction": "x_evm_michelson",
+            "id": "1152923006423531520",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 1047309,
+            "timestamp": "2026-09-25T14:58:57Z",
+            "hash": "0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
+            "sender": {
+              "id": 268437701,
+              "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": 1694908914,
+            "initiator": {
+              "id": 268437694,
+              "hash": "0x2caddb07bb2893c85f48a58e9e605bdb96f787b3",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268437696,
+              "hash": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+              "type": "x_michelson_contract"
+            },
+            "targetCodeHash": -1217531874,
+            "counter": 17,
+            "gasUsed": 30237,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"at zero\") of type String",
+            "entrypoint": "decrement",
+            "parameters": {},
+            "guessed": false,
+            "opType": "trace",
+            "opCode": "call",
+            "amountSent": "0",
+            "roundingLoss": "0",
+            "amountReceived": 0,
+            "parametersRaw": {
+              "prim": "Unit"
+            },
+            "alias": {
+              "id": 268437702,
+              "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268437701,
+                "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+                "type": "x_evm_contract"
+              }
+            },
+            "gateway": {
+              "id": 268435464,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+            "gatewayParameters": {
+              "entrypoint": "decrement",
+              "parameters": "0x030b",
+              "destination": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv"
+            },
+            "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314c54327658626e54766a6a73665a4a516e41726d32316f72584c7368393554677600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000964656372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000"
+          },
+          "caughtByCaller": true,
           "callFrame": {
             "type": "CALL",
             "from": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
@@ -207,7 +320,6 @@
             ],
             "calls": []
           },
-          "caughtByCaller": true,
           "tezosInternalOperation": {
             "kind": "transaction",
             "source": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
@@ -255,7 +367,7 @@
   "explanation": {
     "summary": "EVM tx 0x7db6…fb4f from 0x2cad…87b3 to 0xb8a4…0908 calling 0x6165b870 succeeded, but its cross-runtime call to Michelson %decrement on KT1LT…5Tgv failed with FAILWITH \"at zero\" and the caller caught the revert; only that leg was rolled back.",
     "failedNodeId": "n1",
-    "evmReason": "custom error 0x43726f73 732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e747261637420776974682072756e74696d65206661696c757265207768696c652072756e6e696e6720746865207363726970743a206661696c656420776974683a20537472696e6728226174207a65726f2229206f66207479706520537472696e67",
+    "evmReason": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"at zero\") of type String",
     "michelsonError": {
       "kind": "permanent",
       "id": "tezlink_error",
@@ -263,9 +375,21 @@
     }
   },
   "meta": {
-    "source": "rpc_only",
-    "correlation": "derived_hash",
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
     "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0x7db675f6db248befb77d063408237bfad74890dd0079531e10e891df957cfb4f",
+        "method": "GET"
+      },
       {
         "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
         "method": "eth_getTransactionReceipt"
@@ -277,10 +401,6 @@
       {
         "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047309/operations",
         "method": "GET"
-      },
-      {
-        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
-        "method": "eth_getTransactionByHash"
       },
       {
         "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047308/context/contracts/KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv/storage",

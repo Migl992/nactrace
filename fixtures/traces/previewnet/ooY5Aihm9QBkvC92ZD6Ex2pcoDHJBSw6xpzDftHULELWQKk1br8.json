@@ -19,23 +19,52 @@
     },
     "entrypoint": "decrement",
     "status": "reverted",
+    "error": "[{\"type\":\"tezlink_error\"}]",
     "links": {
       "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0x9b21bd640b212a463fe220b7385a3556dfe73142f6c48d57a23df7c6eac7c8ba",
       "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8"
     },
-    "events": [],
-    "children": [],
-    "gas": {
-      "limit": "120000",
-      "unit": "michelson_milligas"
-    },
-    "michelsonError": {
-      "kind": "permanent",
-      "id": "tezlink_error",
-      "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"at zero\\\") of type String\"))"
-    },
-    "error": "FAILWITH \"at zero\"",
     "raw": {
+      "xtzkt": {
+        "direction": "x_michelson",
+        "id": "1152923006399414272",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 1047288,
+        "timestamp": "2026-09-25T14:56:51.5Z",
+        "hash": "ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+        "sender": {
+          "id": 268437695,
+          "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+          "type": "x_michelson_user"
+        },
+        "target": {
+          "id": 268437696,
+          "hash": "KT1LT2vXbnTvjjsfZJQnArm21orXLsh95Tgv",
+          "type": "x_michelson_contract"
+        },
+        "targetCodeHash": -1217531874,
+        "counter": 14,
+        "gasLimit": 120000,
+        "gasUsed": 0,
+        "status": "failed",
+        "errors": "[{\"type\":\"tezlink_error\"}]",
+        "entrypoint": "decrement",
+        "parameters": {},
+        "guessed": false,
+        "amount": 0,
+        "storageLimit": 1000,
+        "storageUsed": 0,
+        "parametersRaw": {
+          "prim": "Unit"
+        },
+        "daFee": 672,
+        "gasFee": 19328,
+        "gasFeeRefunded": 0
+      },
       "tezosOperation": {
         "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
         "chain_id": "NetXY2oPPzkxUW1",
@@ -87,6 +116,17 @@
         ],
         "signature": "sige9iJoJ8wjQ2RRWWoCVTn7q7B6bxTTzsKnuZvKdsvyQWF7ymsAG5xPgNc2kCodU9Jgg7zk2rkDS5D4QRA1wWkBCMjcXTXr"
       }
+    },
+    "events": [],
+    "children": [],
+    "gas": {
+      "limit": "120000",
+      "unit": "michelson_milligas"
+    },
+    "michelsonError": {
+      "kind": "permanent",
+      "id": "tezlink_error",
+      "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"at zero\\\") of type String\"))"
     }
   },
   "status": "reverted",
@@ -94,7 +134,7 @@
   "explanation": {
     "summary": "Tezos op ooY5A…1br8 from tz1Tj…A3Mh to KT1LT…5Tgv %decrement reverted: FAILWITH \"at zero\"; no cross-runtime leg failed.",
     "failedNodeId": "n0",
-    "evmReason": "FAILWITH \"at zero\"",
+    "evmReason": "[{\"type\":\"tezlink_error\"}]",
     "michelsonError": {
       "kind": "permanent",
       "id": "tezlink_error",
@@ -102,12 +142,20 @@
     }
   },
   "meta": {
-    "source": "rpc_only",
-    "correlation": "derived_hash",
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
     "sources": [
       {
-        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
-        "method": "eth_getTransactionReceipt"
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=ooY5Aihm9QBkvC92ZD6Ex2pcoDHJBSw6xpzDftHULELWQKk1br8",
+        "method": "GET"
       },
       {
         "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047288/operations",

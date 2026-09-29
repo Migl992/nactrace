@@ -65,7 +65,6 @@
       "type": "x_michelson_user"
     },
     "counter": 15,
-    "gasLimit": 0,
     "gasUsed": 105147,
     "status": "applied",
     "opType": "trace",
@@ -73,12 +72,15 @@
     "amountSent": "1000000000000000",
     "roundingLoss": "0",
     "amountReceived": 1000,
-    "daFee": "0",
-    "gasFee": "0",
     "alias": {
       "id": 268437702,
       "hash": "KT1CFJAJUd2LwoKMGRt1yrmMpgfgG7VTGJno",
-      "type": "x_michelson_alias"
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268437701,
+        "hash": "0xb8a44c2e9148e0bc1996b6122f1aec43f7970908",
+        "type": "x_evm_contract"
+      }
     },
     "gateway": {
       "id": 268435464,

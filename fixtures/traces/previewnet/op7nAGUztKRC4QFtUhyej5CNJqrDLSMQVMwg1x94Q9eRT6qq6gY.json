@@ -55,14 +55,19 @@
         "amountReceived": "1000000000000000",
         "daFee": 912,
         "gasFee": 7088,
-        "gasRefund": 0,
+        "gasFeeRefunded": 0,
         "storageLimit": 0,
         "storageUsed": 0,
         "input": "0xc5d24601",
         "alias": {
           "id": 268437700,
           "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-          "type": "x_evm_alias"
+          "type": "x_evm_alias",
+          "owner": {
+            "id": 268437695,
+            "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+            "type": "x_michelson_user"
+          }
         },
         "gateway": {
           "id": 268435469,
@@ -242,14 +247,19 @@
             "amountReceived": "1000000000000000",
             "daFee": 912,
             "gasFee": 7088,
-            "gasRefund": 0,
+            "gasFeeRefunded": 0,
             "storageLimit": 0,
             "storageUsed": 0,
             "input": "0xc5d24601",
             "alias": {
               "id": 268437700,
               "hash": "0x926e29d504dc631e4e405925361392dbe7d25909",
-              "type": "x_evm_alias"
+              "type": "x_evm_alias",
+              "owner": {
+                "id": 268437695,
+                "hash": "tz1Tj26he8NbyEuiMGZerWUYCXNnzkvTA3Mh",
+                "type": "x_michelson_user"
+              }
             },
             "gateway": {
               "id": 268435469,
