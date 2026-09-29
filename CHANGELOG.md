@@ -13,7 +13,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 
-- Hosted page at https://migl992.github.io/nectrace/?hash=… (GitHub Pages, deployed by `.github/workflows/pages.yml`) with the widget demo under `/demo/`.
+- Hosted page at https://migl992.github.io/nactrace/?hash=… (GitHub Pages, deployed by `.github/workflows/pages.yml`) with the widget demo under `/demo/`.
 
 ## [1.0.0] - 2026-09-28
 
@@ -45,7 +45,7 @@ First public release (pre-alpha).
 - Fixtures: 27 Previewnet and 5 mainnet crossings recorded verbatim (0xTzKT rows, receipts, traces, Tezos block operations, storage before/after), with expected traces for every one.
 - `docs/FINDINGS.md`: observed chain behaviour and documentation discrepancies, each with the hash that proves it.
 
-[Unreleased]: https://github.com/Migl992/nectrace/compare/v1.0.1...HEAD
-[1.0.1]: https://github.com/Migl992/nectrace/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/Migl992/nectrace/compare/v0.1.0...v1.0.0
-[0.1.0]: https://github.com/Migl992/nectrace/releases/tag/v0.1.0
+[Unreleased]: https://github.com/Migl992/nactrace/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/Migl992/nactrace/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/Migl992/nactrace/compare/v0.1.0...v1.0.0
+[0.1.0]: https://github.com/Migl992/nactrace/releases/tag/v0.1.0

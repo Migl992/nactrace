@@ -5,7 +5,7 @@
 // error state. Not part of the unit suite (needs a browser download); run with `pnpm e2e:browser`.
 //
 //   node scripts/e2e-browser.mjs                                   # local demo on http://localhost:5173/demo/
-//   node scripts/e2e-browser.mjs https://migl992.github.io/nectrace/?hash=0x…&network=previewnet
+//   node scripts/e2e-browser.mjs https://migl992.github.io/nactrace/?hash=0x…&network=previewnet
 import { chromium } from "playwright";
 
 const url = process.argv[2] ?? "http://localhost:5173/demo/";

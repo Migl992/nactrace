@@ -10,7 +10,7 @@ One script tag that shows what a cross-interface (NAC) call on Etherlink / Tezos
 ></script>
 ```
 
-Try it without installing anything: https://migl992.github.io/nectrace/?hash=… (the same widget, hash from the URL).
+Try it without installing anything: https://migl992.github.io/nactrace/?hash=… (the same widget, hash from the URL).
 
 The widget mounts itself right after the tag. Attributes:
 
@@ -34,4 +34,4 @@ const trace = await nactrace.mount(document.getElementById("box"), {
 
 Data comes straight from the browser: 0xTzKT first, then the public EVM and Michelson nodes for gas per frame, revert data and storage diffs (all three allow cross-origin requests). No React, no dependencies at runtime, styles isolated in a shadow root. About 28 kB gzipped.
 
-Pre-alpha. Built on [@nactrace/core](https://www.npmjs.com/package/@nactrace/core). Source and issues: https://github.com/Migl992/nectrace. MIT.
+Pre-alpha. Built on [@nactrace/core](https://www.npmjs.com/package/@nactrace/core). Source and issues: https://github.com/Migl992/nactrace. MIT.

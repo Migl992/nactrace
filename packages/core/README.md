@@ -1,6 +1,6 @@
 # @nactrace/core
 
-Library behind [nactrace](https://github.com/Migl992/nectrace), a debugger for cross-interface (NAC) calls on Etherlink / Tezos X. Give it a hash from either runtime and get a normalized `Trace` plus a one-sentence explanation of what happened and why it failed.
+Library behind [nactrace](https://github.com/Migl992/nactrace), a debugger for cross-interface (NAC) calls on Etherlink / Tezos X. Give it a hash from either runtime and get a normalized `Trace` plus a one-sentence explanation of what happened and why it failed.
 
 Pre-alpha. The 0xTzKT schema it reads is still evolving; unknown fields are tolerated, but expect changes.
 
