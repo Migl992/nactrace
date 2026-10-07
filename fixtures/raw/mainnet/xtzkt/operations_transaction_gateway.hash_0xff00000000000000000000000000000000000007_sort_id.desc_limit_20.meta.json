@@ -2,5 +2,5 @@
   "key": "GET https://api.xtzkt.io/v1/operations/transaction?gateway.hash=0xff00000000000000000000000000000000000007&sort=id.desc&limit=20",
   "url": "https://api.xtzkt.io/v1/operations/transaction?gateway.hash=0xff00000000000000000000000000000000000007&sort=id.desc&limit=20",
   "status": 200,
-  "fetchedAt": "2026-09-28T12:33:53.824Z"
+  "fetchedAt": "2026-10-07T12:12:41.892Z"
 }

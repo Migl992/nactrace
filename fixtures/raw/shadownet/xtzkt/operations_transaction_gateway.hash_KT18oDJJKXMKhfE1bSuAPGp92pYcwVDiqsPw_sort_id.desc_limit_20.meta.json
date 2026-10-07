@@ -2,5 +2,5 @@
   "key": "GET https://api.shadownet.xtzkt.io/v1/operations/transaction?gateway.hash=KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw&sort=id.desc&limit=20",
   "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?gateway.hash=KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw&sort=id.desc&limit=20",
   "status": 200,
-  "fetchedAt": "2026-09-28T08:47:49.906Z"
+  "fetchedAt": "2026-10-07T12:12:55.987Z"
 }

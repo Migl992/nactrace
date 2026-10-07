@@ -2,5 +2,5 @@
   "key": "GET https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047160/header",
   "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/1047160/header",
   "status": 200,
-  "fetchedAt": "2026-09-29T15:56:02.644Z"
+  "fetchedAt": "2026-10-07T12:11:53.221Z"
 }

@@ -51,7 +51,8 @@
         "target": {
           "id": 268443567,
           "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
-          "type": "x_michelson_user"
+          "type": "x_michelson_user",
+          "profile": "boot1"
         },
         "counter": 8,
         "gasLimit": 12918944,
@@ -225,7 +226,8 @@
         "to": {
           "value": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
           "runtime": "michelson",
-          "role": "native"
+          "role": "native",
+          "label": "boot1"
         },
         "entrypoint": "default",
         "value": "5000000000000000000 wei",
@@ -258,7 +260,8 @@
             "target": {
               "id": 268443567,
               "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
-              "type": "x_michelson_user"
+              "type": "x_michelson_user",
+              "profile": "boot1"
             },
             "counter": 8,
             "gasLimit": 12918944,

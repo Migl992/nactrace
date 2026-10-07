@@ -1,6 +1,185 @@
 [
   {
     "direction": "x_evm_michelson",
+    "id": "1152933698125955072",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6696285,
+    "timestamp": "2026-10-02T07:06:30Z",
+    "hash": "0x6cd76bbd6d8dac54eb64029b07bf95aee3d3fa258abbc4f7d4b70edce26ea595",
+    "sender": {
+      "id": 268435497,
+      "hash": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268443567,
+      "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+      "type": "x_michelson_user",
+      "profile": "boot1"
+    },
+    "counter": 1769,
+    "gasLimit": 1770471,
+    "gasUsed": 125612,
+    "status": "applied",
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amountSent": "10000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 10000,
+    "daFee": "1640000000000000",
+    "gasFee": "125612000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "alias": {
+      "id": 268443594,
+      "hash": "KT1QoxbwyZubBZbeMFVBTDdLqAhxJqFBd5LF",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268435497,
+        "hash": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+        "type": "x_evm_user"
+      }
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "",
+      "parameters": "0x",
+      "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000024747a314b715470455a37596f62375162504534487934576f38664847384c684b785a53780000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152933697742176256",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6695960,
+    "timestamp": "2026-10-02T06:35:37Z",
+    "hash": "0x0d024d75dd78e6d327a8673cb6059f1c92122a4530123251055e9114fc16b48b",
+    "sender": {
+      "id": 268435497,
+      "hash": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268443567,
+      "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
+      "type": "x_michelson_user",
+      "profile": "boot1"
+    },
+    "counter": 1766,
+    "gasLimit": 1770471,
+    "gasUsed": 125612,
+    "status": "applied",
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amountSent": "10000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 10000,
+    "daFee": "1640000000000000",
+    "gasFee": "125612000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "alias": {
+      "id": 268443594,
+      "hash": "KT1QoxbwyZubBZbeMFVBTDdLqAhxJqFBd5LF",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268435497,
+        "hash": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+        "type": "x_evm_user"
+      }
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "",
+      "parameters": "0x",
+      "destination": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000024747a314b715470455a37596f62375162504534487934576f38664847384c684b785a53780000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152933683870564352",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6684586,
+    "timestamp": "2026-10-01T13:16:10Z",
+    "hash": "0x74a3f9306ac6d51873bdbdc56cfa37043c1ad0d7ecaaa87ee22be2ec1aee2a29",
+    "sender": {
+      "id": 268437773,
+      "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268442940,
+      "hash": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg",
+      "type": "x_michelson_user"
+    },
+    "counter": 10,
+    "gasLimit": 1770471,
+    "gasUsed": 125612,
+    "status": "applied",
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amountSent": "10000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 10000,
+    "daFee": "1640000000000000",
+    "gasFee": "125612000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "alias": {
+      "id": 268442939,
+      "hash": "KT1T4bwRhj4Ep1qLrBKkYdrFNM1VwU26m7fJ",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268437773,
+        "hash": "0x2e2ac8699ad02e710951ea0f56b892ed36916cd5",
+        "type": "x_evm_user"
+      }
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "",
+      "parameters": "0x",
+      "destination": "tz1boqBV6XhVjXA2i5ysZ4megxZxa2EEgyxg"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000000e00000000000000000000000000000000000000000000000000000000000000024747a31626f714256365868566a584132693579735a346d6567785a7861324545677978670000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
     "id": "1152933401731268608",
     "chain": {
       "id": 1,
@@ -18,7 +197,8 @@
     "target": {
       "id": 268443567,
       "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot1"
     },
     "counter": 1427,
     "gasLimit": 3000000,
@@ -77,7 +257,8 @@
     "target": {
       "id": 268443567,
       "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot1"
     },
     "counter": 9,
     "gasLimit": 12918944,
@@ -136,7 +317,8 @@
     "target": {
       "id": 268443567,
       "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot1"
     },
     "counter": 8,
     "gasLimit": 12918944,
@@ -196,7 +378,8 @@
     "target": {
       "id": 268443567,
       "hash": "tz1KqTpEZ7Yob7QbPE4Hy4Wo8fHG8LhKxZSx",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot1"
     },
     "counter": 7,
     "gasLimit": 2918944,
@@ -255,19 +438,22 @@
       "owner": {
         "id": 268443575,
         "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-        "type": "x_michelson_user"
+        "type": "x_michelson_user",
+        "profile": "boot2"
       }
     },
     "senderCodeHash": -1368642541,
     "initiator": {
       "id": 268443575,
       "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot2"
     },
     "target": {
       "id": 268443575,
       "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot2"
     },
     "counter": 2,
     "gasUsed": 103047,
@@ -280,7 +466,8 @@
     "alias": {
       "id": 268443575,
       "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot2"
     },
     "gateway": {
       "id": 268442897,

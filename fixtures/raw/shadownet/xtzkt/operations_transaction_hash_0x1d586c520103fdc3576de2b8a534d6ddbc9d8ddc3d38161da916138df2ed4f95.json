@@ -13,7 +13,8 @@
     "sender": {
       "id": 268443575,
       "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot2"
     },
     "target": {
       "id": 268443574,
@@ -22,7 +23,8 @@
       "owner": {
         "id": 268443575,
         "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-        "type": "x_michelson_user"
+        "type": "x_michelson_user",
+        "profile": "boot2"
       }
     },
     "targetCodeHash": -1368642541,
@@ -46,13 +48,15 @@
       "owner": {
         "id": 268443575,
         "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-        "type": "x_michelson_user"
+        "type": "x_michelson_user",
+        "profile": "boot2"
       }
     },
     "gateway": {
       "id": 268442901,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
-      "type": "x_michelson_contract"
+      "type": "x_michelson_contract",
+      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -107,19 +111,22 @@
       "owner": {
         "id": 268443575,
         "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-        "type": "x_michelson_user"
+        "type": "x_michelson_user",
+        "profile": "boot2"
       }
     },
     "senderCodeHash": -1368642541,
     "initiator": {
       "id": 268443575,
       "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot2"
     },
     "target": {
       "id": 268443575,
       "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot2"
     },
     "counter": 2,
     "gasUsed": 103047,
@@ -132,7 +139,8 @@
     "alias": {
       "id": 268443575,
       "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-      "type": "x_michelson_user"
+      "type": "x_michelson_user",
+      "profile": "boot2"
     },
     "gateway": {
       "id": 268442897,
