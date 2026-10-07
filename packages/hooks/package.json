@@ -69,6 +69,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "hardhat": "^3.18.0"
+    "hardhat": "^3.18.1"
   }
 }
