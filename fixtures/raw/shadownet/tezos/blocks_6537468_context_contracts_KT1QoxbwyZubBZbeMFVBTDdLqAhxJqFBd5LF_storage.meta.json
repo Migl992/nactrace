@@ -2,5 +2,5 @@
   "key": "GET https://michelson.etherlink.shadownet.octez.io/chains/main/blocks/6537468/context/contracts/KT1QoxbwyZubBZbeMFVBTDdLqAhxJqFBd5LF/storage",
   "url": "https://michelson.etherlink.shadownet.octez.io/chains/main/blocks/6537468/context/contracts/KT1QoxbwyZubBZbeMFVBTDdLqAhxJqFBd5LF/storage",
   "status": 200,
-  "fetchedAt": "2026-09-28T08:47:50.983Z"
+  "fetchedAt": "2026-10-07T12:13:00.149Z"
 }

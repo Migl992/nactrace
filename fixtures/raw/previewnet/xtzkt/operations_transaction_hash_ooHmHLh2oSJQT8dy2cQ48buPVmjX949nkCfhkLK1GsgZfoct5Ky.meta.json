@@ -1,0 +1,6 @@
+{
+  "key": "GET https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=ooHmHLh2oSJQT8dy2cQ48buPVmjX949nkCfhkLK1GsgZfoct5Ky",
+  "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=ooHmHLh2oSJQT8dy2cQ48buPVmjX949nkCfhkLK1GsgZfoct5Ky",
+  "status": 200,
+  "fetchedAt": "2026-10-07T12:12:52.704Z"
+}

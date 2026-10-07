@@ -10,7 +10,8 @@
       "value": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
       "runtime": "michelson",
       "role": "native",
-      "counterpart": "0x042b24fe81458329ac79d893b2d70fbdad6f2956"
+      "counterpart": "0x042b24fe81458329ac79d893b2d70fbdad6f2956",
+      "label": "boot2"
     },
     "to": {
       "value": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
@@ -39,7 +40,8 @@
         "sender": {
           "id": 268443575,
           "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-          "type": "x_michelson_user"
+          "type": "x_michelson_user",
+          "profile": "boot2"
         },
         "target": {
           "id": 268443574,
@@ -48,7 +50,8 @@
           "owner": {
             "id": 268443575,
             "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-            "type": "x_michelson_user"
+            "type": "x_michelson_user",
+            "profile": "boot2"
           }
         },
         "targetCodeHash": -1368642541,
@@ -72,13 +75,15 @@
           "owner": {
             "id": 268443575,
             "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-            "type": "x_michelson_user"
+            "type": "x_michelson_user",
+            "profile": "boot2"
           }
         },
         "gateway": {
           "id": 268442901,
           "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
-          "type": "x_michelson_contract"
+          "type": "x_michelson_contract",
+          "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
         },
         "gatewayEntrypoint": "call_evm",
         "gatewayParameters": {
@@ -277,7 +282,8 @@
           "value": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
           "runtime": "michelson",
           "role": "native",
-          "counterpart": "0x042b24fe81458329ac79d893b2d70fbdad6f2956"
+          "counterpart": "0x042b24fe81458329ac79d893b2d70fbdad6f2956",
+          "label": "boot2"
         },
         "to": {
           "value": "0x042b24fe81458329ac79d893b2d70fbdad6f2956",
@@ -306,7 +312,8 @@
             "sender": {
               "id": 268443575,
               "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-              "type": "x_michelson_user"
+              "type": "x_michelson_user",
+              "profile": "boot2"
             },
             "target": {
               "id": 268443574,
@@ -315,7 +322,8 @@
               "owner": {
                 "id": 268443575,
                 "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-                "type": "x_michelson_user"
+                "type": "x_michelson_user",
+                "profile": "boot2"
               }
             },
             "targetCodeHash": -1368642541,
@@ -339,13 +347,15 @@
               "owner": {
                 "id": 268443575,
                 "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-                "type": "x_michelson_user"
+                "type": "x_michelson_user",
+                "profile": "boot2"
               }
             },
             "gateway": {
               "id": 268442901,
               "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
-              "type": "x_michelson_contract"
+              "type": "x_michelson_contract",
+              "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
             },
             "gatewayEntrypoint": "call_evm",
             "gatewayParameters": {
@@ -495,7 +505,8 @@
             "to": {
               "value": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
               "runtime": "michelson",
-              "role": "native"
+              "role": "native",
+              "label": "boot2"
             },
             "entrypoint": "default",
             "value": "1000000000000000000 wei",
@@ -526,19 +537,22 @@
                   "owner": {
                     "id": 268443575,
                     "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-                    "type": "x_michelson_user"
+                    "type": "x_michelson_user",
+                    "profile": "boot2"
                   }
                 },
                 "senderCodeHash": -1368642541,
                 "initiator": {
                   "id": 268443575,
                   "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-                  "type": "x_michelson_user"
+                  "type": "x_michelson_user",
+                  "profile": "boot2"
                 },
                 "target": {
                   "id": 268443575,
                   "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-                  "type": "x_michelson_user"
+                  "type": "x_michelson_user",
+                  "profile": "boot2"
                 },
                 "counter": 2,
                 "gasUsed": 103047,
@@ -551,7 +565,8 @@
                 "alias": {
                   "id": 268443575,
                   "hash": "tz1gjaF81ZRRvdzjobyfVNsAeSC6PScjfQwN",
-                  "type": "x_michelson_user"
+                  "type": "x_michelson_user",
+                  "profile": "boot2"
                 },
                 "gateway": {
                   "id": 268442897,

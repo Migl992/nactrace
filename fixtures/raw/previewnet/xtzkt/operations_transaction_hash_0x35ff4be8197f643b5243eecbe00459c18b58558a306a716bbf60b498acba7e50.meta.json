@@ -2,5 +2,5 @@
   "key": "GET https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0x35ff4be8197f643b5243eecbe00459c18b58558a306a716bbf60b498acba7e50",
   "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0x35ff4be8197f643b5243eecbe00459c18b58558a306a716bbf60b498acba7e50",
   "status": 200,
-  "fetchedAt": "2026-09-29T15:55:50.515Z"
+  "fetchedAt": "2026-10-07T12:11:08.512Z"
 }

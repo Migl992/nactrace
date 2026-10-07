@@ -144,9 +144,15 @@ function addr(
   counterpart?: string,
 ): Address {
   if (!ref?.hash) return { value: "?", runtime: fallbackRuntime, role: "unknown" };
-  // 0xTzKT (mainnet/Shadownet since 2026-09-28) attaches the native `owner` to alias refs.
-  const owner = (ref as { owner?: { hash?: string } }).owner?.hash;
-  return classifyAddress(ref.hash, { type: ref.type, counterpart: counterpart ?? owner });
+  // 0xTzKT (mainnet/Shadownet since 2026-09-28) attaches the native `owner` to alias refs, and
+  // since 2026-10 a `profile` label for known accounts ("Tezos X call_evm Gateway (Michelson→EVM)").
+  const extra = ref as { owner?: { hash?: string }; profile?: unknown };
+  const owner = extra.owner?.hash;
+  const address = classifyAddress(ref.hash, { type: ref.type, counterpart: counterpart ?? owner });
+  if (typeof extra.profile === "string" && extra.profile && !address.label) {
+    address.label = extra.profile;
+  }
+  return address;
 }
 
 /** "http://tezos/KT1abc/transfer" -> { destination, entrypoint }; "http://ethereum/0x…" likewise. */
