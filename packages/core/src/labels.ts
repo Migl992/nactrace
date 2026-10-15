@@ -9,6 +9,25 @@ export const SYSTEM_ADDRESSES: ReadonlySet<string> = new Set([
   "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
 ]);
 
+/**
+ * Etherlink precompiles seen on chain (docs/FINDINGS.md "Precompiles"). Only the ones observed in a
+ * recorded trace are listed; the names come from the functions they expose.
+ */
+export const PRECOMPILES: ReadonlyMap<string, string> = new Map([
+  ["0xff00000000000000000000000000000000000001", "withdrawal precompile"],
+  ["0xff00000000000000000000000000000000000002", "FA bridge precompile"],
+  ["0xff00000000000000000000000000000000000003", "outbox precompile"],
+  ["0xff00000000000000000000000000000000000005", "withdrawal counter precompile"],
+  ["0x000000000000000000000000000000000000dead", "burn address"],
+]);
+
+/** Short tag to print after a target address: "gateway", a precompile name, or nothing. */
+export function addressTag(address: Address): string | undefined {
+  if (address.role === "gateway") return "gateway";
+  if (address.role === "system") return address.label;
+  return undefined;
+}
+
 export function runtimeOfAddress(value: string): Runtime {
   return value.startsWith("0x") ? "evm" : "michelson";
 }
@@ -35,6 +54,9 @@ export function classifyAddress(value: string, hint: AddressHint = {}): Address 
   } else if (SYSTEM_ADDRESSES.has(value)) {
     role = "system";
     label = "kernel attribution address";
+  } else if (PRECOMPILES.has(value.toLowerCase())) {
+    role = "system";
+    label = PRECOMPILES.get(value.toLowerCase());
   } else if (hint.type?.endsWith("_alias")) {
     role = "alias";
     label = hint.counterpart ? `alias of ${hint.counterpart}` : "alias";

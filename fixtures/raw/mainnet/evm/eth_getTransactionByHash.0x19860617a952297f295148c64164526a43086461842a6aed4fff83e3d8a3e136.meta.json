@@ -1,0 +1,10 @@
+{
+  "key": "RPC https://node.mainnet.etherlink.com eth_getTransactionByHash [\"0x19860617a952297f295148c64164526a43086461842a6aed4fff83e3d8a3e136\"]",
+  "url": "https://node.mainnet.etherlink.com",
+  "method": "eth_getTransactionByHash",
+  "params": [
+    "0x19860617a952297f295148c64164526a43086461842a6aed4fff83e3d8a3e136"
+  ],
+  "status": 200,
+  "fetchedAt": "2026-10-15T07:35:44.936Z"
+}

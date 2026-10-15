@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+
+- Etherlink precompiles are labelled in traces and sentences (`withdrawal precompile` 0xff…01, `outbox precompile` 0xff…03, `withdrawal counter precompile` 0xff…05, `FA bridge precompile` 0xff…02, `burn address` 0x…dead); new `addressTag()` helper in `@nactrace/core`. Mainnet fast-withdrawal case added to the fixtures.
+
+### Fixed
+
+- A Michelson operation whose first content is a `reveal` (first operation of a fresh tz1) was read from the wrong content, losing milligas, errors and internal transactions (Shadownet `ons8rrir…`).
+
 ## [1.0.1] - 2026-09-28
 
 ### Fixed

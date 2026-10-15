@@ -123,6 +123,14 @@ Confirmed with `eth_call` on the gateway views (`resolveAddress`, `originOf`) an
 - `tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU` is a **native** Michelson account (`originOf` kind 1) used by the kernel as the source of every mirrored operation and of the `cross_runtime_call*` events. It is the Michelson counterpart of the EVM attribution address `0x7e2058…01`, which `originOf` reports as Unknown (kind 0). Both must be labelled `system` in `Trace.Address`.
 - The EVM gateway `0xff…07` has no Michelson alias (`resolveAddress` classified = false).
 
+## Precompiles
+
+Seen in mainnet traces (`oox3adZyj5yK5bFtUVT8FjcBLt3NPm6Dx3sHoxwc4EqAewURFiL` fast withdrawal, `opZX4Z3TuidPmJDB93WatMNKBfbkDQipUXvFiVeS6LY9JiovffV` withdrawal), all with status `applied`:
+
+- A Michelson `%call_evm` into `0xff…01` (`withdraw_base58(string)` / `fast_withdraw_base58(string,string,bytes)`) shows in the EVM call tracer as three internal calls from the precompile: `0xff…05` `get_and_increment()` (the withdrawal counter), `0xff…03` `push_withdrawal_to_outbox(string,uint256)` or `push_fast_withdrawal_to_outbox(string,string,bytes,uint256,uint256)`, and a value transfer to `0x…dead` for the withdrawn amount (the burn). The precompile-to-precompile calls report tiny fixed gas (24200, 500, 0).
+- `0xff…02` is the FA bridge precompile (not seen in a trace yet; labelled from the Etherlink docs).
+- Mainnet NAC traffic as of 2026-10-15: 19 cross-runtime operations in total (2 EVM → Michelson, 17 Michelson → EVM, 14 of them withdrawals), none failed. Every failure case in the fixtures comes from Previewnet or Shadownet.
+
 ## Discrepancies (docs vs chain)
 
 1. **SPEC §3.5 / docs** say an EVM account's Michelson alias is "a KT1 created on first crossing". Confirmed for both EOAs and contracts (`KT1Ru5fp…`, `KT1TA7Pn…`), but note the mirrored op's `source` is not the alias but the system account `tz1Ke2h7…`; the alias is the `destination` of the top-level mirrored transaction and the `source` of the internal call.

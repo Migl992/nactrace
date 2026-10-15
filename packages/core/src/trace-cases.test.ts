@@ -316,3 +316,26 @@ describe("Shadownet specifics", () => {
     expect(t.meta.warnings.some((w) => w.includes("is a leg of Michelson operation"))).toBe(true);
   });
 });
+
+describe("Mainnet withdrawals", () => {
+  it("fast withdrawal: %call_evm into the withdrawal precompile, internal precompile calls labelled", async () => {
+    const t = await buildTrace("oox3adZyj5yK5bFtUVT8FjcBLt3NPm6Dx3sHoxwc4EqAewURFiL", {
+      provider: replayProvider(),
+    });
+    expect(t.network).toBe("mainnet");
+    expect(t.root.status).toBe("success");
+    const legs = crossings(t);
+    expect(legs).toHaveLength(1);
+    expect(legs[0]?.to.value).toBe("0xff00000000000000000000000000000000000001");
+    expect(legs[0]?.to.role).toBe("system");
+    expect(legs[0]?.to.label).toBe("withdrawal precompile");
+    expect(legs[0]?.entrypoint).toBe("fast_withdraw_base58(string,string,bytes)");
+    const labels = nodes(t).map((n) => n.to.label);
+    expect(labels).toContain("withdrawal counter precompile");
+    expect(labels).toContain("outbox precompile");
+    expect(labels).toContain("burn address");
+    expect(t.explanation.summary).toContain(
+      "fast_withdraw_base58(string,string,bytes) on 0xff00…0001 with 1 XTZ; all 1 leg applied.",
+    );
+  });
+});
