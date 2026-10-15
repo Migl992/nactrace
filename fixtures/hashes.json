@@ -109,6 +109,38 @@
     {
       "hash": "0xe57162f92be1c3cd1552744103e7f49d2d98f38d18fe4f6a6013bbed45469340",
       "label": "EOA -> Forwarder -> sink.callMissingEntrypoint(): nested failure through two EVM contracts"
+    },
+    {
+      "hash": "0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+      "label": "third-party: FAILWITH AT_ZERO at level 78619, mirrored op under the older hash recipe (matched by content)"
+    },
+    {
+      "hash": "0x248ce960aa3ac4983afe63b8b81507073eeec4b06f213278e33a92d38a71fa9d",
+      "label": "third-party: generic gateway call(...) into %default, Michelson out of gas (0xTzKT errors = bare OutOfGas)"
+    },
+    {
+      "hash": "0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+      "label": "third-party: ill-typed input (numeric conversion out of range), reverted"
+    },
+    {
+      "hash": "0xe00958e3d965cd04a3e5c969db57f49ab221b6d1b8ce60f7a6eb7cdb4e8da0ec",
+      "label": "third-party: view + applied leg + FAILWITH on second leg, whole tx reverted (views of a reverted tx are not indexed)"
+    },
+    {
+      "hash": "0x9fa434f56a3f4ef3d770b331d2e87ae8fd95d578882ec0ab4a048e3c0abb6e1d",
+      "label": "third-party: own-code revert after a successful crossing, leg backtracked"
+    },
+    {
+      "hash": "ooNoT5REHUFwRpzGifXWH6TjNgPxuYsdjB2xFRBsFQgH1QwRX97",
+      "label": "third-party: Michelson %call (generic) -> EVM alias with 5 XTZ at level 315020, mirrored tx under the older hash recipe (matched by its CrossRuntimeCallReceived log)"
+    },
+    {
+      "hash": "opKwbyoHu2iQSP1QkF3Q7gDEf4rPpfw3GGyXQMfMJTnVRcUroWe",
+      "label": "third-party: KT1 %run -> plain internal call + EVM gateway callMichelson -> Michelson %run (round trip through the EVM gateway), success"
+    },
+    {
+      "hash": "onvWjSgWcMgSBcTe6xPoPzhvceWznaer79CkyTxrf4PhkCDwsv4",
+      "label": "third-party: %call_evm approve + swap (27 rows, negative gasUsed on two internal calls, nested leg to the tz1) at level 14865, older hash recipe"
     }
   ],
   "mainnet": [
@@ -161,6 +193,10 @@
     {
       "hash": "ooAYMzmpqbUPeUChawecQa5vp1up2pUcqVxHNt8kQBF6yVB7QTZ",
       "label": "tz1 -> %call_evm -> withdrawal precompile withdraw_base58, success"
+    },
+    {
+      "hash": "0x3c1f4c12cb7f0ff91a26cc625fe682d9d27f69e3a3bf4841de941966f8043927",
+      "label": "third-party: callMichelson with a parameter to a tz1 (NonSmartContractExecutionCall), reverted"
     }
   ]
 }

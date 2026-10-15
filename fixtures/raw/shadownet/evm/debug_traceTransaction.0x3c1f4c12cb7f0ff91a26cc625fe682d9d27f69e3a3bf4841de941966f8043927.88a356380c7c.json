@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "error": {
+    "code": -32053,
+    "message": "API key is not allowed to access method"
+  }
+}

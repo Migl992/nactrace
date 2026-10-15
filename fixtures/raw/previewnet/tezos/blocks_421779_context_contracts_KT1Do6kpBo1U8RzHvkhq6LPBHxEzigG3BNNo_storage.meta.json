@@ -1,0 +1,6 @@
+{
+  "key": "GET https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/421779/context/contracts/KT1Do6kpBo1U8RzHvkhq6LPBHxEzigG3BNNo/storage",
+  "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/421779/context/contracts/KT1Do6kpBo1U8RzHvkhq6LPBHxEzigG3BNNo/storage",
+  "status": 200,
+  "fetchedAt": "2026-10-15T09:07:53.333Z"
+}

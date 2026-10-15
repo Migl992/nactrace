@@ -120,6 +120,11 @@ export function syntheticEvmTxHash(opHash: Uint8Array | string): `0x${string}` {
   return bytesToHex(syntheticEvmTxHashBytes(opHash));
 }
 
+/** EVM alias of a Michelson address: keccak256(utf8(base58))[0:20] (docs/FINDINGS.md "Aliases"). */
+export function evmAliasOf(address: string): `0x${string}` {
+  return bytesToHex(keccak_256(new TextEncoder().encode(address)).slice(0, 20));
+}
+
 export function isEvmTxHash(s: string): boolean {
   return /^0x[0-9a-fA-F]{64}$/.test(s);
 }

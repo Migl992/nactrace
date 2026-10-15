@@ -1,0 +1,65 @@
+[
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152922332198600704",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 421780,
+    "timestamp": "2026-08-13T12:31:28Z",
+    "hash": "0x248ce960aa3ac4983afe63b8b81507073eeec4b06f213278e33a92d38a71fa9d",
+    "sender": {
+      "id": 268436836,
+      "hash": "0x64240821844d9eb6d07fe75b5664d3da6db69397",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268436431,
+      "hash": "KT1Do6kpBo1U8RzHvkhq6LPBHxEzigG3BNNo",
+      "type": "x_michelson_contract"
+    },
+    "targetCodeHash": 2108185017,
+    "counter": 8,
+    "gasLimit": 2500000,
+    "gasUsed": 2395344,
+    "status": "failed",
+    "errors": "OutOfGas",
+    "internalOperations": 1,
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amountSent": "0",
+    "roundingLoss": "0",
+    "amountReceived": 0,
+    "daFee": "1896000000000000",
+    "gasFee": "604000000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "alias": {
+      "id": 268436847,
+      "hash": "KT1AbhXFYLYdkWwP88BtdkuCjZonPYrPb56w",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268436836,
+        "hash": "0x64240821844d9eb6d07fe75b5664d3da6db69397",
+        "type": "x_evm_user"
+      }
+    },
+    "gateway": {
+      "id": 268435464,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "call(string,(string,string)[],bytes,uint8)",
+    "gatewayParameters": {
+      "url": "http://tezos/KT1Do6kpBo1U8RzHvkhq6LPBHxEzigG3BNNo",
+      "body": "0x030b",
+      "method": "1",
+      "headers": []
+    },
+    "gatewayInput": "0xfa591a56000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000031687474703a2f2f74657a6f732f4b5431446f366b70426f315538527a48766b6871364c50424878457a69674733424e4e6f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000"
+  }
+]

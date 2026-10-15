@@ -1,0 +1,152 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXY2oPPzkxUW1",
+      "hash": "opCKmmvTC6Qy7wBxD67Q9omF1PLsxkvD14cVoP4jbt3MS3C9JMu",
+      "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+          "fee": "0",
+          "counter": "0",
+          "gas_limit": "0",
+          "storage_limit": "0",
+          "amount": "0",
+          "destination": "KT1K8vYc1Jshq7KZt1wsQxKvGUBXfjKBUhR8",
+          "metadata": {
+            "operation_result": {
+              "status": "failed",
+              "errors": []
+            },
+            "internal_operation_results": [
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 0,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              },
+              {
+                "kind": "transaction",
+                "source": "KT1KZiyAXbsNxvLeX7PjftxN8qfy8NLAwA4a",
+                "nonce": 1,
+                "amount": "250000",
+                "destination": "tz1TuGcaeKwNZs5HLhmKxWwFDBKuacDLQRPD",
+                "result": {
+                  "status": "backtracked",
+                  "balance_updates": [
+                    {
+                      "kind": "contract",
+                      "contract": "tz1TuGcaeKwNZs5HLhmKxWwFDBKuacDLQRPD",
+                      "change": "250000",
+                      "origin": "block"
+                    }
+                  ],
+                  "consumed_milligas": "2000165"
+                }
+              },
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 2,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call_end",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              },
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 3,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              },
+              {
+                "kind": "transaction",
+                "source": "KT1KZiyAXbsNxvLeX7PjftxN8qfy8NLAwA4a",
+                "nonce": 4,
+                "amount": "0",
+                "destination": "KT1HcvSojw8A4HHsney9YFNn4M554qZPbGq3",
+                "parameters": {
+                  "entrypoint": "record",
+                  "value": {
+                    "prim": "Pair",
+                    "args": [
+                      {
+                        "int": "1"
+                      },
+                      {
+                        "prim": "Pair",
+                        "args": [
+                          {
+                            "string": "KT1K8vYc1Jshq7KZt1wsQxKvGUBXfjKBUhR8"
+                          },
+                          {
+                            "int": "250000"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "result": {
+                  "status": "failed",
+                  "errors": [
+                    {
+                      "kind": "permanent",
+                      "id": "tezlink_error",
+                      "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"REGISTRY: item already sold\\\") of type String\"))"
+                    }
+                  ]
+                }
+              },
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 5,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call_end",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+    }
+  ]
+]

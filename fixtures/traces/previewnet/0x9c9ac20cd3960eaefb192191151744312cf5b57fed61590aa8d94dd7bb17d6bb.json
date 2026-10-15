@@ -1,0 +1,397 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+    "from": {
+      "value": "0xd46cac2ec6549bb8af9de8292e4ac7b6e78c9e42",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0xf2c1ff67",
+    "gas": {
+      "used": "1828025",
+      "limit": "2500000",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "custom error 0x4a0f4c90",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/opPWdtV9EkoLufQ2aZtUHWj5GjxQ4yC2pXmdiXDyvCyqNpDwuat"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152922333611032576",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 422325,
+        "timestamp": "2026-08-13T13:21:07Z",
+        "hash": "0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+        "sender": {
+          "id": 268436838,
+          "hash": "0xd46cac2ec6549bb8af9de8292e4ac7b6e78c9e42",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268436876,
+          "hash": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": 187978339,
+        "counter": 8,
+        "gasLimit": 2500000,
+        "gasUsed": 1775631,
+        "status": "failed",
+        "errors": "4a0f4c90",
+        "internalOperations": 1,
+        "opType": "legacy",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "1768000000000000",
+        "gasFee": "60025000000000",
+        "gasPrice": "1000000000",
+        "effectiveGasPrice": "1000000000",
+        "input": "0xf2c1ff67000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000b1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314741567958627947783441455a636b48656f637639565a526559387350346b5544000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002004d000000000000000000000000000000000000000000000000000000000000",
+        "output": "0x4a0f4c90"
+      },
+      "receipt": {
+        "transactionHash": "0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+        "transactionIndex": "0x0",
+        "blockHash": "0x11a29bbaa2be60310291e6c95f9898653836e792b1452c763cdd533a1c5939dd",
+        "blockNumber": "0x671b5",
+        "from": "0xd46cac2ec6549bb8af9de8292e4ac7b6e78c9e42",
+        "to": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+        "cumulativeGasUsed": "0x1be4b9",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0x1be4b9",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x0",
+        "status": "0x0",
+        "contractAddress": null
+      },
+      "tezosOperation": {
+        "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+        "chain_id": "NetXY2oPPzkxUW1",
+        "hash": "opPWdtV9EkoLufQ2aZtUHWj5GjxQ4yC2pXmdiXDyvCyqNpDwuat",
+        "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+            "fee": "0",
+            "counter": "0",
+            "gas_limit": "0",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT1DsXAwNPGEcpVQjL5Jqh3aaP9AW35o7LEM",
+            "metadata": {
+              "operation_result": {
+                "status": "failed",
+                "errors": []
+              },
+              "internal_operation_results": [
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 0,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                },
+                {
+                  "kind": "transaction",
+                  "source": "KT1A5bhrKbY7hcTffj9zpbuK9rgYKr1NC99z",
+                  "nonce": 1,
+                  "amount": "0",
+                  "destination": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD",
+                  "parameters": {
+                    "entrypoint": "default",
+                    "value": {
+                      "int": "-13"
+                    }
+                  },
+                  "result": {
+                    "status": "failed",
+                    "errors": [
+                      {
+                        "kind": "permanent",
+                        "id": "tezlink_error",
+                        "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted\"))"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 2,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call_end",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+      }
+    },
+    "events": [
+      {
+        "name": "cross_runtime_call",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      },
+      {
+        "name": "cross_runtime_call_end",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "michelson",
+        "kind": "crossing",
+        "hash": "opPWdtV9EkoLufQ2aZtUHWj5GjxQ4yC2pXmdiXDyvCyqNpDwuat",
+        "synthetic": true,
+        "from": {
+          "value": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+          "runtime": "evm",
+          "role": "native",
+          "counterpart": "KT1A5bhrKbY7hcTffj9zpbuK9rgYKr1NC99z",
+          "label": "contract"
+        },
+        "to": {
+          "value": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD",
+          "runtime": "michelson",
+          "role": "native",
+          "label": "contract"
+        },
+        "entrypoint": "default",
+        "gas": {
+          "used": "52394",
+          "unit": "evm_gas"
+        },
+        "status": "reverted",
+        "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted",
+        "links": {
+          "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/opPWdtV9EkoLufQ2aZtUHWj5GjxQ4yC2pXmdiXDyvCyqNpDwuat"
+        },
+        "raw": {
+          "xtzkt": {
+            "direction": "x_evm_michelson",
+            "id": "1152922333612081152",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 422325,
+            "timestamp": "2026-08-13T13:21:07Z",
+            "hash": "0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+            "sender": {
+              "id": 268436876,
+              "hash": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": 187978339,
+            "initiator": {
+              "id": 268436838,
+              "hash": "0xd46cac2ec6549bb8af9de8292e4ac7b6e78c9e42",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268436873,
+              "hash": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD",
+              "type": "x_michelson_contract"
+            },
+            "targetCodeHash": -1376634161,
+            "counter": 8,
+            "gasUsed": 52394,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted",
+            "entrypoint": "default",
+            "parameters": "-13",
+            "guessed": false,
+            "opType": "trace",
+            "opCode": "call",
+            "amountSent": "0",
+            "roundingLoss": "0",
+            "amountReceived": 0,
+            "parametersRaw": {
+              "int": "-13"
+            },
+            "alias": {
+              "id": 268436878,
+              "hash": "KT1A5bhrKbY7hcTffj9zpbuK9rgYKr1NC99z",
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268436876,
+                "hash": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+                "type": "x_evm_contract"
+              }
+            },
+            "gateway": {
+              "id": 268435464,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+            "gatewayParameters": {
+              "entrypoint": "default",
+              "parameters": "0x004d",
+              "destination": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD"
+            },
+            "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314741567958627947783441455a636b48656f637639565a526559387350346b554400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000764656661756c74000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002004d000000000000000000000000000000000000000000000000000000000000"
+          },
+          "callFrame": {
+            "type": "CALL",
+            "from": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+            "to": "0xff00000000000000000000000000000000000007",
+            "value": "0x00",
+            "gas": "0x0ae385",
+            "gasUsed": "0xccaa",
+            "input": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314741567958627947783441455a636b48656f637639565a526559387350346b554400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000764656661756c74000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002004d000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e74726163742077697468206661696c65642074797065636865636b696e6720696e7075743a206e756d6572696320636f6e76657273696f6e206661696c65643a206f7574206f662072616e676520636f6e76657273696f6e20726567617264696e672062696720696e746567657220617474656d70746564",
+            "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted",
+            "logs": [
+              {
+                "address": "0xff00000000000000000000000000000000000007",
+                "topics": ["0x63d7b3745d574412126b88bc586adea349b617cd75e87d47aff3dbc765bd834b"],
+                "data": "0x000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003312d300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000574657a6f7300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314741567958627947783441455a636b48656f637639565a526559387350346b554400000000000000000000000000000000000000000000000000000000"
+              }
+            ],
+            "calls": []
+          },
+          "tezosInternalOperation": {
+            "kind": "transaction",
+            "source": "KT1A5bhrKbY7hcTffj9zpbuK9rgYKr1NC99z",
+            "nonce": 1,
+            "amount": "0",
+            "destination": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD",
+            "parameters": {
+              "entrypoint": "default",
+              "value": {
+                "int": "-13"
+              }
+            },
+            "result": {
+              "status": "failed",
+              "errors": [
+                {
+                  "kind": "permanent",
+                  "id": "tezlink_error",
+                  "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted\"))"
+                }
+              ]
+            }
+          }
+        },
+        "events": [],
+        "children": [],
+        "michelsonError": {
+          "kind": "permanent",
+          "id": "tezlink_error",
+          "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted\"))"
+        },
+        "storageDiff": {
+          "before": {
+            "int": "9"
+          },
+          "after": {
+            "int": "9"
+          }
+        }
+      }
+    ]
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0x9c9a…d6bb from 0xd46c…9e42 to 0xf9fa…85df calling 0xf2c1ff67 reverted: Michelson entrypoint %default of KT1GA…4kUD failed with ill-typed input: numeric conversion failed: out of range conversion regarding big integer attempted; whole transaction rolled back on both sides.",
+    "failedNodeId": "n1",
+    "evmReason": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted",
+    "michelsonError": {
+      "kind": "permanent",
+      "id": "tezlink_error",
+      "error_message": "Transfer(MichelsonContractInterpretError(\"failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted\"))"
+    }
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/422325/operations",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/422324/context/contracts/KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD/storage",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/422325/context/contracts/KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD/storage",
+        "method": "GET"
+      }
+    ],
+    "warnings": []
+  }
+}

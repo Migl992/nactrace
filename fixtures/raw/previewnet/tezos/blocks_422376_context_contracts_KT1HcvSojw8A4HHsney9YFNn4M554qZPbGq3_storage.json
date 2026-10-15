@@ -1,0 +1,64 @@
+{
+  "prim": "Pair",
+  "args": [
+    {
+      "int": "395"
+    },
+    {
+      "prim": "Pair",
+      "args": [
+        [
+          {
+            "prim": "Elt",
+            "args": [
+              {
+                "int": "1"
+              },
+              {
+                "prim": "Pair",
+                "args": [
+                  {
+                    "string": "Ganesha Charter #1"
+                  },
+                  {
+                    "int": "250000"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "prim": "Elt",
+            "args": [
+              {
+                "int": "2"
+              },
+              {
+                "prim": "Pair",
+                "args": [
+                  {
+                    "string": "Ganesha Charter #2"
+                  },
+                  {
+                    "int": "400000"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "bytes": "0000f19020c707ff2d6a022a14ca767a23114c7b306e"
+            },
+            {
+              "bytes": "017876ccd77a60f2f1962d176e2f453a801bf7c31d00"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

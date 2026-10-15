@@ -35,12 +35,29 @@ export function humanizeTezosMessage(msg: string): string {
   if (outer) s = outer[2]!;
   if (/^OutOfGas\b/.test(s)) return "out of gas";
   if (/^NonSmartContractExecutionCall\b/.test(s)) {
-    return "a parameter was sent to a user account (tz1), which cannot execute it";
+    return "a parameter sent to a user account (tz1), which cannot execute it";
   }
   const notFound = /^ContractDoesNotExist\(.*?"([^"]+)"/.exec(s);
   if (notFound) return `contract ${notFound[1]} does not exist`;
   const quoted = /^\w+\("(.*)"\)$/s.exec(s);
-  if (quoted) return quoted[1]!.replace(/\\"/g, '"');
+  if (quoted) return humanizeInterpretError(quoted[1]!.replace(/\\"/g, '"'));
+  return s;
+}
+
+/**
+ * The text after "Failed interpreting the Michelson contract with …" (same wording whether it comes
+ * from the Tezos RPC as MichelsonContractInterpretError("…") or from the gateway's 400 revert string):
+ *   failed typechecking input: no such entrypoint: nope   -> no such entrypoint "nope"
+ *   failed typechecking input: value String("hi") is …   -> ill-typed input: value String("hi") is …
+ * Runtime failures ("… failed with: String("x") of type String") are left for extractFailWith.
+ */
+export function humanizeInterpretError(text: string): string {
+  const s = text.replace(/^Failed interpreting the Michelson contract with /, "").trim();
+  if (s === "OOG") return "out of gas"; // 429 Too Many Requests: OOG
+  const ep = /^failed typechecking input: no such entrypoint: (\S+)$/.exec(s);
+  if (ep) return `no such entrypoint "${ep[1]}"`;
+  const typed = /^failed typechecking input: (.+)$/s.exec(s);
+  if (typed) return `ill-typed input: ${typed[1]!.trim()}`;
   return s;
 }
 
@@ -60,5 +77,5 @@ export function parseGatewayFailure(
 ): { status: string; detail: string } | undefined {
   if (!text) return undefined;
   const m = /^Cross-runtime call failed with status (\d{3}[^:]*): ?(.*)$/s.exec(text.trim());
-  return m ? { status: m[1]!.trim(), detail: m[2]!.trim() } : undefined;
+  return m ? { status: m[1]!.trim(), detail: humanizeInterpretError(m[2]!.trim()) } : undefined;
 }

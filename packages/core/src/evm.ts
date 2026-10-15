@@ -81,6 +81,28 @@ export async function getTransactionReceipt(
   return (res.result as EvmReceipt | null) ?? null;
 }
 
+export interface EvmBlock {
+  number: string;
+  hash: string;
+  timestamp: string;
+  transactions: EvmTransaction[];
+  [key: string]: unknown;
+}
+
+/** Full transactions of a block (eth_getBlockByNumber with hydrated transactions). */
+export async function getBlockTransactions(
+  provider: Provider,
+  network: NetworkName,
+  level: number,
+): Promise<EvmTransaction[]> {
+  const res = await provider.rpc(rpcUrl(network), "eth_getBlockByNumber", [
+    `0x${level.toString(16)}`,
+    true,
+  ]);
+  if (res.error) throw new Error(`eth_getBlockByNumber: ${res.error.message}`);
+  return (res.result as EvmBlock | null)?.transactions ?? [];
+}
+
 export async function getTransaction(
   provider: Provider,
   network: NetworkName,
