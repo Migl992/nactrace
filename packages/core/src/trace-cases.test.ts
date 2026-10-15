@@ -80,7 +80,7 @@ describe("EVM-originated edge cases", () => {
     expect(t.status).toBe("reverted");
     expect(crossings(t)[0]?.entrypoint).toBe("nope");
     expect(t.explanation.summary).toContain(
-      "%nope of KT1LT…5Tgv failed with failed typechecking input: no such entrypoint: nope",
+      '%nope of KT1LT…5Tgv failed with no such entrypoint "nope"',
     );
   });
 
@@ -283,7 +283,7 @@ describe("EVM-side reverts and deeper call stacks", () => {
     expect(t.root.to.value).toBe(H2.forwarder);
     expect(crossings(t)[0]?.from.value).toBe(H.sink);
     expect(t.explanation.summary).toContain(
-      "%nope of KT1LT…5Tgv failed with failed typechecking input: no such entrypoint: nope",
+      '%nope of KT1LT…5Tgv failed with no such entrypoint "nope"',
     );
   });
 });
@@ -337,5 +337,113 @@ describe("Mainnet withdrawals", () => {
     expect(t.explanation.summary).toContain(
       "fast_withdraw_base58(string,string,bytes) on 0xff00…0001 with 1 XTZ; all 1 leg applied.",
     );
+  });
+});
+
+describe("Third-party traffic (other teams' contracts on Previewnet / Shadownet)", () => {
+  it("mirrored op under the older hash recipe is matched by content", async () => {
+    const t = await build("0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750");
+    expect(t.root.status).toBe("reverted");
+    const c = crossings(t)[0];
+    expect(c?.gas?.used).toMatch(/^[0-9]+$/); // only there if the Tezos op was found
+    expect(t.explanation.summary).toContain(
+      '%decrement of KT1AX…Mayn failed with FAILWITH "AT_ZERO"',
+    );
+    expect(
+      t.meta.warnings.some((w) => w.includes("matched the mirrored operation oougR1e9jQ")),
+    ).toBe(true);
+  });
+
+  it("bare OutOfGas in the 0xTzKT errors field reads as out of gas", async () => {
+    const t = await build("0x248ce960aa3ac4983afe63b8b81507073eeec4b06f213278e33a92d38a71fa9d");
+    expect(t.explanation.summary).toContain(
+      "%default of KT1Do…BNNo failed with out of gas; whole transaction rolled back",
+    );
+    expect(t.explanation.summary).not.toContain("OutOfGas");
+  });
+
+  it("ill-typed input is named as such", async () => {
+    const t = await build("0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb");
+    expect(t.explanation.summary).toContain(
+      "failed with ill-typed input: numeric conversion failed",
+    );
+  });
+
+  it("views of a reverted transaction do not produce a mismatch warning", async () => {
+    const t = await build("0xe00958e3d965cd04a3e5c969db57f49ab221b6d1b8ce60f7a6eb7cdb4e8da0ec");
+    expect(t.root.status).toBe("reverted");
+    expect(crossings(t).map((n) => n.status)).toEqual(["backtracked", "reverted"]);
+    expect(t.explanation.summary).toContain(
+      'FAILWITH "REGISTRY: item already sold"; whole transaction rolled back on both sides, including 1 earlier leg that had applied.',
+    );
+    expect(t.meta.warnings.some((w) => w.startsWith("Michelson views:"))).toBe(false);
+  });
+
+  it("own-code revert after a successful crossing", async () => {
+    const t = await build("0x9fa434f56a3f4ef3d770b331d2e87ae8fd95d578882ec0ab4a048e3c0abb6e1d");
+    expect(crossings(t)[0]?.status).toBe("backtracked");
+    expect(t.explanation.summary).toContain(
+      "reverted in its own EVM code (intentional revert after successful crossing) after crossing into Michelson %default on KT1GA…4kUD",
+    );
+  });
+
+  it("parameter sent to a tz1 (Shadownet)", async () => {
+    const t = await buildTrace(
+      "0x3c1f4c12cb7f0ff91a26cc625fe682d9d27f69e3a3bf4841de941966f8043927",
+      {
+        provider: replayProvider(),
+      },
+    );
+    expect(t.network).toBe("shadownet");
+    expect(t.explanation.summary).toContain(
+      "%default of tz1Kq…xZSx failed with a parameter sent to a user account (tz1), which cannot execute it",
+    );
+  });
+});
+
+describe("Michelson-originated third-party traffic", () => {
+  it("older hash recipe: the mirrored EVM tx is matched by its CrossRuntimeCallReceived log", async () => {
+    const t = await build("ooNoT5REHUFwRpzGifXWH6TjNgPxuYsdjB2xFRBsFQgH1QwRX97");
+    expect(t.root.status).toBe("success");
+    const leg = crossings(t)[0];
+    expect(leg?.hash).toBe("0x44759a20d4cf92575f8451022116b5459faa5b91ca0c71e11ec4eccdd8588627");
+    expect(leg?.links?.blockscout).toContain(
+      "0x44759a20d4cf92575f8451022116b5459faa5b91ca0c71e11ec4eccdd8588627",
+    );
+    expect(
+      t.meta.warnings.some((w) => w.includes("matched the mirrored transaction 0x44759a20")),
+    ).toBe(true);
+    expect(t.meta.warnings.some((w) => w.includes("gateway frame(s)"))).toBe(false);
+    expect(t.explanation.summary).toContain(
+      "%call crossed into EVM transfer on 0x89b4…d162 with 5 XTZ; all 1 leg applied.",
+    );
+  });
+
+  it("round trip through the EVM gateway: plain internal call, then callMichelson back into Michelson", async () => {
+    const t = await build("opKwbyoHu2iQSP1QkF3Q7gDEf4rPpfw3GGyXQMfMJTnVRcUroWe");
+    const legs = crossings(t);
+    expect(legs.map((n) => `${n.runtime}:${n.entrypoint}`)).toEqual([
+      "evm:callMichelson(string,string,bytes)",
+      "michelson:run",
+    ]);
+    // The nested Michelson leg is an internal transaction of the root op and is paired by content,
+    // not by position (the root op also makes an ordinary internal call first).
+    expect(legs[1]?.michelsonGas?.used).toMatch(/^[0-9]+$/);
+    expect(t.meta.warnings.some((w) => w.includes("internal transaction(s)"))).toBe(false);
+    expect(t.explanation.summary).toContain(
+      "%run crossed into EVM callMichelson(string,string,bytes) on 0xff00…0007, then Michelson %run on KT1Q5…CUgi; all 2 legs applied.",
+    );
+  });
+
+  it("approve + swap with a nested leg back to the tz1 (27 rows, older hash recipe)", async () => {
+    const t = await build("onvWjSgWcMgSBcTe6xPoPzhvceWznaer79CkyTxrf4PhkCDwsv4");
+    const legs = crossings(t);
+    expect(legs.map((n) => n.runtime)).toEqual(["evm", "evm", "michelson"]);
+    expect(legs[2]?.to.value).toBe("tz1QPS1T1g2eiLptTSG6qLTK1789Cwt1rH3e");
+    // 0xTzKT reports negative gasUsed on two internal EVM calls; the value is passed through.
+    const negative = nodes(t).filter((n) => n.gas?.used?.startsWith("-"));
+    expect(negative.length).toBe(2);
+    expect(t.meta.warnings.some((w) => w.includes("internal transaction(s)"))).toBe(false);
+    expect(t.explanation.summary).toContain("all 3 legs applied.");
   });
 });

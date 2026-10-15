@@ -1,0 +1,384 @@
+{
+  "schemaVersion": "1",
+  "network": "previewnet",
+  "root": {
+    "id": "n0",
+    "runtime": "evm",
+    "kind": "tx",
+    "hash": "0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+    "from": {
+      "value": "0x64d9913e37cac84a98a4b94d02867f4a4cd9aff6",
+      "runtime": "evm",
+      "role": "native"
+    },
+    "to": {
+      "value": "0x623aa693f0bf7c7958d6c76860e0c4624bdc29a2",
+      "runtime": "evm",
+      "role": "native",
+      "label": "contract"
+    },
+    "entrypoint": "0x2baeceb7",
+    "gas": {
+      "used": "690328",
+      "limit": "1000000",
+      "unit": "evm_gas"
+    },
+    "status": "reverted",
+    "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"AT_ZERO\") of type String",
+    "links": {
+      "blockscout": "https://blockscout.previewnet.tezosx.nomadic-labs.com/tx/0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+      "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/oougR1e9jQtCw7XkgNihMu1nMgKNpfNg7GejJqVJLhfCYzPEJ1C"
+    },
+    "raw": {
+      "xtzkt": {
+        "direction": "x_evm",
+        "id": "1152921593565937664",
+        "chain": {
+          "id": 1,
+          "chainId": "0x1f440",
+          "layer": "x"
+        },
+        "level": 78619,
+        "timestamp": "2026-07-26T00:42:52Z",
+        "hash": "0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+        "sender": {
+          "id": 268436456,
+          "hash": "0x64d9913e37cac84a98a4b94d02867f4a4cd9aff6",
+          "type": "x_evm_user"
+        },
+        "target": {
+          "id": 268436458,
+          "hash": "0x623aa693f0bf7c7958d6c76860e0c4624bdc29a2",
+          "type": "x_evm_contract"
+        },
+        "targetCodeHash": -1763754139,
+        "counter": 3,
+        "gasLimit": 1000000,
+        "gasUsed": 634295,
+        "status": "failed",
+        "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"AT_ZERO\") of type String",
+        "internalOperations": 1,
+        "opType": "dynamic_fee",
+        "opCode": "call",
+        "amount": "0",
+        "daFee": "616000000000000",
+        "gasFee": "74328000000000",
+        "gasPrice": "1200000000",
+        "maxFeePerGas": "1200000000",
+        "maxPriorityFeePerGas": "0",
+        "effectiveGasPrice": "1000000000",
+        "input": "0x2baeceb7",
+        "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e747261637420776974682072756e74696d65206661696c757265207768696c652072756e6e696e6720746865207363726970743a206661696c656420776974683a20537472696e67282241545f5a45524f2229206f66207479706520537472696e67"
+      },
+      "receipt": {
+        "transactionHash": "0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+        "transactionIndex": "0x0",
+        "blockHash": "0x05bd1b12724e9a1ef1af964bb6832b0e0b16259ea371809b95429d73c0c775b2",
+        "blockNumber": "0x1331b",
+        "from": "0x64d9913e37cac84a98a4b94d02867f4a4cd9aff6",
+        "to": "0x623aa693f0bf7c7958d6c76860e0c4624bdc29a2",
+        "cumulativeGasUsed": "0xa8898",
+        "effectiveGasPrice": "0x3b9aca00",
+        "gasUsed": "0xa8898",
+        "logs": [],
+        "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "type": "0x2",
+        "status": "0x0",
+        "contractAddress": null
+      },
+      "tezosOperation": {
+        "protocol": "PtTALLiNtPec7mE7yY4m3k26J8Qukef3E3ehzhfXgFZKGtDdAXu",
+        "chain_id": "NetXY2oPPzkxUW1",
+        "hash": "oougR1e9jQtCw7XkgNihMu1nMgKNpfNg7GejJqVJLhfCYzPEJ1C",
+        "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+        "contents": [
+          {
+            "kind": "transaction",
+            "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+            "fee": "0",
+            "counter": "0",
+            "gas_limit": "0",
+            "storage_limit": "0",
+            "amount": "0",
+            "destination": "KT1R4EtQfmewh1v69QX5c4UKJaLRc5JFRkBk",
+            "metadata": {
+              "operation_result": {
+                "status": "failed",
+                "errors": []
+              },
+              "internal_operation_results": [
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 0,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                },
+                {
+                  "kind": "transaction",
+                  "source": "KT1PAascaMZMwUZW8maaaPPSwyZWzQtJv9ky",
+                  "nonce": 1,
+                  "amount": "0",
+                  "destination": "KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn",
+                  "parameters": {
+                    "entrypoint": "decrement",
+                    "value": {
+                      "prim": "Unit"
+                    }
+                  },
+                  "result": {
+                    "status": "failed",
+                    "errors": [
+                      {
+                        "kind": "permanent",
+                        "id": "tezlink_error",
+                        "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"AT_ZERO\\\") of type String\"))"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "kind": "event",
+                  "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                  "nonce": 2,
+                  "type": {
+                    "prim": "string"
+                  },
+                  "tag": "cross_runtime_call_end",
+                  "payload": {
+                    "string": "1-0"
+                  },
+                  "result": {
+                    "status": "backtracked"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+      }
+    },
+    "events": [
+      {
+        "name": "cross_runtime_call",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      },
+      {
+        "name": "cross_runtime_call_end",
+        "args": {
+          "payload": {
+            "string": "1-0"
+          },
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"
+        }
+      }
+    ],
+    "children": [
+      {
+        "id": "n1",
+        "runtime": "michelson",
+        "kind": "crossing",
+        "hash": "oougR1e9jQtCw7XkgNihMu1nMgKNpfNg7GejJqVJLhfCYzPEJ1C",
+        "synthetic": true,
+        "from": {
+          "value": "0x623aa693f0bf7c7958d6c76860e0c4624bdc29a2",
+          "runtime": "evm",
+          "role": "native",
+          "counterpart": "KT1PAascaMZMwUZW8maaaPPSwyZWzQtJv9ky",
+          "label": "contract"
+        },
+        "to": {
+          "value": "KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn",
+          "runtime": "michelson",
+          "role": "native",
+          "label": "contract"
+        },
+        "entrypoint": "decrement",
+        "gas": {
+          "used": "56033",
+          "unit": "evm_gas"
+        },
+        "status": "reverted",
+        "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"AT_ZERO\") of type String",
+        "links": {
+          "tzkt": "https://tzkt.previewnet.tezosx.nomadic-labs.com/oougR1e9jQtCw7XkgNihMu1nMgKNpfNg7GejJqVJLhfCYzPEJ1C"
+        },
+        "raw": {
+          "xtzkt": {
+            "direction": "x_evm_michelson",
+            "id": "1152921593566986240",
+            "chain": {
+              "id": 1,
+              "chainId": "0x1f440",
+              "layer": "x"
+            },
+            "level": 78619,
+            "timestamp": "2026-07-26T00:42:52Z",
+            "hash": "0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+            "sender": {
+              "id": 268436458,
+              "hash": "0x623aa693f0bf7c7958d6c76860e0c4624bdc29a2",
+              "type": "x_evm_contract"
+            },
+            "senderCodeHash": -1763754139,
+            "initiator": {
+              "id": 268436456,
+              "hash": "0x64d9913e37cac84a98a4b94d02867f4a4cd9aff6",
+              "type": "x_evm_user"
+            },
+            "target": {
+              "id": 268436457,
+              "hash": "KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn",
+              "type": "x_michelson_contract"
+            },
+            "targetCodeHash": 827141587,
+            "counter": 3,
+            "gasUsed": 56033,
+            "status": "failed",
+            "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"AT_ZERO\") of type String",
+            "entrypoint": "decrement",
+            "parameters": {},
+            "guessed": false,
+            "opType": "trace",
+            "opCode": "call",
+            "amountSent": "0",
+            "roundingLoss": "0",
+            "amountReceived": 0,
+            "parametersRaw": {
+              "prim": "Unit"
+            },
+            "alias": {
+              "id": 268436459,
+              "hash": "KT1PAascaMZMwUZW8maaaPPSwyZWzQtJv9ky",
+              "type": "x_michelson_alias",
+              "owner": {
+                "id": 268436458,
+                "hash": "0x623aa693f0bf7c7958d6c76860e0c4624bdc29a2",
+                "type": "x_evm_contract"
+              }
+            },
+            "gateway": {
+              "id": 268435464,
+              "hash": "0xff00000000000000000000000000000000000007",
+              "type": "x_evm_contract"
+            },
+            "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+            "gatewayParameters": {
+              "entrypoint": "decrement",
+              "parameters": "0x030b",
+              "destination": "KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn"
+            },
+            "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314158796f724c614c32763433614d684439386e36533666356d6d5967594d61796e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000964656372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000"
+          },
+          "callFrame": {
+            "type": "CALL",
+            "from": "0x623aa693f0bf7c7958d6c76860e0c4624bdc29a2",
+            "to": "0xff00000000000000000000000000000000000007",
+            "value": "0x00",
+            "gas": "0x05803f",
+            "gasUsed": "0xdae1",
+            "input": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314158796f724c614c32763433614d684439386e36533666356d6d5967594d61796e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000964656372656d656e7400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002030b000000000000000000000000000000000000000000000000000000000000",
+            "output": "0x43726f73732d72756e74696d652063616c6c206661696c6564207769746820737461747573203430302042616420526571756573743a204661696c656420696e74657270726574696e6720746865204d696368656c736f6e20636f6e747261637420776974682072756e74696d65206661696c757265207768696c652072756e6e696e6720746865207363726970743a206661696c656420776974683a20537472696e67282241545f5a45524f2229206f66207479706520537472696e67",
+            "error": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"AT_ZERO\") of type String",
+            "logs": [],
+            "calls": []
+          },
+          "tezosInternalOperation": {
+            "kind": "transaction",
+            "source": "KT1PAascaMZMwUZW8maaaPPSwyZWzQtJv9ky",
+            "nonce": 1,
+            "amount": "0",
+            "destination": "KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn",
+            "parameters": {
+              "entrypoint": "decrement",
+              "value": {
+                "prim": "Unit"
+              }
+            },
+            "result": {
+              "status": "failed",
+              "errors": [
+                {
+                  "kind": "permanent",
+                  "id": "tezlink_error",
+                  "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"AT_ZERO\\\") of type String\"))"
+                }
+              ]
+            }
+          }
+        },
+        "events": [],
+        "children": [],
+        "michelsonError": {
+          "kind": "permanent",
+          "id": "tezlink_error",
+          "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"AT_ZERO\\\") of type String\"))"
+        }
+      }
+    ]
+  },
+  "status": "reverted",
+  "atomic": true,
+  "explanation": {
+    "summary": "EVM tx 0xc89a…c750 from 0x64d9…aff6 to 0x623a…29a2 calling 0x2baeceb7 reverted: Michelson entrypoint %decrement of KT1AX…Mayn failed with FAILWITH \"AT_ZERO\"; whole transaction rolled back on both sides.",
+    "failedNodeId": "n1",
+    "evmReason": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"AT_ZERO\") of type String",
+    "michelsonError": {
+      "kind": "permanent",
+      "id": "tezlink_error",
+      "error_message": "Transfer(MichelsonContractInterpretError(\"runtime failure while running the script: failed with: String(\\\"AT_ZERO\\\") of type String\"))"
+    }
+  },
+  "meta": {
+    "source": "xtzkt+rpc",
+    "correlation": "xtzkt_hash",
+    "sources": [
+      {
+        "url": "https://api.previewnet.xtzkt.io/v1/operations/transaction?hash=0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.xtzkt.io/v1/operations/transaction?hash=0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+        "method": "GET"
+      },
+      {
+        "url": "https://api.shadownet.xtzkt.io/v1/operations/transaction?hash=0xc89a4a9cb3a44d0947b5a1233d97b28549457182303e8e3fa30fcf79970bc750",
+        "method": "GET"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "eth_getTransactionReceipt"
+      },
+      {
+        "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+        "method": "debug_traceTransaction"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/78619/operations",
+        "method": "GET"
+      },
+      {
+        "url": "https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/78618/context/contracts/KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn/storage",
+        "method": "GET"
+      }
+    ],
+    "warnings": [
+      "derived op hash opKYdthaWdAw1NbpZK7hqDZXsznS85HZktp4eVCZHz9zPNe7t3T not found in Michelson block 78619; matched the mirrored operation oougR1e9jQtCw7XkgNihMu1nMgKNpfNg7GejJqVJLhfCYzPEJ1C by content (older hash recipe)",
+      "storage of KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn: no fixture for GET https://michelson.previewnet.tezosx.nomadic-labs.com/chains/main/blocks/78618/context/contracts/KT1AXyorLaL2v43aMhD98n6S6f5mmYgYMayn/storage"
+    ]
+  }
+}

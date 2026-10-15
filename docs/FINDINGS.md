@@ -113,6 +113,14 @@ Recipe from `tezosx_journal.rs`, implemented in `packages/core/src/hashes.ts` an
 - Verified on chain: `syntheticMichelsonOpHash(0x9480b2…)` = `op7w99uHZNVjvQUz1YtWdWFADykSPzB3KEqrR7jd7SinogyCEtQ`, which is the op hash present in Previewnet block 1046559; same for the revert (`opEnkkJMcLqyuuVBfPC5neVFZ8mCYibXf8VqtP7MRvEBWNAmSry` at 1046562) and for all mainnet EVM-originated fixtures. `syntheticEvmTxHash(opZX4Z…)` = `0xb388b4be…` has a real receipt on mainnet.
 - Operation hash base58check prefix is `[5, 116]` (`o…`, 51 chars).
 
+### Recipe switch on 2026-08-13 (Previewnet)
+
+The recipes above hold from Previewnet level 421743 (2026-08-13 12:28 UTC) on. Up to level 419334 (2026-08-13 08:28 UTC) mirrored operations and transactions carried different hashes (bisection with `scripts`-style probes: `0xcc420eee…` at 419334 missing, `0x27d27b0b…` at 421743 found):
+
+- EVM → Michelson: the block at the transaction's level still holds the mirrored operation, sourced by the kernel attribution account `tz1Ke2h7…` with the same internal transactions (`0xc89a4a9c…` at 78619 ↔ `oougR1e9…`). None of `blake2b(tx)`, `blake2b("tezos"|"tezlink" ++ tx)`, `keccak(tx)` or `keccak("michelson" ++ tx)` reproduces the old hash; nactrace matches the op by content and says so in a warning.
+- Michelson → EVM: the mirrored transaction is a bare self-transfer **from the originating account's alias to itself** with empty input and value 0, whose receipt carries the gateway's `CrossRuntimeCallReceived` log (`ooNoT5RE…` at 315020 ↔ `0x44759a20…`, `onvWjSgW…` at 14865 ↔ `0x3467cee3…`). Its callTracer frame has no gateway frames (the actual calls are not visible there); the 0xTzKT rows are the record of the legs. nactrace matches the tx by alias + log.
+- Shadownet and mainnet started after the switch: every operation there follows the current recipes.
+
 ## Aliases
 
 Confirmed with `eth_call` on the gateway views (`resolveAddress`, `originOf`) and the `tez_*` RPCs:
@@ -130,6 +138,17 @@ Seen in mainnet traces (`oox3adZyj5yK5bFtUVT8FjcBLt3NPm6Dx3sHoxwc4EqAewURFiL` fa
 - A Michelson `%call_evm` into `0xff…01` (`withdraw_base58(string)` / `fast_withdraw_base58(string,string,bytes)`) shows in the EVM call tracer as three internal calls from the precompile: `0xff…05` `get_and_increment()` (the withdrawal counter), `0xff…03` `push_withdrawal_to_outbox(string,uint256)` or `push_fast_withdrawal_to_outbox(string,string,bytes,uint256,uint256)`, and a value transfer to `0x…dead` for the withdrawn amount (the burn). The precompile-to-precompile calls report tiny fixed gas (24200, 500, 0).
 - `0xff…02` is the FA bridge precompile (not seen in a trace yet; labelled from the Etherlink docs).
 - Mainnet NAC traffic as of 2026-10-15: 19 cross-runtime operations in total (2 EVM → Michelson, 17 Michelson → EVM, 14 of them withdrawals), none failed. Every failure case in the fixtures comes from Previewnet or Shadownet.
+
+## Third-party traffic (2026-10-15 retest)
+
+The 1000 most recent EVM-gateway rows on Previewnet (0xTzKT `gateway.hash=0xff…07`, 990 transactions from other teams' contracts: identity registries, token compliance, marketplaces, vaults) contain 26 failed or backtracked crossings; all 26 trace with a correct root cause. What they taught:
+
+- 0xTzKT's `errors` field for a crossing that ran out of Michelson gas is the bare kernel id `"OutOfGas"` (`0x248ce960…`, `0x988e8e33…`), not the gateway revert string; for other failures it is the full `Cross-runtime call failed with status 400 Bad Request: …` string (`0x9c9ac20c…` ill-typed input, Shadownet `0x3c1f4c12…` `Called a non-smart contract with parameter`). Both are humanized before they reach `explain()`.
+- A reverted transaction's `callMichelsonView` calls are not indexed at all: 0xTzKT shows no view leg while the callTracer has the STATICCALL frame (`0xe00958e3…`, `0xa8617fce…`, `0xdf513155…`). The callTracer is the only record of them; nactrace no longer reports that as a mismatch.
+- `0x9c9ac20c…`: `failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted` is what the kernel says when the ABI-encoded argument does not fit the Michelson type (here a `nat` fed a value out of range).
+- 0xTzKT reports a negative `gasUsed` on some internal EVM calls (`onvWjSgW…`: `-210930` and `-26179` on two `x_evm` rows, `-810` on an `x_michelson_evm` row). nactrace passes the value through; it is an indexer artefact, not a chain value.
+- A nested EVM → Michelson leg inside a Michelson-originated operation is an internal transaction of the root operation (`opKwbyoH…` %run → gateway → %run; Shadownet `ons8rrir…`), so it carries milligas; the root may also make ordinary internal calls before it, which is why nactrace pairs internal transactions with legs by destination + entrypoint rather than by position.
+- Mainnet (2026-10-15): 19 cross-runtime operations in total, none failed. Every failure fixture comes from Previewnet or Shadownet.
 
 ## Discrepancies (docs vs chain)
 

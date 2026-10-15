@@ -1,6 +1,90 @@
 [
   {
     "direction": "x_michelson_evm",
+    "id": "1152933972247838720",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6883026,
+    "timestamp": "2026-10-13T18:53:07Z",
+    "hash": "oouyxMEHKF1BRcfHqM5GS54streDDZbgihhxSfaHuQCcRYPm4M9",
+    "sender": {
+      "id": 268445520,
+      "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268435611,
+      "hash": "0x000000000000000000000000000000000000dead",
+      "type": "x_evm_user"
+    },
+    "counter": 3,
+    "gasLimit": 5126,
+    "gasUsed": 5026,
+    "status": "applied",
+    "amountSent": 0,
+    "amountReceived": "0",
+    "daFee": 932,
+    "gasFee": 359,
+    "gasFeeRefunded": 0,
+    "storageLimit": 0,
+    "storageUsed": 0,
+    "input": "0x5c36b186",
+    "alias": {
+      "id": 268445521,
+      "hash": "0x68767b38768e554a31735268b2d356d5cc75d96c",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268445520,
+        "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+        "type": "x_michelson_user"
+      }
+    },
+    "gateway": {
+      "id": 268442901,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract",
+      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+    },
+    "gatewayEntrypoint": "call_evm",
+    "gatewayParameters": {
+      "bytes": "",
+      "contract": null,
+      "string_0": "0x000000000000000000000000000000000000dEaD",
+      "string_1": "ping()"
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "0x000000000000000000000000000000000000dEaD"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "ping()"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "direction": "x_michelson_evm",
     "id": "1152933698017951744",
     "chain": {
       "id": 1,
@@ -1716,100 +1800,6 @@
               "args": [
                 {
                   "bytes": "00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000024747a31554648364569573861695546697377377233574278586f6a55733977554c43724e00000000000000000000000000000000000000000000000000000000"
-                },
-                {
-                  "prim": "None"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "direction": "x_michelson_evm",
-    "id": "1152932644808294400",
-    "chain": {
-      "id": 1,
-      "chainId": "0x1f34f",
-      "layer": "x"
-    },
-    "level": 6070330,
-    "timestamp": "2026-08-26T09:58:52Z",
-    "hash": "onhuQkBiyGnG8nUSDYN95mW6wAQy3WqJ4UgrCkMJLVToMWqePWy",
-    "sender": {
-      "id": 268442910,
-      "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
-      "type": "x_michelson_user"
-    },
-    "target": {
-      "id": 268435458,
-      "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
-    },
-    "targetCodeHash": -1912878149,
-    "counter": 2,
-    "gasLimit": 6244,
-    "gasUsed": 5600,
-    "status": "applied",
-    "entrypoint": "fast_withdraw_base58(string,string,bytes)",
-    "parameters": {
-      "target": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
-      "payload": "0x050098f979",
-      "fastWithdrawalContract": "KT19MJZvZLBagbtBapBcfWqkECu9B93RAGDp"
-    },
-    "guessed": false,
-    "internalOperations": 3,
-    "logsCount": 1,
-    "amountSent": 1000000,
-    "amountReceived": "1000000000000000000",
-    "daFee": 2104,
-    "gasFee": 2427,
-    "gasFeeRefunded": 0,
-    "storageLimit": 0,
-    "storageUsed": 0,
-    "input": "0x67a32cd7000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000024747a31554648364569573861695546697377377233574278586f6a55733977554c43724e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b5431394d4a5a765a4c426167627442617042636657716b454375394239335241474470000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005050098f979000000000000000000000000000000000000000000000000000000",
-    "alias": {
-      "id": 268442911,
-      "hash": "0x36e2a43ed08bd0827e7ded3d62621fab8438539c",
-      "type": "x_evm_alias",
-      "owner": {
-        "id": 268442910,
-        "hash": "tz1UFH6EiW8aiUFisw7r3WBxXojUs9wULCrN",
-        "type": "x_michelson_user"
-      }
-    },
-    "gateway": {
-      "id": 268442901,
-      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
-      "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
-    },
-    "gatewayEntrypoint": "call_evm",
-    "gatewayParameters": {
-      "bytes": "000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000024747a31554648364569573861695546697377377233574278586f6a55733977554c43724e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b5431394d4a5a765a4c426167627442617042636657716b454375394239335241474470000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005050098f979000000000000000000000000000000000000000000000000000000",
-      "contract": null,
-      "string_0": "0xff00000000000000000000000000000000000001",
-      "string_1": "fast_withdraw_base58(string,string,bytes)"
-    },
-    "gatewayParametersRaw": {
-      "prim": "Pair",
-      "args": [
-        {
-          "string": "0xff00000000000000000000000000000000000001"
-        },
-        {
-          "prim": "Pair",
-          "args": [
-            {
-              "string": "fast_withdraw_base58(string,string,bytes)"
-            },
-            {
-              "prim": "Pair",
-              "args": [
-                {
-                  "bytes": "000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001200000000000000000000000000000000000000000000000000000000000000024747a31554648364569573861695546697377377233574278586f6a55733977554c43724e0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b5431394d4a5a765a4c426167627442617042636657716b454375394239335241474470000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005050098f979000000000000000000000000000000000000000000000000000000"
                 },
                 {
                   "prim": "None"

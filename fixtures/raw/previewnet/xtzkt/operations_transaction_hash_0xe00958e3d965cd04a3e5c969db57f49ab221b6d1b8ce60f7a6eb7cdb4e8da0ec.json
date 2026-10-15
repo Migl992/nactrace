@@ -1,0 +1,231 @@
+[
+  {
+    "direction": "x_evm",
+    "id": "1152922333694918656",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 422376,
+    "timestamp": "2026-08-13T13:25:10.5Z",
+    "hash": "0xe00958e3d965cd04a3e5c969db57f49ab221b6d1b8ce60f7a6eb7cdb4e8da0ec",
+    "sender": {
+      "id": 268436837,
+      "hash": "0xbfc541b91e348ee3aa6c389453d505b3807f68f4",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268436890,
+      "hash": "0x98cd532cc877c0eeca2eede7a1a88a6a3cc7d7d2",
+      "type": "x_evm_contract"
+    },
+    "targetCodeHash": -1642407833,
+    "counter": 11,
+    "gasLimit": 8000000,
+    "gasUsed": 774373,
+    "status": "failed",
+    "errors": "901baa62",
+    "internalOperations": 3,
+    "opType": "dynamic_fee",
+    "opCode": "call",
+    "amount": "250000000000000000",
+    "daFee": "744000000000000",
+    "gasFee": "249515000000000",
+    "gasPrice": "2000000001",
+    "maxFeePerGas": "2000000001",
+    "maxPriorityFeePerGas": "1",
+    "effectiveGasPrice": "1000000000",
+    "input": "0xd96a094a0000000000000000000000000000000000000000000000000000000000000001",
+    "output": "0x901baa62"
+  },
+  {
+    "direction": "x_evm",
+    "id": "1152922333695967232",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 422376,
+    "timestamp": "2026-08-13T13:25:10.5Z",
+    "hash": "0xe00958e3d965cd04a3e5c969db57f49ab221b6d1b8ce60f7a6eb7cdb4e8da0ec",
+    "sender": {
+      "id": 268436890,
+      "hash": "0x98cd532cc877c0eeca2eede7a1a88a6a3cc7d7d2",
+      "type": "x_evm_contract"
+    },
+    "senderCodeHash": -1642407833,
+    "initiator": {
+      "id": 268436837,
+      "hash": "0xbfc541b91e348ee3aa6c389453d505b3807f68f4",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268435464,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "targetCodeHash": 0,
+    "counter": 11,
+    "gasUsed": 28404,
+    "status": "backtracked",
+    "entrypoint": "resolveAddress(string,uint8,uint8)",
+    "parameters": {
+      "addr": "0xbfc541b91e348ee3aa6c389453d505b3807f68f4",
+      "sourceRuntime": "1",
+      "targetRuntime": "0"
+    },
+    "guessed": false,
+    "opType": "trace",
+    "opCode": "static_call",
+    "amount": "0",
+    "input": "0x1349c045000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002a30786266633534316239316533343865653361613663333839343533643530356233383037663638663400000000000000000000000000000000000000000000",
+    "output": "0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000244b54314b38765963314a736871374b5a7431777351784b7647554258666a4b425568523800000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152922333697015808",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 422376,
+    "timestamp": "2026-08-13T13:25:10.5Z",
+    "hash": "0xe00958e3d965cd04a3e5c969db57f49ab221b6d1b8ce60f7a6eb7cdb4e8da0ec",
+    "sender": {
+      "id": 268436890,
+      "hash": "0x98cd532cc877c0eeca2eede7a1a88a6a3cc7d7d2",
+      "type": "x_evm_contract"
+    },
+    "senderCodeHash": -1642407833,
+    "initiator": {
+      "id": 268436837,
+      "hash": "0xbfc541b91e348ee3aa6c389453d505b3807f68f4",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268436891,
+      "hash": "tz1TuGcaeKwNZs5HLhmKxWwFDBKuacDLQRPD",
+      "type": "x_michelson_user"
+    },
+    "counter": 11,
+    "gasUsed": 126351,
+    "status": "backtracked",
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "250000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 250000,
+    "alias": {
+      "id": 268436894,
+      "hash": "KT1KZiyAXbsNxvLeX7PjftxN8qfy8NLAwA4a",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268436890,
+        "hash": "0x98cd532cc877c0eeca2eede7a1a88a6a3cc7d7d2",
+        "type": "x_evm_contract"
+      }
+    },
+    "gateway": {
+      "id": 268435464,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "call(string,(string,string)[],bytes,uint8)",
+    "gatewayParameters": {
+      "url": "http://tezos/tz1TuGcaeKwNZs5HLhmKxWwFDBKuacDLQRPD",
+      "body": "0x",
+      "method": "1",
+      "headers": []
+    },
+    "gatewayInput": "0xfa591a56000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000031687474703a2f2f74657a6f732f747a315475476361654b774e5a7335484c686d4b7857774644424b756163444c5152504400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152922333698064384",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 422376,
+    "timestamp": "2026-08-13T13:25:10.5Z",
+    "hash": "0xe00958e3d965cd04a3e5c969db57f49ab221b6d1b8ce60f7a6eb7cdb4e8da0ec",
+    "sender": {
+      "id": 268436890,
+      "hash": "0x98cd532cc877c0eeca2eede7a1a88a6a3cc7d7d2",
+      "type": "x_evm_contract"
+    },
+    "senderCodeHash": -1642407833,
+    "initiator": {
+      "id": 268436837,
+      "hash": "0xbfc541b91e348ee3aa6c389453d505b3807f68f4",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268436887,
+      "hash": "KT1HcvSojw8A4HHsney9YFNn4M554qZPbGq3",
+      "type": "x_michelson_contract"
+    },
+    "targetCodeHash": 969546736,
+    "counter": 11,
+    "gasUsed": 64387,
+    "status": "failed",
+    "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with runtime failure while running the script: failed with: String(\"REGISTRY: item already sold\") of type String",
+    "entrypoint": "record",
+    "parameters": {
+      "item": "1",
+      "paid": "250000",
+      "buyer": "KT1K8vYc1Jshq7KZt1wsQxKvGUBXfjKBUhR8"
+    },
+    "guessed": false,
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "0",
+    "roundingLoss": "0",
+    "amountReceived": 0,
+    "parametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "int": "1"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "bytes": "0173c61091e94d616389b369760f4115b9f92ff05f00"
+            },
+            {
+              "int": "250000"
+            }
+          ]
+        }
+      ]
+    },
+    "alias": {
+      "id": 268436894,
+      "hash": "KT1KZiyAXbsNxvLeX7PjftxN8qfy8NLAwA4a",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268436890,
+        "hash": "0x98cd532cc877c0eeca2eede7a1a88a6a3cc7d7d2",
+        "type": "x_evm_contract"
+      }
+    },
+    "gateway": {
+      "id": 268435464,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "record",
+      "parameters": "0x07070001070701000000244b54314b38765963314a736871374b5a7431777351784b7647554258666a4b42556852380090c21e",
+      "destination": "KT1HcvSojw8A4HHsney9YFNn4M554qZPbGq3"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b5431486376536f6a773841344848736e65793959464e6e344d353534715a50624771330000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000067265636f72640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003307070001070701000000244b54314b38765963314a736871374b5a7431777351784b7647554258666a4b42556852380090c21e00000000000000000000000000"
+  }
+]

@@ -6,10 +6,20 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 
+- `evmAliasOf()` and `getBlockTransactions()` in `@nactrace/core`.
+- Nine third-party cases from Previewnet and Shadownet in the fixtures (older hash recipe, bare `OutOfGas`, ill-typed input, view inside a reverted transaction, own-code revert after a crossing, parameter sent to a tz1).
+
 - Etherlink precompiles are labelled in traces and sentences (`withdrawal precompile` 0xff…01, `outbox precompile` 0xff…03, `withdrawal counter precompile` 0xff…05, `FA bridge precompile` 0xff…02, `burn address` 0x…dead); new `addressTag()` helper in `@nactrace/core`. Mainnet fast-withdrawal case added to the fixtures.
+
+### Changed
+
+- Wording in `explain()`: `failed with out of gas` (was `OutOfGas` when the reason came from 0xTzKT), `no such entrypoint "nope"` and `ill-typed input: …` (was `failed typechecking input: …`), `a parameter sent to a user account (tz1), …`.
 
 ### Fixed
 
+- Operations from before the hash-recipe change (Previewnet up to 2026-08-13, see FINDINGS) could not find their mirrored counterpart: an EVM transaction's Michelson operation is now matched by content inside the block, and a Michelson operation's EVM transaction by the originating alias and the gateway's `CrossRuntimeCallReceived` log, each with a warning naming the hash found.
+- Internal transactions of a Michelson operation are paired with the trace's legs by destination and entrypoint instead of by position, which mis-assigned milligas and produced spurious "N internal transaction(s) but M Michelson leg(s)" warnings on operations with ordinary internal calls or nested legs.
+- Views inside a reverted transaction no longer trigger a "0xTzKT shows 0 leg(s) but callTracer has 1 gateway frame(s)" warning.
 - A Michelson operation whose first content is a `reveal` (first operation of a fresh tz1) was read from the wrong content, losing milligas, errors and internal transactions (Shadownet `ons8rrir…`).
 
 ## [1.0.1] - 2026-09-28

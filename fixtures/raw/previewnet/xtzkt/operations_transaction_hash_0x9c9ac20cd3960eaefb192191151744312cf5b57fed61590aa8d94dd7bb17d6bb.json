@@ -1,0 +1,106 @@
+[
+  {
+    "direction": "x_evm",
+    "id": "1152922333611032576",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 422325,
+    "timestamp": "2026-08-13T13:21:07Z",
+    "hash": "0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+    "sender": {
+      "id": 268436838,
+      "hash": "0xd46cac2ec6549bb8af9de8292e4ac7b6e78c9e42",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268436876,
+      "hash": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+      "type": "x_evm_contract"
+    },
+    "targetCodeHash": 187978339,
+    "counter": 8,
+    "gasLimit": 2500000,
+    "gasUsed": 1775631,
+    "status": "failed",
+    "errors": "4a0f4c90",
+    "internalOperations": 1,
+    "opType": "legacy",
+    "opCode": "call",
+    "amount": "0",
+    "daFee": "1768000000000000",
+    "gasFee": "60025000000000",
+    "gasPrice": "1000000000",
+    "effectiveGasPrice": "1000000000",
+    "input": "0xf2c1ff67000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000b1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000244b54314741567958627947783441455a636b48656f637639565a526559387350346b5544000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002004d000000000000000000000000000000000000000000000000000000000000",
+    "output": "0x4a0f4c90"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152922333612081152",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 422325,
+    "timestamp": "2026-08-13T13:21:07Z",
+    "hash": "0x9c9ac20cd3960eaefb192191151744312cf5b57fed61590aa8d94dd7bb17d6bb",
+    "sender": {
+      "id": 268436876,
+      "hash": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+      "type": "x_evm_contract"
+    },
+    "senderCodeHash": 187978339,
+    "initiator": {
+      "id": 268436838,
+      "hash": "0xd46cac2ec6549bb8af9de8292e4ac7b6e78c9e42",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268436873,
+      "hash": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD",
+      "type": "x_michelson_contract"
+    },
+    "targetCodeHash": -1376634161,
+    "counter": 8,
+    "gasUsed": 52394,
+    "status": "failed",
+    "errors": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: numeric conversion failed: out of range conversion regarding big integer attempted",
+    "entrypoint": "default",
+    "parameters": "-13",
+    "guessed": false,
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "0",
+    "roundingLoss": "0",
+    "amountReceived": 0,
+    "parametersRaw": {
+      "int": "-13"
+    },
+    "alias": {
+      "id": 268436878,
+      "hash": "KT1A5bhrKbY7hcTffj9zpbuK9rgYKr1NC99z",
+      "type": "x_michelson_alias",
+      "owner": {
+        "id": 268436876,
+        "hash": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df",
+        "type": "x_evm_contract"
+      }
+    },
+    "gateway": {
+      "id": 268435464,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract"
+    },
+    "gatewayEntrypoint": "callMichelson(string,string,bytes)",
+    "gatewayParameters": {
+      "entrypoint": "default",
+      "parameters": "0x004d",
+      "destination": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD"
+    },
+    "gatewayInput": "0xa1544fc3000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000c0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000244b54314741567958627947783441455a636b48656f637639565a526559387350346b554400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000764656661756c74000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002004d000000000000000000000000000000000000000000000000000000000000"
+  }
+]

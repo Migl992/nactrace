@@ -105,7 +105,7 @@ describe("michelson error wrappers", () => {
       humanizeTezosMessage(
         'Transfer(MichelsonContractInterpretError("failed typechecking input: no such entrypoint: nope"))',
       ),
-    ).toBe("failed typechecking input: no such entrypoint: nope");
+    ).toBe('no such entrypoint "nope"');
     expect(humanizeTezosMessage("Something(new)")).toBe("Something(new)");
     expect(extractFailWith('failed with: Pair("a" 1) of type pair')).toBe('Pair("a" 1)');
   });

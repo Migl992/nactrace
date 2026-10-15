@@ -1,0 +1,343 @@
+[
+  [],
+  [],
+  [],
+  [
+    {
+      "protocol": "PsUshuai9QapM5TGj1JpuVGkdxz5GykdnEvS6Rh8SUVrARvZLCY",
+      "chain_id": "NetXY2oPPzkxUW1",
+      "hash": "opA3LbvnXrfqanaVY3Wycy2m4G4hiJSwoL7eaGMDzJ8GkQaZwzu",
+      "branch": "BKiHLREqU3JkXfzEDYAkmmfX48gBDtYhMrpA98s7Aq4SzbUAB6M",
+      "contents": [
+        {
+          "kind": "transaction",
+          "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+          "fee": "0",
+          "counter": "0",
+          "gas_limit": "0",
+          "storage_limit": "0",
+          "amount": "0",
+          "destination": "KT1DsXAwNPGEcpVQjL5Jqh3aaP9AW35o7LEM",
+          "metadata": {
+            "operation_result": {
+              "status": "backtracked"
+            },
+            "internal_operation_results": [
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 0,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              },
+              {
+                "kind": "origination",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 1,
+                "balance": "0",
+                "script": {
+                  "code": [
+                    {
+                      "prim": "parameter",
+                      "args": [
+                        {
+                          "prim": "unit"
+                        }
+                      ]
+                    },
+                    {
+                      "prim": "storage",
+                      "args": [
+                        {
+                          "prim": "string"
+                        }
+                      ]
+                    },
+                    {
+                      "prim": "code",
+                      "args": [
+                        [
+                          {
+                            "prim": "CDR"
+                          },
+                          {
+                            "prim": "DUP"
+                          },
+                          {
+                            "prim": "PUSH",
+                            "args": [
+                              {
+                                "prim": "string"
+                              },
+                              {
+                                "string": "http://ethereum/"
+                              }
+                            ]
+                          },
+                          {
+                            "prim": "CONCAT"
+                          },
+                          {
+                            "prim": "NONE",
+                            "args": [
+                              {
+                                "prim": "contract",
+                                "args": [
+                                  {
+                                    "prim": "bytes"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "prim": "PUSH",
+                            "args": [
+                              {
+                                "prim": "nat"
+                              },
+                              {
+                                "int": "1"
+                              }
+                            ]
+                          },
+                          {
+                            "prim": "PAIR"
+                          },
+                          {
+                            "prim": "PUSH",
+                            "args": [
+                              {
+                                "prim": "bytes"
+                              },
+                              {
+                                "bytes": ""
+                              }
+                            ]
+                          },
+                          {
+                            "prim": "PAIR"
+                          },
+                          {
+                            "prim": "NIL",
+                            "args": [
+                              {
+                                "prim": "pair",
+                                "args": [
+                                  {
+                                    "prim": "string"
+                                  },
+                                  {
+                                    "prim": "string"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "prim": "PAIR"
+                          },
+                          {
+                            "prim": "SWAP"
+                          },
+                          {
+                            "prim": "PAIR"
+                          },
+                          {
+                            "prim": "PUSH",
+                            "args": [
+                              {
+                                "prim": "address"
+                              },
+                              {
+                                "string": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw"
+                              }
+                            ]
+                          },
+                          {
+                            "prim": "CONTRACT",
+                            "args": [
+                              {
+                                "prim": "pair",
+                                "args": [
+                                  {
+                                    "prim": "string"
+                                  },
+                                  {
+                                    "prim": "pair",
+                                    "args": [
+                                      {
+                                        "prim": "list",
+                                        "args": [
+                                          {
+                                            "prim": "pair",
+                                            "args": [
+                                              {
+                                                "prim": "string"
+                                              },
+                                              {
+                                                "prim": "string"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "prim": "pair",
+                                        "args": [
+                                          {
+                                            "prim": "bytes"
+                                          },
+                                          {
+                                            "prim": "pair",
+                                            "args": [
+                                              {
+                                                "prim": "nat"
+                                              },
+                                              {
+                                                "prim": "option",
+                                                "args": [
+                                                  {
+                                                    "prim": "contract",
+                                                    "args": [
+                                                      {
+                                                        "prim": "bytes"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "annots": [
+                              "%call"
+                            ]
+                          },
+                          {
+                            "prim": "IF_NONE",
+                            "args": [
+                              [
+                                {
+                                  "prim": "PUSH",
+                                  "args": [
+                                    {
+                                      "prim": "string"
+                                    },
+                                    {
+                                      "string": "gateway"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "prim": "FAILWITH"
+                                }
+                              ],
+                              []
+                            ]
+                          },
+                          {
+                            "prim": "SWAP"
+                          },
+                          {
+                            "prim": "BALANCE"
+                          },
+                          {
+                            "prim": "SWAP"
+                          },
+                          {
+                            "prim": "TRANSFER_TOKENS"
+                          },
+                          {
+                            "prim": "NIL",
+                            "args": [
+                              {
+                                "prim": "operation"
+                              }
+                            ]
+                          },
+                          {
+                            "prim": "SWAP"
+                          },
+                          {
+                            "prim": "CONS"
+                          },
+                          {
+                            "prim": "PAIR"
+                          }
+                        ]
+                      ]
+                    }
+                  ],
+                  "storage": {
+                    "string": "0xf9fa7ad32cc0853d910d73050ee97ced3c8385df"
+                  }
+                },
+                "result": {
+                  "status": "backtracked",
+                  "originated_contracts": [
+                    "KT1A5bhrKbY7hcTffj9zpbuK9rgYKr1NC99z"
+                  ],
+                  "consumed_milligas": "2027661",
+                  "storage_size": "47",
+                  "paid_storage_size_diff": "47"
+                }
+              },
+              {
+                "kind": "transaction",
+                "source": "KT1A5bhrKbY7hcTffj9zpbuK9rgYKr1NC99z",
+                "nonce": 2,
+                "amount": "0",
+                "destination": "KT1GAVyXbyGx4AEZckHeocv9VZReY8sP4kUD",
+                "parameters": {
+                  "entrypoint": "default",
+                  "value": {
+                    "int": "5"
+                  }
+                },
+                "result": {
+                  "status": "backtracked",
+                  "storage": {
+                    "int": "5"
+                  },
+                  "consumed_milligas": "1004297",
+                  "storage_size": "30"
+                }
+              },
+              {
+                "kind": "event",
+                "source": "tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU",
+                "nonce": 3,
+                "type": {
+                  "prim": "string"
+                },
+                "tag": "cross_runtime_call_end",
+                "payload": {
+                  "string": "1-0"
+                },
+                "result": {
+                  "status": "backtracked"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "signature": "sigMzJ4GVAvXEd2RjsKGfG2H9QvqTSKCZsuB2KiHbZRGFz72XgF6KaKADznh674fQgBatxw3xdHqTtMHUZAGRprxy64wg1aq"
+    }
+  ]
+]

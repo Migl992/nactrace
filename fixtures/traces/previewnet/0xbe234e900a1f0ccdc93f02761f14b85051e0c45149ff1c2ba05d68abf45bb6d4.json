@@ -565,7 +565,7 @@
   "status": "reverted",
   "atomic": true,
   "explanation": {
-    "summary": "EVM tx 0xbe23…b6d4 from 0x2cad…87b3 to 0xb8a4…0908 calling 0xc8181ab1 reverted: Michelson entrypoint %nope of KT1LT…5Tgv failed with failed typechecking input: no such entrypoint: nope; whole transaction rolled back on both sides, including 1 earlier leg that had applied.",
+    "summary": "EVM tx 0xbe23…b6d4 from 0x2cad…87b3 to 0xb8a4…0908 calling 0xc8181ab1 reverted: Michelson entrypoint %nope of KT1LT…5Tgv failed with no such entrypoint \"nope\"; whole transaction rolled back on both sides, including 1 earlier leg that had applied.",
     "failedNodeId": "n2",
     "evmReason": "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
     "michelsonError": {

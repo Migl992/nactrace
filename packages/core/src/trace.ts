@@ -19,6 +19,7 @@ import {
   type CallFrame,
   type EvmLog,
   type EvmReceipt,
+  getBlockTransactions,
 } from "./evm.js";
 import { explain } from "./explain.js";
 import {
@@ -26,10 +27,11 @@ import {
   isMichelsonOpHash,
   syntheticEvmTxHash,
   syntheticMichelsonOpHash,
+  evmAliasOf,
 } from "./hashes.js";
 import { parseInput } from "./input.js";
 import { classifyAddress, isGatewayAddress, SYSTEM_ADDRESSES, type AddressHint } from "./labels.js";
-import { summarizeTezosError } from "./michelson-errors.js";
+import { humanizeTezosMessage, summarizeTezosError } from "./michelson-errors.js";
 import { NETWORKS, type NetworkName } from "./networks.js";
 import type { Provider, ProviderRequest } from "./provider.js";
 import {
@@ -74,6 +76,8 @@ interface Ctx {
   opHash: string;
   warnings: string[];
   nextId: number;
+  /** The mirrored EVM tx was matched by content (pre-2026-08-13 kernel): its callTracer frame is a bare self-transfer. */
+  oldRecipe?: boolean;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -135,7 +139,9 @@ function rowError(r: XtzktTransactionRow): string | undefined {
   if (/^(0x)?[0-9a-fA-F]{8,}$/.test(text)) {
     return decodeRevert(text.startsWith("0x") ? text : `0x${text}`) ?? text;
   }
-  return text;
+  // Michelson-side failures of a crossing come as the bare kernel error id ("OutOfGas") or the
+  // gateway revert string; both read better humanized (Previewnet 0x248ce960…, Shadownet 0x3c1f4c12…).
+  return humanizeTezosMessage(text);
 }
 
 function addr(
@@ -556,7 +562,10 @@ function applyCallTrace(ctx: Ctx, root: TraceNode, frame: CallFrame): void {
     // malformed destination): 0xTzKT rightly has no leg for them, so that is not a mismatch.
     const rejectedOnly =
       frames.length > nodes.length && frames.slice(nodes.length).every((h) => h.frame.error);
-    if (nodes.length !== frames.length && !rejectedOnly) {
+    // 0xTzKT indexes the views of a reverted transaction as nothing at all (Previewnet 0xe00958e3…):
+    // the callTracer frames are the only record of them, and that is not a disagreement.
+    const viewsOfRevertedTx = what === "Michelson views" && root.status === "reverted";
+    if (nodes.length !== frames.length && !rejectedOnly && !viewsOfRevertedTx && !ctx.oldRecipe) {
       ctx.warnings.push(
         `${what}: 0xTzKT shows ${nodes.length} leg(s) but callTracer has ${frames.length} gateway frame(s)`,
       );
@@ -586,6 +595,78 @@ function applyCallTrace(ctx: Ctx, root: TraceNode, frame: CallFrame): void {
     root.status = "reverted";
     root.error ??= frame.revertReason ?? decodeRevert(frame.output) ?? frame.error;
   }
+}
+
+/** Skeleton nodes were built with a derived hash; point them at the one actually found. */
+function rehashMirrored(
+  root: TraceNode | undefined,
+  from: string,
+  to: string,
+  link: "tzkt" | "blockscout",
+): void {
+  if (!root) return;
+  for (const { node } of walkNodes(root)) {
+    if (node.hash === from) node.hash = to;
+    const url = node.links?.[link];
+    if (url?.endsWith(`/${from}`)) node.links![link] = `${url.slice(0, -from.length)}${to}`;
+  }
+}
+
+/**
+ * The mirrored EVM transaction of a Michelson-originated crossing when its derived hash has no
+ * receipt: in the block at `level`, the transaction sent by the originating account's alias whose
+ * receipt carries the gateway's CrossRuntimeCallReceived log. Undefined unless exactly one matches.
+ */
+async function findMirroredTxByContent(
+  provider: Provider,
+  network: NetworkName,
+  level: number,
+  root: TraceNode | undefined,
+): Promise<{ hash: string; receipt: EvmReceipt } | undefined> {
+  if (!root || root.runtime !== "michelson") return undefined;
+  const alias = evmAliasOf(root.from.value);
+  const txs = (await getBlockTransactions(provider, network, level)).filter(
+    (tx) => tx.from.toLowerCase() === alias,
+  );
+  const hits: { hash: string; receipt: EvmReceipt }[] = [];
+  for (const tx of txs) {
+    const receipt = await getTransactionReceipt(provider, network, tx.hash);
+    const received = receipt?.logs.some(
+      (l) => isGatewayAddress(l.address) && l.topics[0] === CROSS_RUNTIME_CALL_RECEIVED_TOPIC0,
+    );
+    if (receipt && received) hits.push({ hash: tx.hash, receipt });
+  }
+  return hits.length === 1 ? hits[0] : undefined;
+}
+
+/**
+ * The mirrored operation of an EVM transaction when its derived hash is not in the block: the
+ * operation sourced by the kernel attribution account whose internal transactions hit the same
+ * destination + entrypoint as the skeleton's crossings. Undefined unless exactly one op matches.
+ */
+function findMirroredOperationByContent(
+  blockOps: TezosOperation[][],
+  root: TraceNode | undefined,
+): TezosOperation | undefined {
+  const ops = blockOps
+    .flat()
+    .filter((o) =>
+      o.contents.some((c) => c.kind === "transaction" && SYSTEM_ADDRESSES.has(c.source ?? "")),
+    );
+  if (ops.length === 0) return undefined;
+  const wanted = root
+    ? crossingsInto(root, "michelson").map((n) => `${n.to.value}|${n.entrypoint ?? "default"}`)
+    : [];
+  const matches = ops.filter((o) => {
+    if (wanted.length === 0) return true;
+    const internal = o.contents.flatMap((c) =>
+      (c.metadata?.internal_operation_results ?? []).map(
+        (i) => `${i.destination ?? ""}|${i.parameters?.entrypoint ?? "default"}`,
+      ),
+    );
+    return wanted.every((w) => internal.includes(w));
+  });
+  return matches.length === 1 ? matches[0] : undefined;
 }
 
 /** RPC-only skeleton of the EVM side: root from receipt/tx, one crossing or view per gateway frame. */
@@ -774,14 +855,31 @@ async function applyTezosOperation(
     }
     node.raw = { ...node.raw, tezosInternalOperation: c };
   });
+  // Pair each Michelson leg with the first unused internal transaction to the same destination and
+  // entrypoint. Pairing by position breaks when the root op also makes ordinary internal calls
+  // (Previewnet opKwbyoH…) or when a nested leg lives in another mirrored op (onvWjSgW…).
   const nodes = crossingsInto(root, "michelson");
-  if (calls.length !== nodes.length) {
+  const unused = new Set(calls);
+  const takeCallFor = (node: TraceNode): TezosInternalOperation | undefined => {
+    for (const c of unused) {
+      const sameTarget = (c.destination ?? "") === node.to.value;
+      const sameEntrypoint =
+        (c.parameters?.entrypoint ?? "default") === (node.entrypoint ?? "default");
+      if (sameTarget && sameEntrypoint) {
+        unused.delete(c);
+        return c;
+      }
+    }
+    return undefined;
+  };
+  const paired = nodes.map((node) => [node, takeCallFor(node)] as const);
+  const unmatched = paired.filter(([, c]) => !c).length;
+  if (ctx.origin === "evm" && (unmatched > 0 || unused.size > 0)) {
     ctx.warnings.push(
-      `Tezos op has ${calls.length} internal transaction(s) but the trace has ${nodes.length} Michelson leg(s)`,
+      `Tezos op has ${calls.length} internal transaction(s) but the trace has ${nodes.length} Michelson leg(s) (${unmatched} unmatched)`,
     );
   }
-  nodes.forEach((node, i) => {
-    const call = calls[i];
+  paired.forEach(([node, call]) => {
     if (!call) return;
     if (call.result?.consumed_milligas) {
       node.michelsonGas = { used: call.result.consumed_milligas, unit: "michelson_milligas" };
@@ -950,7 +1048,7 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
       );
     }
   }
-  const evmHash = origin === "evm" ? realHash : syntheticEvmTxHash(realHash);
+  let evmHash = origin === "evm" ? realHash : syntheticEvmTxHash(realHash);
   const opHash = origin === "evm" ? syntheticMichelsonOpHash(realHash) : realHash;
   const ctx: Ctx = { provider, network, origin, evmHash, opHash, warnings, nextId: 0 };
   const fromXtzkt = rows.length > 0;
@@ -972,6 +1070,26 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
         warnings.push(`eth_getTransactionReceipt: ${(e as Error).message}`);
       }
     }
+    if (needsEvm && !receipt && origin === "michelson" && level !== undefined) {
+      // Older kernels mirrored a Michelson-originated crossing under a different hash
+      // (docs/FINDINGS.md "Mirrored hashes"): the block still holds it, sent by the originating
+      // account's alias and carrying the gateway's CrossRuntimeCallReceived log.
+      try {
+        const matched = await findMirroredTxByContent(provider, network, level, root);
+        if (matched) {
+          warnings.push(
+            `derived EVM hash ${evmHash} has no receipt; matched the mirrored transaction ${matched.hash} in block ${level} by content (older hash recipe)`,
+          );
+          rehashMirrored(root, evmHash, matched.hash, "blockscout");
+          evmHash = matched.hash;
+          ctx.evmHash = matched.hash;
+          ctx.oldRecipe = true;
+          receipt = matched.receipt;
+        }
+      } catch (e) {
+        warnings.push(`eth_getBlockByNumber: ${(e as Error).message}`);
+      }
+    }
     if (receipt) {
       const t = await traceTransaction(provider, network, evmHash);
       if (t.error)
@@ -984,7 +1102,21 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
     let op: TezosOperation | undefined;
     if (level !== undefined) {
       try {
-        op = findOperation(await getBlockOperations(provider, network, level), opHash);
+        const blockOps = await getBlockOperations(provider, network, level);
+        op = findOperation(blockOps, opHash);
+        if (!op && origin === "evm") {
+          // Older blocks mirror EVM transactions under a different hash (docs/FINDINGS.md "Mirrored
+          // hashes"); the block still holds the op, sourced by the kernel attribution account, and its
+          // internal transactions name the same destinations and entrypoints as the 0xTzKT legs.
+          op = findMirroredOperationByContent(blockOps, root);
+          if (op) {
+            rehashMirrored(root, opHash, op.hash, "tzkt");
+            ctx.opHash = op.hash;
+            warnings.push(
+              `derived op hash ${opHash} not found in Michelson block ${level}; matched the mirrored operation ${op.hash} by content (older hash recipe)`,
+            );
+          }
+        }
       } catch (e) {
         warnings.push(`Tezos block ${level}: ${(e as Error).message}`);
       }
