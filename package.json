@@ -36,11 +36,11 @@
     "playwright": "1.64.0",
     "prettier": "^3.9.10",
     "solc": "^0.8.37",
-    "tsup": "^8.3.0",
+    "tsup": "^9.0.0",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.71.1",
     "viem": "^2.57.4",
-    "vitest": "^3.0.0"
+    "vitest": "^5.0.4"
   },
   "repository": {
     "type": "git",
@@ -50,5 +50,11 @@
   "bugs": {
     "url": "https://github.com/Migl992/nactrace/issues"
   },
-  "author": "mig"
+  "author": "mig",
+  "pnpm": {
+    "overrides": {
+      "tmp": ">=0.2.7",
+      "source-map-js": ">=1.2.2"
+    }
+  }
 }
