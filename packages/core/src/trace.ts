@@ -734,7 +734,8 @@ async function applyTezosOperation(
   op: TezosOperation,
   level: number,
 ): Promise<void> {
-  const content: TezosContent | undefined = op.contents[0];
+  // The first content may be a `reveal` (first operation of an account): use the transaction.
+  const content: TezosContent | undefined = mainContent(op);
   if (!content) return;
   const result = content.metadata?.operation_result;
   const internals = content.metadata?.internal_operation_results ?? [];
@@ -841,6 +842,11 @@ async function applyTezosOperation(
   }
 }
 
+/** The content that matters: the (first) transaction; a `reveal` may precede it. */
+function mainContent(op: TezosOperation): TezosContent | undefined {
+  return op.contents.find((c) => c.kind === "transaction") ?? op.contents[0];
+}
+
 /** Does the op (top level or internally) call the Michelson gateway? */
 function opCallsGateway(op: TezosOperation): boolean {
   return op.contents.some(
@@ -865,7 +871,7 @@ function parseCallEvmParams(value: unknown): { destination?: string; signature?:
 
 /** RPC-only root for a Michelson-originated op, from the Tezos operation itself. */
 function opNodeFromTezosOperation(ctx: Ctx, op: TezosOperation): TraceNode {
-  const c = op.contents[0]!;
+  const c = mainContent(op) ?? op.contents[0]!;
   const to = c.destination ?? "?";
   return newNode(ctx, {
     runtime: "michelson",
@@ -1008,7 +1014,7 @@ export async function buildTrace(input: string, opts: BuildTraceOptions): Promis
           );
           evmLeg.kind = "crossing";
           // The %call_evm parameters name the target and the signature better than a selector.
-          const params = parseCallEvmParams(op.contents[0]?.parameters?.value);
+          const params = parseCallEvmParams(mainContent(op)?.parameters?.value);
           if (params.destination?.startsWith("0x")) {
             evmLeg.to = classifyAddress(params.destination, { type: "x_evm_contract" });
           }
