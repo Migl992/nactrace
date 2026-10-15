@@ -131,6 +131,10 @@
     {
       "hash": "ooHmHLh2oSJQT8dy2cQ48buPVmjX949nkCfhkLK1GsgZfoct5Ky",
       "label": "tz1 -> KT18oDJ %call_evm -> EVM user with value (empty signature), success"
+    },
+    {
+      "hash": "oox3adZyj5yK5bFtUVT8FjcBLt3NPm6Dx3sHoxwc4EqAewURFiL",
+      "label": "tz1 -> KT18oDJ %call_evm -> withdrawal precompile 0xff…01 fast_withdraw_base58 (fast withdrawal, 3 internal precompile calls), success"
     }
   ],
   "shadownet": [

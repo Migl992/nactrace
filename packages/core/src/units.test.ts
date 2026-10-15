@@ -12,7 +12,7 @@ import {
   syntheticEvmTxHashBytes,
   syntheticMichelsonOpHashBytes,
 } from "./hashes.js";
-import { classifyAddress, shortAddress } from "./labels.js";
+import { addressTag, classifyAddress, shortAddress } from "./labels.js";
 import { FileFixtureStore } from "./node/fileStore.js";
 import { Provider, ProviderError } from "./provider.js";
 import { extractFailWith, humanizeTezosMessage } from "./michelson-errors.js";
@@ -42,6 +42,16 @@ describe("hashes: invalid inputs", () => {
 describe("labels", () => {
   it("classifies gateways, system accounts, aliases and natives", () => {
     expect(classifyAddress("0xFF00000000000000000000000000000000000007").role).toBe("gateway");
+    const wd = classifyAddress("0xFF00000000000000000000000000000000000001");
+    expect(wd.role).toBe("system");
+    expect(wd.label).toBe("withdrawal precompile");
+    expect(addressTag(wd)).toBe("withdrawal precompile");
+    expect(addressTag(classifyAddress("0xff00000000000000000000000000000000000007"))).toBe(
+      "gateway",
+    );
+    expect(
+      addressTag(classifyAddress("0x0e11ecfd5cb2d8f0f4e3b3ea8f1c6a3ed5a4ab12")),
+    ).toBeUndefined();
     expect(classifyAddress("KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw").label).toBe(
       "NAC gateway (Michelson side)",
     );
