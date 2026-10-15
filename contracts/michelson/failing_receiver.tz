@@ -1,0 +1,5 @@
+# Callback receiver that always fails: lets us see what happens to a %call_evm whose EVM leg
+# succeeded but whose Michelson callback delivery fails.
+parameter bytes ;
+storage bytes ;
+code { DROP ; PUSH string "callback refused" ; FAILWITH } ;

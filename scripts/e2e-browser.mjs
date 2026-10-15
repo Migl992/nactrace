@@ -9,7 +9,18 @@
 import { chromium } from "playwright";
 
 const url = process.argv[2] ?? "http://localhost:5173/demo/";
-const browser = await chromium.launch();
+let browser;
+try {
+  browser = await chromium.launch();
+} catch (e) {
+  if (String(e.message).includes("Executable doesn't exist")) {
+    console.error(
+      "Chromium for this Playwright version is missing. Run: npx playwright install chromium",
+    );
+    process.exit(2);
+  }
+  throw e;
+}
 const page = await browser.newPage();
 const problems = [];
 page.on("console", (m) => {

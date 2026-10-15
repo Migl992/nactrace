@@ -287,3 +287,32 @@ describe("EVM-side reverts and deeper call stacks", () => {
     );
   });
 });
+
+describe("Shadownet specifics", () => {
+  it("reveal-first operation: the Michelson side is read from the transaction content", async () => {
+    // ons8rrir… is the first op of its tz1, so contents[0] is a `reveal`.
+    const t = await buildTrace("ons8rrir5DEctZFB2kuD5pP1TTnSLgiUWsZvhcaHs7PddyzdXMY", {
+      provider: replayProvider(),
+    });
+    expect(t.network).toBe("shadownet");
+    expect(t.root.gas?.unit).toBe("michelson_milligas");
+    expect(t.root.gas?.used).toMatch(/^\d+$/);
+    const legs = crossings(t);
+    expect(legs.map((l) => l.runtime)).toEqual(["evm", "michelson"]);
+    // The nested transfer to the tz1 is matched to its internal transaction (kernel 0.67 attributes
+    // it to the originating tz1, not to the EVM contract's alias).
+    expect(legs[1]?.michelsonGas?.used).toMatch(/^\d+$/);
+    expect(t.meta.warnings.some((w) => w.includes("internal transaction"))).toBe(false);
+  });
+
+  it("a leg hash resolves to its operation with a warning", async () => {
+    const t = await buildTrace(
+      "0x1d586c520103fdc3576de2b8a534d6ddbc9d8ddc3d38161da916138df2ed4f95",
+      {
+        provider: replayProvider(),
+      },
+    );
+    expect(t.root.hash).toBe("ons8rrir5DEctZFB2kuD5pP1TTnSLgiUWsZvhcaHs7PddyzdXMY");
+    expect(t.meta.warnings.some((w) => w.includes("is a leg of Michelson operation"))).toBe(true);
+  });
+});
