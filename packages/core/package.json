@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@noble/hashes": "^1.6.0",
-    "viem": "^2.57.4"
+    "viem": "^2.57.7"
   },
   "repository": {
     "type": "git",
