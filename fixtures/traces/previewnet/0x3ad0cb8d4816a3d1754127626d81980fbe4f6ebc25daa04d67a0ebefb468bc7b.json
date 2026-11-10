@@ -833,7 +833,8 @@
             "gateway": {
               "id": 268435464,
               "hash": "0xff00000000000000000000000000000000000007",
-              "type": "x_evm_contract"
+              "type": "x_evm_contract",
+              "profile": "MichelsonGateway"
             },
             "gatewayEntrypoint": "callMichelson(string,string,bytes)",
             "gatewayParameters": {

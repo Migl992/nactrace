@@ -45,7 +45,8 @@
         "target": {
           "id": 268435458,
           "hash": "0xff00000000000000000000000000000000000001",
-          "type": "x_evm_contract"
+          "type": "x_evm_contract",
+          "profile": "XtzBridge"
         },
         "targetCodeHash": -1912878149,
         "counter": 8,
@@ -81,7 +82,7 @@
           "id": 268442901,
           "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
           "type": "x_michelson_contract",
-          "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+          "profile": "Tezos X: EVM Gateway"
         },
         "gatewayEntrypoint": "call_evm",
         "gatewayParameters": {
@@ -248,7 +249,8 @@
             "target": {
               "id": 268435458,
               "hash": "0xff00000000000000000000000000000000000001",
-              "type": "x_evm_contract"
+              "type": "x_evm_contract",
+              "profile": "XtzBridge"
             },
             "targetCodeHash": -1912878149,
             "counter": 8,
@@ -284,7 +286,7 @@
               "id": 268442901,
               "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
               "type": "x_michelson_contract",
-              "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+              "profile": "Tezos X: EVM Gateway"
             },
             "gatewayEntrypoint": "call_evm",
             "gatewayParameters": {
@@ -422,7 +424,8 @@
                 "sender": {
                   "id": 268435458,
                   "hash": "0xff00000000000000000000000000000000000001",
-                  "type": "x_evm_contract"
+                  "type": "x_evm_contract",
+                  "profile": "XtzBridge"
                 },
                 "senderCodeHash": -1912878149,
                 "initiator": {
@@ -433,7 +436,8 @@
                 "target": {
                   "id": 268435493,
                   "hash": "0xff00000000000000000000000000000000000005",
-                  "type": "x_evm_contract"
+                  "type": "x_evm_contract",
+                  "profile": "GlobalCounter"
                 },
                 "targetCodeHash": 309448485,
                 "counter": 8,
@@ -494,7 +498,8 @@
                 "sender": {
                   "id": 268435458,
                   "hash": "0xff00000000000000000000000000000000000001",
-                  "type": "x_evm_contract"
+                  "type": "x_evm_contract",
+                  "profile": "XtzBridge"
                 },
                 "senderCodeHash": -1912878149,
                 "initiator": {
@@ -505,7 +510,8 @@
                 "target": {
                   "id": 268435491,
                   "hash": "0xff00000000000000000000000000000000000003",
-                  "type": "x_evm_contract"
+                  "type": "x_evm_contract",
+                  "profile": "Outbox"
                 },
                 "targetCodeHash": 309448485,
                 "counter": 8,
@@ -568,7 +574,8 @@
                 "sender": {
                   "id": 268435458,
                   "hash": "0xff00000000000000000000000000000000000001",
-                  "type": "x_evm_contract"
+                  "type": "x_evm_contract",
+                  "profile": "XtzBridge"
                 },
                 "senderCodeHash": -1912878149,
                 "initiator": {
@@ -579,7 +586,8 @@
                 "target": {
                   "id": 268435611,
                   "hash": "0x000000000000000000000000000000000000dead",
-                  "type": "x_evm_user"
+                  "type": "x_evm_user",
+                  "profile": "DeadAddress"
                 },
                 "counter": 8,
                 "gasUsed": 0,

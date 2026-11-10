@@ -76,7 +76,9 @@ for (const net of networks) {
 }
 
 // 4. field-set drift: the same 0xTzKT requests the recorder made (pinned hashes + the two gateway
-//    listings), recorded rows vs live rows. "Removed" then means a field really disappeared.
+//    listings), recorded rows vs live rows. The listings are a rolling `limit=20` window whose rows
+//    change every day, so they only feed "added"; "removed" is judged on the pinned hashes alone,
+//    where it means a field really disappeared.
 const fields = {};
 for (const net of networks) {
   try {
@@ -87,22 +89,33 @@ for (const net of networks) {
         (gw) => `${api}/v1/operations/transaction?gateway.hash=${gw}&sort=id.desc&limit=20`,
       ),
     ];
+    const pinnedUrls = new Set(urls.slice(0, hashes[net].length));
     const recordedRows = [];
     const liveRows = [];
+    const recordedPinned = [];
+    const livePinned = [];
     for (const url of urls) {
       const rel = fixtureRelPath({ kind: "get", url });
       try {
         const rec = JSON.parse(readFileSync(join(root, "fixtures/raw", ...rel.split("/")), "utf8"));
-        if (Array.isArray(rec)) recordedRows.push(...rec);
+        if (Array.isArray(rec)) {
+          recordedRows.push(...rec);
+          if (pinnedUrls.has(url)) recordedPinned.push(...rec);
+        }
       } catch {
         /* not recorded (e.g. indexer lag at record time) */
       }
       const live = await getJson(url);
-      if (Array.isArray(live)) liveRows.push(...live);
+      if (Array.isArray(live)) {
+        liveRows.push(...live);
+        if (pinnedUrls.has(url)) livePinned.push(...live);
+      }
     }
     const live = rowFieldPaths(liveRows);
-    const recorded = rowFieldPaths(recordedRows);
-    const d = setDiff(recorded, live);
+    const d = {
+      added: setDiff(rowFieldPaths(recordedRows), live).added,
+      removed: setDiff(rowFieldPaths(recordedPinned), rowFieldPaths(livePinned)).removed,
+    };
     // Fields the generated types never saw anywhere are the ones that matter for parsing.
     const known = new Set(XTZKT_OBSERVED_FIELDS);
     d.added = d.added.filter((p) => !known.has(p));

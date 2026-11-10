@@ -1,0 +1,43 @@
+{
+  "prim": "Pair",
+  "args": [
+    {
+      "bytes": "0000e4f0fe86c941013e0e22c30511fb13d3bc48b3b8"
+    },
+    {
+      "prim": "Pair",
+      "args": [
+        {
+          "int": "0"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "int": "0"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "string": "0x623AA693f0Bf7C7958D6C76860e0c4624bDc29A2"
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "bytes": "019ff6fa6cc98078dda1dc65f193f5ab2bbdc3c82900"
+                    },
+                    {
+                      "bytes": "00000000000000000000000000000000000000000000"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
