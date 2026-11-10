@@ -27,11 +27,23 @@ describe("Michelson error parsing", () => {
   });
 
   it("splits the gateway status from its detail", () => {
+    // The "Failed interpreting the Michelson contract with " prefix is dropped; the runtime failure
+    // text stays so extractFailWith can still read the payload.
     expect(parseGatewayFailure(GATEWAY_MESSAGE)).toEqual({
       status: "400 Bad Request",
-      detail: GATEWAY_MESSAGE.slice(
-        "Cross-runtime call failed with status 400 Bad Request: ".length,
+      detail:
+        'runtime failure while running the script: failed with: String("at zero") of type String',
+    });
+    expect(
+      parseGatewayFailure(
+        "Cross-runtime call failed with status 400 Bad Request: Failed interpreting the Michelson contract with failed typechecking input: no such entrypoint: nope",
       ),
+    ).toEqual({ status: "400 Bad Request", detail: 'no such entrypoint "nope"' });
+    expect(
+      parseGatewayFailure("Cross-runtime call failed with status 429 Too Many Requests: OOG"),
+    ).toEqual({
+      status: "429 Too Many Requests",
+      detail: "out of gas",
     });
     expect(parseGatewayFailure("execution reverted")).toBeUndefined();
   });

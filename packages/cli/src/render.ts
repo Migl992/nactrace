@@ -1,5 +1,12 @@
 // Tree rendering of a Trace for the terminal. Pure: Trace in, string out. Colors optional.
-import { humanValue, shortAddress, walkNodes, type Trace, type TraceNode } from "@nactrace/core";
+import {
+  addressTag,
+  humanValue,
+  shortAddress,
+  walkNodes,
+  type Trace,
+  type TraceNode,
+} from "@nactrace/core";
 
 export interface RenderOptions {
   color?: boolean;
@@ -55,7 +62,8 @@ function nodeLine(p: ReturnType<typeof palette>, n: TraceNode, isRoot: boolean):
   const kind = isRoot ? (n.kind === "tx" ? "tx" : "op") : n.kind;
   const arrow = n.kind === "crossing" ? "↘ " : n.kind === "view" ? "👁 " : "";
   const from = shortAddress(n.from.value);
-  const to = shortAddress(n.to.value) + (n.to.role === "gateway" ? p.dim(" (gateway)") : "");
+  const tag = addressTag(n.to);
+  const to = shortAddress(n.to.value) + (tag ? p.dim(` (${tag})`) : "");
   const ep = n.entrypoint
     ? ` ${p.cyan(n.runtime === "michelson" && n.kind !== "view" ? `%${n.entrypoint}` : n.entrypoint)}`
     : "";

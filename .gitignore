@@ -25,3 +25,6 @@ tmp/
 
 # nightly output
 nightly-report.md
+
+# scripts/e2e-library.mjs scratch recordings
+.nactrace-record/

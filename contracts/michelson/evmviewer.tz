@@ -1,0 +1,10 @@
+# Calls the gateway's `staticcall_evm` view (parameter: pair string bytes = destination, calldata)
+# and stores the `option bytes` it returns. Exercises a Michelson -> EVM read-only crossing.
+parameter (pair (string %destination) (bytes %calldata)) ;
+storage (option bytes) ;
+code { CAR ;
+       PUSH address "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw" ;
+       SWAP ;
+       VIEW "staticcall_evm" (option bytes) ;
+       IF_NONE { PUSH string "staticcall_evm view unavailable" ; FAILWITH } {} ;
+       NIL operation ; PAIR } ;

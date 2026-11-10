@@ -219,8 +219,8 @@
         "to": {
           "value": "0xff00000000000000000000000000000000000001",
           "runtime": "evm",
-          "role": "native",
-          "label": "contract"
+          "role": "system",
+          "label": "withdrawal precompile"
         },
         "entrypoint": "withdraw_base58(string)",
         "value": "10000 mutez",
@@ -391,14 +391,14 @@
             "from": {
               "value": "0xff00000000000000000000000000000000000001",
               "runtime": "evm",
-              "role": "native",
-              "label": "contract"
+              "role": "system",
+              "label": "withdrawal precompile"
             },
             "to": {
               "value": "0xff00000000000000000000000000000000000005",
               "runtime": "evm",
-              "role": "native",
-              "label": "contract"
+              "role": "system",
+              "label": "withdrawal counter precompile"
             },
             "entrypoint": "get_and_increment()",
             "gas": {
@@ -463,14 +463,14 @@
             "from": {
               "value": "0xff00000000000000000000000000000000000001",
               "runtime": "evm",
-              "role": "native",
-              "label": "contract"
+              "role": "system",
+              "label": "withdrawal precompile"
             },
             "to": {
               "value": "0xff00000000000000000000000000000000000003",
               "runtime": "evm",
-              "role": "native",
-              "label": "contract"
+              "role": "system",
+              "label": "outbox precompile"
             },
             "entrypoint": "push_withdrawal_to_outbox(string,uint256)",
             "gas": {
@@ -538,13 +538,14 @@
             "from": {
               "value": "0xff00000000000000000000000000000000000001",
               "runtime": "evm",
-              "role": "native",
-              "label": "contract"
+              "role": "system",
+              "label": "withdrawal precompile"
             },
             "to": {
               "value": "0x000000000000000000000000000000000000dead",
               "runtime": "evm",
-              "role": "native"
+              "role": "system",
+              "label": "burn address"
             },
             "value": "10000000000000000 wei",
             "gas": {

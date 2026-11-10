@@ -1,0 +1,11 @@
+{
+  "key": "RPC https://evm.previewnet.tezosx.nomadic-labs.com eth_getBlockByNumber [\"0x3a11\",true]",
+  "url": "https://evm.previewnet.tezosx.nomadic-labs.com",
+  "method": "eth_getBlockByNumber",
+  "params": [
+    "0x3a11",
+    true
+  ],
+  "status": 200,
+  "fetchedAt": "2026-10-15T09:12:26.535Z"
+}

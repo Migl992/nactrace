@@ -1381,7 +1381,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`sender`, `contract`, `baker`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.contract=tz1...`, `?anyof.sender.initiator=tz1...`.",
+            "description": "Matches an address against any of the listed fields (`sender`, `contract`, `baker`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.contract=123`, `?anyof.sender.initiator.hash=tz1...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -1557,7 +1557,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`sender`, `contract`, `baker`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.contract=tz1...`, `?anyof.sender.initiator=tz1...`.",
+            "description": "Matches an address against any of the listed fields (`sender`, `contract`, `baker`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.contract=123`, `?anyof.sender.initiator.hash=tz1...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -2125,7 +2125,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`sender`, `target`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=tz1...`, `?anyof.sender.target.initiator=tz1...`.",
+            "description": "Matches an address against any of the listed fields (`sender`, `target`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=123`, `?anyof.sender.target.initiator.hash=tz1...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -2344,7 +2344,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`sender`, `target`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=tz1...`, `?anyof.sender.target.initiator=tz1...`.",
+            "description": "Matches an address against any of the listed fields (`sender`, `target`, `initiator`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=123`, `?anyof.sender.target.initiator.hash=tz1...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -2515,7 +2515,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`sender`, `target`, `ticketer`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=tz1...`, `?anyof.sender.target.ticketer=KT1...`.",
+            "description": "Matches an address against any of the listed fields (`sender`, `target`, `ticketer`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=123`, `?anyof.sender.target.ticketer.hash=KT1...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -2683,7 +2683,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`sender`, `target`, `ticketer`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=tz1...`, `?anyof.sender.target.ticketer=KT1...`.",
+            "description": "Matches an address against any of the listed fields (`sender`, `target`, `ticketer`),\ninstead of just one. This is how you get everything related to an address in a single request,\nrather than querying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.sender.target=123`, `?anyof.sender.target.ticketer.hash=KT1...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -3453,7 +3453,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=tz1...`, `?anyof.from.to.in=tz1...,0x...`.",
+            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=123`, `?anyof.from.to.hash.in=tz1...,0x...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -3637,7 +3637,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=tz1...`, `?anyof.from.to.in=tz1...,0x...`.",
+            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=123`, `?anyof.from.to.hash.in=tz1...,0x...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -4317,7 +4317,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=tz1...`, `?anyof.from.to.in=tz1...,0x...`.",
+            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=123`, `?anyof.from.to.hash.in=tz1...,0x...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -4485,7 +4485,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=tz1...`, `?anyof.from.to.in=tz1...,0x...`.",
+            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=123`, `?anyof.from.to.hash.in=tz1...,0x...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -5069,7 +5069,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=0x...`, `?anyof.from.to.in=0x...,0x...`.",
+            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=123`, `?anyof.from.to.hash.in=0x...,0x...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -5229,7 +5229,7 @@
           {
             "name": "anyof",
             "in": "query",
-            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=0x...`, `?anyof.from.to.in=0x...,0x...`.",
+            "description": "Matches an address against any of the listed fields (`from`, `to`), instead of just one.\nThis is how you get everything related to an address in a single request, rather than\nquerying each field separately and merging the results yourself.\n\nClick on the parameter to expand more details.\n\nExamples: `?anyof.from.to=123`, `?anyof.from.to.hash.in=0x...,0x...`.",
             "schema": {
               "$ref": "#/components/schemas/AnyOfParameter"
             }
@@ -5301,9 +5301,9 @@
           {
             "name": "address",
             "in": "query",
-            "description": "Address whose activity to return. Required. Accepts one address, or several to get a merged feed.\n\nClick on the parameter to expand more details.\n\nExamples: `?address=tz1...`, `?address.in=tz1...,0x...`.",
+            "description": "Address whose activity to return. Required. Accepts one address, or several to get a merged feed.\n\nClick on the parameter to expand more details.\n\nExamples: `?address=123`, `?address.in=123,456`, `?address.hash=tz1...`, `?address.hash.in=tz1...,0x...`.",
             "schema": {
-              "$ref": "#/components/schemas/AddressHashEqParameter"
+              "$ref": "#/components/schemas/AddressInfoEqParameter"
             }
           },
           {
@@ -8305,7 +8305,7 @@
               "null",
               "string"
             ],
-            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value'.\n\nExample: `?address=tz1...`."
+            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value'.\n\nExample: `?address.hash=tz1...`."
           },
           "in": {
             "type": [
@@ -8315,7 +8315,7 @@
             "items": {
               "type": "string"
             },
-            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values'.\n\nExample: `?address.in=tz1...,KT1...`."
+            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values'.\n\nExample: `?address.hash.in=tz1...,KT1...`."
           }
         }
       },
@@ -8327,14 +8327,14 @@
               "null",
               "string"
             ],
-            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value'. Use `null` to get items where 'param' is not set.\n\nExample: `?target=KT1...` or `?target=null`."
+            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value'. Use `null` to get items where 'param' is not set.\n\nExample: `?from.hash=tz1...` or `?from.hash=null`."
           },
           "ne": {
             "type": [
               "null",
               "string"
             ],
-            "description": "**Not equal** mode.\nReturns items where 'param' is not equal to 'value'. Use `null` to get items where 'param' is set.\n\nExample: `?target.ne=KT1...` or `?target.ne=null`."
+            "description": "**Not equal** mode.\nReturns items where 'param' is not equal to 'value'. Use `null` to get items where 'param' is set.\n\nExample: `?from.hash.ne=tz1...` or `?from.hash.ne=null`."
           },
           "in": {
             "type": [
@@ -8344,7 +8344,7 @@
             "items": {
               "type": "string"
             },
-            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values'. Use `null` to include items where 'param' is not set.\n\nExample: `?target.in=KT1...,tz1...` or `?target.in=KT1...,null`."
+            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values'. Use `null` to include items where 'param' is not set.\n\nExample: `?from.hash.in=tz1...,KT1...` or `?from.hash.in=tz1...,null`."
           },
           "ni": {
             "type": [
@@ -8354,7 +8354,7 @@
             "items": {
               "type": "string"
             },
-            "description": "**Not in list** mode.\nReturns items where 'param' is not equal to any of comma-separated 'values'. Use `null` to exclude items where 'param' is not set.\n\nExample: `?target.ni=KT1...,tz1...` or `?target.ni=KT1...,null`."
+            "description": "**Not in list** mode.\nReturns items where 'param' is not equal to any of comma-separated 'values'. Use `null` to exclude items where 'param' is not set.\n\nExample: `?from.hash.ni=tz1...,KT1...` or `?from.hash.ni=tz1...,null`."
           }
         }
       },
@@ -8366,14 +8366,14 @@
               "null",
               "string"
             ],
-            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value'.\n\nExample: `?type=l1_baker`."
+            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value'.\n\nExample: `?address.hash=tz1...`."
           },
           "ne": {
             "type": [
               "null",
               "string"
             ],
-            "description": "**Not equal** mode.\nReturns items where 'param' is not equal to 'value'.\n\nExample: `?type.ne=l1_ghost`."
+            "description": "**Not equal** mode.\nReturns items where 'param' is not equal to 'value'.\n\nExample: `?address.hash.ne=KT1...`."
           },
           "in": {
             "type": [
@@ -8383,7 +8383,7 @@
             "items": {
               "type": "string"
             },
-            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values'.\n\nExample: `?type.in=l1_user,l1_baker`."
+            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values'.\n\nExample: `?address.hash.in=tz1...,0x...`."
           },
           "ni": {
             "type": [
@@ -8393,7 +8393,7 @@
             "items": {
               "type": "string"
             },
-            "description": "**Not in list** mode.\nReturns items where 'param' is not equal to any of comma-separated 'values'.\n\nExample: `?type.ni=l1_ghost,x_michelson_ghost`."
+            "description": "**Not in list** mode.\nReturns items where 'param' is not equal to any of comma-separated 'values'.\n\nExample: `?address.hash.ni=tz1...,KT1...`."
           }
         }
       },
@@ -8443,6 +8443,19 @@
                 "$ref": "#/components/schemas/AddressInfo"
               }
             ]
+          }
+        }
+      },
+      "AddressInfoEqParameter": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Filters by internal unique address id (default).\nClick on the parameter to expand more details.",
+            "$ref": "#/components/schemas/Int32EqInParameter"
+          },
+          "hash": {
+            "description": "Filters by address hash.\nClick on the parameter to expand more details.",
+            "$ref": "#/components/schemas/AddressHashEqParameter"
           }
         }
       },
@@ -11540,7 +11553,7 @@
               "null",
               "integer"
             ],
-            "description": "**Equal** filter mode (optional, i.e. `param.eq=123` is the same as `param=123`).\nSpecify a value to get items where any of the specified fields is equal to the specified value.\n\nExample: `?anyof.sender.target=tz1...`.",
+            "description": "**Equal** filter mode (optional, i.e. `param.eq=123` is the same as `param=123`).\nSpecify a value to get items where any of the specified fields is equal to the specified value.\nThe value is an internal address id (default, so `.id` may be omitted), or `null` to match items\nwhere any of the fields is not set. To specify an address hash instead, use the `.hash` form,\nwhich matches that hash on every chain it exists on and accepts `null` the same way.\n\nExamples: `?anyof.sender.target=123`, `?anyof.sender.target.hash=tz1...`.",
             "format": "int32"
           },
           "in": {
@@ -11552,7 +11565,7 @@
               "type": "integer",
               "format": "int32"
             },
-            "description": "**In list** (any of) filter mode.\nSpecify a comma-separated list of values to get items where any of the specified fields is equal to one of the specified values.\n\nExample: `?anyof.sender.target.in=tz1...,KT1...,null`."
+            "description": "**In list** (any of) filter mode.\nSpecify a comma-separated list of values to get items where any of the specified fields is equal to one of the specified values.\n\nExamples: `?anyof.sender.target.in=123,456,null`, `?anyof.sender.target.hash.in=tz1...,KT1...,null`."
           }
         }
       },
@@ -17680,6 +17693,30 @@
             "type": "integer",
             "description": "Part of the gas fee returned to the sender for the gas that wasn't consumed (mutez).",
             "format": "int64"
+          }
+        }
+      },
+      "Int32EqInParameter": {
+        "type": "object",
+        "properties": {
+          "eq": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value'.\n\nExample: `?address=123`.",
+            "format": "int32"
+          },
+          "in": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values'.\n\nExample: `?address.in=123,456`."
           }
         }
       },
@@ -26877,7 +26914,7 @@
   "tags": [
     {
       "name": "Activity",
-      "description": "Everything that happened, from one of three angles: an account, a block, or an operation group.\nOperations and token, ticket and bridge ticket transfers come back merged into a single **stream** sorted by `id`,\nso an entire flow can be reconstructed from one request.\n\n### Good to know\n\n- Every item carries an `activity` field telling you which kind it is, and therefore which model to expect.\n- Noisy types are left out by default — attestations, autostaking and the like — so ask for them\n  explicitly via `types` if you need them.\n- Account activity matches the address in any role by default: sender, target, initiator, or just\n  mentioned somewhere in the operation. Narrow it down with `roles`.\n- These endpoints page by `cursor` rather than `offset`, which isn't supported here, and accept\n  `id` and `timestamp` as the only sort fields.\n\n### Tips\n\n- `/v1/activity/opg` is what you want for an \"operation details\": one request returns the whole operation\n  group (batch), including internal operations and the transfers they caused.\n- `/v1/activity/block` is keyed by `level`, which exists on every chain, so add `chain` unless you\n  really want all of them at once.\n- Use `?sort=id.desc` for newest first, and pass the last item's `id` as `cursor` to get the next page.\n"
+      "description": "Everything that happened, from one of three angles: an account, a block, or an operation group.\nOperations and token, ticket and bridge ticket transfers come back merged into a single **stream** sorted by `id`,\nso an entire flow can be reconstructed from one request.\n\n### Good to know\n\n- Every item carries an `activity` field telling you which kind it is, and therefore which model to expect.\n- Noisy types are left out by default — attestations, autostaking and the like — so ask for them\n  explicitly via `types` if you need them.\n- Account activity matches the address in any role by default: sender, target, initiator, or just\n  mentioned somewhere in the operation. Narrow it down with `roles`.\n- `address` in account activity takes internal address ids, and an id pins an address to one chain.\n  `address.hash` matches a hash on every chain it exists on, so ids are the way to pick exact addresses.\n- These endpoints page by `cursor` rather than `offset`, which isn't supported here, and accept\n  `id` and `timestamp` as the only sort fields.\n\n### Tips\n\n- `/v1/activity/opg` is what you want for an \"operation details\": one request returns the whole operation\n  group (batch), including internal operations and the transfers they caused.\n- `/v1/activity/block` is keyed by `level`, which exists on every chain, so add `chain` unless you\n  really want all of them at once.\n- Use `?sort=id.desc` for newest first, and pass the last item's `id` as `cursor` to get the next page.\n"
     },
     {
       "name": "Search",

@@ -1,0 +1,97 @@
+[
+  {
+    "direction": "x_michelson_evm",
+    "id": "1152921844565671936",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f440",
+      "layer": "x"
+    },
+    "level": 315020,
+    "timestamp": "2026-08-11T09:37:00Z",
+    "hash": "ooNoT5REHUFwRpzGifXWH6TjNgPxuYsdjB2xFRBsFQgH1QwRX97",
+    "sender": {
+      "id": 268436620,
+      "hash": "tz1ZTKzWZshji8kW45Tg6WPDX7WVrBnRJ9SH",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268436755,
+      "hash": "0x89b4ec2d917d1b73279da00c0d8b80c9bba4d162",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268436754,
+        "hash": "tz1VU2sgL91Z6q7d4yUxm73pFw5KErxJnjiS",
+        "type": "x_michelson_user"
+      }
+    },
+    "counter": 6,
+    "gasLimit": 1170,
+    "gasUsed": 1070,
+    "status": "applied",
+    "amountSent": 5000000,
+    "amountReceived": "5000000000000000000",
+    "daFee": 984,
+    "gasFee": 764,
+    "gasFeeRefunded": 0,
+    "storageLimit": 1,
+    "storageUsed": 0,
+    "alias": {
+      "id": 268436750,
+      "hash": "0xb650b9991e6e7f693d72cd66c6aceeaf254ef606",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268436620,
+        "hash": "tz1ZTKzWZshji8kW45Tg6WPDX7WVrBnRJ9SH",
+        "type": "x_michelson_user"
+      }
+    },
+    "gateway": {
+      "id": 268435469,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract",
+      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+    },
+    "gatewayEntrypoint": "call",
+    "gatewayParameters": {
+      "nat": "1",
+      "list": [],
+      "bytes": "",
+      "string": "http://ethereum/0x89b4ec2d917d1b73279da00c0d8b80c9bba4d162",
+      "contract": null
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "http://ethereum/0x89b4ec2d917d1b73279da00c0d8b80c9bba4d162"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            [],
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "Pair",
+                  "args": [
+                    {
+                      "int": "1"
+                    },
+                    {
+                      "prim": "None"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

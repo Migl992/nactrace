@@ -1,6 +1,6 @@
 // explain(): the product (CLAUDE.md rule 7). One sentence a developer would agree with, built from
 // the deepest failed node. Everything here is derived from a finished Trace; no network.
-import { shortAddress } from "./labels.js";
+import { addressTag, shortAddress } from "./labels.js";
 import { extractFailWith, parseGatewayFailure, summarizeTezosError } from "./michelson-errors.js";
 import type { TezosError } from "./tezos.js";
 import { walkNodes, type Explanation, type Trace, type TraceNode } from "./types.js";
@@ -11,7 +11,8 @@ function ep(n: TraceNode): string | undefined {
 
 function describeRoot(root: TraceNode): string {
   const hash = root.hash ? ` ${shortAddress(root.hash)}` : "";
-  const target = shortAddress(root.to.value) + (root.to.role === "gateway" ? " (gateway)" : "");
+  const tag = addressTag(root.to);
+  const target = shortAddress(root.to.value) + (tag ? ` (${tag})` : "");
   if (root.runtime === "evm") {
     if (root.raw?.["created"]) {
       return `EVM tx${hash} from ${shortAddress(root.from.value)} deploying ${shortAddress(root.to.value)}`;

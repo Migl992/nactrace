@@ -1,5 +1,12 @@
 // HTML rendering for the widget: pure string builders (testable without a DOM), one style sheet.
-import { humanValue, shortAddress, walkNodes, type Trace, type TraceNode } from "@nactrace/core";
+import {
+  addressTag,
+  humanValue,
+  shortAddress,
+  walkNodes,
+  type Trace,
+  type TraceNode,
+} from "@nactrace/core";
 
 export function esc(s: unknown): string {
   return String(s)
@@ -55,7 +62,8 @@ function statusLabel(s: TraceNode["status"]): string {
 
 function nodeHtml(node: TraceNode, depth: number, links: Trace["root"]["links"]): string {
   const from = esc(shortAddress(node.from.value));
-  const to = esc(shortAddress(node.to.value)) + (node.to.role === "gateway" ? " (gateway)" : "");
+  const tag = addressTag(node.to);
+  const to = esc(shortAddress(node.to.value)) + (tag ? esc(` (${tag})`) : "");
   const ep = node.entrypoint
     ? `<span class="nt-ep">${esc(node.runtime === "michelson" && node.kind !== "view" ? `%${node.entrypoint}` : node.entrypoint)}</span>`
     : "";

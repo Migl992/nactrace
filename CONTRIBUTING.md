@@ -12,7 +12,7 @@ pnpm lint
 pnpm typecheck
 ```
 
-Node 22 or newer and pnpm 10 (the repo pins the pnpm version through `packageManager`).
+Node 22 or newer and pnpm 10 (the repo pins the pnpm version through `packageManager`). The real-browser check (`pnpm e2e:browser`) needs a Chromium matching the installed Playwright: run `npx playwright install chromium` once, and again after a Playwright bump.
 
 ## Ground rules
 
