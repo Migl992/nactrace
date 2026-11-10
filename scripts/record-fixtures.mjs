@@ -8,6 +8,7 @@ import { join } from "node:path";
 import {
   NETWORKS,
   Provider,
+  buildTrace,
   detectNetwork,
   findOperation,
   getBlockHeader,
@@ -90,6 +91,10 @@ for (const net of networks) {
         }
       }
     }
+    // Then the real thing, so fallbacks the steps above do not mirror (e.g. matching a mirrored
+    // tx of the older hash recipe by content) get their requests recorded too.
+    const opts = { provider, ...(levelHint ? { level: levelHint } : {}) };
+    await buildTrace(hash, found ? opts : { ...opts, network: net, useXtzkt: false });
     console.log(
       `      rows=${rows.length} [${rows.map((r) => r.direction).join(",")}] receipt=${receipt ? receipt.status : "none"} trace=${trace.frame ? "ok" : trace.error ? `error ${trace.error.code}` : "none"} level=${level} opInBlock=${opFound} kt1s=${kt1s.length}`,
     );

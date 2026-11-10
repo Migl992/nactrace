@@ -1,10 +1,11 @@
 // GENERATED FILE — do not edit. Produced by scripts/gen-xtzkt-types.mjs from recorded 0xTzKT
-// responses (164 rows across 120 fixtures, generated 2026-10-07).
+// responses (218 rows across 109 fixtures, generated 2026-11-10).
 // Every field is optional and every object carries an index signature: 0xTzKT is still adding
 // fields (Baking Bad, 2026-09-25) and unknown fields must never break parsing.
 
 /** Account reference as it appears in sender/target/initiator/alias/gateway. */
 export interface XtzktAccountRef {
+  domain?: string;
   hash?: string;
   id?: number;
   owner?: Record<string, unknown>;
@@ -15,50 +16,52 @@ export interface XtzktAccountRef {
 
 /** One leg of a transaction as returned by GET /v1/operations/transaction?hash=… */
 export interface XtzktTransactionRowFields {
-  /** seen in 128/164 rows (x_evm_michelson, x_michelson_evm) */
+  /** seen in 147/218 rows (x_evm_michelson, x_michelson_evm) */
   alias?: XtzktAccountRef;
-  /** seen in 36/164 rows (x_evm, x_michelson); e.g. "10000000000000000", "0", "1000000000000000" */
+  /** seen in 71/218 rows (x_evm, x_michelson); e.g. "10000000000000000", "0", "1000000000000000000" */
   amount?: string | number;
-  /** seen in 128/164 rows (x_evm_michelson, x_michelson_evm); e.g. "10000000000000000", "1000000000000000000", "99950000000000000000" */
+  /** seen in 147/218 rows (x_evm_michelson, x_michelson_evm); e.g. "0", "10000000000000000", "1000000000000000000" */
   amountReceived?: number | string;
-  /** seen in 128/164 rows (x_evm_michelson, x_michelson_evm); e.g. "20000000000000000", "10000000000000000", "0" */
+  /** seen in 147/218 rows (x_evm_michelson, x_michelson_evm); e.g. "20000000000000000", "10000000000000000", "1000000000000000000" */
   amountSent?: string | number;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 4/218 rows (x_michelson) */
+  bigMapUpdates?: number;
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   chain?: {
     chainId?: string;
     id?: number;
     layer?: string;
     [key: string]: unknown;
   };
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   counter?: number;
-  /** seen in 89/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "1768000000000000", "600000000000000", "1128000000000000" */
+  /** seen in 137/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "1768000000000000", "600000000000000", "1896000000000000" */
   daFee?: string | number;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "x_evm_michelson", "x_michelson_evm", "x_evm" */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "x_evm_michelson", "x_michelson_evm", "x_evm" */
   direction?: string;
-  /** seen in 33/164 rows (x_evm, x_evm_michelson); e.g. "1000000000" */
+  /** seen in 59/218 rows (x_evm, x_evm_michelson); e.g. "1000000000" */
   effectiveGasPrice?: string;
-  /** seen in 89/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "withdraw_base58(string)", "fast_withdraw_base58(string,string,bytes…", "get_and_increment()" */
+  /** seen in 79/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "withdraw_base58(string)", "fast_withdraw_base58(string,string,bytes…", "get_and_increment()" */
   entrypoint?: string;
-  /** seen in 36/164 rows (x_evm, x_evm_michelson, x_michelson); e.g. "Cross-runtime call failed with status 40…", "Cross-runtime call failed with status 42…", "1167d8fb00000000000000000000000000000000…" */
+  /** seen in 36/218 rows (x_evm, x_evm_michelson, x_michelson); e.g. "OutOfGas", "1167d8fb00000000000000000000000000000000…", "Cross-runtime call failed with status 40…" */
   errors?: string;
-  /** seen in 89/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "779031000000000", "171039000000000", "160815000000000" */
+  /** seen in 137/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "779031000000000", "171039000000000", "125911000000000" */
   gasFee?: string | number;
-  /** seen in 56/164 rows (x_michelson, x_michelson_evm) */
+  /** seen in 78/218 rows (x_michelson, x_michelson_evm) */
   gasFeeRefunded?: number;
-  /** seen in 89/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 137/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   gasLimit?: number;
-  /** seen in 33/164 rows (x_evm, x_evm_michelson); e.g. "2000000001", "1200000000" */
+  /** seen in 59/218 rows (x_evm, x_evm_michelson); e.g. "2000000001", "2000000000", "1200000000" */
   gasPrice?: string;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   gasUsed?: number;
-  /** seen in 128/164 rows (x_evm_michelson, x_michelson_evm) */
+  /** seen in 147/218 rows (x_evm_michelson, x_michelson_evm) */
   gateway?: XtzktAccountRef;
-  /** seen in 128/164 rows (x_evm_michelson, x_michelson_evm); e.g. "call(string,(string,string)[],bytes,uint…", "callMichelson(string,string,bytes)", "call_evm" */
+  /** seen in 147/218 rows (x_evm_michelson, x_michelson_evm); e.g. "call(string,(string,string)[],bytes,uint…", "callMichelson(string,string,bytes)", "call_evm" */
   gatewayEntrypoint?: string;
-  /** seen in 59/164 rows (x_evm_michelson); e.g. "0xfa591a56000000000000000000000000000000…", "0xa1544fc3000000000000000000000000000000…" */
+  /** seen in 71/218 rows (x_evm_michelson); e.g. "0xfa591a56000000000000000000000000000000…", "0xa1544fc3000000000000000000000000000000…" */
   gatewayInput?: string;
-  /** seen in 128/164 rows (x_evm_michelson, x_michelson_evm) */
+  /** seen in 147/218 rows (x_evm_michelson, x_michelson_evm) */
   gatewayParameters?: {
     body?: string;
     bytes?: string;
@@ -76,95 +79,124 @@ export interface XtzktTransactionRowFields {
     url?: string;
     [key: string]: unknown;
   };
-  /** seen in 69/164 rows (x_michelson_evm) */
+  /** seen in 76/218 rows (x_michelson_evm) */
   gatewayParametersRaw?: {
     args?: Record<string, unknown>[];
     prim?: string;
     [key: string]: unknown;
   };
-  /** seen in 87/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 78/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   guessed?: boolean;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "0xc5e137c2ba6016f2dc7170edbf1dc03e0e7599…", "0xf4f48ca755363f51db8a835849aaa05bb1fc91…", "opZX4Z3TuidPmJDB93WatMNKBfbkDQipUXvFiVeS…" */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "0xc5e137c2ba6016f2dc7170edbf1dc03e0e7599…", "0xf4f48ca755363f51db8a835849aaa05bb1fc91…", "ooUkfnnNPGDmcX9Yzrj46sC8Ph2pB53Cw8QfQGRi…" */
   hash?: string;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "1154781046073458688", "1154780987551383552", "1154794335067176960" */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "1154781046073458688", "1154780987551383552", "1154818034499584000" */
   id?: string;
-  /** seen in 75/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 81/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   initiator?: XtzktAccountRef;
-  /** seen in 94/164 rows (x_evm, x_michelson_evm); e.g. "0xcda4fee2000000000000000000000000000000…", "0x67a32cd7000000000000000000000000000000…", "0xc5d24601" */
+  /** seen in 114/218 rows (x_evm, x_michelson_evm); e.g. "0x5c36b186", "0xcda4fee2000000000000000000000000000000…", "0x67a32cd7000000000000000000000000000000…" */
   input?: string;
-  /** seen in 55/164 rows (x_evm, x_michelson, x_michelson_evm) */
+  /** seen in 53/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   internalOperations?: number;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   level?: number;
-  /** seen in 50/164 rows (x_evm, x_michelson_evm) */
+  /** seen in 34/218 rows (x_evm, x_michelson_evm) */
   logsCount?: number;
-  /** seen in 33/164 rows (x_evm, x_evm_michelson); e.g. "2000000001", "1200000000" */
+  /** seen in 57/218 rows (x_evm, x_evm_michelson); e.g. "2000000001", "2000000000", "1200000000" */
   maxFeePerGas?: string;
-  /** seen in 33/164 rows (x_evm, x_evm_michelson); e.g. "1", "0" */
+  /** seen in 57/218 rows (x_evm, x_evm_michelson); e.g. "1", "0" */
   maxPriorityFeePerGas?: string;
-  /** seen in 17/164 rows (x_michelson, x_michelson_evm) */
+  /** seen in 9/218 rows (x_michelson, x_michelson_evm) */
   nonce?: number;
-  /** seen in 91/164 rows (x_evm, x_evm_michelson); e.g. "call", "static_call" */
+  /** seen in 131/218 rows (x_evm, x_evm_michelson); e.g. "call", "static_call", "delegate_call" */
   opCode?: string;
-  /** seen in 91/164 rows (x_evm, x_evm_michelson); e.g. "trace", "dynamic_fee" */
+  /** seen in 131/218 rows (x_evm, x_evm_michelson); e.g. "trace", "dynamic_fee", "legacy" */
   opType?: string;
-  /** seen in 35/164 rows (x_evm, x_michelson_evm); e.g. "0x00000000000000000000000000000000000000…", "0x00005e6b9592a2eb45707781e4ff66001527a1…", "0x1167d8fb000000000000000000000000000000…" */
+  /** seen in 46/218 rows (x_evm, x_michelson_evm); e.g. "0x00000000000000000000000000000000000000…", "0x00005e6b9592a2eb45707781e4ff66001527a1…", "0x1167d8fb000000000000000000000000000000…" */
   output?: string;
-  /** seen in 79/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "0000000000000000000000000000000000000000…" */
+  /** seen in 74/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "1", "-13", "5" */
   parameters?:
     | string
+    | number
     | {
+        from_?: string;
+        txs?: unknown[];
+        [key: string]: unknown;
+      }[]
+    | {
+        account?: string;
+        addr?: string;
         amount?: string;
+        ask_id?: string;
+        buyer?: string;
+        condition_extra?: null;
         destination?: string;
         entrypoint?: string;
         fastWithdrawalContract?: string;
         from?: string;
         input?: string;
+        item?: string;
+        paid?: string;
         parameters?: string;
         payload?: string;
+        proxy_for?: null;
+        referrers?: {
+          [key: string]: unknown;
+        };
+        sourceRuntime?: string;
         spender?: string;
         target?: string;
+        targetRuntime?: string;
         to?: string;
         value?: string;
         viewName?: string;
+        withdrawalId?: string;
         [key: string]: unknown;
       };
-  /** seen in 42/164 rows (x_evm_michelson, x_michelson) */
-  parametersRaw?: {
-    bytes?: string;
-    prim?: string;
-    string?: string;
-    [key: string]: unknown;
-  };
-  /** seen in 14/164 rows (x_evm, x_michelson_evm) */
+  /** seen in 34/218 rows (x_evm_michelson, x_michelson) */
+  parametersRaw?:
+    | {
+        args?: unknown[];
+        prim?: string;
+        [key: string]: unknown;
+      }[]
+    | {
+        args?: Record<string, unknown>[];
+        bytes?: string;
+        int?: string;
+        prim?: string;
+        string?: string;
+        [key: string]: unknown;
+      };
+  /** seen in 20/218 rows (x_evm, x_michelson_evm) */
   result?: {
+    balance?: string;
     counter?: string;
     recipient?: string;
     response?: string;
     success?: boolean;
     [key: string]: unknown;
   };
-  /** seen in 59/164 rows (x_evm_michelson); e.g. "0" */
+  /** seen in 71/218 rows (x_evm_michelson); e.g. "0", "162686273" */
   roundingLoss?: string;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   sender?: XtzktAccountRef;
-  /** seen in 73/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 79/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   senderCodeHash?: number;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "applied", "failed", "backtracked" */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "applied", "failed", "backtracked" */
   status?: string;
-  /** seen in 1/164 rows (x_michelson) */
+  /** seen in 2/218 rows (x_michelson) */
   storageFee?: number;
-  /** seen in 56/164 rows (x_michelson, x_michelson_evm) */
+  /** seen in 78/218 rows (x_michelson, x_michelson_evm) */
   storageLimit?: number;
-  /** seen in 73/164 rows (x_michelson, x_michelson_evm) */
+  /** seen in 87/218 rows (x_michelson, x_michelson_evm) */
   storageUsed?: number;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   target?: XtzktAccountRef;
-  /** seen in 127/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
+  /** seen in 133/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm) */
   targetCodeHash?: number;
-  /** seen in 164/164 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "2026-08-21T08:59:01.5Z", "2026-08-21T07:20:48.5Z", "2026-09-15T12:06:19Z" */
+  /** seen in 218/218 rows (x_evm, x_evm_michelson, x_michelson, x_michelson_evm); e.g. "2026-08-21T08:59:01.5Z", "2026-08-21T07:20:48.5Z", "2026-10-29T10:19:06Z" */
   timestamp?: string;
-  /** seen in 11/164 rows (x_michelson_evm) */
+  /** seen in 4/218 rows (x_evm, x_michelson) */
   tokenTransfers?: number;
 }
 
@@ -176,6 +208,7 @@ export const XTZKT_OBSERVED_FIELDS: readonly string[] = [
   "alias.hash",
   "alias.id",
   "alias.owner",
+  "alias.owner.domain",
   "alias.owner.hash",
   "alias.owner.id",
   "alias.owner.profile",
@@ -185,6 +218,7 @@ export const XTZKT_OBSERVED_FIELDS: readonly string[] = [
   "amount",
   "amountReceived",
   "amountSent",
+  "bigMapUpdates",
   "chain",
   "chain.chainId",
   "chain.id",
@@ -256,30 +290,64 @@ export const XTZKT_OBSERVED_FIELDS: readonly string[] = [
   "opType",
   "output",
   "parameters",
+  "parameters.account",
+  "parameters.addr",
   "parameters.amount",
+  "parameters.ask_id",
+  "parameters.buyer",
+  "parameters.condition_extra",
   "parameters.destination",
   "parameters.entrypoint",
   "parameters.fastWithdrawalContract",
   "parameters.from",
   "parameters.input",
+  "parameters.item",
+  "parameters.paid",
   "parameters.parameters",
   "parameters.payload",
+  "parameters.proxy_for",
+  "parameters.referrers",
+  "parameters.sourceRuntime",
   "parameters.spender",
   "parameters.target",
+  "parameters.targetRuntime",
   "parameters.to",
   "parameters.value",
   "parameters.viewName",
+  "parameters.withdrawalId",
+  "parameters[].from_",
+  "parameters[].txs",
+  "parameters[].txs[].amount",
+  "parameters[].txs[].to_",
+  "parameters[].txs[].token_id",
   "parametersRaw",
+  "parametersRaw.args",
+  "parametersRaw.args[].args",
+  "parametersRaw.args[].args[].args",
+  "parametersRaw.args[].args[].args[].args",
+  "parametersRaw.args[].args[].args[].args[].prim",
+  "parametersRaw.args[].args[].args[].prim",
+  "parametersRaw.args[].args[].bytes",
+  "parametersRaw.args[].args[].int",
+  "parametersRaw.args[].args[].prim",
+  "parametersRaw.args[].int",
+  "parametersRaw.args[].prim",
   "parametersRaw.bytes",
+  "parametersRaw.int",
   "parametersRaw.prim",
   "parametersRaw.string",
+  "parametersRaw[].args",
+  "parametersRaw[].args[].bytes",
+  "parametersRaw[].prim",
   "result",
+  "result.balance",
   "result.counter",
   "result.recipient",
   "result.response",
   "result.success",
   "roundingLoss",
   "sender",
+  "sender.domain",
   "sender.hash",
   "sender.id",
   "sender.owner",

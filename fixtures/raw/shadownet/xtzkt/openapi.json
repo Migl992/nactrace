@@ -2163,6 +2163,22 @@
             }
           },
           {
+            "name": "amount",
+            "in": "query",
+            "description": "Filters by raw amount sent: `amount` for single-runtime transactions, and `amountSent`\nfor cross-runtime ones. The value is compared as is, in the sender's runtime units,\nwithout converting between decimals, so it's mutez for `l1`, `x_michelson` and `x_michelson_evm`,\nand 18 decimals for `x_evm` and `x_evm_michelson`. Use `amountTez` to filter all runtimes at once.\n\nClick on the parameter to expand more details.\n\nExample: `?amount.gt=0`.",
+            "schema": {
+              "$ref": "#/components/schemas/BigIntegerParameter"
+            }
+          },
+          {
+            "name": "amountTez",
+            "in": "query",
+            "description": "Filters by amount sent, in tez: `amount` for single-runtime transactions, and `amountSent`\nfor cross-runtime ones. Unlike `amount`, the value is a decimal number of tez with up to 18 decimals,\nso it means the same in every runtime, and a single request covers them all.\n\nClick on the parameter to expand more details.\n\nExamples: `?amountTez.gt=123.4`, `?amountTez.le=0.000001`.",
+            "schema": {
+              "$ref": "#/components/schemas/TezParameter"
+            }
+          },
+          {
             "name": "entrypoint",
             "in": "query",
             "description": "Filters by entrypoint called on the target contract.\n\nClick on the parameter to expand more details.\n\nExamples: `?entrypoint=transfer`, `?entrypoint=null`.",
@@ -2379,6 +2395,22 @@
             "description": "Filters by initiator address.\n\nClick on the parameter to expand more details.\n\nExample: `?initiator.hash=tz1...`.",
             "schema": {
               "$ref": "#/components/schemas/AddressInfoNullParameter"
+            }
+          },
+          {
+            "name": "amount",
+            "in": "query",
+            "description": "Filters by raw amount sent: `amount` for single-runtime transactions, and `amountSent`\nfor cross-runtime ones. The value is compared as is, in the sender's runtime units,\nwithout converting between decimals, so it's mutez for `l1`, `x_michelson` and `x_michelson_evm`,\nand 18 decimals for `x_evm` and `x_evm_michelson`. Use `amountTez` to filter all runtimes at once.\n\nClick on the parameter to expand more details.\n\nExample: `?amount.gt=0`.",
+            "schema": {
+              "$ref": "#/components/schemas/BigIntegerParameter"
+            }
+          },
+          {
+            "name": "amountTez",
+            "in": "query",
+            "description": "Filters by amount sent, in tez: `amount` for single-runtime transactions, and `amountSent`\nfor cross-runtime ones. Unlike `amount`, the value is a decimal number of tez with up to 18 decimals,\nso it means the same in every runtime, and a single request covers them all.\n\nClick on the parameter to expand more details.\n\nExamples: `?amountTez.gt=123.4`, `?amountTez.le=0.000001`.",
+            "schema": {
+              "$ref": "#/components/schemas/TezParameter"
             }
           },
           {
@@ -2798,7 +2830,7 @@
           "Assets"
         ],
         "summary": "Get asset by token id",
-        "description": "Returns the asset the specified token belongs to: its name, description, logo and all the tokens\nit consists of. Any of the asset's own tokens can be used for the lookup, they all resolve to the\nsame asset. A token that doesn't belong to any asset is returned as an asset of its own, described\nby its own metadata. Returns `null` if there's no such token.",
+        "description": "Returns the asset the specified token belongs to: its name, symbol, description, logo and all the tokens\nit consists of. Any of the asset's own tokens can be used for the lookup, they all resolve to the\nsame asset. A token that doesn't belong to any asset is returned as an asset of its own, described\nby its own metadata. Returns `null` if there's no such token.",
         "parameters": [
           {
             "name": "tokenId",
@@ -2831,7 +2863,7 @@
           "Assets"
         ],
         "summary": "Get asset by contract",
-        "description": "Returns the asset the specified token belongs to: its name, description, logo and all the tokens\nit consists of. Any of the asset's own tokens can be used for the lookup, they all resolve to the\nsame asset. A token that doesn't belong to any asset is returned as an asset of its own, described\nby its own metadata. Returns `null` if there's no such token.",
+        "description": "Returns the asset the specified token belongs to: its name, symbol, description, logo and all the tokens\nit consists of. Any of the asset's own tokens can be used for the lookup, they all resolve to the\nsame asset. A token that doesn't belong to any asset is returned as an asset of its own, described\nby its own metadata. Returns `null` if there's no such token.",
         "parameters": [
           {
             "name": "contract",
@@ -2960,6 +2992,14 @@
             "description": "Filters by token metadata.\n\nClick on the parameter to expand more details.\n\nExample: `?metadata.symbol=USDC`.",
             "schema": {
               "$ref": "#/components/schemas/JsonParameter"
+            }
+          },
+          {
+            "name": "asset",
+            "in": "query",
+            "description": "Filters by asset the token belongs to.\n\nClick on the parameter to expand more details.\n\nExamples: `?asset=1`, `?asset.ne=null`.",
+            "schema": {
+              "$ref": "#/components/schemas/AssetInfoParameter"
             }
           },
           {
@@ -3113,6 +3153,14 @@
             "schema": {
               "$ref": "#/components/schemas/JsonParameter"
             }
+          },
+          {
+            "name": "asset",
+            "in": "query",
+            "description": "Filters by asset the token belongs to.\n\nClick on the parameter to expand more details.\n\nExamples: `?asset=1`, `?asset.ne=null`.",
+            "schema": {
+              "$ref": "#/components/schemas/AssetInfoParameter"
+            }
           }
         ],
         "responses": {
@@ -3181,7 +3229,7 @@
           {
             "name": "entrypoint",
             "in": "query",
-            "description": "Filters by entrypoint used to receive the ticket.\n\nClick on the parameter to expand more details.\n\nExample: `?entrypoint=transfer`.",
+            "description": "Filters by entrypoint of the address holding the balance.\n\nClick on the parameter to expand more details.\n\nExample: `?entrypoint=transfer`.",
             "schema": {
               "$ref": "#/components/schemas/Utf8BytesParameter"
             }
@@ -3341,7 +3389,7 @@
           {
             "name": "entrypoint",
             "in": "query",
-            "description": "Filters by entrypoint used to receive the ticket.\n\nClick on the parameter to expand more details.\n\nExample: `?entrypoint=transfer`.",
+            "description": "Filters by entrypoint of the address holding the balance.\n\nClick on the parameter to expand more details.\n\nExample: `?entrypoint=transfer`.",
             "schema": {
               "$ref": "#/components/schemas/Utf8BytesParameter"
             }
@@ -5309,7 +5357,7 @@
           {
             "name": "types",
             "in": "query",
-            "description": "Comma-separated list of activity types to return. If not specified, most types are returned,\nexcept the noisy ones such as attestations, which you have to ask for explicitly.\n\nExamples: `?types=transaction`, `?types=transaction,token_transfer,origination`.",
+            "description": "Comma-separated list of activity types to return. If not specified, most types are returned,\nexcept the noisy ones such as attestations, which you have to ask for explicitly.\n\nType groups are accepted as well (`consensus`, `voting`, `anonymous`, `manager`, `implicit`, or `all`),\neach standing for all of its types, noisy ones included — see the section description for their contents.\n\nExamples: `?types=transaction`, `?types=transaction,token_transfer,origination`, `?types=manager,attestation`.",
             "schema": {
               "$ref": "#/components/schemas/ActivityTypesParameter"
             }
@@ -5410,7 +5458,7 @@
           {
             "name": "types",
             "in": "query",
-            "description": "Comma-separated list of activity types to return. If not specified, most types are returned,\nexcept the noisy ones such as attestations, which you have to ask for explicitly.\n\nExamples: `?types=transaction`, `?types=transaction,token_transfer,origination`.",
+            "description": "Comma-separated list of activity types to return. If not specified, most types are returned,\nexcept the noisy ones such as attestations, which you have to ask for explicitly.\n\nType groups are accepted as well (`consensus`, `voting`, `anonymous`, `manager`, `implicit`, or `all`),\neach standing for all of its types, noisy ones included — see the section description for their contents.\n\nExamples: `?types=transaction`, `?types=transaction,token_transfer,origination`, `?types=all`.",
             "schema": {
               "$ref": "#/components/schemas/ActivityTypesParameter"
             }
@@ -5487,7 +5535,7 @@
           {
             "name": "types",
             "in": "query",
-            "description": "Comma-separated list of activity types to return. If not specified, most types are returned,\nexcept the noisy ones such as attestations, which you have to ask for explicitly.\n\nExamples: `?types=transaction`, `?types=transaction,token_transfer`.",
+            "description": "Comma-separated list of activity types to return. If not specified, most types are returned,\nexcept the noisy ones such as attestations, which you have to ask for explicitly.\n\nType groups are accepted as well (`consensus`, `voting`, `anonymous`, `manager`, `implicit`, or `all`),\neach standing for all of its types, noisy ones included — see the section description for their contents.\n\nExamples: `?types=transaction`, `?types=transaction,token_transfer`, `?types=all`.",
             "schema": {
               "$ref": "#/components/schemas/ActivityTypesParameter"
             }
@@ -7380,7 +7428,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Comma-separated list of fields (with optional sort direction) to sort by.\n\nExamples: `?sort=id`, `?sort=id.desc`, `?sort=balance.desc,id.asc`.\n\nAllowed fields: `id`, `timestamp`.",
+            "description": "Comma-separated list of fields (with optional sort direction) to sort by.\n\nExamples: `?sort=id`, `?sort=id.desc`, `?sort=balance.desc,id.asc`.\n\nAllowed fields: `id`, `level`, `timestamp`.",
             "schema": {
               "$ref": "#/components/schemas/SortParameter"
             }
@@ -11575,12 +11623,27 @@
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Internal unique asset id, or `null` if the token doesn't belong to any asset.",
+            "format": "int32"
+          },
           "name": {
             "type": [
               "null",
               "string"
             ],
             "description": "Asset name. Falls back to the token's own name, if the token doesn't belong to any asset."
+          },
+          "symbol": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Asset symbol. Falls back to the token's own symbol, if the token doesn't belong to any asset."
           },
           "description": {
             "type": [
@@ -11602,6 +11665,46 @@
               "$ref": "#/components/schemas/Token"
             },
             "description": "Tokens the asset consists of."
+          }
+        }
+      },
+      "AssetInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Internal unique asset id.",
+            "format": "int32"
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Asset name."
+          },
+          "symbol": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Asset symbol."
+          },
+          "logo": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Asset logo uri."
+          }
+        }
+      },
+      "AssetInfoParameter": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Filters by internal unique asset id (default).\nClick on the parameter to expand more details.",
+            "$ref": "#/components/schemas/Int32NullParameter"
           }
         }
       },
@@ -12317,6 +12420,13 @@
             "description": "Protocol the block was created under.",
             "$ref": "#/components/schemas/ProtocolInfo"
           },
+          "activityTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Types of activity included in the block (`transaction`, `token_transfer`, `migration`, ...),\nnamed as in the `types` filter of `/v1/activity/block`."
+          },
           "cycle": {
             "type": "integer",
             "description": "Cycle the block belongs to.",
@@ -12484,6 +12594,13 @@
             "description": "Protocol the block was created under.",
             "$ref": "#/components/schemas/ProtocolInfo"
           },
+          "activityTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Types of activity included in the block (`transaction`, `token_transfer`, `migration`, ...),\nnamed as in the `types` filter of `/v1/activity/block`."
+          },
           "daFees": {
             "description": "Total data availability fees paid by the transactions in the block (18 decimals).",
             "$ref": "#/components/schemas/BigInteger"
@@ -12541,6 +12658,17 @@
           "weakHash": {
             "description": "Hash of the L1 ticket behind the bridged asset: `keccak256` of the ticketer address and the\nticket content, both in their binary forms. It's all the bridge keeps on the chain — the\nticketer and the content themselves stay on L1, and the same hash on a `/v1/tickets` entry\n(`weakHash`) is what links the two.\n\nThe content type is not hashed, so this is a lookup key rather than an identity: L1 tickets\nof the same ticketer whose types encode their content identically share it.",
             "format": "byte"
+          },
+          "token": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Token the ticket represents. Ticket-token binding is done manually, off-chain.",
+                "$ref": "#/components/schemas/TokenInfo"
+              }
+            ]
           },
           "firstLevel": {
             "type": "integer",
@@ -12661,6 +12789,17 @@
           "weakHash": {
             "description": "Hash identifying the L1 ticket behind the bridged asset:\n`keccak256` of the ticketer address and the ticket content, both in their binary forms.",
             "format": "byte"
+          },
+          "token": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Token the ticket represents. Ticket-token binding is done manually, off-chain.",
+                "$ref": "#/components/schemas/TokenInfo"
+              }
+            ]
           }
         }
       },
@@ -13374,6 +13513,17 @@
           "ticketHash": {
             "description": "Hash of the L1 ticket backing the deposited token (`fa` deposits only). It's the same hash\n`/v1/bridge_tickets` and `/v1/tickets` expose as `weakHash`, so it links the deposit to the\nbridge ticket it credits and to the L1 ticket behind it.",
             "format": "byte"
+          },
+          "token": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Token the deposited ticket represents (`fa` deposits only).\nTickets are bound to tokens by hand, so it's missing for unbound ones.",
+                "$ref": "#/components/schemas/TokenInfo"
+              }
+            ]
           },
           "proxy": {
             "oneOf": [
@@ -14491,6 +14641,13 @@
             "description": "Address that revealed its public key.",
             "$ref": "#/components/schemas/AddressInfo"
           },
+          "publicKey": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Public key the operation reveals; missing if the sender has never revealed it successfully."
+          },
           "counter": {
             "type": "integer",
             "description": "Sender's operation counter, ensuring operations apply in order and only once.",
@@ -15257,6 +15414,17 @@
           "ticketHash": {
             "description": "Hash of the L1 ticket backing the deposited token (`fa` deposits only). It's the same hash\n`/v1/bridge_tickets` and `/v1/tickets` expose as `weakHash`, so it links the deposit to the\nbridge ticket it credits and to the L1 ticket behind it.",
             "format": "byte"
+          },
+          "token": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Token the deposited ticket represents (`fa` deposits only).\nTickets are bound to tokens by hand, so it's missing for unbound ones.",
+                "$ref": "#/components/schemas/TokenInfo"
+              }
+            ]
           },
           "proxy": {
             "oneOf": [
@@ -17223,6 +17391,13 @@
             "description": "Address that revealed its public key.",
             "$ref": "#/components/schemas/AddressInfo"
           },
+          "publicKey": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Public key the operation reveals; missing if the sender has never revealed it successfully."
+          },
           "counter": {
             "type": "integer",
             "description": "Sender's operation counter, ensuring operations apply in order and only once.",
@@ -18701,6 +18876,13 @@
             "description": "Address that revealed its public key.",
             "$ref": "#/components/schemas/AddressInfo"
           },
+          "publicKey": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Public key the operation reveals; missing if the sender has never revealed it successfully."
+          },
           "counter": {
             "type": "integer",
             "description": "Sender's operation counter, ensuring operations apply in order and only once.",
@@ -19404,6 +19586,17 @@
           "ticketHash": {
             "description": "Hash of the L1 ticket backing the deposited token (`fa` deposits only). It's the same hash\n`/v1/bridge_tickets` and `/v1/tickets` expose as `weakHash`, so it links the deposit to the\nbridge ticket it credits and to the L1 ticket behind it.",
             "format": "byte"
+          },
+          "token": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Token the deposited ticket represents (`fa` deposits only).\nTickets are bound to tokens by hand, so it's missing for unbound ones.",
+                "$ref": "#/components/schemas/TokenInfo"
+              }
+            ]
           },
           "proxy": {
             "oneOf": [
@@ -21369,6 +21562,13 @@
           "sender": {
             "description": "Address that revealed its public key.",
             "$ref": "#/components/schemas/AddressInfo"
+          },
+          "publicKey": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Public key the operation reveals; missing if the sender has never revealed it successfully."
           },
           "counter": {
             "type": "integer",
@@ -23720,6 +23920,13 @@
             "description": "Address that revealed its public key.",
             "$ref": "#/components/schemas/AddressInfo"
           },
+          "publicKey": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Public key the operation reveals; missing if the sender has never revealed it successfully."
+          },
           "counter": {
             "type": "integer",
             "description": "Sender's operation counter, ensuring operations apply in order and only once.",
@@ -23819,6 +24026,13 @@
           "sender": {
             "description": "Address that revealed its public key.",
             "$ref": "#/components/schemas/AddressInfo"
+          },
+          "publicKey": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Public key the operation reveals; missing if the sender has never revealed it successfully."
           },
           "counter": {
             "type": "integer",
@@ -24119,6 +24333,17 @@
             ],
             "description": "Token decimals (from metadata).",
             "format": "int32"
+          },
+          "asset": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Asset the token belongs to, or `null` if it doesn't belong to any. Assets are curated manually, off-chain,\nso unlike the token's own name and symbol, this can't be faked on-chain. A token without an asset\nis unknown rather than bad: NFTs, for one, are almost never curated.",
+                "$ref": "#/components/schemas/AssetInfo"
+              }
+            ]
           }
         }
       },
@@ -24409,6 +24634,57 @@
           }
         }
       },
+      "TezParameter": {
+        "type": "object",
+        "properties": {
+          "eq": {
+            "type": "string",
+            "description": "**Equal** mode (default mode, so `param.eq=value` is the same as `param=value`).\nReturns items where 'param' is equal to 'value' tez.\n\nExample: `?amountTez=1.5`.",
+            "format": "decimal"
+          },
+          "ne": {
+            "type": "string",
+            "description": "**Not equal** mode.\nReturns items where 'param' is not equal to 'value' tez.\n\nExample: `?amountTez.ne=0`.",
+            "format": "decimal"
+          },
+          "gt": {
+            "type": "string",
+            "description": "**Greater than** mode.\nReturns items where 'param' is greater than 'value' tez.\n\nExample: `?amountTez.gt=123.4`.",
+            "format": "decimal"
+          },
+          "ge": {
+            "type": "string",
+            "description": "**Greater or equal** mode.\nReturns items where 'param' is greater than or equal to 'value' tez.\n\nExample: `?amountTez.ge=123.4`.",
+            "format": "decimal"
+          },
+          "lt": {
+            "type": "string",
+            "description": "**Less than** mode.\nReturns items where 'param' is less than 'value' tez.\n\nExample: `?amountTez.lt=0.000001`.",
+            "format": "decimal"
+          },
+          "le": {
+            "type": "string",
+            "description": "**Less or equal** mode.\nReturns items where 'param' is less than or equal to 'value' tez.\n\nExample: `?amountTez.le=0.000001`.",
+            "format": "decimal"
+          },
+          "in": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "decimal"
+            },
+            "description": "**In list** mode.\nReturns items where 'param' is equal to any of comma-separated 'values' tez.\n\nExample: `?amountTez.in=1,2.5`."
+          },
+          "ni": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "decimal"
+            },
+            "description": "**Not in list** mode.\nReturns items where 'param' is not equal to any of comma-separated 'values' tez.\n\nExample: `?amountTez.ni=1,2.5`."
+          }
+        }
+      },
       "Ticket": {
         "required": [
           "chain",
@@ -24487,6 +24763,17 @@
           "weakHash": {
             "description": "Canonical hash of the ticket: `keccak256` of the ticketer address and the ticket content,\nboth in their binary forms — the same hash bridged tickets are identified by on Tezos X,\nso it can be used to match a ticket across the layers.\n\nNote, the content type is not hashed, so tickets of the same ticketer whose types encode\ntheir content identically (`nat` and `int`, `bytes` and `address`, ...) share the hash.",
             "format": "byte"
+          },
+          "token": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Token the ticket represents. Ticket-token binding is done manually, off-chain.",
+                "$ref": "#/components/schemas/TokenInfo"
+              }
+            ]
           },
           "rawType": {
             "description": "Ticket content type in Micheline format.",
@@ -24605,6 +24892,17 @@
           "weakHash": {
             "description": "Canonical hash of the ticket: `keccak256` of the ticketer address and the ticket content,\nboth in their binary forms (the content type is not hashed).",
             "format": "byte"
+          },
+          "token": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Token the ticket represents. Ticket-token binding is done manually, off-chain.",
+                "$ref": "#/components/schemas/TokenInfo"
+              }
+            ]
           }
         }
       },
@@ -24852,6 +25150,17 @@
             ],
             "description": "Time when the metadata was last synced (resolved, or the last resolve attempt), if any.",
             "format": "date-time"
+          },
+          "asset": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Asset the token belongs to, or `null` if it doesn't belong to any. Assets are curated manually, off-chain,\nso unlike the token's own name, symbol and metadata, this can't be faked on-chain. A token without an asset\nis unknown rather than bad: NFTs, for one, are almost never curated.",
+                "$ref": "#/components/schemas/AssetInfo"
+              }
+            ]
           }
         }
       },
@@ -24885,7 +25194,7 @@
             "$ref": "#/components/schemas/BigInteger"
           },
           "entrypoint": {
-            "description": "Entrypoint used to receive the ticket (tickets only).",
+            "description": "Entrypoint of the address holding the balance, e.g. `deposit` for `KT1...%deposit`. A token contract may keep\nbalances of one address under different entrypoints, so the address can have several balances of the same token.",
             "format": "byte"
           },
           "firstLevel": {
@@ -24975,6 +25284,17 @@
                 "$ref": "#/components/schemas/RawJson"
               }
             ]
+          },
+          "asset": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "description": "Asset the token belongs to, or `null` if it doesn't belong to any. Assets are curated manually, off-chain,\nso unlike the token's own name, symbol and metadata, this can't be faked on-chain. A token without an asset\nis unknown rather than bad: NFTs, for one, are almost never curated.",
+                "$ref": "#/components/schemas/AssetInfo"
+              }
+            ]
           }
         }
       },
@@ -25000,6 +25320,10 @@
           "metadata": {
             "description": "Filters by token metadata.\nClick on the parameter to expand more details.",
             "$ref": "#/components/schemas/JsonParameter"
+          },
+          "asset": {
+            "description": "Filters by asset the token belongs to.\nClick on the parameter to expand more details.",
+            "$ref": "#/components/schemas/AssetInfoParameter"
           }
         }
       },
@@ -26914,7 +27238,7 @@
   "tags": [
     {
       "name": "Activity",
-      "description": "Everything that happened, from one of three angles: an account, a block, or an operation group.\nOperations and token, ticket and bridge ticket transfers come back merged into a single **stream** sorted by `id`,\nso an entire flow can be reconstructed from one request.\n\n### Good to know\n\n- Every item carries an `activity` field telling you which kind it is, and therefore which model to expect.\n- Noisy types are left out by default — attestations, autostaking and the like — so ask for them\n  explicitly via `types` if you need them.\n- Account activity matches the address in any role by default: sender, target, initiator, or just\n  mentioned somewhere in the operation. Narrow it down with `roles`.\n- `address` in account activity takes internal address ids, and an id pins an address to one chain.\n  `address.hash` matches a hash on every chain it exists on, so ids are the way to pick exact addresses.\n- These endpoints page by `cursor` rather than `offset`, which isn't supported here, and accept\n  `id` and `timestamp` as the only sort fields.\n\n### Tips\n\n- `/v1/activity/opg` is what you want for an \"operation details\": one request returns the whole operation\n  group (batch), including internal operations and the transfers they caused.\n- `/v1/activity/block` is keyed by `level`, which exists on every chain, so add `chain` unless you\n  really want all of them at once.\n- Use `?sort=id.desc` for newest first, and pass the last item's `id` as `cursor` to get the next page.\n"
+      "description": "Everything that happened, from one of three angles: an account, a block, or an operation group.\nOperations and token, ticket and bridge ticket transfers come back merged into a single **stream** sorted by `id`,\nso an entire flow can be reconstructed from one request.\n\n### Good to know\n\n- Every item carries an `activity` field telling you which kind it is, and therefore which model to expect.\n- Noisy types are left out by default — attestations, autostaking and the like — so ask for them\n  explicitly via `types` if you need them, one by one or as a whole group (see below).\n- Account activity matches the address in any role by default: sender, target, initiator, or just\n  mentioned somewhere in the operation. Narrow it down with `roles`.\n- `address` in account activity takes internal address ids, and an id pins an address to one chain.\n  `address.hash` matches a hash on every chain it exists on, so ids are the way to pick exact addresses.\n- These endpoints page by `cursor` rather than `offset`, which isn't supported here, and accept\n  `id` and `timestamp` as the only sort fields.\n\n### Tips\n\n- `/v1/activity/opg` is what you want for an \"operation details\": one request returns the whole operation\n  group (batch), including internal operations and the transfers they caused.\n- `/v1/activity/block` is keyed by `level`, which exists on every chain, so add `chain` unless you\n  really want all of them at once.\n- Use `?sort=id.desc` for newest first, and pass the last item's `id` as `cursor` to get the next page.\n\n### Type groups\n\nWherever `types` takes a type, it also takes a group, which stands for all of its types, noisy ones included.\nGroups and types mix freely, e.g. `?types=manager,attestation`.\n\n- `consensus` — `attestation`, `preattestation`, `baking`.\n- `voting` — `proposal`, `ballot`.\n- `anonymous` — `activation`, `dal_entrapment_evidence`, `double_baking`, `double_consensus`, `drain_delegate`,\n  `nonce_revelation`, `vdf_revelation`.\n- `manager` — `transaction`, `origination`, `delegation`, `reveal`, `staking`, `set_delegate_parameters`,\n  `set_deposits_limit`, `update_secondary_key`, `increase_paid_storage`, `register_constant`, `transfer_ticket`,\n  `dal_publish_commitment`, `deposit`, `smart_rollup_add_messages`, `smart_rollup_cement`, `smart_rollup_execute`,\n  `smart_rollup_originate`, `smart_rollup_publish`, `smart_rollup_recover_bond`, `smart_rollup_refute`,\n  plus token, ticket and bridge ticket transfers: `token_transfer`, `ticket_transfer`, `bridge_ticket_transfer`.\n- `implicit` — `migration`, `attestation_reward`, `dal_attestation_reward`, `autostaking`, `revelation_penalty`,\n  `subsidy`.\n- `all` — every type of every group above.\n\nA group grows as new types are added to it, so be ready to meet `activity` kinds you haven't seen before.\n"
     },
     {
       "name": "Search",
@@ -26934,7 +27258,7 @@
     },
     {
       "name": "Assets",
-      "description": "Assets, tokens, tickets and bridge tickets: what they are, who holds them, and how they moved. An **asset**\nis a curated group of tokens representing the same thing — like USDC, deployed as separate contracts on\nTezos L1 and on Tezos X.\n\n### Good to know\n\n- Nothing on-chain links deployments of the same asset — each one is issued on its own — so assets are\n  grouped by hand, and a token stays an asset of its own until someone groups it.\n- Tokens of one asset are independent contracts, each with its own supply, holders and decimals: the same\n  asset often has 6 decimals on Tezos L1 and 18 in EVM. Nothing is summed up across them.\n\n### Bridge tickets are a third thing\n\nWhen an FA token is bridged from Tezos L1 to Tezos X, what the user ends up holding is an ordinary ERC-20\nin `/v1/tokens`. Behind it the bridge keeps its own accounting entry, and *that* is neither a token nor a\nMichelson ticket, so it lives in `/v1/bridge_tickets`:\n\n- The real ticket stays on L1, held by the rollup's own address — see who holds it in\n  `/v1/tickets/balances`. On Tezos X the bridge only keeps an accounting entry, identified by the ticket's\n  `weakHash`, which is the same on both layers and is how you match the two. The hash doesn't cover the\n  ticket content type, so treat it as a lookup key rather than an identity.\n- Balances only ever move in two ways: credited when funds are bridged in, debited when they're withdrawn.\n  Bridge tickets are never transferred between addresses — the transferable thing is the ERC-20 minted by\n  the proxy contract.\n- So the holder of a bridge ticket balance is normally that proxy contract, backing the wrapped supply.\n  A regular address holds one only when the deposit had no proxy, or the proxy call failed — and then this\n  balance is the only place the deposited funds exist on the chain. For the same reason a depositor's own\n  `/v1/activity` feed usually shows the deposit but no `bridge_ticket_transfer`: that row belongs to the proxy.\n- A deposit is credited immediately when it has no proxy, otherwise it's queued and credited later by a\n  `claim` transaction. A queued deposit carries a `depositId`, and once it's claimed, the claiming\n  transaction is on it as `claimTransactionId` — so `?depositId.ne=null&claimTransactionId=null`\n  is the queue itself: funds that were bridged in and are still sitting on the bridge.\n  `xtz` deposits never produce a bridge ticket transfer — they credit the native balance instead.\n- Amounts here are ticket units: unlike EVM values they are not scaled by 18 decimals, even though they\n  are rendered as strings.\n\n### Tips\n\n- `/v1/assets/{contract}/{tokenId}` accepts any token of the asset and returns all of them at once.\n- If the pair `contract + tokenId` matches tokens on several chains (which practically never happens),\n  you'll get a 400 asking you to add the `chain` parameter, or use `/v1/assets/{tokenId}` with internal `Token.Id` instead.\n- You can use returned token ids in `/v1/tokens/balances?token.id.in=...` and `/v1/tokens/transfers?token.id.in=...`\n  to get a single feed across the whole asset and build aggregated statistics.\n"
+      "description": "Assets, tokens, tickets and bridge tickets: what they are, who holds them, and how they moved. An **asset**\nis a curated group of tokens representing the same thing — like USDC, deployed as separate contracts on\nTezos L1 and on Tezos X.\n\n### Good to know\n\n- Nothing on-chain links deployments of the same asset — each one is issued on its own — so assets are\n  grouped by hand, and a token stays an asset of its own until someone groups it.\n- Tokens of one asset are independent contracts, each with its own supply, holders and decimals: the same\n  asset often has 6 decimals on Tezos L1 and 18 in EVM. Nothing is summed up across them.\n- Every token carries the `asset` it belongs to, or `null` if it doesn't belong to any. Since assets are\n  curated by hand, this can't be faked on-chain the way a token's own name, symbol or logo can: a token\n  that calls itself USDC is USDC only if its `asset` says so. `null` means unknown rather than bad: most\n  tokens, NFTs especially, are never curated.\n\n### Bridge tickets are a third thing\n\nWhen an FA token is bridged from Tezos L1 to Tezos X, what the user ends up holding is an ordinary ERC-20\nin `/v1/tokens`. Behind it the bridge keeps its own accounting entry, and *that* is neither a token nor a\nMichelson ticket, so it lives in `/v1/bridge_tickets`:\n\n- The real ticket stays on L1, held by the rollup's own address — see who holds it in\n  `/v1/tickets/balances`. On Tezos X the bridge only keeps an accounting entry, identified by the ticket's\n  `weakHash`, which is the same on both layers and is how you match the two. The hash doesn't cover the\n  ticket content type, so treat it as a lookup key rather than an identity.\n- Balances only ever move in two ways: credited when funds are bridged in, debited when they're withdrawn.\n  Bridge tickets are never transferred between addresses — the transferable thing is the ERC-20 minted by\n  the proxy contract.\n- So the holder of a bridge ticket balance is normally that proxy contract, backing the wrapped supply.\n  A regular address holds one only when the deposit had no proxy, or the proxy call failed — and then this\n  balance is the only place the deposited funds exist on the chain. For the same reason a depositor's own\n  `/v1/activity` feed usually shows the deposit but no `bridge_ticket_transfer`: that row belongs to the proxy.\n- A deposit is credited immediately when it has no proxy, otherwise it's queued and credited later by a\n  `claim` transaction. A queued deposit carries a `depositId`, and once it's claimed, the claiming\n  transaction is on it as `claimTransactionId` — so `?depositId.ne=null&claimTransactionId=null`\n  is the queue itself: funds that were bridged in and are still sitting on the bridge.\n  `xtz` deposits never produce a bridge ticket transfer — they credit the native balance instead.\n- Amounts here are ticket units: unlike EVM values they are not scaled by 18 decimals, even though they\n  are rendered as strings.\n\n### Tips\n\n- `/v1/assets/{contract}/{tokenId}` accepts any token of the asset and returns all of them at once.\n- If the pair `contract + tokenId` matches tokens on several chains (which practically never happens),\n  you'll get a 400 asking you to add the `chain` parameter, or use `/v1/assets/{tokenId}` with internal `Token.Id` instead.\n- `/v1/tokens/balances?token.asset=...` and `/v1/tokens/transfers?token.asset=...` give a single feed across\n  the whole asset, to build aggregated statistics. Note that `asset.id` is not a token id, so it doesn't go\n  into `/v1/assets/{tokenId}`: any token id of the asset does.\n"
     },
     {
       "name": "Accounts",
