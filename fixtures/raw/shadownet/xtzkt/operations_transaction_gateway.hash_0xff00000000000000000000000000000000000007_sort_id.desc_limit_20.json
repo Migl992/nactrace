@@ -1,6 +1,186 @@
 [
   {
     "direction": "x_evm_michelson",
+    "id": "1152934206556340224",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6927593,
+    "timestamp": "2026-10-16T05:13:16Z",
+    "hash": "0x5d9a9b95a483d096a029f3edb3a2e39c2f3684069605a7ae8ba36e1c8809c518",
+    "sender": {
+      "id": 268445514,
+      "hash": "0xbc6167647d6714eca23f78472ea4cf84c044c53d",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268445494,
+        "hash": "tz3Rb5RVucLc6ani23jVdZM4Qm6c4oQ74zhh",
+        "type": "x_michelson_user"
+      }
+    },
+    "senderCodeHash": -1368642541,
+    "initiator": {
+      "id": 268435624,
+      "hash": "0x40284f0902a17d409bf7fc4f87ae84c727452303",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268445494,
+      "hash": "tz3Rb5RVucLc6ani23jVdZM4Qm6c4oQ74zhh",
+      "type": "x_michelson_user"
+    },
+    "counter": 58534,
+    "gasUsed": 105147,
+    "status": "applied",
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "2000000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 2000000,
+    "alias": {
+      "id": 268445494,
+      "hash": "tz3Rb5RVucLc6ani23jVdZM4Qm6c4oQ74zhh",
+      "type": "x_michelson_user"
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
+    },
+    "gatewayEntrypoint": "call(string,(string,string)[],bytes,uint8)",
+    "gatewayParameters": {
+      "url": "http://tezos/tz3Rb5RVucLc6ani23jVdZM4Qm6c4oQ74zhh",
+      "body": "0x",
+      "method": "1",
+      "headers": []
+    },
+    "gatewayInput": "0xfa591a56000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000031687474703a2f2f74657a6f732f747a33526235525675634c6336616e6932336a56645a4d34516d3663346f5137347a686800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152934206553194496",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6927593,
+    "timestamp": "2026-10-16T05:13:16Z",
+    "hash": "0x7465ecc6868dbda5e97669f4aff4abce5ba20dfb98d6df09663ff599a553e15e",
+    "sender": {
+      "id": 268445521,
+      "hash": "0x68767b38768e554a31735268b2d356d5cc75d96c",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268445520,
+        "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+        "type": "x_michelson_user"
+      }
+    },
+    "senderCodeHash": -1368642541,
+    "initiator": {
+      "id": 268435624,
+      "hash": "0x40284f0902a17d409bf7fc4f87ae84c727452303",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268445520,
+      "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+      "type": "x_michelson_user"
+    },
+    "counter": 58533,
+    "gasUsed": 501339,
+    "status": "applied",
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "500000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 500000,
+    "alias": {
+      "id": 268445520,
+      "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+      "type": "x_michelson_user"
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
+    },
+    "gatewayEntrypoint": "call(string,(string,string)[],bytes,uint8)",
+    "gatewayParameters": {
+      "url": "http://tezos/tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+      "body": "0x",
+      "method": "1",
+      "headers": []
+    },
+    "gatewayInput": "0xfa591a56000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000031687474703a2f2f74657a6f732f747a315653564576326d43744d59637a635444796556673444525576793537454e4e384500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
+    "id": "1152934068040499200",
+    "chain": {
+      "id": 1,
+      "chainId": "0x1f34f",
+      "layer": "x"
+    },
+    "level": 6906589,
+    "timestamp": "2026-10-15T14:29:57Z",
+    "hash": "0x49707fec87cac252f3179a8b6f2ed57fa01b4acfba96ac990ecba96346c60d74",
+    "sender": {
+      "id": 268445521,
+      "hash": "0x68767b38768e554a31735268b2d356d5cc75d96c",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 268445520,
+        "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+        "type": "x_michelson_user"
+      }
+    },
+    "senderCodeHash": -1368642541,
+    "initiator": {
+      "id": 268445523,
+      "hash": "0x4b64a8c77da917133edd220b05475ccae6247879",
+      "type": "x_evm_user"
+    },
+    "target": {
+      "id": 268445520,
+      "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+      "type": "x_michelson_user"
+    },
+    "counter": 1,
+    "gasUsed": 501339,
+    "status": "applied",
+    "opType": "trace",
+    "opCode": "call",
+    "amountSent": "1100000000000000000",
+    "roundingLoss": "0",
+    "amountReceived": 1100000,
+    "alias": {
+      "id": 268445520,
+      "hash": "tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+      "type": "x_michelson_user"
+    },
+    "gateway": {
+      "id": 268442897,
+      "hash": "0xff00000000000000000000000000000000000007",
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
+    },
+    "gatewayEntrypoint": "call(string,(string,string)[],bytes,uint8)",
+    "gatewayParameters": {
+      "url": "http://tezos/tz1VSVEv2mCtMYczcTDyeVg4DRUvy57ENN8E",
+      "body": "0x",
+      "method": "1",
+      "headers": []
+    },
+    "gatewayInput": "0xfa591a56000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000e0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000031687474703a2f2f74657a6f732f747a315653564576326d43744d59637a635444796556673444525576793537454e4e384500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "direction": "x_evm_michelson",
     "id": "1152933698125955072",
     "chain": {
       "id": 1,
@@ -49,7 +229,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {
@@ -109,7 +290,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {
@@ -168,7 +350,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {
@@ -228,7 +411,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {
@@ -288,7 +472,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {
@@ -349,7 +534,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {
@@ -410,7 +596,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {
@@ -472,7 +659,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "call(string,(string,string)[],bytes,uint8)",
     "gatewayParameters": {
@@ -531,7 +719,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "call(string,(string,string)[],bytes,uint8)",
     "gatewayParameters": {
@@ -591,7 +780,8 @@
     "gateway": {
       "id": 268442897,
       "hash": "0xff00000000000000000000000000000000000007",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "MichelsonGateway"
     },
     "gatewayEntrypoint": "callMichelson(string,string,bytes)",
     "gatewayParameters": {

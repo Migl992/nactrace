@@ -1,6 +1,180 @@
 [
   {
     "direction": "x_michelson_evm",
+    "id": "1154818034499584000",
+    "chain": {
+      "id": 1,
+      "chainId": "0xa729",
+      "layer": "x"
+    },
+    "level": 56708760,
+    "timestamp": "2026-10-29T10:19:06Z",
+    "hash": "ooUkfnnNPGDmcX9Yzrj46sC8Ph2pB53Cw8QfQGRimeaZqoc36f8",
+    "sender": {
+      "id": 269817454,
+      "hash": "tz1gUCWWwmwEpc7eVd4NHy3UhL28K4j9L6jy",
+      "type": "x_michelson_user"
+    },
+    "target": {
+      "id": 268437788,
+      "hash": "0x000000000000000000000000000000000000dead",
+      "type": "x_evm_user",
+      "profile": "DeadAddress"
+    },
+    "counter": 2,
+    "gasLimit": 5077,
+    "gasUsed": 4977,
+    "status": "applied",
+    "amountSent": 0,
+    "amountReceived": "0",
+    "daFee": 564,
+    "gasFee": 449,
+    "gasFeeRefunded": 0,
+    "storageLimit": 0,
+    "storageUsed": 0,
+    "input": "0x5c36b186",
+    "alias": {
+      "id": 269819463,
+      "hash": "0x2ca3d9d64162f6fadea8272b0cbd6570df950ee4",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269817454,
+        "hash": "tz1gUCWWwmwEpc7eVd4NHy3UhL28K4j9L6jy",
+        "type": "x_michelson_user"
+      }
+    },
+    "gateway": {
+      "id": 269807828,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract",
+      "profile": "Tezos X: EVM Gateway"
+    },
+    "gatewayEntrypoint": "call_evm",
+    "gatewayParameters": {
+      "bytes": "",
+      "contract": null,
+      "string_0": "0x000000000000000000000000000000000000dEaD",
+      "string_1": "ping()"
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "0x000000000000000000000000000000000000dEaD"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "ping()"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "direction": "x_michelson_evm",
+    "id": "1154817254860259328",
+    "chain": {
+      "id": 1,
+      "chainId": "0xa729",
+      "layer": "x"
+    },
+    "level": 56570229,
+    "timestamp": "2026-10-27T10:41:36Z",
+    "hash": "oocpFrraqtjaZeyAoDp3a2KRkTGQwVikpknEZajXpjrzB6vrfNG",
+    "sender": {
+      "id": 269819267,
+      "hash": "tz1dCaMnnMJk76UodjewCK67ABiXWjcKj73N",
+      "type": "x_michelson_user",
+      "domain": "captstake.tez",
+      "profile": "Captain Stake"
+    },
+    "target": {
+      "id": 268437788,
+      "hash": "0x000000000000000000000000000000000000dead",
+      "type": "x_evm_user",
+      "profile": "DeadAddress"
+    },
+    "counter": 2,
+    "gasLimit": 5077,
+    "gasUsed": 4977,
+    "status": "applied",
+    "amountSent": 0,
+    "amountReceived": "0",
+    "daFee": 564,
+    "gasFee": 449,
+    "gasFeeRefunded": 0,
+    "storageLimit": 0,
+    "storageUsed": 0,
+    "input": "0x5c36b186",
+    "alias": {
+      "id": 269819269,
+      "hash": "0x88294e3e4afa1ebbb8f8af5fdbd0fcf2878495e4",
+      "type": "x_evm_alias",
+      "owner": {
+        "id": 269819267,
+        "hash": "tz1dCaMnnMJk76UodjewCK67ABiXWjcKj73N",
+        "type": "x_michelson_user",
+        "domain": "captstake.tez",
+        "profile": "Captain Stake"
+      }
+    },
+    "gateway": {
+      "id": 269807828,
+      "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
+      "type": "x_michelson_contract",
+      "profile": "Tezos X: EVM Gateway"
+    },
+    "gatewayEntrypoint": "call_evm",
+    "gatewayParameters": {
+      "bytes": "",
+      "contract": null,
+      "string_0": "0x000000000000000000000000000000000000dEaD",
+      "string_1": "ping()"
+    },
+    "gatewayParametersRaw": {
+      "prim": "Pair",
+      "args": [
+        {
+          "string": "0x000000000000000000000000000000000000dEaD"
+        },
+        {
+          "prim": "Pair",
+          "args": [
+            {
+              "string": "ping()"
+            },
+            {
+              "prim": "Pair",
+              "args": [
+                {
+                  "bytes": ""
+                },
+                {
+                  "prim": "None"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "direction": "x_michelson_evm",
     "id": "1154794335067176960",
     "chain": {
       "id": 1,
@@ -18,7 +192,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 12,
@@ -54,7 +229,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -110,7 +285,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 11,
@@ -148,7 +324,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -204,7 +380,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 2,
@@ -242,7 +419,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -298,7 +475,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 10,
@@ -336,7 +514,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -392,7 +570,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 9,
@@ -430,7 +609,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -486,7 +665,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 2,
@@ -524,7 +704,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -580,7 +760,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 8,
@@ -618,7 +799,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -674,7 +855,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 7,
@@ -712,7 +894,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -768,7 +950,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 6,
@@ -806,7 +989,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -862,7 +1045,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 2,
@@ -900,7 +1084,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -956,7 +1140,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 5,
@@ -992,7 +1177,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -1048,7 +1233,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 4,
@@ -1086,7 +1272,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -1142,7 +1328,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 3,
@@ -1180,7 +1367,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -1236,7 +1423,8 @@
     "target": {
       "id": 268435458,
       "hash": "0xff00000000000000000000000000000000000001",
-      "type": "x_evm_contract"
+      "type": "x_evm_contract",
+      "profile": "XtzBridge"
     },
     "targetCodeHash": -1912878149,
     "counter": 2,
@@ -1274,7 +1462,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -1358,7 +1546,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call",
     "gatewayParameters": {
@@ -1449,7 +1637,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
@@ -1533,7 +1721,7 @@
       "id": 269807828,
       "hash": "KT18oDJJKXMKhfE1bSuAPGp92pYcwVDiqsPw",
       "type": "x_michelson_contract",
-      "profile": "Tezos X call_evm Gateway (Michelson→EVM)"
+      "profile": "Tezos X: EVM Gateway"
     },
     "gatewayEntrypoint": "call_evm",
     "gatewayParameters": {
