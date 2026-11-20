@@ -92,7 +92,10 @@ async function sendRaw(
   for (let level = head + 1, tries = 0; tries < 40; tries++) {
     let ops;
     try {
-      ops = await tezos.rpc.getOperationsFromBlock(String(level)).catch(() => null);
+      ops = await tezos.rpc
+        .getBlock({ block: String(level) })
+        .then((b) => b.operations)
+        .catch(() => null);
     } catch {
       ops = null;
     }
