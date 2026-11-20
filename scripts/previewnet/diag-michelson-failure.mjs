@@ -77,7 +77,10 @@ const hash = await tezos.rpc
   .catch((e) => "REFUSED " + e.message?.slice(0, 300));
 console.log("inject:", hash);
 for (let level = head + 1, tries = 0; tries < 25 && !String(hash).startsWith("REFUSED"); tries++) {
-  const ops = await tezos.rpc.getOperationsFromBlock(String(level)).catch(() => null);
+  const ops = await tezos.rpc
+    .getBlock({ block: String(level) })
+    .then((b) => b.operations)
+    .catch(() => null);
   if (!ops) {
     await new Promise((r) => setTimeout(r, 3000));
     continue;
